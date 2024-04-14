@@ -1,0 +1,1069 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <script src="https://cdn.plot.ly/plotly-2.30.0.min.js" charset="utf-8"></script>
+        <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+        <style>
+          html, body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0px; }
+          h1 { font-size: 1.2em; text-align: center; padding-left: 20px; padding-right: 20px; }
+          h2 { font-size: 1em; text-align: center; font-weight: normal; }
+          h3 { font-size: 0.8em; text-align: center; font-weight: normal; }
+          p { font-size: 0.75em; text-align: center; font-weight: normal; }
+          .HeadCell { grid-area: HeadCell; }
+          .ViewCell { grid-area: ViewCell; }
+          .SideCell { grid-area: SideCell; }
+          .BaseCell { grid-area: BaseCell; }
+          .ClipCell { grid-area: ClipCell; }
+          .FootCell { grid-area: FootCell; }
+          .GridCell { display: grid;
+            grid-template-areas:
+              'HeadCell HeadCell'
+              'ViewCell SideCell'
+              'ViewCell BaseCell'
+              'ViewCell ClipCell'
+              'FootCell FootCell';
+            gap: 5px; background-color: #fff; padding: 0px;
+            grid-template-columns: min-content min-content min-content; justify-content: center; }
+          .GridCell > div { background-color: #fff; padding: 0px; }
+          .Tooltip { position: relative; display: inline-block;  }
+          .Tooltip .TooltipText { visibility: hidden; width: 150px; background-color: #555; color: #fff; text-align: center; padding: 5px; border-radius: 6px; position: absolute; z-index: 1; bottom: 125%; left: 50%; margin-left: -75px; opacity: 0; transition: opacity 0.3s; font-family: Arial, Helvetica, sans-serif; font-size:0.8em}
+          .Tooltip .TooltipText::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: #555 transparent transparent transparent; }
+          .Tooltip:hover .TooltipText { visibility: visible; opacity: 1; }
+          .TooltipSmall { position: relative; display: inline-block;  }
+          .TooltipSmall .TooltipSmallText { visibility: hidden; width: 60px; background-color: #555; color: #fff; text-align: center; padding: 5px; border-radius: 6px; position: absolute; z-index: 1; bottom: 125%; left: 50%; margin-left: -30px; opacity: 0; transition: opacity 0.3s; font-family: Arial, Helvetica, sans-serif; font-size:0.8em}
+          .TooltipSmall .TooltipSmallText::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: #555 transparent transparent transparent; }
+          .TooltipSmall:hover .TooltipSmallText { visibility: visible; opacity: 1; }
+          .Slider { -webkit-appearance: none; appearance: none; width: 50px; height: 15px; background: #eee; outline: none; opacity: 0.75; vertical-align: middle; -webkit-transition: .2s; transition: opacity .2s; border-radius: 15px; }
+          .Slider:hover { opacity: 1; }
+          .Slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 15px; height: 15px; outline: none; background: #666;  cursor: pointer; border-radius: 15px; }
+          .Slider::-moz-range-thumb { width: 15px; height: 15px; background: #666; outline: none; cursor: pointer; border-radius: 15px; }
+          .Label { font-size: 0.75em; }
+          button { appearance: none; background-color: #FAFBFC; border: 1px solid rgba(27, 31, 35, 0.15);
+            border-radius: 6px; box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+            box-sizing: border-box; color: #24292E; cursor: pointer; display: inline-block; font-size: 0.7em;
+            font-weight: 500; line-height: 20px; list-style: none; padding: 3px 8px; position: relative; transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+            user-select: none; -webkit-user-select: none; touch-action: manipulation; vertical-align: middle; white-space: nowrap; word-wrap: break-word; }
+          button:hover { background-color: #F3F4F6; text-decoration: none; transition-duration: 0.1s; }
+          button:disabled { background-color: #FAFBFC; border-color: rgba(27, 31, 35, 0.15); color: #959DA5; cursor: default; }
+          button:active { background-color: #EDEFF2; box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset; transition: none 0s; }
+          button:focus { outline: 1px transparent; }
+          button:before { display: none; }
+          button:-webkit-details-marker { display: none; }
+          .Space { height: 8px }
+          #Messages { font-size: 0.7em; }
+        </style>
+    </head>
+    <body ondrop="App.OnDropFile( event );" ondragover="App.OnDragFile( event );">
+
+      <div class="GridCell">
+
+        <div class="HeadCell">
+          <h1>Classification, Registration and Segmentation of Ear Canal Impressions using Convolutional Neural Networks Application</h1>
+          <h2>Stylianos Dritsas<sup>1</sup>, Kenneth Wei De Chua<sup>2</sup>, Zhi Hwee Goh<sup>1</sup>, Robert E. Simpson<sup>4</sup></h2>
+          <h3><sup>1</sup>Singapore University of Technology and Design, <sup>2</sup>Changi General Hospital, <sup>3</sup>University of Birmingham</h3>
+        </div>
+
+        <div class="ViewCell">
+
+          <div class="Tooltip">
+            <button onclick="App.Download( 'P.stl' )">Processed</button>
+            <span class="TooltipText">Load a processed ear canal impression where
+              the mesh has been manually oriented and clipped.</span></div>
+
+            <div class="Tooltip">
+            <button onclick="App.Download( 'U.stl' )">Unprocessed</button>
+            <span class="TooltipText">Load an unprocessed ear canal impression
+              which is arbitrarily oriented and contains extraneous surfaces.</span></div>
+
+          <div class="Tooltip">
+            <button onclick="App.ViewNorm( )">Reset</button>
+            <span class="TooltipText">Orient the view such that
+              the Z-axis is aligned with the vertical direction and the Y-axis
+              points towards the ear canal when viewed from outside.</span></div>
+
+          <div class="Tooltip">
+            <button class="ViewTool" onclick="App.Article( )">Article</button>
+            <span class="TooltipText">Open Medical Imaging Analysis article link
+              in a new browser window.</span></div>
+
+          <div class="Tooltip">
+            <button class="ViewTool" disabled="true">?</button>
+            <span class="TooltipText">You may drag and drop an ear canal
+              impression file in the viewport. The file must be binary
+              STL in millimeters.</span></div>
+
+          <div id="ViewArea"></div>
+
+          <div id="Messages"></div>
+        </div>
+
+        <div class="SideCell">
+          <div id="SideArea"></div>
+
+          <div class="Tooltip">
+            <span class="Label">Translation:</span>
+            <span class="TooltipText">Translate randomly all points before performing inference.</span></div>
+
+          <div class="TooltipSmall">
+            <input id="SideTranslation" class="Slider" type="range" min="0" max="500" value="0"
+              onchange="App.Tooltip( 'SideTranslation', 100, ' mm' )">
+              <span id="SideTranslationText" class="TooltipSmallText">0 mm</span></div>
+
+          <div class="Tooltip">
+            <span class="Label">Rotation:</span>
+            <span class="TooltipText">Rotate randomly all points before performing inference.</span></div>
+
+          <div class="TooltipSmall">
+            <input id="SideRotation" class="Slider" type="range" min="0" max="1" value="0"
+              onchange="App.Tooltip( 'SideRotation', 1/180, ' deg' )">
+              <span id="SideRotationText" class="TooltipSmallText">0 deg</span></div>
+
+          <div class="Tooltip">
+            <span class="Label">Noise:</span>
+            <span class="TooltipText">Translate randomly each point before performing inference.</span></div>
+
+          <div class="TooltipSmall">
+            <input id="SideNoise" class="Slider" type="range" min="0" max="500" value="0"
+              onchange="App.Tooltip( 'SideNoise', 100, ' mm' )">
+              <span id="SideNoiseText" class="TooltipSmallText">0 mm</span></div>
+
+          <div class="Space"></div>
+
+          <div class="Tooltip">
+            <button onclick="App.Infer( 'Side', 1.0, 5, App.UpdateSide )">Classify</button>
+            <span class="TooltipText">Run five iterations of handedness classification.</span></div>
+
+          <div class="Tooltip">
+            <button onclick="App.ResetSide( )">Reset</button>
+            <span class="TooltipText">Reset classification results.</span></div>
+
+          <div class="Tooltip">
+            <button class="ViewTool" disabled="true">?</button>
+            <span class="TooltipText">The graph presents how many times the neural network
+              inferred the impression is from a left or right ear canal.</span></div>
+        </div>
+
+        <div class="BaseCell">
+
+          <div id="BaseArea"></div>
+
+          <div class="Tooltip">
+            <button onclick="App.Infer( 'Base', 0.01, 5, App.UpdateBase )">Register</button>
+            <span class="TooltipText">Run five iterations of ear canal registration. The
+              view will orient about the predicted orientation axes.</span></div>
+
+          <div class="Tooltip">
+            <button onclick="App.Rotate( Mat3.Random( ) )">Randomize</button>
+            <span class="TooltipText">Randomly rotate the loaded ear canal impression to
+              assess how the predicted pose is affected by the initial orientation.</span></div>
+
+          <div class="Tooltip">
+            <button onclick="App.Rotate( Mat3.Identity( ) )">Restore</button>
+            <span class="TooltipText">Restore the orientation of ear canal impression
+              to its default as-loaded pose.</span></div>
+
+          <div class="Tooltip">
+            <button onclick="App.ResetBase( )">Reset</button>
+            <span class="TooltipText">Reset the ear canal impression registration results.</span></div>
+
+            <div class="Tooltip">
+              <button class="ViewTool" disabled="true">?</button>
+              <span class="TooltipText">The graph presents the inferred orientations' axes
+                and their mean and standard deviation.</span></div>
+        </div>
+
+        <div class="ClipCell">
+
+          <div id="ClipArea"></div>
+
+          <div class="Tooltip">
+            <span class="Label">Threshold:</span>
+            <span class="TooltipText">Adjust the consensus threshold to control
+              the under-clipping / over-clipping behavior.</span></div>
+
+          <div class="TooltipSmall">
+            <input id="ClipThreshold" class="Slider" type="range" min="0" max="100" value="50"
+              onchange="App.Tooltip( 'ClipThreshold', 1, ' %' ); App.UpdateClip( );">
+              <span id="ClipThresholdText" class="TooltipSmallText">50%</span></div>
+
+          <div class="Space"></div>
+
+          <div class="Tooltip">
+            <button onclick="App.Infer( 'Clip', 1.0, 5, App.UpdateClip )">Segment</button>
+            <span class="TooltipText">Run five iterations of ear canal registration. The
+              view will orient about the predicted orientation axes.</span></div>
+
+          <div class="Tooltip">
+            <button onclick="App.ResetClip( )">Reset</button>
+            <span class="TooltipText">Reset the ear canal impression segmentation results.</span></div>
+
+          <div class="Tooltip">
+            <button class="ViewTool" disabled="true">?</button>
+            <span class="TooltipText">The graph presents the number of points classified
+              as retain or deleted.</span></div>
+        </div>
+
+        <div class="FootCell">
+          <b>Introduction</b><br/>
+          This web application demonstrates the use of convolutional
+          neural networks for performing classification, registration
+          and segmentation of ear canal impressions. Detailed presentation
+          of the methodology is available in the <a href="https://doi.org/10.1016/j.media.2024.103152">relevant article</a>
+          published in the Medical Imaging Analysis journal.
+          <br/><br/>
+          <b>Requirements</b><br/>
+          You may drag and drop an ear canal impression stored in as STL
+          binary file format to perform analysis. Meshes should be in millimeters.
+          The application should work on computers with browsers supporting web
+          assembly (for running the machine learning inference session) and webgl
+          (for 3D visualization of the ear canal impressions).
+          The neural network models are circa 10 megabytes each,
+          therefore the first execution will be slow until the models are downloaded.
+          Typically, each iteration requires a few milliseconds.
+          <br/><br/>
+          <b>Classification</b><br/>
+          The classification process estimates the handedness of the impression.
+          Each evaluation considers 2048 points from the mesh and updates the
+          relevant graph with the probabilities of the impression coming from
+          a left or a right ear canal. The transformation sliders enable performing
+          random global translations and rotations, as well as adding noise
+          in the data before estimation. The consensus score is presented in
+          the legend. While the model is robust against relatively large global
+          transforms, it is not as stable in the presence of excessive noise.
+          <br/><br/>
+          <b>Registration</b><br/>
+          The registration process estimates the orientation of the ear
+          canal impression such that the Z-axis points upwards in relation
+          to a standing person and the Y-axis points towards the ear canal
+          viewed from outside. The processed ear canal impression provides
+          an example of the expected orientation.
+
+          The randomize button applies a random rotation to
+          the loaded mesh before inference. This is for assessing the
+          stability of the model against arbitrary initial orientations.
+          The restore button recovers the original orientation.
+          The registration button performs a series of estimations and
+          presents that principal axes including the mean and standard
+          deviations per axis.
+          <br/><br/>
+          <b>Segmentation</b><br/>
+          The segmentation process estimates the parts of an ear canal
+          impression that may be removed from an unprocessed image.
+          Each point of the input mesh is classified as being important
+          and thus retained or unimportant and thus deleted.
+          <br/><br/>
+          The consensus threshold value adjusts the retention vs. deletion
+          ratio based on the number of votes per point. Low threshold values
+          result to aggressive deletion while high threshold values promote
+          conservative removal. Note that for this to work properly, each point
+          needs several votes which is time consuming when running the model on
+          a CPU via javascript.
+          <br/><br/>
+          <b>Privacy</b><br/>
+          Processing of the dropped ear canal impression files is performed
+          locally on the host computer therefore no information is transmitted
+          online.
+        </div>
+      </div>
+    </body>
+    <script>
+      /**
+       *  Copyright (c) 2020, Stylianos Dritsas
+       *  All Rights Reserved.
+       */
+      class Application {
+        constructor( ) {
+          this.Home  = '.'
+          this.Mesh  = new Mesh( );
+          this.Sides = [];
+          this.Bases = [];
+          this.Basis = Mat3.Identity( );
+          this.Clips = [];
+
+          const ticks = []
+          for( let tick = -30; tick <= 30; tick += 5 ) ticks.push( tick );
+
+          this.ViewLayout = {
+            autosize: false, pad: 0, margin: { b: 0, t: 0, l: 0, r: 0 }, scene : {
+              aspectmode: 'data', aspectratio : { x: 1, y: 1, z: 1 }, paper_bgcolor: '#ddd', plot_bgcolor: '#ddd',
+              camera: { center: { x: 0, y: 0, z: 0 }, eye: { x: 0, y: -2.5, z: 0 }, up: { x: 0, y: 0, z: 1 } },
+              xaxis: { title: 'X-Axis', autorange: true, showgrid: true, zeroline: true, showline: false,
+                autotick: false, ticks: ticks, tickvals: ticks, showticklabels: true, showspikes: false },
+              yaxis: { title: 'Y-Axis', autorange: true, showgrid: true, zeroline: true, showline: false,
+                autotick: false, ticks: ticks, tickvals: ticks, showticklabels: true, showspikes: false },
+              zaxis: { title: 'Z-Axis', autorange: true, showgrid: true, zeroline: true, showline: false,
+                  autotick: false, ticks: ticks, tickvals: ticks, showticklabels: true, showspikes: false } } };
+
+          this.SideLayout = { title: { text: '<b>Classification</b>', y: 0.95, font: { size: 12 }},
+            margin: { b: 15, t: 20, l: 30, r: 0 }, pad: 0,
+            xaxis: { minallowed: 0 }, yaxis: { minallowed: -0.1, maxallowed: 1.1 } };
+
+          this.BaseLayout = { title: { text: '<b>Registration</b>', y: 0.95, font: { size: 12 }},
+            margin: { b: 15, t: 20, l: 35, r: 0 }, pad: 0, scene: {
+            camera: { projection: { type: 'orthographic' } },
+            aspectmode: 'cube', aspectratio : { x: 1, y: 1, z: 1 },
+            xaxis: { title:'', range: [-1.5, 1.5], tickvals: [-1, 0, 1], showticklabels: false, showspikes: false },
+            yaxis: { title:'', range: [-1.5, 1.5], tickvals: [-1, 0, 1], showticklabels: false, showspikes: false },
+            zaxis: { title:'', range: [-1.5, 1.5], tickvals: [-1, 0, 1], showticklabels: false, showspikes: false } } };
+
+          this.ClipLayout = { title: { text: '<b>Segmentation</b>', y: 0.95, font: { size: 12 }},
+            margin: { b: 15, t: 20, l: 30, r: 0 }, pad: 0,
+            xaxis: { minallowed: 0 }, yaxis: { minallowed: -0.1, maxallowed: 1.1 } };
+
+          this.Config = {  displayModeBar: false };
+        }
+
+        Initialize( ) {
+          Plotly.newPlot( 'ViewArea', this.ViewData( ), this.ViewLayout, this.Config );
+          Plotly.newPlot( 'SideArea', this.SideData( ), this.SideLayout, this.Config );
+          Plotly.newPlot( 'BaseArea', this.BaseData( ), this.BaseLayout, this.Config );
+          Plotly.newPlot( 'ClipArea', this.ClipData( ), this.ClipLayout, this.Config );
+
+          this.Tooltip( 'SideTranslation', 100, ' mm'  )
+          this.Tooltip( 'SideRotation',  1/180, ' deg' )
+          this.Tooltip( 'SideNoise',       100, ' mm'  )
+          this.Tooltip( 'ClipThreshold',     1, ' %'   )
+
+          return this.Download( 'P.stl' );
+        }
+
+        Article( ) {
+          window.open( "https://doi.org/10.1016/j.media.2024.103152" );
+        }
+
+        Download( filename ) {
+          fetch( new Request( `${this.Home}/${filename}` ) )
+            .then( ( response ) => response.blob( ) )
+            .then( ( blob ) => blob.arrayBuffer( ) )
+            .then( ( bytes ) => App.LoadStl( bytes ) );
+          return this;
+        }
+
+        Reset( ) {
+          this.Mesh.Reset( );
+          this.Sides = [];
+          this.Bases = [];
+          this.Clips = [];
+        }
+
+        Complete( ) {
+          this.Mesh.Complete( );
+
+          this.UpdateView( );
+          this.UpdateSide( );
+          this.UpdateBase( );
+          this.UpdateClip( );
+        }
+
+        Rotate( rotation ) {
+          this.Mesh.Rotation = rotation;
+          this.ResetBase( );
+          this.UpdateView( );
+        }
+
+        Tooltip( id, scale, units ) {
+          const value = document.getElementById( id ).value / scale;
+          document.getElementById( id + 'Text' ).innerText = (
+            value == 0 || units == ' %' ? '' : '±' ) + value + units;
+        }
+
+        Log( message, result = false ) {
+          const messages = document.getElementById( 'Messages' );
+          messages.innerText = message;
+          return result
+        }
+
+        OnDragFile( event ) {
+          event.preventDefault( );
+        }
+
+        OnDropFile( event ) {
+          event.preventDefault( );
+
+          let file = null;
+          if( event.dataTransfer.items )
+            if( event.dataTransfer.items[0].kind === "file" )
+              file = event.dataTransfer.items[0].getAsFile( );
+          else if( event.dataTransfer.files )
+            file = event.dataTransfer.files[0];
+
+          if( file === null || !file.name.endsWith( '.stl' ) )
+              return this.Log( 'Drop Stereolithography or Point Cloud File' );
+
+          const reader = new FileReader( );
+          reader.onload = ( event ) => {
+            App.LoadStl( event.target.result ); }
+          reader.readAsArrayBuffer( file );
+        }
+
+        LoadStl( bytes ) {
+          const stream = new Stream( bytes );
+
+          const Signature = 'solid';
+          if( !stream.HasSufficient( Signature.length ) )
+              return this.Log( 'File too small' );
+
+          const signature = stream.ReadAscii( Signature.length );
+          stream.Position = 0;
+
+          if( signature === Signature )
+          {
+            return this.Log( 'Ascii encoded STL files are not supported.' );
+          }
+          else
+          {
+            const SizeOfComment =  80;
+            const SizeOfHeader  =  84;
+            const SizeOfRecord  =  50;
+            const SizeOfMinimal = 134;
+
+            if( !stream.HasSufficient( SizeOfMinimal ) )
+            return this.Log( 'File too small' );
+
+            const comments = stream.ReadAscii( SizeOfComment ).trim( );
+            console.log( comments )
+
+            const count = stream.ReadUInt32( );
+            const expect = SizeOfHeader + count * SizeOfRecord;
+            if( count === 0 || stream.Count( ) < expect )
+            return this.Log( 'Invalid file size' );
+
+            this.Reset( );
+
+            const unique = { };
+
+            for( let index = 0; index < count; index++ )
+            {
+              stream.ReadVec3( )
+
+              const points = [
+                stream.ReadVec3( ),
+                stream.ReadVec3( ),
+                stream.ReadVec3( )];
+
+              stream.ReadUInt16( );
+
+              const plane = [0, 0, 0];
+              for( let corner = 0; corner < 3; corner++ )
+              {
+                const point = points[corner];
+                const key = Vec3.Hash( point );
+                if( !( key in unique ) )
+                  unique[key] = this.Mesh.AddPoint( point );
+                plane[corner] = unique[key];
+              }
+
+              this.Mesh.AddPlane(
+                plane[0],
+                plane[1],
+                plane[2] );
+            }
+            this.Complete( );
+            return this.Log( 'Loaded mesh with ' + this.Mesh.Points.length +
+              ' points and ' + this.Mesh.Planes.length + ' planes.', true );
+          }
+        }
+
+        ToTensor( scale = 1.0, translate = 0.0, rotate = 0, noise = 0.0 ) {
+          const batch = new Float32Array( 2048 * 3 );
+
+          const T = Vec3.Random( translate );
+          const R = rotate != 0 ? Mat3.Random( ) : Mat3.Identity( );
+          const I = [];
+
+          for( let index = 0; index < 2048; index++ )
+          {
+              const random = Math.floor(
+                Math.random( ) * this.Mesh.Points.length );
+              I.push( random );
+
+              const point = Vec3.Scale( Vec3.Translate(
+                Vec3.Rotate( Vec3.Noise( Vec3.Rotate(
+                      this.Mesh.Points[random],
+                      this.Mesh.Rotation ),
+                    noise ), R ), T ), scale );
+
+              batch[2048 * 0 + index] = point[0];
+              batch[2048 * 1 + index] = point[1];
+              batch[2048 * 2 + index] = point[2];
+          }
+
+          return [{ Points: new ort.Tensor( 'float32', batch, [1, 3, 2048] ) }, I]
+        }
+
+        IsReady( ) {
+          if( this.Mesh == null )
+            return Log( 'Please load an ear canal impression by dragging and dropping and STL file in the viewport' );
+          return true;
+        }
+
+        GetValue( id, _default ) {
+          const element = document.getElementById( id );
+          return element != null ? element.value : _default;
+        }
+
+        Infer( model = '', scale = 1.0, count = 1, complete = null ) {
+          if( !this.IsReady( ) ) return;
+          for( let index = 0; index < count; index++ )
+          {
+            let sequence = [];
+            ort.InferenceSession.create( `${this.Home}/${model}.onnx` )
+              .then( ( session ) => {
+                const [points, _sequence] = this.ToTensor( scale,
+                  App.GetValue( `${model}Translation`, 0 ) / 100.0,
+                  App.GetValue( `${model}Rotation`, 0 ) & 1,
+                  App.GetValue( `${model}Noise`, 0 ) / 100.0 );
+                sequence = _sequence;
+                return session.run( points );
+              } )
+              .then( ( result ) => complete( result, sequence ) );
+          }
+        }
+
+        UpdateView( ) {
+          Plotly.react( 'ViewArea', this.ViewData( ), this.ViewLayout, this.Config );
+        }
+
+        UpdateSide( result = null, sequence = null ) {
+          if( result !== null ) App.Sides.push( result['Side']['cpuData'] );
+          Plotly.react( 'SideArea', App.SideData( ), App.SideLayout, App.Config );
+        }
+
+        UpdateBase( result = null, sequence = null ) {
+          if( result !== null ) App.Bases.push( result['Base']['cpuData'] );
+          Plotly.react( 'BaseArea', App.BaseData( ), App.BaseLayout, App.Config );
+        }
+
+        UpdateClip( result = null, sequence = null ) {
+          if( result !== null ) App.Clips.push( [result['Base']['cpuData'], sequence] );
+          Plotly.react( 'ClipArea', App.ClipData( ), App.ClipLayout, App.Config );
+          App.UpdateView( );
+        }
+
+        ViewData( ) {
+          return [this.Mesh.ToPlotly( )];
+        }
+
+        SideData( ) {
+          const L = { type: 'scatter', x: [0.0], y: [0.5], name: 'Left 0.0%' };
+          const R = { type: 'scatter', x: [0.0], y: [0.5], name: 'Right 0.0%' };
+
+          let x = 1;
+          let l = 0;
+          for( let side of this.Sides )
+          {
+            const lv =  Math.exp( side[0] );
+            const rv =  Math.exp( side[1] );
+
+            L['x'].push( x ); L['y'].push( lv );
+            R['x'].push( x ); R['y'].push( rv );
+
+            ++x; if( side[0] > side[1] ) l++;
+          }
+          const r = this.Sides.length - l;
+
+          const n = 100.0 / ( this.Sides.length + 1e-5 );
+          L['name'] = `Left ${( l * n ).toFixed( 1 )}%`;
+          R['name'] = `Right ${( r * n ).toFixed( 1 )}%`;
+
+          return [L, R];
+        }
+
+        ResetSide( ) {
+          this.Sides = [];
+          this.SideData( );
+          this.UpdateSide( );
+        }
+
+        ResetBase( ) {
+          this.Bases = [];
+          this.BaseData( );
+          this.UpdateBase( );
+        }
+
+        ResetClip( ) {
+          this.Clips = [];
+          this.Mesh.Visual = [];
+          this.ClipData( );
+          this.UpdateClip( );
+          this.UpdateView( );
+        }
+
+        BaseData( ) {
+          const r2d = 180 / Math.PI;
+
+          const data = [];
+
+          data.push( { type: 'scatter3d', showlegend: true, hoverinfo: 'none', mode: "lines", x:[0,1], y:[0,0], z:[0,0], line:{ width: 5, color:"#f00"}, opacity: 0.2, name:"World X" } );
+          data.push( { type: 'scatter3d', showlegend: true, hoverinfo: 'none', mode: "lines", x:[0,0], y:[0,1], z:[0,0], line:{ width: 5, color:"#0f0"}, opacity: 0.2, name:"World Y" } );
+          data.push( { type: 'scatter3d', showlegend: true, hoverinfo: 'none', mode: "lines", x:[0,0], y:[0,0], z:[0,1], line:{ width: 5, color:"#00f"}, opacity: 0.2, name:"World Z" } );
+
+          let _X = Vec3.Zero( );
+          let _Y = Vec3.Zero( );
+          let _Z = Vec3.Zero( );
+
+          const B = [];
+          for( const basis of this.Bases ) {
+            console.log( basis )
+            const W = Vec3.Normalize( [basis[0], basis[1], basis[2]] );
+            const Y = Vec3.Normalize( [basis[3], basis[4], basis[5]] );
+            const Z = Vec3.Normalize( Vec3.Cross( W, Y ) );
+            const X = Vec3.Normalize( Vec3.Cross( Y, Z ) );
+
+            data.push( { type: 'scatter3d', hoverinfo: 'none', showlegend: false, mode: "lines", x:[0,X[0]], y:[0,X[1]], z:[0,X[2]], opacity: 0.5, line:{ width: 5, color:"#f00"}, name:"X_" } );
+            data.push( { type: 'scatter3d', hoverinfo: 'none', showlegend: false, mode: "lines", x:[0,Y[0]], y:[0,Y[1]], z:[0,Y[2]], opacity: 0.5, line:{ width: 5, color:"#0f0"}, name:"Y_" } );
+            data.push( { type: 'scatter3d', hoverinfo: 'none', showlegend: false, mode: "lines", x:[0,Z[0]], y:[0,Z[1]], z:[0,Z[2]], opacity: 0.5, line:{ width: 5, color:"#00f"}, name:"Z_" } );
+
+            _X = Vec3.Add( _X, X );
+            _Y = Vec3.Add( _Y, Y );
+            _Z = Vec3.Add( _Z, Z );
+
+            B.push( [X, Y, Z] );
+          }
+
+          if( this.Bases.length > 0 ) {
+            _X = Vec3.Normalize( _X );
+            _Y = Vec3.Normalize( _Y );
+            _Z = Vec3.Normalize( Vec3.Cross( _X, _Y ) );
+            _X = Vec3.Normalize( Vec3.Cross( _Y, _Z ) );
+
+            this.Basis = [
+              [_X[0], _Y[0], _Z[0]],
+              [_X[1], _Y[1], _Z[1]],
+              [_X[2], _Y[2], _Z[2]]];
+            this.ViewBase( );
+
+            data.push( { type: 'scatter3d', hoverinfo: 'none', showlegend: true, mode: "lines", x:[0,_X[0]*2], y:[0,_X[1]*2], z:[0,_X[2]*2], opacity: 1, line:{width: 2, color:"#f00"}, name:"Pred X" } );
+            data.push( { type: 'scatter3d', hoverinfo: 'none', showlegend: true, mode: "lines", x:[0,_Y[0]*2], y:[0,_Y[1]*2], z:[0,_Y[2]*2], opacity: 1, line:{width: 2, color:"#0f0"}, name:"Pred Y" } );
+            data.push( { type: 'scatter3d', hoverinfo: 'none', showlegend: true, mode: "lines", x:[0,_Z[0]*2], y:[0,_Z[1]*2], z:[0,_Z[2]*2], opacity: 1, line:{width: 2, color:"#00f"}, name:"Pred Z" } );
+
+            const n = this.Bases.length;
+            if( n > 2 ) {
+              let mx = 0.0; let sx = 0.0;
+              let my = 0.0; let sy = 0.0;
+              let mz = 0.0; let sz = 0.0;
+
+              for( const b of B ) {
+                const ax = Vec3.Angle( _X, b[0] ) * r2d;
+                const ay = Vec3.Angle( _Y, b[1] ) * r2d;
+                const az = Vec3.Angle( _Z, b[2] ) * r2d;
+
+                mx += ax;
+                my += ay;
+                mz += az;
+
+                sx += ax * ax;
+                sy += ay * ay;
+                sz += az * az;
+              }
+
+              mx /= n; sx = Math.sqrt( n * sx - mx * mx ) / n;
+              my /= n; sy = Math.sqrt( n * sy - my * my ) / n;
+              mz /= n; sz = Math.sqrt( n * sz - mz * mz ) / n;
+
+
+              data[data.length - 3]['name'] = 'Pred X ' + mx.toFixed( 3 ) + '° (' + sx.toFixed( 3 ) + ')';
+              data[data.length - 2]['name'] = 'Pred Y ' + my.toFixed( 3 ) + '° (' + sy.toFixed( 3 ) + ')';
+              data[data.length - 1]['name'] = 'Pred Z ' + mz.toFixed( 3 ) + '° (' + sz.toFixed( 3 ) + ')';
+            }
+          }
+          return data;
+        }
+
+        ViewNorm( ) {
+          this.ViewLayout['scene']['camera']['eye'] = Vec3.ToDict( [0.0,-2.5, 0.0] );
+          this.ViewLayout['scene']['camera']['up' ] = Vec3.ToDict( [0.0, 0.0, 1.0] );
+          this.UpdateView( );
+        }
+
+        ViewBase( ) {
+          const m = this.Basis;
+          const y = Vec3.Scale( [m[0][1], m[1][1], m[2][1]], -2.5 );
+          const z = [m[0][2], m[1][2], m[2][2]];
+
+          this.ViewLayout['scene']['camera']['eye'] = Vec3.ToDict( y );
+          this.ViewLayout['scene']['camera']['up' ] = Vec3.ToDict( z );
+          this.UpdateView( );
+        }
+
+        ClipData( ) {
+          if( this.Clips.length == 0 ) return [];
+
+          const threshold = document.getElementById( 'ClipThreshold' ).value / 100.0;
+
+          const D = { type: 'scatter', name: 'Delete',  x: [], y: [], marker: { color: '#f00', line: { color: '#f00' } }  };
+          const R = { type: 'scatter', name: 'Retain',  x: [], y: [], marker: { color: '#0f0', line: { color: '#0f0' } } };
+          const U = { type: 'scatter', name: 'Unknown', x: [], y: [], marker: { color: '#999', line: { color: '#999' } } };
+
+          this.Mesh.Visual = [];
+          for( let index = 0; index < this.Mesh.Colors.length; index++ )
+            this.Mesh.Visual.push( this.Mesh.Colors[index] );
+
+          const scores = [];
+          for( let index = 0; index < this.Mesh.Points.length; index++ )
+            scores.push( [] );
+
+          let x = 1;
+          for( const [results, sequence] of this.Clips )
+          {
+            for( let index = 0; index < sequence.length; index++ )
+              scores[sequence[index]].push(
+                results[index * 2 + 0] > results[index * 2 + 1] ? 1 : 0 );
+
+            let r = 0;
+            let d = 0;
+            let u = 0;
+            for( let index = 0; index < scores.length; index++ )
+            {
+              const score = scores[index];
+              if( score.length == 0 ) { ++u; continue; }
+              let retain = 0;
+              for( const value of score ) retain += value;
+              const rate = retain / score.length;
+              if( rate > threshold ) ++d; else ++r;
+            }
+
+            d /= this.Mesh.Points.length;
+            r /= this.Mesh.Points.length;
+            u /= this.Mesh.Points.length;
+
+            R['x'].push( x ); R['y'].push( r );
+            D['x'].push( x ); D['y'].push( d );
+            U['x'].push( x ); U['y'].push( u );
+
+            ++x;
+          }
+
+          for( let index = 0; index < scores.length; index++ )
+          {
+            const score = scores[index];
+            if( score.length == 0 ) continue;
+            let retain = 0;
+            for( const value of score ) retain += value;
+            const rate = retain / score.length;
+            this.Mesh.Visual[index] = rate > threshold ? [255,0,0] : [0,255,0];
+          }
+
+          return [R, D, U];
+        }
+
+        UpdateWindow( )
+        {
+          const dx = window.innerWidth;
+          const dy = window.innerHeight;
+
+          const vx = dx / 2.75;
+          const vy = vx;
+
+          const ux = vx / 1.5;
+          const uy = vy / 3.5;
+
+
+          App.ViewLayout['width' ] = vx;
+          App.ViewLayout['height'] = vy;
+
+          App.SideLayout['width' ] = ux;
+          App.SideLayout['height'] = uy;
+
+          App.BaseLayout['width' ] = ux;
+          App.BaseLayout['height'] = uy;
+
+          App.ClipLayout['width' ] = ux;
+          App.ClipLayout['height'] = uy;
+        }
+      }
+
+      class Mesh {
+        constructor( ) {
+          this.Points   = [[-1, -1, 0], [-1,  1, 0], [ 1,  1, 0], [ 1, -1, 0]];
+          this.Planes   = [[0, 1, 2], [2, 3, 0]];
+          this.Colors   = [[255,255,255],[255,255,255],[255,255,255],[255,255,255]];
+          this.Visual   = [];
+          this.Min      = [ -1, -1, -1];
+          this.Max      = [  1,  1,  1];
+          this.Origin   = [ 0.0, 0.0, 0.0];
+          this.Rotation = Mat3.Identity( );
+        }
+
+        Reset( ) {
+          this.Points   = [];
+          this.Planes   = [];
+          this.Colors   = [];
+          this.Visual   = [];
+          this.Min      = [ 1e8, 1e8, 1e8];
+          this.Max      = [-1e8,-1e8,-1e8];
+          this.Origin   = [ 0.0, 0.0, 0.0];
+          this.Rotation = Mat3.Identity( );
+        }
+
+        Complete( ) {
+          const count = this.Points.length;
+
+          for( let index = 0; index < count; index++ )
+            for( let coord = 0; coord < 3; coord++ )
+              this.Origin[coord] += this.Points[index][coord];
+
+          for( let coord = 0; coord < 3; coord++ )
+            this.Origin[coord] /= count;
+
+          for( let index = 0; index < count; index++ )
+            for( let coord = 0; coord < 3; coord++ ) {
+              this.Points[index][coord] -= this.Origin[coord];
+
+              this.Min[coord] = Math.min( this.Min[coord], this.Points[index][coord] );
+              this.Max[coord] = Math.max( this.Max[coord], this.Points[index][coord] );
+            }
+
+          for( let coord = 0; coord < 3; coord++ ) {
+            this.Min[coord] -= 0.5;
+            this.Max[coord] += 0.5;
+          }
+
+          const delta = 255.0 / ( this.Max[1] - this.Min[1] );
+          for( let index = 0; index < count; index++ )
+            this.Colors.push( new Array( 3 ).fill(
+              Math.min( 255, Math.max( 0, Math.round(
+                ( this.Points[index][1] - this.Min[1] ) * delta, 0 ) ) ) ) );
+        }
+
+        ToPlotly( ) {
+          const Xs = [];
+          const Ys = [];
+          const Zs = [];
+
+          for( const point of this.Points )
+          {
+            const p = Vec3.Rotate( point, this.Rotation );
+
+            Xs.push( p[0] );
+            Ys.push( p[1] );
+            Zs.push( p[2] );
+          }
+
+          const Is = [];
+          const Js = [];
+          const Ks = [];
+          for( let index = 0; index < this.Planes.length; index++ )
+          {
+            const plane = this.Planes[index];
+
+            Is.push( plane[0] );
+            Js.push( plane[1] );
+            Ks.push( plane[2] );
+          }
+
+          return { type: "mesh3d",
+            x: Xs, y: Ys, z: Zs,
+            i: Is, j: Js, k: Ks,
+            vertexcolor: this.Visual.length == 0 ? this.Colors : this.Visual,
+            hoverinfo: 'none',
+          };
+        }
+
+        AddPoint( point ) {
+          this.Points.push( point )
+          return this.Points.length - 1;
+        }
+
+        AddPlane( a, b, c ) {
+          this.Planes.push( [a, b, c] )
+          return this.Planes.length - 1;
+        }
+      }
+
+      class Stream {
+        constructor( data )
+        {
+          this.Source   = new DataView( data );
+          this.Position = 0;
+        }
+
+        Count( ) {
+          return this.Source.byteLength;
+        }
+
+        HasSufficient( count ) {
+          return this.Position + count < this.Source.byteLength;
+        }
+
+        ReadAscii( count ) {
+          const chars = [];
+          for( let index = 0; index < count; index++ )
+          {
+            chars[index] = String.fromCharCode( this.Source.getUint8(
+              this.Position ) );
+            ++this.Position;
+          }
+          return chars.join( '' );
+        }
+
+        ReadUInt16( ) {
+          const result = this.Source.getUint16( this.Position, true );
+          this.Position += 2;
+          return result;
+        }
+
+        ReadUInt32( ) {
+          const result = this.Source.getUint32( this.Position, true );
+          this.Position += 4;
+          return result;
+        }
+
+        ReadFloat32( ) {
+          const result = this.Source.getFloat32( this.Position, true );
+          this.Position += 4;
+          return result;
+        }
+
+        ReadVec3( ) {
+          return [this.ReadFloat32( ), this.ReadFloat32( ), this.ReadFloat32( )];
+        }
+      }
+
+      class Mat3 {
+        static Identity( s = 1 ) {
+          return [[s,0,0],[0,s,0],[0,0,s]];
+        }
+
+        static Transpose( a ) {
+          return [
+            [a[0][0], a[1][0], a[2][0]],
+            [a[0][1], a[1][1], a[2][1]],
+            [a[0][2], a[1][2], a[2][2]]];
+        }
+
+        static Multiply( a, b ) {
+          const xx = a[0][0] * b[0][0] + a[0][1] * b[1][0] + a[0][2] * b[2][0];
+          const yx = a[0][0] * b[0][1] + a[0][1] * b[1][1] + a[0][2] * b[2][1];
+          const zx = a[0][0] * b[0][2] + a[0][1] * b[1][2] + a[0][2] * b[2][2];
+
+          const xy = a[1][0] * b[0][0] + a[1][1] * b[1][0] + a[1][2] * b[2][0];
+          const yy = a[1][0] * b[0][1] + a[1][1] * b[1][1] + a[1][2] * b[2][1];
+          const zy = a[1][0] * b[0][2] + a[1][1] * b[1][2] + a[1][2] * b[2][2];
+
+          const xz = a[2][0] * b[0][0] + a[2][1] * b[1][0] + a[2][2] * b[2][0];
+          const yz = a[2][0] * b[0][1] + a[2][1] * b[1][1] + a[2][2] * b[2][1];
+          const zz = a[2][0] * b[0][2] + a[2][1] * b[1][2] + a[2][2] * b[2][2];
+
+          return [
+            [xx, yx, zx],
+            [xy, yy, zy],
+            [xz, yz, zz]];
+        }
+
+        static Random( ) {
+          //-- Author: Jim Arvo, 1991
+          const t = 2 * Math.random( ) * Math.PI;
+          const p = 2 * Math.random( ) * Math.PI;
+          const e = 2 * Math.random( );
+
+          const r = Math.sqrt( e );
+          const x = Math.sin( p ) * r;
+          const y = Math.cos( p ) * r;
+          const z = Math.sqrt( 2 - e );
+
+          const s = Math.sin( t );
+          const c = Math.cos( t );
+          const u = x * c - y * s;
+          const v = x * s + y * c;
+
+          return [
+            [x * u - c,x * v - s,x * z],
+            [y * u + s,y * v - c,y * z],
+            [z * u, z * v, 1.0 - e]]
+        }
+      }
+
+      class Vec3 {
+        static Hash( u ) {
+          return (
+            ( u[0] * 1000 ).toFixed( 0 ) +
+            ( u[1] * 1000 ).toFixed( 0 ) +
+            ( u[2] * 1000 ).toFixed( 0 ) );
+        }
+
+        static Zero( ) {
+          return [0.0, 0.0, 0.0]
+        }
+
+        static ToDict( u ) {
+          return { x: u[0], y: u[1], z: u[2] };
+        }
+
+        static Rotate( u, m ) {
+          return [
+            u[0] * m[0][0] + u[1] * m[1][0] + u[2] * m[2][0],
+            u[0] * m[0][1] + u[1] * m[1][1] + u[2] * m[2][1],
+            u[0] * m[0][2] + u[1] * m[1][2] + u[2] * m[2][2]];
+        }
+
+        static Dot( u, v ) {
+          return u[0] * v[0] + u[1] * v[1] + u[2] * v[2];
+        }
+
+        static Angle( u, v ) {
+          return Math.acos( Math.min( Math.max( -1.0, Vec3.Dot( u, v ) ), 1.0 ) );
+        }
+
+        static Cross( u, v ) {
+          return [
+            u[1] * v[2] - u[2] * v[1],
+            u[2] * v[0] - u[0] * v[2],
+            u[0] * v[1] - u[1] * v[0]];
+        }
+
+        static Length( u ) {
+          return Math.sqrt( u[0] * u[0] + u[1] * u[1] + u[2] * u[2] );
+        }
+
+        static Normalize( u, s = 1.0 ) {
+          const l = Vec3.Length( u );
+          s = Math.abs( l ) <= 1e-7 ? 0.0 : s / l;
+          return [u[0] * s, u[1] * s, u[2] * s];
+        }
+
+        static Random( s ) {
+          return [
+            ( 2 * Math.random( ) - 1 ) * s,
+            ( 2 * Math.random( ) - 1 ) * s,
+            ( 2 * Math.random( ) - 1 ) * s];
+        }
+
+        static Add( u, v ) {
+          return [
+            u[0] + v[0],
+            u[1] + v[1],
+            u[2] + v[2]];
+        }
+
+        static Translate( u, v ) {
+          return [
+            u[0] + v[0],
+            u[1] + v[1],
+            u[2] + v[2]];
+        }
+
+        static Scale( u, s ) {
+          return [
+            u[0] * s,
+            u[1] * s,
+            u[2] * s];
+        }
+
+        static Noise( u, s ) {
+          return [
+            u[0] + ( 2 * Math.random( ) - 1 ) * s,
+            u[1] + ( 2 * Math.random( ) - 1 ) * s,
+            u[2] + ( 2 * Math.random( ) - 1 ) * s];
+        }
+      }
+
+      const App = new Application( ).Initialize( );
+      window.onresize = App.UpdateWindow( );
+
+    </script>
+</html>
