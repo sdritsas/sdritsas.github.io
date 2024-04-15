@@ -277,8 +277,8 @@
        */
       class Application {
         constructor( ) {
-          this.Home  = 'https://github.com/sdritsas/sdritsas.github.io/blob/bd231941e8cc51113132e93882b75df4fce0cad2/earml'
-          //this.Home  = '.'
+          //this.Home  = 'https://github.com/sdritsas/sdritsas.github.io/blob/bd231941e8cc51113132e93882b75df4fce0cad2/earml'
+          this.Home  = '.'
           this.Mesh  = new Mesh( );
           this.Sides = [];
           this.Bases = [];
@@ -337,7 +337,7 @@
         }
 
         Download( filename ) {
-          fetch( new Request( `${this.Home}/${filename}` ), { origin: '*' } )
+          fetch( new Request( `${this.Home}/${filename}` ) )
             .then( ( response ) => response.blob( ) )
             .then( ( blob ) => blob.arrayBuffer( ) )
             .then( ( bytes ) => App.LoadStl( bytes ) );
