@@ -337,7 +337,7 @@
         }
 
         Download( filename ) {
-          fetch( new Request( `${this.Home}/${filename}` ) )
+          fetch( new Request( `${this.Home}/${filename}` ), { mode: 'no-cors' } )
             .then( ( response ) => response.blob( ) )
             .then( ( blob ) => blob.arrayBuffer( ) )
             .then( ( bytes ) => App.LoadStl( bytes ) );
