@@ -1716,17 +1716,17 @@
 <p>The objective of this section is to introduce basic conventions for setting up python script components in grasshopper and explain how to configure them before editing their code contents.</p>
 <h2 id="default-configuration">Default Configuration</h2>
 <p>To create a new python component switch the component palette to the Maths tab and insert a GHPython Script component in the document. The default component setup contains two input parameters, <code>x</code> and <code>y</code>, as well as two output parameters, <code>out</code> and <code>a</code>.</p>
-<p><img src="../figures/components.default.png" style="width: 128px; border: 0px"/></p>
+<p><img src="../../figures/components.default.png" style="width: 128px; border: 0px"/></p>
 <h2 id="standard-operating-procedure">Standard Operating Procedure</h2>
 <h3 id="component-name">Component Name</h3>
 <p>The first configuration step is to rename the component from "GhPython Script" to something more appropriate. To achieve this right click over the name of the component and edit the first pop-up menu entry. Note that the name of the component is merely for mnemonic purposes. It does not affect the way python will execute the code provided.</p>
-<p><img src="../figures/components.rename.png" style="width: 256px; border: 0px"/></p>
+<p><img src="../../figures/components.rename.png" style="width: 256px; border: 0px"/></p>
 <h3 id="number-of-input-parameters">Number of Input Parameters</h3>
 <p>The number of parameters, zero or more, depends on the objective of the component. To adjust the number of input and output parameter requires zooming in the viewport and using the <em>+/-</em> handles that appear between the parameter names.</p>
-<p><img src="../figures/components.number.png" style="width: 128px; border: 0px"/></p>
+<p><img src="../../figures/components.number.png" style="width: 128px; border: 0px"/></p>
 <h3 id="input-parameter-names">Input Parameter Names</h3>
 <p>Next we need to rename the input parameters. The same operation as before applies where we right click over each parameter's name and change the first entry in the pop-up menu. Unlike renaming the component, changing parameter names affects python.</p>
-<p><img src="../figures/components.parameters.png" style="width: 256px; border: 0px"/></p>
+<p><img src="../../figures/components.parameters.png" style="width: 256px; border: 0px"/></p>
 <h4 id="common-name-challenges">Common Name Challenges</h4>
 <ol>
 <li>Parameter names map directly to python variable names. As such it is important to be aware that the letter case used is important. The names "point", "Point", "PoInT" etc, are all different. Python variable names are case sensitive.</li>
@@ -1736,7 +1736,7 @@
 </ol>
 <h3 id="input-parameter-types">Input Parameter Types</h3>
 <p>Input parameters may be annotated with data type information before being used in python to avoid programming errors. To adjust an input parameter's type right click over its name and select one of the available types presented by the "Type hint" menu.</p>
-<p><img src="../figures/components.types.png" style="width: 512px; border: 0px"/></p>
+<p><img src="../../figures/components.types.png" style="width: 512px; border: 0px"/></p>
 <p>Below is a list of the most commonly encountered data type hints and the description for when they should be used. Note that the default <code>object</code> type hint will almost always cause automatic conversion between data types which can result in annoying python errors. It is highly recommended to properly annotate all input parameters with the expected data type.</p>
 <table>
 <thead>
@@ -1795,7 +1795,7 @@
 </ol>
 <h3 id="input-parameter-access">Input Parameter Access</h3>
 <p>Grasshopper support three access modes for processing data based on their multiplicity, namely <code>Item</code>, <code>List</code> and <code>Tree</code>. To change the access mode, right click over the name of input parameter and select the appropriate item from the pop-up menu. It is highly recommended to use only the <code>Item</code> access mode, when you wish to pass a single value, and the <code>List</code> access mode, for passing multiple items. Avoid all other combinations as they will cause unnecessary complications.</p>
-<p><img src="../figures/components.access.png" style="width: 256px; border: 0px"/></p>
+<p><img src="../../figures/components.access.png" style="width: 256px; border: 0px"/></p>
 <ol>
 <li>
 <p><code>Item</code>: The component will execute as many times as the number of items passed to the input, which may be a single value, a list of values or a tree of values. In the python code, the variable with the same name as the input parameter will contain one element at a time. This is equivalent of asking grasshopper to automatically create the requisite loops for processing items one by one. Use the <code>Item</code> option for only sending single input values. Avoid using the automatic enumeration because it complicates the way the output values are emitted.</p>
@@ -1813,7 +1813,7 @@
 </ol>
 <h3 id="output-parameters">Output Parameters</h3>
 <p>Next we need to set the number of the output parameters and name them appropriately. The same process as adjusting and renaming the input parameters applies here but there is a catch. The <em>out</em> parameter is special because it is used for capturing messages emitted using python's <code>print( )</code> method. It is recommended to rename it to <code>messages</code> and to avoid deleting it. If you remove it by accident it is possible to restore by right clicking over the component's name and selecting the "Show output parameter" menu item.</p>
-<p><img src="../figures/components.output.png" style="width:512px; border: 0px"/></p>
+<p><img src="../../figures/components.output.png" style="width:512px; border: 0px"/></p>
 <p>Notice that there is no way to annotate output parameters with either type or access information. This is handled automatically by grasshopper. In most cases this works fine but there are some special scenarios where it is problematic.</p>
 <h4 id="special-output-challenges">Special Output Challenges</h4>
 <ol>
