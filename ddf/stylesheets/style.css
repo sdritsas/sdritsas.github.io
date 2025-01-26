@@ -1,0 +1,20 @@
+.navbar.bg-primary {
+    background-image: linear-gradient( #212529, #212529 60%, #212529 );
+}
+
+:root > * {
+    --md-code-hl-number-color:   light-dark( #cc6666, #cc6666 );
+    --md-code-hl-keyword-color:  light-dark( #236baa, #81a2be );
+    --md-code-hl-string-color:   light-dark( #b5bd68, #b5bd68 );
+    --md-code-hl-comment-color:  light-dark( #9faa3b, #b5bd68 );
+    --md-code-hl-constant-color: light-dark( #428a80, #8abeb7 );
+  }
+
+.highlight .ow { color: light-dark( #236baa, #81a2be ); }
+.highlight .nf { color: light-dark( #c08000, #f0c674 ); }
+.highlight .nn { color: light-dark( #c08000, #f0c674 ); }
+.highlight .nb { color: light-dark( #b0472a, #de935f ); }
+.highlight .nc { color: light-dark( #c08000, #f0c674 ); } /* class    */
+.highlight .ne { color: light-dark( #c08000, #f0c674 ); } /* except   */
+.highlight .fm { color: light-dark( #0084dc, #90c7f7 ); } /* overload */
+.highlight .c1 { color: light-dark( #707880, #707880 ); }

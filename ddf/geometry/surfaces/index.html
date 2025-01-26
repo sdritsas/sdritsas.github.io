@@ -1,0 +1,1955 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Stylianos Dritsas">
+      
+      
+      
+        <link rel="prev" href="../curves/computational/">
+      
+      
+        <link rel="next" href="euclidean/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
+    
+    
+      
+        <title>Overview - Digital Design and Fabrication</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10M11 7h2v2h-2zm3 10h-4v-2h1v-2h-1v-2h3v4h1z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#surface-geometry" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Digital Design and Fabrication" class="md-header__button md-logo" aria-label="Digital Design and Fabrication" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 2 4 4h-3v7.85l6.53 3.76L21 15.03l1.5 5.47-5.5 1.46 1.53-2.61L12 15.58l-6.53 3.77L7 21.96 1.5 20.5 3 15.03l1.47 2.58L11 13.85V6H8z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Digital Design and Fabrication
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Digital Design and Fabrication" class="md-nav__button md-logo" aria-label="Digital Design and Fabrication" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 2 4 4h-3v7.85l6.53 3.76L21 15.03l1.5 5.47-5.5 1.46 1.53-2.61L12 15.58l-6.53 3.77L7 21.96 1.5 20.5 3 15.03l1.47 2.58L11 13.85V6H8z"/></svg>
+
+    </a>
+    Digital Design and Fabrication
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Parametrics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Parametrics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parametrics/components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Components
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parametrics/template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parametrics/cpython/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CPython
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Programming
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/collections/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Collections
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Objects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Geometry
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Geometry
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vectors
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Vectors
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vectors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vectors/distances/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vectors/addition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Addition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vectors/subtraction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Subtraction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vectors/multiplication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multiplication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vectors/normalize/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Normalization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vectors/dot-product/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dot Product
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vectors/cross-product/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cross Product
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vectors/systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coordinate Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vectors/transforms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transformations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Curves
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Curves
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../curves/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../curves/euclidean/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Euclidean
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../curves/computational/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Computational
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Surfaces
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Surfaces
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Representation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#point-on-surface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Point On Surface
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameterization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameterization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derivatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Derivatives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Projection
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="euclidean/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Euclidean
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="computational/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Computational
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Meshes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Meshes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meshes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meshes/topology/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Topology
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Solids
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Solids
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solids/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solids/constructive/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Constructive
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solids/boundary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boundary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solids/voxels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Volumetric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solids/clouds/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Point Clouds
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Constructions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Constructions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constructions/angles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Angles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constructions/areas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Areas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constructions/centroids/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Centroids
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constructions/clashes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clashes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constructions/containment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Containment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constructions/mappings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mappings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constructions/offsets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Offsets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constructions/perpendiculars/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Perpendiculars
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constructions/polygons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Polygons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constructions/projections/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projections
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constructions/reflections/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reflections
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Representation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#point-on-surface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Point On Surface
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameterization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameterization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derivatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Derivatives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Projection
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="surface-geometry">Surface Geometry</h1>
+<p>The objective of this section is to introduce concepts associated with flat and curved surfaces. There are three very important operations related to surfaces:</p>
+<ol>
+<li><strong>Evaluation</strong>: Forward mapping from R<sup>2</sup> → R<sup>3</sup>, that is <code>[u, v] → [x, y, z]</code>.</li>
+<li><strong>Derivatives</strong>: Geometric properties associated with differential concepts.</li>
+<li><strong>Projection</strong>: Inverse mapping from R<sup>3</sup> → R<sup>2</sup>, that is <code>[x, y, z] → [u, v]</code>.</li>
+</ol>
+<h3 id="representation">Representation</h3>
+<p>Surfaces can be expressed in one of several ways, namely explicit, implicit and parametric, in the same sense there are multiple representations for curves. Those offer different kinds of intuition and capabilities. Nevertheless, the parametric representation of surfaces is the one most commonly used.</p>
+<h3 id="point-on-surface">Point On Surface</h3>
+<p>Parametric surfaces can be considered as a direct extension of curves in two, namely <code>u</code> and <code>v</code> instead of one parameter, that is <code>t</code>. As such as surface <code>S( u, v ) = [x, y, z]</code> renders points in space <code>p = [x, y, z]</code>.</p>
+<p>In Rhino the <code>Surface</code> interface, which all surfaces comply with, captures the notion of a point-on-surface via the <code>PointAt( )</code> method, see <a href="https://developer.rhino3d.com/api/rhinocommon/rhino.geometry.surface">documentation</a>.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><span class="sd">&quot;&quot;&quot; Various Surfaces</span>
+</span><span id="__span-0-2"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-0-3"><span class="n">surface</span> <span class="o">=</span> <span class="ne">Plane</span><span class="o">.</span><span class="n">WorldXY</span>
+</span><span id="__span-0-4">
+</span><span id="__span-0-5"><span class="n">surface</span> <span class="o">=</span> <span class="ne">NurbsSurface</span><span class="o">.</span><span class="n">CreateFromPoints</span><span class="p">(</span>
+</span><span id="__span-0-6">    <span class="p">[</span><span class="ne">Point3d</span><span class="p">(</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span> <span class="p">),</span>
+</span><span id="__span-0-7">     <span class="ne">Point3d</span><span class="p">(</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span> <span class="p">),</span>
+</span><span id="__span-0-8">     <span class="ne">Point3d</span><span class="p">(</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">),</span>
+</span><span id="__span-0-9">     <span class="ne">Point3d</span><span class="p">(</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span> <span class="p">)],</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+</span><span id="__span-0-10">
+</span><span id="__span-0-11"><span class="sd">&quot;&quot;&quot; The PointAt Method</span>
+</span><span id="__span-0-12"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-0-13"><span class="n">point</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span> <span class="p">)</span>
+</span></code></pre></div>
+<p>Computing points on a surface along the parametric directions is commonly expressed as a grid or flat list of points as seen below.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><span class="sd">&quot;&quot;&quot; Points on Normalized Surface</span>
+</span><span id="__span-1-2"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-1-3"><span class="n">nu</span><span class="p">,</span> <span class="n">nv</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+</span><span id="__span-1-4">
+</span><span id="__span-1-5"><span class="n">flat</span> <span class="o">=</span> <span class="p">[</span><span class="n">surface</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span>
+</span><span id="__span-1-6">    <span class="n">iu</span> <span class="o">/</span> <span class="p">(</span> <span class="n">nu</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">),</span> <span class="n">iv</span> <span class="o">/</span> <span class="p">(</span> <span class="n">nv</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-1-7">        <span class="k">for</span> <span class="n">iu</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">nu</span> <span class="p">)</span>
+</span><span id="__span-1-8">            <span class="k">for</span> <span class="n">iv</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">nv</span> <span class="p">)]</span>
+</span><span id="__span-1-9">
+</span><span id="__span-1-10"><span class="n">grid</span> <span class="o">=</span> <span class="p">[[</span><span class="n">surface</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span>
+</span><span id="__span-1-11">    <span class="n">iu</span> <span class="o">/</span> <span class="p">(</span> <span class="n">nu</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">),</span> <span class="n">iv</span> <span class="o">/</span> <span class="p">(</span> <span class="n">nv</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-1-12">        <span class="k">for</span> <span class="n">iu</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">nu</span> <span class="p">)]</span>
+</span><span id="__span-1-13">            <span class="k">for</span> <span class="n">iv</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">nv</span> <span class="p">)]</span>
+</span></code></pre></div>
+<h3 id="parameterization">Parameterization</h3>
+<p>The range of values associated with the parameters <code>u</code> and <code>v</code> follow the same conventions as with parametric curves. However, the domain of a surface requires two intervals, one for each parameter <code>u: [umin, umax]</code> and <code>v: [vmin, vmax]</code>. The minimum and maximum values are typically either associated with the unit range <code>[0, 1]</code> or arc-length <code>[0, length]</code>.</p>
+<p>In Rhino, the domain of a surface can be obtained using the <code>Domain( )</code> method, where the parameter specifies which interval to select.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><span class="sd">&quot;&quot;&quot; Surface Domain Intervals</span>
+</span><span id="__span-2-2"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-2-3"><span class="n">ud</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">Domain</span><span class="p">(</span> <span class="mi">0</span> <span class="p">)</span>
+</span><span id="__span-2-4"><span class="n">vd</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">Domain</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)</span>
+</span><span id="__span-2-5">
+</span><span id="__span-2-6"><span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;u: [</span><span class="si">{:.3f}</span><span class="s1">, </span><span class="si">{:.3f}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+</span><span id="__span-2-7">    <span class="n">ud</span><span class="o">.</span><span class="n">Min</span><span class="p">,</span> <span class="n">ud</span><span class="o">.</span><span class="n">Max</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-2-8">
+</span><span id="__span-2-9"><span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;v: [</span><span class="si">{:.3f}</span><span class="s1">, </span><span class="si">{:.3f}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+</span><span id="__span-2-10">    <span class="n">vd</span><span class="o">.</span><span class="n">Min</span><span class="p">,</span> <span class="n">vd</span><span class="o">.</span><span class="n">Max</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-2-11">
+</span><span id="__span-2-12"><span class="sd">&quot;&quot;&quot; Points on Surface</span>
+</span><span id="__span-2-13"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-2-14"><span class="n">nu</span><span class="p">,</span> <span class="n">nv</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+</span><span id="__span-2-15">
+</span><span id="__span-2-16"><span class="n">flat</span> <span class="o">=</span> <span class="p">[</span><span class="n">surface</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span>
+</span><span id="__span-2-17">    <span class="n">ud</span><span class="o">.</span><span class="n">ParameterAt</span><span class="p">(</span> <span class="n">iu</span> <span class="o">/</span> <span class="p">(</span> <span class="n">nu</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">),</span>
+</span><span id="__span-2-18">    <span class="n">vd</span><span class="o">.</span><span class="n">ParameterAt</span><span class="p">(</span> <span class="n">iv</span> <span class="o">/</span> <span class="p">(</span> <span class="n">nv</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-2-19">        <span class="k">for</span> <span class="n">iu</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">nu</span> <span class="p">)</span>
+</span><span id="__span-2-20">            <span class="k">for</span> <span class="n">iv</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">nv</span> <span class="p">)]</span>
+</span><span id="__span-2-21">
+</span><span id="__span-2-22"><span class="n">grid</span> <span class="o">=</span> <span class="p">[[</span><span class="n">surface</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span>
+</span><span id="__span-2-23">    <span class="n">ud</span><span class="o">.</span><span class="n">ParameterAt</span><span class="p">(</span> <span class="n">iu</span> <span class="o">/</span> <span class="p">(</span> <span class="n">nu</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">),</span>
+</span><span id="__span-2-24">    <span class="n">vd</span><span class="o">.</span><span class="n">ParameterAt</span><span class="p">(</span> <span class="n">iv</span> <span class="o">/</span> <span class="p">(</span> <span class="n">nv</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-2-25">        <span class="k">for</span> <span class="n">iu</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">nu</span> <span class="p">)]</span>
+</span><span id="__span-2-26">            <span class="k">for</span> <span class="n">iv</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">nv</span> <span class="p">)]</span>
+</span></code></pre></div>
+<h3 id="derivatives">Derivatives</h3>
+<p>The concepts associated with parametric curves extend to surfaces but the terminology and mechanics change slightly because surfaces involve two parameters.</p>
+<h4 id="tangent-plane">Tangent Plane</h4>
+<p>The tangent of a surface a point with parameters <code>u</code> and <code>v</code> is a plane instead of vector. It is defined via the process of computing the first derivative at <code>S( u, v )</code>. However, the result is two vectors or partial derivatives <code>Su = dS / du</code> and <code>Sv = dS / dv</code>. These define the basis vectors of the tangent plane, which are in general not orthogonal with one another.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><span class="sd">&quot;&quot;&quot; Finite deltas</span>
+</span><span id="__span-3-2"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-3-3"><span class="n">du</span><span class="p">,</span> <span class="n">dv</span> <span class="o">=</span> <span class="mf">1e-5</span><span class="p">,</span> <span class="mf">1e-5</span>
+</span><span id="__span-3-4">
+</span><span id="__span-3-5"><span class="sd">&quot;&quot;&quot; Point at u, v</span>
+</span><span id="__span-3-6"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-3-7"><span class="n">o</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="p">)</span>
+</span><span id="__span-3-8">
+</span><span id="__span-3-9"><span class="sd">&quot;&quot;&quot; Forward points</span>
+</span><span id="__span-3-10"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-3-11"><span class="n">pu</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">u</span> <span class="o">+</span> <span class="n">du</span><span class="p">,</span> <span class="n">v</span> <span class="p">)</span>
+</span><span id="__span-3-12"><span class="n">pv</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">+</span> <span class="n">dv</span> <span class="p">)</span>
+</span><span id="__span-3-13">
+</span><span id="__span-3-14"><span class="sd">&quot;&quot;&quot; Finite partial derivatives</span>
+</span><span id="__span-3-15"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-3-16"><span class="n">Su</span> <span class="o">=</span> <span class="p">(</span> <span class="n">p</span> <span class="o">-</span> <span class="n">o</span> <span class="p">)</span> <span class="o">/</span> <span class="n">du</span>
+</span><span id="__span-3-17"><span class="n">Sv</span> <span class="o">=</span> <span class="p">(</span> <span class="n">q</span> <span class="o">-</span> <span class="n">o</span> <span class="p">)</span> <span class="o">/</span> <span class="n">du</span>
+</span><span id="__span-3-18">
+</span><span id="__span-3-19"><span class="sd">&quot;&quot;&quot; Finite tangent plane</span>
+</span><span id="__span-3-20"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-3-21"><span class="n">tangent</span> <span class="o">=</span> <span class="ne">Plane</span><span class="p">(</span> <span class="n">o</span><span class="p">,</span> <span class="n">Su</span><span class="p">,</span> <span class="n">Sv</span> <span class="p">)</span>
+</span></code></pre></div>
+<p>In Rhino the <code>Evaluate( )</code> method can be used to compute partial derivative vectors of surfaces. Note that higher order partial derivatives come in expanding combinations, see <a href="https://en.wikipedia.org/wiki/Hessian_matrix">Hessian matrix</a>.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><span class="sd">&quot;&quot;&quot; Surface Derivatives</span>
+</span><span id="__span-4-2"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-4-3"><span class="n">_</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">dS</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">Evaluate</span><span class="p">(</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>
+</span><span id="__span-4-4">
+</span><span id="__span-4-5"><span class="sd">&quot;&quot;&quot; First Order</span>
+</span><span id="__span-4-6"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-4-7"><span class="n">Su</span> <span class="o">=</span> <span class="n">dS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-4-8"><span class="n">Sv</span> <span class="o">=</span> <span class="n">dS</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-4-9">
+</span><span id="__span-4-10"><span class="sd">&quot;&quot;&quot; Second Order</span>
+</span><span id="__span-4-11"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-4-12"><span class="n">Suu</span> <span class="o">=</span> <span class="n">dS</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</span><span id="__span-4-13"><span class="n">Suv</span> <span class="o">=</span> <span class="n">dS</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-4-14"><span class="n">Svv</span> <span class="o">=</span> <span class="n">dS</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+</span></code></pre></div>
+<h4 id="normal-vector">Normal Vector</h4>
+<p>The normal of a surface at <code>S( u, v )</code> is a vector perpendicular to the surface. It is defined as the normal of the tangent plane and computed via the cross product <code>Su × Sv</code>.</p>
+<p>In Rhino the surface normal can be evaluated using the <code>NormalAt( )</code> method.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><span class="sd">&quot;&quot;&quot; Principle</span>
+</span><span id="__span-5-2"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-5-3"><span class="n">_</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">dS</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">Evaluate</span><span class="p">(</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+</span><span id="__span-5-4"><span class="n">normal</span> <span class="o">=</span> <span class="ne">Vector3d</span><span class="o">.</span><span class="n">CrossProduct</span><span class="p">(</span> <span class="n">dS</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dS</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
+</span><span id="__span-5-5"><span class="n">normal</span><span class="o">.</span><span class="n">Unitize</span><span class="p">(</span> <span class="p">)</span>
+</span><span id="__span-5-6">
+</span><span id="__span-5-7"><span class="sd">&quot;&quot;&quot; Shortcut</span>
+</span><span id="__span-5-8"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-5-9"><span class="n">normal</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">NormalAt</span><span class="p">(</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="p">)</span>
+</span></code></pre></div>
+<h4 id="surface-frame">Surface Frame</h4>
+<p>The surface frame at <code>S( u, v )</code> is just the tangent plane as presented earlier. In Rhino, it is computed using the <code>FrameAt( )</code> method. Note that planes in Rhino are orthonormal so the partial derivatives' directions and lengths are not preserved. Nevertheless, the X-axis is indeed in the direction of <code>Su</code>.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><span class="sd">&quot;&quot;&quot; Principle</span>
+</span><span id="__span-6-2"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-6-3"><span class="n">_</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">dS</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">Evaluate</span><span class="p">(</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+</span><span id="__span-6-4"><span class="n">plane</span> <span class="o">=</span> <span class="ne">Plane</span><span class="p">(</span> <span class="n">o</span><span class="p">,</span> <span class="n">dS</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dS</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
+</span><span id="__span-6-5">
+</span><span id="__span-6-6"><span class="sd">&quot;&quot;&quot; Shortcut</span>
+</span><span id="__span-6-7"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-6-8"><span class="n">plane</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">FrameAt</span><span class="p">(</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="p">)</span>
+</span></code></pre></div>
+<h4 id="fundamentals">Fundamentals</h4>
+<p>Measuring the length of curves as well as the area of regions within surfaces is associated with a concept from calculous known as the First Fundamental Form, see <a href="https://en.wikipedia.org/wiki/First_fundamental_form">additional</a> details. It is defined by three terms, <code>E</code>, <code>F</code> and <code>G</code> forming a 2x2 matrix computed from the first order partial derivatives' dot products as <code>Su · Su</code>, <code>Su · Sv</code>, and <code>Sv · Sv</code>, respectively.</p>
+<p>Intuitively, the dot products capture the rate by which length is changing along each direction. However, because the partial derivative vectors <code>Su</code> and <code>Sv</code> are not necessarily orthogonal with one another, their combination <code>Su · Sv</code> needs to be considered, otherwise it would have been 0.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><span class="sd">&quot;&quot;&quot; Surface Derivatives</span>
+</span><span id="__span-7-2"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-7-3"><span class="n">_</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">dS</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">Evaluate</span><span class="p">(</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+</span><span id="__span-7-4">
+</span><span id="__span-7-5"><span class="n">Su</span> <span class="o">=</span> <span class="n">dS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-7-6"><span class="n">Sv</span> <span class="o">=</span> <span class="n">dS</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-7-7">
+</span><span id="__span-7-8"><span class="sd">&quot;&quot;&quot; First Fundamental Form</span>
+</span><span id="__span-7-9"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-7-10"><span class="n">E</span> <span class="o">=</span> <span class="n">Su</span> <span class="o">*</span> <span class="n">Su</span>
+</span><span id="__span-7-11"><span class="n">F</span> <span class="o">=</span> <span class="n">Su</span> <span class="o">*</span> <span class="n">Sv</span>
+</span><span id="__span-7-12"><span class="n">G</span> <span class="o">=</span> <span class="n">Sv</span> <span class="o">*</span> <span class="n">Sv</span>
+</span><span id="__span-7-13">
+</span><span id="__span-7-14"><span class="n">I</span> <span class="o">=</span> <span class="p">[[</span> <span class="n">E</span><span class="p">,</span> <span class="n">F</span> <span class="p">],</span>
+</span><span id="__span-7-15">     <span class="p">[</span> <span class="n">F</span><span class="p">,</span> <span class="n">G</span> <span class="p">]]</span>
+</span></code></pre></div>
+<p>While this concept is of theoretical significance, in practice lengths and areas are computed by approximation as seen in the case of parametric curves. Curves are discretized and the sum of the linear segment lengths is computed, while areas are measured using triangulations thereof.</p>
+<p>The Second Fundamental Form is associated with the second order derivatives of surfaces and expresses the notion surface curvature, see <a href="https://en.wikipedia.org/wiki/Second_fundamental_form">additional</a> details. Again the dot products between the normal <code>n</code> and the second order partial derivatives <code>Suu</code>, <code>Svv</code> and <code>Suv</code>, express projection lengths onto the normal, which measure the rate by which the surface is bending in each direction separately and in combinations.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><span class="sd">&quot;&quot;&quot; Surface Derivatives</span>
+</span><span id="__span-8-2"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-8-3"><span class="n">_</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">dS</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">Evaluate</span><span class="p">(</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>
+</span><span id="__span-8-4">
+</span><span id="__span-8-5"><span class="n">Su</span> <span class="o">=</span> <span class="n">dS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-8-6"><span class="n">Sv</span> <span class="o">=</span> <span class="n">dS</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-8-7">
+</span><span id="__span-8-8"><span class="n">n</span> <span class="o">=</span> <span class="ne">Vector3d</span><span class="o">.</span><span class="n">CrossProduct</span><span class="p">(</span> <span class="n">Su</span><span class="p">,</span> <span class="n">Sv</span> <span class="p">)</span>
+</span><span id="__span-8-9"><span class="n">n</span><span class="o">.</span><span class="n">Unitize</span><span class="p">(</span> <span class="p">)</span>
+</span><span id="__span-8-10">
+</span><span id="__span-8-11"><span class="sd">&quot;&quot;&quot; Second Fundamental Form</span>
+</span><span id="__span-8-12"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-8-13"><span class="n">Suu</span> <span class="o">=</span> <span class="n">dS</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</span><span id="__span-8-14"><span class="n">Suv</span> <span class="o">=</span> <span class="n">dS</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-8-15"><span class="n">Svv</span> <span class="o">=</span> <span class="n">dS</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+</span><span id="__span-8-16">
+</span><span id="__span-8-17"><span class="n">L</span> <span class="o">=</span> <span class="n">Suu</span> <span class="o">*</span> <span class="n">n</span>
+</span><span id="__span-8-18"><span class="n">M</span> <span class="o">=</span> <span class="n">Suv</span> <span class="o">*</span> <span class="n">n</span>
+</span><span id="__span-8-19"><span class="n">N</span> <span class="o">=</span> <span class="n">Svv</span> <span class="o">*</span> <span class="n">n</span>
+</span><span id="__span-8-20">
+</span><span id="__span-8-21"><span class="n">II</span> <span class="o">=</span> <span class="p">[[</span> <span class="n">L</span><span class="p">,</span> <span class="n">M</span> <span class="p">],</span>
+</span><span id="__span-8-22">      <span class="p">[</span> <span class="n">M</span><span class="p">,</span> <span class="n">N</span> <span class="p">]]</span>
+</span></code></pre></div>
+<h4 id="normal-curvature">Normal Curvature</h4>
+<p>The complication with computing the curvature of surfaces is that unlike curves it is not a single value. For every point on a surface <code>S( u, v ) = p</code> there is an infinite number of curves, within the surface, passing through the point, and they all typically have different curvature values.</p>
+<p>The way to investigate curvature therefore first requires selecting a particular direction <code>w</code> in the tangent plane. Then using <code>p</code> as the origin and <code>w</code> and <code>n</code> as basis vectors, we define a plane that intersects the surface producing a curve for which we can compute the curvature. This concept is also known as the normal curvature.</p>
+<p>In practice, we do not need to perform a geometric intersection but only express the direction <code>w</code> in terms of the tangent plane's basis vectors <code>Su</code> and <code>Sv</code>. This requires solving a 2x2 linear system for <code>s</code> and <code>t</code> because the vectors are almost never orthogonal with one another. Finally, we can use the first and second fundamental forms to compute the normal curvature.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><span class="sd">&quot;&quot;&quot; Direction in Tangent Plane</span>
+</span><span id="__span-9-2"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-9-3"><span class="n">w</span> <span class="o">=</span> <span class="ne">Vector2d</span><span class="p">(</span> <span class="n">wx</span><span class="p">,</span> <span class="n">wy</span> <span class="p">)</span>
+</span><span id="__span-9-4">
+</span><span id="__span-9-5"><span class="sd">&quot;&quot;&quot; Express w as t * Su + s * Sv</span>
+</span><span id="__span-9-6"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-9-7"><span class="n">t</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span> <span class="n">Sv</span><span class="o">.</span><span class="n">X</span> <span class="o">*</span>  <span class="n">w</span><span class="o">.</span><span class="n">Y</span> <span class="o">-</span> <span class="n">Sv</span><span class="o">.</span><span class="n">Y</span> <span class="o">*</span>  <span class="n">w</span><span class="o">.</span><span class="n">X</span> <span class="p">)</span> <span class="o">/</span>
+</span><span id="__span-9-8">      <span class="p">(</span> <span class="n">Sv</span><span class="o">.</span><span class="n">X</span> <span class="o">*</span> <span class="n">Su</span><span class="o">.</span><span class="n">Y</span> <span class="o">-</span> <span class="n">Sv</span><span class="o">.</span><span class="n">Y</span> <span class="o">*</span> <span class="n">Su</span><span class="o">.</span><span class="n">X</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-9-9"><span class="n">s</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span> <span class="n">Su</span><span class="o">.</span><span class="n">X</span> <span class="o">*</span>  <span class="n">w</span><span class="o">.</span><span class="n">Y</span> <span class="o">-</span> <span class="n">Su</span><span class="o">.</span><span class="n">Y</span> <span class="o">*</span>  <span class="n">w</span><span class="o">.</span><span class="n">X</span> <span class="p">)</span> <span class="o">/</span>
+</span><span id="__span-9-10">      <span class="p">(</span> <span class="n">Su</span><span class="o">.</span><span class="n">X</span> <span class="o">*</span> <span class="n">Sv</span><span class="o">.</span><span class="n">Y</span> <span class="o">-</span> <span class="n">Su</span><span class="o">.</span><span class="n">Y</span> <span class="o">*</span> <span class="n">Sv</span><span class="o">.</span><span class="n">X</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-9-11">
+</span><span id="__span-9-12"><span class="n">tt</span> <span class="o">=</span> <span class="n">t</span> <span class="o">*</span> <span class="n">t</span>
+</span><span id="__span-9-13"><span class="n">ts</span> <span class="o">=</span> <span class="n">t</span> <span class="o">*</span> <span class="n">s</span>
+</span><span id="__span-9-14"><span class="n">ss</span> <span class="o">=</span> <span class="n">s</span> <span class="o">*</span> <span class="n">s</span>
+</span><span id="__span-9-15">
+</span><span id="__span-9-16"><span class="sd">&quot;&quot;&quot; Compute Normal Curvature</span>
+</span><span id="__span-9-17"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-9-18"><span class="n">k</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span> <span class="n">L</span> <span class="o">*</span> <span class="n">tt</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">M</span> <span class="o">*</span> <span class="n">ts</span> <span class="o">+</span> <span class="n">N</span> <span class="o">*</span> <span class="n">ss</span> <span class="p">)</span> <span class="o">/</span>
+</span><span id="__span-9-19">      <span class="p">(</span> <span class="n">E</span> <span class="o">*</span> <span class="n">tt</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">F</span> <span class="o">*</span> <span class="n">ts</span> <span class="o">+</span> <span class="n">G</span> <span class="o">*</span> <span class="n">ss</span> <span class="p">)</span> <span class="p">)</span>
+</span></code></pre></div>
+<h4 id="principal-curvatures">Principal Curvatures</h4>
+<p>Normal curvature has a minimum and a maximum value, namely <code>k_min</code> and <code>k_max</code> about the <code>w_min</code> and <code>w_max</code> directions in the tangent plane, respectively. Those are also known as the principal directions and they are orthogonal with one another and the normal, see <a href="https://web.mit.edu/hyperbook/Patrikalakis-Maekawa-Cho/node30.html">derivation</a>. Additionally, their mean <code>H = ( k_min + k_max ) / 2</code> and product <code>K = k_min * k_max</code> are known as the <a href="https://en.wikipedia.org/wiki/Mean_curvature">Mean</a> and <a href="https://en.wikipedia.org/wiki/Gaussian_curvature">Gaussian</a> curvature of the surface at <code>S( u, v )</code>.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-10-1"><span class="sd">&quot;&quot;&quot; Mean and Gaussian Curvature</span>
+</span><span id="__span-10-2"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-10-3"><span class="n">K</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span> <span class="n">E</span> <span class="o">*</span> <span class="n">N</span> <span class="o">+</span> <span class="n">G</span> <span class="o">*</span> <span class="n">L</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">F</span> <span class="o">*</span> <span class="n">M</span> <span class="p">)</span> <span class="o">/</span>
+</span><span id="__span-10-4">      <span class="p">(</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span> <span class="n">E</span> <span class="o">*</span> <span class="n">G</span> <span class="o">-</span> <span class="n">F</span> <span class="o">*</span> <span class="n">F</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-10-5"><span class="n">H</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span> <span class="n">L</span> <span class="o">*</span> <span class="n">N</span> <span class="o">-</span> <span class="n">M</span> <span class="o">*</span> <span class="n">M</span> <span class="p">)</span> <span class="o">/</span>
+</span><span id="__span-10-6">      <span class="p">(</span> <span class="n">E</span> <span class="o">*</span> <span class="n">G</span> <span class="o">-</span> <span class="n">F</span> <span class="o">*</span> <span class="n">F</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-10-7">
+</span><span id="__span-10-8"><span class="sd">&quot;&quot;&quot; Minimum and Maximum Curvature</span>
+</span><span id="__span-10-9"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-10-10"><span class="n">k_min</span> <span class="o">=</span> <span class="n">H</span> <span class="o">-</span> <span class="ne">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">H</span> <span class="o">*</span> <span class="n">H</span> <span class="o">-</span> <span class="n">K</span> <span class="p">)</span>
+</span><span id="__span-10-11"><span class="n">k_max</span> <span class="o">=</span> <span class="n">H</span> <span class="o">+</span> <span class="ne">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">H</span> <span class="o">*</span> <span class="n">H</span> <span class="o">-</span> <span class="n">K</span> <span class="p">)</span>
+</span><span id="__span-10-12">
+</span><span id="__span-10-13"><span class="sd">&quot;&quot;&quot; Principal Directions</span>
+</span><span id="__span-10-14"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-10-15"><span class="n">w_min</span> <span class="o">=</span> <span class="n">Sv</span> <span class="o">*</span> <span class="p">(</span> <span class="n">M</span> <span class="o">-</span> <span class="n">k_min</span> <span class="o">*</span> <span class="n">F</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="n">N</span> <span class="o">-</span> <span class="n">k_min</span> <span class="o">*</span> <span class="n">G</span> <span class="p">)</span> <span class="o">-</span> <span class="n">Su</span>
+</span><span id="__span-10-16"><span class="n">w_max</span> <span class="o">=</span> <span class="n">Sv</span> <span class="o">*</span> <span class="p">(</span> <span class="n">M</span> <span class="o">-</span> <span class="n">k_max</span> <span class="o">*</span> <span class="n">F</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="n">N</span> <span class="o">-</span> <span class="n">k_max</span> <span class="o">*</span> <span class="n">G</span> <span class="p">)</span> <span class="o">-</span> <span class="n">Su</span>
+</span><span id="__span-10-17">
+</span><span id="__span-10-18"><span class="n">w_min</span><span class="o">.</span><span class="n">Unitize</span><span class="p">(</span> <span class="p">)</span>
+</span><span id="__span-10-19"><span class="n">w_max</span><span class="o">.</span><span class="n">Unitize</span><span class="p">(</span> <span class="p">)</span>
+</span></code></pre></div>
+<p>Rhino provides the <code>CurvatureAt( )</code> method which returns a <code>SurfaceCurvature</code> object that contains the above computed surface properties.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-11-1"><span class="sd">&quot;&quot;&quot; Surface Curvature</span>
+</span><span id="__span-11-2"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-11-3"><span class="n">curvature</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">CurvatureAt</span><span class="p">(</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="p">)</span>
+</span><span id="__span-11-4">
+</span><span id="__span-11-5"><span class="n">H</span> <span class="o">=</span> <span class="n">curvature</span><span class="o">.</span><span class="n">Mean</span>
+</span><span id="__span-11-6"><span class="n">K</span> <span class="o">=</span> <span class="n">curvature</span><span class="o">.</span><span class="n">Gaussian</span>
+</span><span id="__span-11-7">
+</span><span id="__span-11-8"><span class="n">k_min</span> <span class="o">=</span> <span class="n">curvature</span><span class="o">.</span><span class="n">Kappa</span><span class="p">(</span> <span class="mi">0</span> <span class="p">)</span>
+</span><span id="__span-11-9"><span class="n">k_max</span> <span class="o">=</span> <span class="n">curvature</span><span class="o">.</span><span class="n">Kappa</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)</span>
+</span><span id="__span-11-10">
+</span><span id="__span-11-11"><span class="n">w_min</span> <span class="o">=</span> <span class="n">curvature</span><span class="o">.</span><span class="n">Direction</span><span class="p">(</span> <span class="mi">0</span> <span class="p">)</span>
+</span><span id="__span-11-12"><span class="n">w_max</span> <span class="o">=</span> <span class="n">curvature</span><span class="o">.</span><span class="n">Direction</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)</span>
+</span></code></pre></div>
+<h3 id="projection">Projection</h3>
+<p>Projection, also known as finding the closest point, from a point <code>p</code> onto a surface <code>S</code> requires finding a point <code>o = S( u, v )</code> such that <code>p = o + n * s</code>, where <code>n</code> is the surface normal at parameters <code>[u, v]</code> and <code>s</code> is a scalar. In other words, the point of intersection <code>q</code> between the surface and a line from <code>p</code> with direction perpendicular to the surface. Projection of points on simple surfaces, such as planes and spheres, can be computed analytically. For more complex curves it requires numerical computation.</p>
+<p>In Rhino, surfaces implement the <code>ClosestPoint( )</code> method, which accepts the point to project and return the parameter of the surface.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-12-1"><span class="sd">&quot;&quot;&quot; Surface Closest Point</span>
+</span><span id="__span-12-2"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-12-3"><span class="n">p</span> <span class="o">=</span> <span class="ne">Point3d</span><span class="p">(</span> <span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">pz</span> <span class="p">)</span>
+</span><span id="__span-12-4">
+</span><span id="__span-12-5"><span class="n">_</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">ClosestPoint</span><span class="p">(</span> <span class="n">p</span> <span class="p">)</span>
+</span><span id="__span-12-6">
+</span><span id="__span-12-7"><span class="n">q</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="p">)</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright (c) 2024-2025 Digital Design and Fabrication
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+    
+  </body>
+</html>

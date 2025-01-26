@@ -1,0 +1,2260 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Stylianos Dritsas">
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../solids/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
+    
+    
+      
+        <title>Topology - Digital Design and Fabrication</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10M11 7h2v2h-2zm3 10h-4v-2h1v-2h-1v-2h3v4h1z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mesh-topology" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Digital Design and Fabrication" class="md-header__button md-logo" aria-label="Digital Design and Fabrication" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 2 4 4h-3v7.85l6.53 3.76L21 15.03l1.5 5.47-5.5 1.46 1.53-2.61L12 15.58l-6.53 3.77L7 21.96 1.5 20.5 3 15.03l1.47 2.58L11 13.85V6H8z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Digital Design and Fabrication
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Topology
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Digital Design and Fabrication" class="md-nav__button md-logo" aria-label="Digital Design and Fabrication" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 2 4 4h-3v7.85l6.53 3.76L21 15.03l1.5 5.47-5.5 1.46 1.53-2.61L12 15.58l-6.53 3.77L7 21.96 1.5 20.5 3 15.03l1.47 2.58L11 13.85V6H8z"/></svg>
+
+    </a>
+    Digital Design and Fabrication
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Parametrics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Parametrics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parametrics/components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Components
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parametrics/template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parametrics/cpython/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CPython
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Programming
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming/collections/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Collections
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming/functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming/objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Objects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Geometry
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Geometry
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vectors
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Vectors
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vectors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vectors/distances/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vectors/addition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Addition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vectors/subtraction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Subtraction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vectors/multiplication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multiplication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vectors/normalize/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Normalization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vectors/dot-product/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dot Product
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vectors/cross-product/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cross Product
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vectors/systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coordinate Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vectors/transforms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transformations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Curves
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Curves
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curves/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curves/euclidean/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Euclidean
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curves/computational/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Computational
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Surfaces
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Surfaces
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../surfaces/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../surfaces/euclidean/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Euclidean
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../surfaces/computational/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Computational
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Meshes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Meshes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Topology
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Topology
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definitions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nodes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faces
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connectivity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connectivity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#face-to-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Face to Node
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-to-face" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node to Face
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#face-to-edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Face to Edge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-to-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node to Node
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-to-face" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge to Face
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#face-to-face" class="md-nav__link">
+    <span class="md-ellipsis">
+      Face to Face
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rhino-topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rhino Topology
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topology-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topology Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Topology Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boundary-edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boundary Edges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-manifold-edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Manifold Edges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-manifold-edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two-Manifold Edges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple Domains
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#face-orientation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Face Orientation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Solids
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Solids
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solids/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solids/constructive/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Constructive
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solids/boundary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boundary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solids/voxels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Volumetric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solids/clouds/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Point Clouds
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Constructions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Constructions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/angles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Angles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/areas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Areas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/centroids/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Centroids
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/clashes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clashes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/containment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Containment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/mappings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mappings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/offsets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Offsets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/perpendiculars/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Perpendiculars
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/polygons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Polygons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/projections/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projections
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/reflections/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reflections
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definitions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nodes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faces
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connectivity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connectivity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#face-to-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Face to Node
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-to-face" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node to Face
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#face-to-edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Face to Edge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-to-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node to Node
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-to-face" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge to Face
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#face-to-face" class="md-nav__link">
+    <span class="md-ellipsis">
+      Face to Face
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rhino-topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rhino Topology
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topology-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topology Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Topology Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boundary-edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boundary Edges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-manifold-edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Manifold Edges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-manifold-edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two-Manifold Edges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple Domains
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#face-orientation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Face Orientation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="mesh-topology">Mesh Topology</h1>
+<p>Often we need to perform geometric operations by examining relationships between the vertices, edges and faces of a mesh. Indicative examples include finding: the edge or faces connected to a vertex or the edge shared between two faces. All those relationships are captured by the notion of mesh topology. Already the indexed mesh representation is topological in the sense that it encodes mesh faces in terms of their relationship with the list of vertices.</p>
+<h2 id="definitions">Definitions</h2>
+<h3 id="nodes">Nodes</h3>
+<p>Conceptually, a node is a shared point of a mesh. The list of points in an indexed mesh can be considered as its node list. However, a node <code>i</code> is the index of the point in the list, not the 3D point itself. Typically, nodes are integers serially numbered from <code>0</code> to <code>n - 1</code>, where <code>n</code> is the number of points. Another important property of nodes is that they represent unique points, so the mesh needs to be deduplicated.</p>
+<h3 id="edges">Edges</h3>
+<p>Mesh edges are represented by pairs of nodes <code>[s, t]</code>, where <code>s</code> and <code>t</code> are integer indices expressing which two points are connected. In cases we do not care about the direction of the edge <code>[s, t]</code> and <code>[t, s]</code> represent the same edge. However, if we do, then those two pairs represent edges with opposite directions.</p>
+<h3 id="faces">Faces</h3>
+<p>Mesh faces are represented by triplets of nodes <code>[a, b, c]</code> for triangulations, where <code>a</code>, <code>b</code> and <code>c</code> are the nodes. This is the convention already used for indexed meshes. Generally, the nodes in a face are oriented, that is their order in important, as explained in the earlier discussion about mesh normals.</p>
+<h2 id="connectivity">Connectivity</h2>
+<h3 id="face-to-node">Face to Node</h3>
+<p>The face-to-node map enables queries such as <em>which nodes are connected to a particular face</em>: face → list( node ). This information is already available in the mesh faces list.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-0-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+</span><span id="__span-0-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
+</span><span id="__span-0-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
+</span><span id="__span-0-5">
+</span><span id="__span-0-6"><span class="w">    </span><span class="sd">&#39;&#39;&#39; Face Index -&gt; Node Indices</span>
+</span><span id="__span-0-7"><span class="sd">    &#39;&#39;&#39;</span>
+</span><span id="__span-0-8">    <span class="k">def</span> <span class="nf">NodesFromFace</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">face</span> <span class="p">):</span>
+</span><span id="__span-0-9">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span><span class="p">[</span><span class="n">face</span><span class="p">]</span>
+</span></code></pre></div>
+<h3 id="node-to-face">Node to Face</h3>
+<p>The node-to-face map enables queries such as <em>which faces are connected to a particular node</em>: node → list( face ). It is the exact opposite of a mesh's face list which conveys <em>which nodes are connected to a face</em>: face → list( node ). It may be represented as a list with the same length as the number of points, with each item containing another list of indices pointing to the mesh's faces. The faces about a node are also known as a fan or umbrella.</p>
+<p>The method <code>BuildNodeToFaceMap( )</code> creates a list of sets, one per node, and then iterates over each face updating the map with the node indices encountered. Sets are used because they cull duplicate node indices but they are simplified away into lists before completing the mapping. The method <code>FacesFromNode( )</code> returns a list of the faces connected to a node.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-1-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+</span><span id="__span-1-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
+</span><span id="__span-1-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
+</span><span id="__span-1-5">
+</span><span id="__span-1-6">        <span class="bp">self</span><span class="o">.</span><span class="n">BuildNodeToFaceMap</span><span class="p">(</span> <span class="p">)</span>
+</span><span id="__span-1-7">
+</span><span id="__span-1-8">    <span class="k">def</span> <span class="nf">BuildNodeToFaceMap</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-1-9">        <span class="bp">self</span><span class="o">.</span><span class="n">NodeToFace</span> <span class="o">=</span> <span class="p">[</span><span class="nb">set</span><span class="p">(</span> <span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span><span class="p">]</span>
+</span><span id="__span-1-10">        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span> <span class="p">):</span>
+</span><span id="__span-1-11">            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+</span><span id="__span-1-12">                <span class="bp">self</span><span class="o">.</span><span class="n">NodeToFace</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">index</span> <span class="p">)</span>
+</span><span id="__span-1-13">        <span class="bp">self</span><span class="o">.</span><span class="n">NodeToFace</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span> <span class="n">indices</span> <span class="p">)</span>
+</span><span id="__span-1-14">            <span class="k">for</span> <span class="n">indices</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">NodeToFace</span><span class="p">]</span>
+</span><span id="__span-1-15">        <span class="k">return</span> <span class="bp">self</span>
+</span><span id="__span-1-16">
+</span><span id="__span-1-17"><span class="w">    </span><span class="sd">&#39;&#39;&#39; Node Index -&gt; Face Indices</span>
+</span><span id="__span-1-18"><span class="sd">    &#39;&#39;&#39;</span>
+</span><span id="__span-1-19">    <span class="k">def</span> <span class="nf">FacesFromNode</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">node</span> <span class="p">):</span>
+</span><span id="__span-1-20">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">NodeToFace</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+</span></code></pre></div>
+<h3 id="face-to-edge">Face to Edge</h3>
+<p>The face-to-edge map enables queries such as <em>which edges are connected to a particular face</em>: face → list( edge ). Since these relationships are trivially computed from the face list, we do not need to store the data. Instead we can implement this in the form of an iterator. Additionally, in some cases we need the same edge expressed as both <code>( s, t )</code> and <code>( t, s )</code>.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-2-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+</span><span id="__span-2-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
+</span><span id="__span-2-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
+</span><span id="__span-2-5">
+</span><span id="__span-2-6"><span class="w">    </span><span class="sd">&#39;&#39;&#39; Face Index -&gt; Edge Indices</span>
+</span><span id="__span-2-7"><span class="sd">    &#39;&#39;&#39;</span>
+</span><span id="__span-2-8">    <span class="k">def</span> <span class="nf">EdgesFromFace</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">both_ways</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">):</span>
+</span><span id="__span-2-9">        <span class="n">nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span><span class="p">[</span><span class="n">face</span><span class="p">]</span>
+</span><span id="__span-2-10">        <span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span> <span class="n">nodes</span> <span class="p">)</span>
+</span><span id="__span-2-11">        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">count</span> <span class="p">):</span>
+</span><span id="__span-2-12">            <span class="n">s</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+</span><span id="__span-2-13">            <span class="n">t</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[(</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)</span> <span class="o">%</span> <span class="n">count</span><span class="p">]</span>
+</span><span id="__span-2-14">            <span class="k">yield</span> <span class="p">(</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="p">)</span>
+</span><span id="__span-2-15">            <span class="k">if</span><span class="p">(</span> <span class="n">both_ways</span> <span class="p">):</span>
+</span><span id="__span-2-16">                <span class="k">yield</span> <span class="p">(</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span> <span class="p">)</span>
+</span></code></pre></div>
+<h3 id="node-to-node">Node to Node</h3>
+<p>The node-to-node map enables queries such as <em>which nodes are connected to a particular node</em>: node → list( node ). It has as many items as the number of points, with each item containing a list of connected nodes. It is constructed by iterating over each face, collecting the three edges encountered. Again the use of sets is to prevent duplicates. The edges between a node and its adjacent nodes are also known as spokes.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-3-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+</span><span id="__span-3-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
+</span><span id="__span-3-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
+</span><span id="__span-3-5">
+</span><span id="__span-3-6">        <span class="bp">self</span><span class="o">.</span><span class="n">BuildNodeToNodeMap</span><span class="p">(</span> <span class="p">)</span>
+</span><span id="__span-3-7">
+</span><span id="__span-3-8">    <span class="k">def</span> <span class="nf">BuildNodeToNodeMap</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-3-9">        <span class="bp">self</span><span class="o">.</span><span class="n">NodeToNode</span> <span class="o">=</span> <span class="p">[</span><span class="nb">set</span><span class="p">(</span> <span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span><span class="p">]</span>
+</span><span id="__span-3-10">        <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span><span class="p">:</span>
+</span><span id="__span-3-11">            <span class="bp">self</span><span class="o">.</span><span class="n">NodeToNode</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">b</span> <span class="p">)</span> <span class="c1">#-- a -&gt; b</span>
+</span><span id="__span-3-12">            <span class="bp">self</span><span class="o">.</span><span class="n">NodeToNode</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">c</span> <span class="p">)</span> <span class="c1">#-- a -&gt; c</span>
+</span><span id="__span-3-13">
+</span><span id="__span-3-14">            <span class="bp">self</span><span class="o">.</span><span class="n">NodeToNode</span><span class="p">[</span><span class="n">b</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">c</span> <span class="p">)</span> <span class="c1">#-- b -&gt; c</span>
+</span><span id="__span-3-15">            <span class="bp">self</span><span class="o">.</span><span class="n">NodeToNode</span><span class="p">[</span><span class="n">b</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span> <span class="c1">#-- b -&gt; a</span>
+</span><span id="__span-3-16">
+</span><span id="__span-3-17">            <span class="bp">self</span><span class="o">.</span><span class="n">NodeToNode</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span> <span class="c1">#-- c -&gt; a</span>
+</span><span id="__span-3-18">            <span class="bp">self</span><span class="o">.</span><span class="n">NodeToNode</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">b</span> <span class="p">)</span> <span class="c1">#-- c -&gt; b</span>
+</span><span id="__span-3-19">        <span class="bp">self</span><span class="o">.</span><span class="n">NodeToNode</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span> <span class="n">indices</span> <span class="p">)</span>
+</span><span id="__span-3-20">            <span class="k">for</span> <span class="n">indices</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">NodeToNode</span><span class="p">]</span>
+</span><span id="__span-3-21">        <span class="k">return</span> <span class="bp">self</span>
+</span><span id="__span-3-22">
+</span><span id="__span-3-23"><span class="w">    </span><span class="sd">&#39;&#39;&#39; Node Index -&gt; Node Indices</span>
+</span><span id="__span-3-24"><span class="sd">    &#39;&#39;&#39;</span>
+</span><span id="__span-3-25">    <span class="k">def</span> <span class="nf">NodesFromNode</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">node</span> <span class="p">):</span>
+</span><span id="__span-3-26">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">NodeToNode</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+</span></code></pre></div>
+<h3 id="edge-to-face">Edge to Face</h3>
+<p>The edge-to-face map enables queries such as <em>which faces are connected to a particular edge</em>: edge → list( face ). Unlike the previous maps, we do not know the number of edges in advance. Since an edge requires two indices <code>s</code> and <code>t</code>, we cannot use a lists but instead a dictionary with tuples <code>( s, t )</code> for keys. The edge-to-face map is constructed by iterating over each face, collecting the edges encountered. Again the use of sets is to prevent duplicates and we double store each edge <code>( s, t )</code> and <code>( t, s )</code> for convenience.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-4-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+</span><span id="__span-4-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
+</span><span id="__span-4-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
+</span><span id="__span-4-5">
+</span><span id="__span-4-6">        <span class="bp">self</span><span class="o">.</span><span class="n">BuildEdgeToFaceMap</span><span class="p">(</span> <span class="p">)</span>
+</span><span id="__span-4-7">
+</span><span id="__span-4-8">    <span class="k">def</span> <span class="nf">BuildEdgeToFaceMap</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-4-9">        <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span> <span class="o">=</span> <span class="p">{</span> <span class="p">}</span>
+</span><span id="__span-4-10">        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span> <span class="p">)</span> <span class="p">):</span>
+</span><span id="__span-4-11">            <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">EdgesFromFace</span><span class="p">(</span> <span class="n">index</span><span class="p">,</span> <span class="n">both_ways</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">):</span>
+</span><span id="__span-4-12">                <span class="k">if</span><span class="p">(</span> <span class="ow">not</span> <span class="p">(</span> <span class="n">edge</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span> <span class="p">)</span> <span class="p">):</span>
+</span><span id="__span-4-13">                    <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span><span class="p">[</span><span class="n">edge</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span> <span class="p">)</span>
+</span><span id="__span-4-14">                <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span><span class="p">[</span><span class="n">edge</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">index</span> <span class="p">)</span>
+</span><span id="__span-4-15">        <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span> <span class="n">indices</span> <span class="p">)</span>
+</span><span id="__span-4-16">            <span class="k">for</span> <span class="n">indices</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span><span class="p">]</span>
+</span><span id="__span-4-17">        <span class="k">return</span> <span class="bp">self</span>
+</span><span id="__span-4-18">
+</span><span id="__span-4-19"><span class="w">    </span><span class="sd">&#39;&#39;&#39; Edge Indices -&gt; Face Indices</span>
+</span><span id="__span-4-20"><span class="sd">    &#39;&#39;&#39;</span>
+</span><span id="__span-4-21">    <span class="k">def</span> <span class="nf">FacesFromEdge</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">edge</span> <span class="p">):</span>
+</span><span id="__span-4-22">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span><span class="p">[</span><span class="n">edge</span><span class="p">]</span>
+</span></code></pre></div>
+<h3 id="face-to-face">Face to Face</h3>
+<p>The face-to-face map enables queries such as <em>which faces are connected to a particular face</em>: face → list( face ). This map can be represented using a list since we know the number of faces in advance. The construction below uses the edge-to-face map as a shortcut. Since two faces are connected with one another through a shared edge, the values of the <code>EdgeToFace</code> dictionary contains faces that are incident. Thus, we just need to use their combinations making sure we don't make the superfluous association between a face and itself.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-5-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+</span><span id="__span-5-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
+</span><span id="__span-5-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
+</span><span id="__span-5-5">
+</span><span id="__span-5-6">        <span class="bp">self</span><span class="o">.</span><span class="n">BuildEdgeToFaceMap</span><span class="p">(</span> <span class="p">)</span>
+</span><span id="__span-5-7">        <span class="bp">self</span><span class="o">.</span><span class="n">BuildFaceToFaceMap</span><span class="p">(</span> <span class="p">)</span>
+</span><span id="__span-5-8">
+</span><span id="__span-5-9">    <span class="k">def</span> <span class="nf">BuildFaceToFaceMap</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-5-10">        <span class="bp">self</span><span class="o">.</span><span class="n">FaceToFace</span> <span class="o">=</span> <span class="p">[</span><span class="nb">set</span><span class="p">(</span> <span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span><span class="p">]</span>
+</span><span id="__span-5-11">        <span class="k">for</span> <span class="n">faces</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span><span class="o">.</span><span class="n">values</span><span class="p">(</span> <span class="p">):</span>
+</span><span id="__span-5-12">            <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">:</span>
+</span><span id="__span-5-13">                <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">:</span>
+</span><span id="__span-5-14">                    <span class="k">if</span><span class="p">(</span> <span class="n">source</span> <span class="o">!=</span> <span class="n">target</span> <span class="p">):</span>
+</span><span id="__span-5-15">                        <span class="bp">self</span><span class="o">.</span><span class="n">FaceToFace</span><span class="p">[</span><span class="n">source</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">target</span> <span class="p">)</span>
+</span><span id="__span-5-16">        <span class="bp">self</span><span class="o">.</span><span class="n">FaceToFace</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span> <span class="n">indices</span> <span class="p">)</span>
+</span><span id="__span-5-17">            <span class="k">for</span> <span class="n">indices</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">FaceToFace</span><span class="p">]</span>
+</span><span id="__span-5-18">        <span class="k">return</span> <span class="bp">self</span>
+</span><span id="__span-5-19">
+</span><span id="__span-5-20"><span class="w">    </span><span class="sd">&#39;&#39;&#39; Face Index -&gt; Face Indices</span>
+</span><span id="__span-5-21"><span class="sd">    &#39;&#39;&#39;</span>
+</span><span id="__span-5-22">    <span class="k">def</span> <span class="nf">FacesFromFace</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">face</span> <span class="p">):</span>
+</span><span id="__span-5-23">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">FaceToFace</span><span class="p">[</span><span class="n">face</span><span class="p">]</span>
+</span></code></pre></div>
+<h2 id="rhino-topology">Rhino Topology</h2>
+<p>In Rhino mesh topology is available via the <code>MeshTopologyVertices</code> and <code>MeshTopologyEdges</code> properties of a mesh object. The term <em>topology vertices</em> is associated with the concept of a node and it is used to contrast with <em>geometry vertices</em> or just mesh vertices.</p>
+<p>Rhino performs vertex deduplication before constructing the topology data structures. If the mesh has no duplicates then the topology vertices, or nodes, are identical to the geometry vertices. However, if there are duplicate geometry vertices then a single topology vertex, or node, is associated with all of them. Therefore, conversion between geometry to topology vertices is one-to-one but reverse is in general one-to-many.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><span class="sd">&quot;&quot;&quot; Mesh has duplicates if counts are unequal</span>
+</span><span id="__span-6-2"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-6-3"><span class="nb">print</span><span class="p">(</span> <span class="n">mesh</span><span class="o">.</span><span class="n">Vertices</span><span class="o">.</span><span class="n">Count</span> <span class="p">)</span>
+</span><span id="__span-6-4"><span class="nb">print</span><span class="p">(</span> <span class="n">mesh</span><span class="o">.</span><span class="n">TopologyVertices</span><span class="o">.</span><span class="n">Count</span> <span class="p">)</span>
+</span><span id="__span-6-5">
+</span><span id="__span-6-6"><span class="sd">&#39;&#39;&#39; Topology Vertex to Geometry Vertex ( 1 -&gt; n )</span>
+</span><span id="__span-6-7"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-6-8"><span class="n">indices</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">TopologyVertices</span><span class="o">.</span><span class="n">MeshVertexIndices</span><span class="p">(</span> <span class="n">node</span> <span class="p">)</span>
+</span><span id="__span-6-9">
+</span><span id="__span-6-10"><span class="sd">&#39;&#39;&#39; Geometry Vertex to Topology Vertex ( 1 -&gt; 1 )</span>
+</span><span id="__span-6-11"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-6-12"><span class="n">node</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">TopologyVertices</span><span class="o">.</span><span class="n">MeshVertexIndices</span><span class="p">(</span> <span class="n">index</span> <span class="p">)</span>
+</span></code></pre></div>
+<p>Adjacencies between nodes and other topology entities can be accessed as seen below.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><span class="sd">&#39;&#39;&#39; Node Adjacencies</span>
+</span><span id="__span-7-2"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-7-3"><span class="n">nodes</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">TopologyVertices</span><span class="o">.</span><span class="n">ConnectedTopologyVertices</span><span class="p">(</span> <span class="n">node</span> <span class="p">)</span>
+</span><span id="__span-7-4"><span class="n">edges</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">TopologyVertices</span><span class="o">.</span><span class="n">ConnectedEdges</span><span class="p">(</span> <span class="n">node</span> <span class="p">)</span>
+</span><span id="__span-7-5"><span class="n">faces</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">TopologyVertices</span><span class="o">.</span><span class="n">ConnectedFaces</span><span class="p">(</span> <span class="n">node</span> <span class="p">)</span>
+</span></code></pre></div>
+<p>Topology edges are expressed as <code>IndexPair</code> objects containing the source <code>s</code>  and target <code>t</code> topology vertices, named as <code>I</code> and <code>J</code>, respectively. Edges are stored in a serial format and they are accessible by index as seen below.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><span class="sd">&#39;&#39;&#39; Node Indices -&gt; Edge Index</span>
+</span><span id="__span-8-2"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-8-3"><span class="n">index</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">MeshTopologyEdges</span><span class="o">.</span><span class="n">GetEdgeIndex</span><span class="p">(</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="p">)</span>
+</span><span id="__span-8-4">
+</span><span id="__span-8-5"><span class="sd">&#39;&#39;&#39; Edge Index -&gt; Node Indices</span>
+</span><span id="__span-8-6"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-8-7"><span class="n">nodes</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">MeshTopologyEdges</span><span class="o">.</span><span class="n">GetTopologyVertices</span><span class="p">(</span> <span class="n">index</span> <span class="p">)</span>
+</span><span id="__span-8-8"><span class="nb">print</span><span class="p">(</span> <span class="n">nodes</span><span class="o">.</span><span class="n">I</span><span class="p">,</span> <span class="n">nodes</span><span class="o">.</span><span class="n">J</span> <span class="p">)</span>
+</span></code></pre></div>
+<p>Adjacencies between edges and other topology entities can be accessed as seen below.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><span class="sd">&#39;&#39;&#39; Edge Adjacencies</span>
+</span><span id="__span-9-2"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-9-3"><span class="n">edges</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">MeshTopologyEdges</span><span class="o">.</span><span class="n">GetEdgesForFace</span><span class="p">(</span> <span class="n">face</span> <span class="p">)</span>
+</span><span id="__span-9-4"><span class="n">faces</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">MeshTopologyEdges</span><span class="o">.</span><span class="n">GetConnectedFaces</span><span class="p">(</span> <span class="n">edge</span> <span class="p">)</span>
+</span></code></pre></div>
+<h2 id="topology-analysis">Topology Analysis</h2>
+<p>The connectivity maps developed enable understanding several interesting mesh properties and performing operations that require information about the local  neighborhood of a vertex or face.</p>
+<h3 id="boundary-edges">Boundary Edges</h3>
+<p>The number of faces incident to an edge provides insight regarding whether the mesh is an open surface or potentially a closed solid. Edges with only one adjacent face must be on a surface boundary. Therefore, such a mesh cannot not represent a closed solid, which ought to have no boundary edges. Boundary edges are also known as naked.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-10-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-10-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+</span><span id="__span-10-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
+</span><span id="__span-10-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
+</span><span id="__span-10-5">
+</span><span id="__span-10-6">    <span class="k">def</span> <span class="nf">HasBoundaryEdges</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-10-7">        <span class="k">for</span> <span class="n">faces</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span><span class="o">.</span><span class="n">values</span><span class="p">(</span> <span class="p">):</span>
+</span><span id="__span-10-8">            <span class="k">if</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span> <span class="n">faces</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">):</span>
+</span><span id="__span-10-9">                <span class="k">return</span> <span class="kc">True</span>
+</span><span id="__span-10-10">        <span class="k">return</span> <span class="kc">False</span>
+</span><span id="__span-10-11">
+</span><span id="__span-10-12">    <span class="k">def</span> <span class="nf">BoundaryEdges</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-10-13">        <span class="n">edges</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span> <span class="p">)</span>
+</span><span id="__span-10-14">        <span class="k">for</span> <span class="p">(</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="p">),</span> <span class="n">faces</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span><span class="o">.</span><span class="n">items</span><span class="p">(</span> <span class="p">):</span>
+</span><span id="__span-10-15">            <span class="k">if</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span> <span class="n">faces</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">):</span>
+</span><span id="__span-10-16">                <span class="k">if</span><span class="p">(</span> <span class="n">s</span> <span class="o">&gt;</span> <span class="n">t</span> <span class="p">):</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span>
+</span><span id="__span-10-17">                <span class="n">edges</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="p">(</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-10-18">        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span> <span class="n">edges</span> <span class="p">)</span>
+</span></code></pre></div>
+<h3 id="non-manifold-edges">Non-Manifold Edges</h3>
+<p>Edges with more than two incident faces are also known as non-manifold. Surfaces with non-manifold edges cannot be properly oriented in the sense of making their normals consistently points towards an interior and an exterior direction. Therefore, meshes with non-manifold edges cannot also represent closed solids.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-11-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-11-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+</span><span id="__span-11-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
+</span><span id="__span-11-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
+</span><span id="__span-11-5">
+</span><span id="__span-11-6">    <span class="k">def</span> <span class="nf">HasNonManifoldEdges</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-11-7">        <span class="k">for</span> <span class="n">faces</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span><span class="o">.</span><span class="n">values</span><span class="p">(</span> <span class="p">):</span>
+</span><span id="__span-11-8">            <span class="k">if</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span> <span class="n">faces</span> <span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="p">):</span>
+</span><span id="__span-11-9">                <span class="k">return</span> <span class="kc">True</span>
+</span><span id="__span-11-10">        <span class="k">return</span> <span class="kc">False</span>
+</span><span id="__span-11-11">
+</span><span id="__span-11-12">    <span class="k">def</span> <span class="nf">NonManifoldEdges</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-11-13">        <span class="n">edges</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span> <span class="p">)</span>
+</span><span id="__span-11-14">        <span class="k">for</span> <span class="p">(</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="p">),</span> <span class="n">faces</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span><span class="o">.</span><span class="n">items</span><span class="p">(</span> <span class="p">):</span>
+</span><span id="__span-11-15">            <span class="k">if</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span> <span class="n">faces</span> <span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="p">):</span>
+</span><span id="__span-11-16">                <span class="k">if</span><span class="p">(</span> <span class="n">s</span> <span class="o">&gt;</span> <span class="n">t</span> <span class="p">):</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span>
+</span><span id="__span-11-17">                <span class="n">edges</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="p">(</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-11-18">        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span> <span class="n">edges</span> <span class="p">)</span>
+</span></code></pre></div>
+<h3 id="two-manifold-edges">Two-Manifold Edges</h3>
+<p>One of the conditions for determining whether a mesh represents a solid object is such that all its edges have exactly two adjacent faces. This is easy to check using the edge-to-face map.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-12-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-12-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+</span><span id="__span-12-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
+</span><span id="__span-12-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
+</span><span id="__span-12-5">
+</span><span id="__span-12-6">    <span class="k">def</span> <span class="nf">HasSolidEdges</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-12-7">        <span class="k">for</span> <span class="n">faces</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span><span class="o">.</span><span class="n">values</span><span class="p">(</span> <span class="p">):</span>
+</span><span id="__span-12-8">            <span class="k">if</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span> <span class="n">faces</span> <span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span> <span class="p">):</span>
+</span><span id="__span-12-9">                <span class="k">return</span> <span class="kc">False</span>
+</span><span id="__span-12-10">        <span class="k">return</span> <span class="kc">True</span>
+</span></code></pre></div>
+<h3 id="multiple-domains">Multiple Domains</h3>
+<p>A mesh may contain multiple surface fragments that are not connected with one another. This is also known as a multiply connected domain condition. To check whether a mesh represents one continuously connected surface or solid we need to start from a face, say the first one, and walk from face to face until we visit all connected faces once. If by the end of this process the number of faces visited is not equal with total number of faces, then we know that the mesh has multiply connected domains.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-13-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-13-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+</span><span id="__span-13-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
+</span><span id="__span-13-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
+</span><span id="__span-13-5">
+</span><span id="__span-13-6">    <span class="k">def</span> <span class="nf">HasMultipleDomains</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">):</span>
+</span><span id="__span-13-7">        <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span> <span class="p">[</span><span class="n">seed</span><span class="p">]</span> <span class="p">)</span>
+</span><span id="__span-13-8">        <span class="n">queue</span> <span class="o">=</span> <span class="p">[</span><span class="n">seed</span><span class="p">]</span>
+</span><span id="__span-13-9">        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span> <span class="n">queue</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">):</span>
+</span><span id="__span-13-10">            <span class="n">face</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span> <span class="mi">0</span> <span class="p">)</span>
+</span><span id="__span-13-11">            <span class="k">for</span> <span class="n">adjacent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">FaceToFace</span><span class="p">[</span><span class="n">face</span><span class="p">]:</span>
+</span><span id="__span-13-12">                <span class="k">if</span><span class="p">(</span> <span class="n">adjacent</span> <span class="ow">in</span> <span class="n">visited</span> <span class="p">):</span> <span class="k">continue</span>
+</span><span id="__span-13-13">                <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">adjacent</span> <span class="p">)</span>
+</span><span id="__span-13-14">                <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">adjacent</span> <span class="p">)</span>
+</span><span id="__span-13-15">        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span> <span class="n">visited</span> <span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span> <span class="p">)</span>
+</span></code></pre></div>
+<h3 id="face-orientation">Face Orientation</h3>
+<p>Checking whether the normals of a simply connected mesh are consistently oriented can be performed by examining pairs of adjacent faces and evaluating the sign of their dot products. If all normals are aligned then the mesh fulfils another necessary condition for representing a solid.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-14-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-14-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+</span><span id="__span-14-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
+</span><span id="__span-14-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
+</span><span id="__span-14-5">
+</span><span id="__span-14-6"><span class="w">    </span><span class="sd">&#39;&#39;&#39; Face Index -&gt; Face Normal</span>
+</span><span id="__span-14-7"><span class="sd">    &#39;&#39;&#39;</span>
+</span><span id="__span-14-8">    <span class="k">def</span> <span class="nf">FaceNormalAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">face</span> <span class="p">):</span>
+</span><span id="__span-14-9">        <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">TriangleAt</span><span class="p">(</span> <span class="n">face</span> <span class="p">)</span>
+</span><span id="__span-14-10">        <span class="k">return</span> <span class="ne">Vector3d</span><span class="o">.</span><span class="n">CrossProduct</span><span class="p">(</span>
+</span><span id="__span-14-11">            <span class="n">pb</span> <span class="o">-</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pc</span> <span class="o">-</span> <span class="n">pb</span> <span class="p">)</span>
+</span><span id="__span-14-12">
+</span><span id="__span-14-13">    <span class="k">def</span> <span class="nf">HasInconsistentNormals</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-14-14">        <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
+</span><span id="__span-14-15">        <span class="n">stack</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-14-16">        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span> <span class="n">queue</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">):</span>
+</span><span id="__span-14-17">            <span class="n">face</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span> <span class="p">)</span>
+</span><span id="__span-14-18">            <span class="n">normal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">FaceNormalAt</span><span class="p">(</span> <span class="n">face</span> <span class="p">)</span>
+</span><span id="__span-14-19">            <span class="k">for</span> <span class="n">adjacent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">FaceToFace</span><span class="p">[</span><span class="n">face</span><span class="p">]:</span>
+</span><span id="__span-14-20">                <span class="k">if</span><span class="p">(</span> <span class="n">adjacent</span> <span class="ow">in</span> <span class="n">visited</span> <span class="p">):</span> <span class="k">continue</span>
+</span><span id="__span-14-21">                <span class="k">if</span><span class="p">(</span> <span class="n">normal</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">FaceNormalAt</span><span class="p">(</span> <span class="n">adjacent</span> <span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">):</span>
+</span><span id="__span-14-22">                    <span class="k">return</span> <span class="kc">True</span>
+</span><span id="__span-14-23">                <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">adjacent</span> <span class="p">)</span>
+</span><span id="__span-14-24">                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">adjacent</span> <span class="p">)</span>
+</span><span id="__span-14-25">        <span class="k">return</span> <span class="kc">False</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright (c) 2024-2025 Digital Design and Fabrication
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+    
+  </body>
+</html>

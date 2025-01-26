@@ -1,0 +1,2506 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Stylianos Dritsas">
+      
+      
+      
+        <link rel="prev" href="../boundary/">
+      
+      
+        <link rel="next" href="../clouds/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
+    
+    
+      
+        <title>Volumetric - Digital Design and Fabrication</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10M11 7h2v2h-2zm3 10h-4v-2h1v-2h-1v-2h3v4h1z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#volumetric-representations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Digital Design and Fabrication" class="md-header__button md-logo" aria-label="Digital Design and Fabrication" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 2 4 4h-3v7.85l6.53 3.76L21 15.03l1.5 5.47-5.5 1.46 1.53-2.61L12 15.58l-6.53 3.77L7 21.96 1.5 20.5 3 15.03l1.47 2.58L11 13.85V6H8z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Digital Design and Fabrication
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Volumetric
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Digital Design and Fabrication" class="md-nav__button md-logo" aria-label="Digital Design and Fabrication" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 2 4 4h-3v7.85l6.53 3.76L21 15.03l1.5 5.47-5.5 1.46 1.53-2.61L12 15.58l-6.53 3.77L7 21.96 1.5 20.5 3 15.03l1.47 2.58L11 13.85V6H8z"/></svg>
+
+    </a>
+    Digital Design and Fabrication
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Parametrics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Parametrics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parametrics/components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Components
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parametrics/template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parametrics/cpython/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CPython
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Programming
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming/collections/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Collections
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming/functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming/objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Objects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Geometry
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Geometry
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vectors
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Vectors
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vectors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vectors/distances/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vectors/addition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Addition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vectors/subtraction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Subtraction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vectors/multiplication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multiplication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vectors/normalize/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Normalization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vectors/dot-product/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dot Product
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vectors/cross-product/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cross Product
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vectors/systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coordinate Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vectors/transforms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transformations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Curves
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Curves
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curves/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curves/euclidean/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Euclidean
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curves/computational/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Computational
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Surfaces
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Surfaces
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../surfaces/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../surfaces/euclidean/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Euclidean
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../surfaces/computational/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Computational
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Meshes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Meshes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meshes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Geometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meshes/topology/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Topology
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Solids
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Solids
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constructive/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Constructive
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boundary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boundary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Volumetric
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Volumetric
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#voxel-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voxel Space
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Voxel Space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#point-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Point Grid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voxel-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voxel Grid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpolation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tetrahedra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tetrahedra
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triangulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Triangulation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implicit-surfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implicit Surfaces
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distance-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distance Fields
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Distance Fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primitives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primitives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offsetting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Offsetting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#booleans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Booleans
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blending" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blending
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clouds/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Point Clouds
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Constructions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Constructions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/angles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Angles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/areas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Areas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/centroids/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Centroids
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/clashes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clashes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/containment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Containment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/mappings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mappings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/offsets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Offsets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/perpendiculars/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Perpendiculars
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/polygons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Polygons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/projections/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projections
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../constructions/reflections/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reflections
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#voxel-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voxel Space
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Voxel Space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#point-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Point Grid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voxel-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voxel Grid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpolation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tetrahedra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tetrahedra
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triangulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Triangulation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implicit-surfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implicit Surfaces
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distance-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distance Fields
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Distance Fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primitives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primitives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offsetting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Offsetting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#booleans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Booleans
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blending" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blending
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="volumetric-representations">Volumetric Representations</h1>
+<p>For certain applications, including medical, engineering and scientific, the outer shape of solid objects is just insufficient. Consider any physical object with varied interior material properties for instance. Such objects cannot be represented easily using the above representations.</p>
+<p>In general, the same challenge of representation is encountered in every scenario where we need to address information, physical or otherwise, volumetrically. In other words, to consider space as a dense set of properties defined at every point within it.</p>
+<p>There are at least two ways to achieve this including (a) structured, where space is represented using for instance a regular 3D grid of properties, and (b) unstructured, where point clouds are used to carry the information. In both cases the concept of a shape is implicit in the sense that it is subject to defining which property, or relationship thereof, is of interest and then extracting it.</p>
+<p>The data associated with points in space may be sourced from sensors such as CT and 3D scanners, from simulations such as FEA and CFD, or from mathematical functions whereby three coordinates produce a value <code>v = f( x, y, z )</code>.</p>
+<h2 id="voxel-space">Voxel Space</h2>
+<p>Voxels are 3D pixels associated with regular grids of points, which are typically rectangular, and the volumes between them, typically cubes. Using this representation it is possible to associate any kind of information with the points and/or the volumes. Shapes such as surfaces and solids may be extracted by determining face elements that adhere to some rule.</p>
+<p>Capabilities available using this representation include: (a) surfaces of arbitrary topology can be represented, (b) Boolean operations can be computed in a trivially, (c) some unique operations such as blending shapes. Limitations include: (a) they are computationally much more expensive than other representations, (b) the surfaces and solids are finite approximations which are often reduced to unstructured meshes.</p>
+<h3 id="point-grid">Point Grid</h3>
+<p>The implementation below defines a grid using an axis aligned bounding box and a resolution, that is the number of points, per axis. The points of the grid are not computed, to save memory, but instead interpolated. The values associated per point are just scalar initially set to zero. They are stored in a nested list of floats. The <code>PointIndices( )</code> enumerator simplifies the process of iterating over all points without using triple for-loops.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><span class="sd">&quot;&quot;&quot; Voxel Grid</span>
+</span><span id="__span-0-2"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-0-3"><span class="k">class</span> <span class="nc">VoxelGrid</span><span class="p">:</span>
+</span><span id="__span-0-4"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Constructor</span>
+</span><span id="__span-0-5"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-6">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">minimum</span><span class="p">,</span> <span class="n">maximum</span><span class="p">,</span> <span class="n">resolution</span> <span class="p">):</span>
+</span><span id="__span-0-7">        <span class="bp">self</span><span class="o">.</span><span class="n">Min</span>    <span class="o">=</span> <span class="n">minimum</span>        <span class="c1">#-- Minimum Point : Point3d</span>
+</span><span id="__span-0-8">        <span class="bp">self</span><span class="o">.</span><span class="n">Max</span>    <span class="o">=</span> <span class="n">maximum</span>        <span class="c1">#-- Maximum Point : Point3d</span>
+</span><span id="__span-0-9">        <span class="bp">self</span><span class="o">.</span><span class="n">Count</span>  <span class="o">=</span> <span class="n">resolution</span>     <span class="c1">#-- Resolution    : [int, int, int]</span>
+</span><span id="__span-0-10">        <span class="bp">self</span><span class="o">.</span><span class="n">Reset</span><span class="p">(</span> <span class="p">)</span>
+</span><span id="__span-0-11">
+</span><span id="__span-0-12"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Reset Values</span>
+</span><span id="__span-0-13"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-14">    <span class="k">def</span> <span class="nf">Reset</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="p">):</span>
+</span><span id="__span-0-15">        <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Count</span>
+</span><span id="__span-0-16">        <span class="bp">self</span><span class="o">.</span><span class="n">Values</span> <span class="o">=</span> <span class="p">[[[</span><span class="mf">0.0</span>
+</span><span id="__span-0-17">            <span class="k">for</span> <span class="n">iz</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">nz</span> <span class="p">)]</span>
+</span><span id="__span-0-18">                <span class="k">for</span> <span class="n">iy</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">ny</span> <span class="p">)]</span>
+</span><span id="__span-0-19">                    <span class="k">for</span> <span class="n">ix</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">nx</span> <span class="p">)]</span>
+</span><span id="__span-0-20">        <span class="k">return</span> <span class="bp">self</span>
+</span><span id="__span-0-21">
+</span><span id="__span-0-22"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Point Index Enumeration</span>
+</span><span id="__span-0-23"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-24">    <span class="k">def</span> <span class="nf">PointIndices</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-0-25">        <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Count</span>
+</span><span id="__span-0-26">        <span class="k">for</span> <span class="n">ix</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">nx</span> <span class="p">):</span>
+</span><span id="__span-0-27">            <span class="k">for</span> <span class="n">iy</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">ny</span> <span class="p">):</span>
+</span><span id="__span-0-28">                <span class="k">for</span> <span class="n">iz</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">nz</span> <span class="p">):</span>
+</span><span id="__span-0-29">                    <span class="k">yield</span> <span class="p">(</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="p">)</span>
+</span><span id="__span-0-30">
+</span><span id="__span-0-31"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Value at Index</span>
+</span><span id="__span-0-32"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-33">    <span class="k">def</span> <span class="nf">ValueAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="p">):</span>
+</span><span id="__span-0-34">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Values</span><span class="p">[</span><span class="n">ix</span><span class="p">][</span><span class="n">iy</span><span class="p">][</span><span class="n">iz</span><span class="p">]</span>
+</span><span id="__span-0-35">
+</span><span id="__span-0-36"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Point at Index</span>
+</span><span id="__span-0-37"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-38">    <span class="k">def</span> <span class="nf">PointAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="p">):</span>
+</span><span id="__span-0-39">        <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Count</span>
+</span><span id="__span-0-40">        <span class="n">tx</span> <span class="o">=</span> <span class="n">ix</span> <span class="o">/</span> <span class="p">(</span> <span class="n">nx</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span>
+</span><span id="__span-0-41">        <span class="n">ty</span> <span class="o">=</span> <span class="n">iy</span> <span class="o">/</span> <span class="p">(</span> <span class="n">ny</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span>
+</span><span id="__span-0-42">        <span class="n">tz</span> <span class="o">=</span> <span class="n">iz</span> <span class="o">/</span> <span class="p">(</span> <span class="n">nz</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span>
+</span><span id="__span-0-43">        <span class="k">return</span> <span class="ne">Point3d</span><span class="p">(</span>
+</span><span id="__span-0-44">            <span class="bp">self</span><span class="o">.</span><span class="n">Min</span><span class="o">.</span><span class="n">X</span> <span class="o">*</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">tx</span> <span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">Max</span><span class="o">.</span><span class="n">X</span> <span class="o">*</span> <span class="n">tx</span><span class="p">,</span>
+</span><span id="__span-0-45">            <span class="bp">self</span><span class="o">.</span><span class="n">Min</span><span class="o">.</span><span class="n">Y</span> <span class="o">*</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">ty</span> <span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">Max</span><span class="o">.</span><span class="n">Y</span> <span class="o">*</span> <span class="n">ty</span><span class="p">,</span>
+</span><span id="__span-0-46">            <span class="bp">self</span><span class="o">.</span><span class="n">Min</span><span class="o">.</span><span class="n">Z</span> <span class="o">*</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">tz</span> <span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">Max</span><span class="o">.</span><span class="n">Z</span> <span class="o">*</span> <span class="n">tz</span> <span class="p">)</span>
+</span><span id="__span-0-47">
+</span><span id="__span-0-48"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Grid Points</span>
+</span><span id="__span-0-49"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-50">    <span class="k">def</span> <span class="nf">Points</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-0-51">        <span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">PointIndices</span><span class="p">(</span> <span class="p">):</span>
+</span><span id="__span-0-52">            <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="p">)</span>
+</span><span id="__span-0-53">
+</span><span id="__span-0-54"><span class="sd">&quot;&quot;&quot; All Grid Points</span>
+</span><span id="__span-0-55"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-0-56"><span class="n">grid</span> <span class="o">=</span> <span class="n">VoxelGrid</span><span class="p">(</span>
+</span><span id="__span-0-57">    <span class="ne">Point3d</span><span class="p">(</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="p">),</span>
+</span><span id="__span-0-58">    <span class="ne">Point3d</span><span class="p">(</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span> <span class="p">),</span>
+</span><span id="__span-0-59">    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="p">)</span>
+</span><span id="__span-0-60">
+</span><span id="__span-0-61"><span class="n">points</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span> <span class="n">grid</span><span class="o">.</span><span class="n">Points</span><span class="p">(</span> <span class="p">)</span> <span class="p">)</span>
+</span></code></pre></div>
+<h3 id="voxel-grid">Voxel Grid</h3>
+<p>Voxels are defined as the vertices of boxes referenced from the lowest point indices with respect to the grid's axes. Their eight vertices are thus combinations of an <code>[ix, iy, iz]</code> index and the ones vector <code>[+1, +1, +1]</code>. The <code>VoxelIndices( )</code> indices iterator produces all voxel indices for simplifying for-loops. Note that the iterator skips the last point per direction.</p>
+<p>Voxel vertices are ordered counter clockwise in the XY-plane and then upwards in the Z-direction, as seen in the <code>VoxelPointsAt( )</code> method. For constructing bounding boxes, only the reference index <code>[ix, iy, iz]</code> and the opposite extreme vertex <code>[ix + 1, iy + 1, iz + 1]</code> are required.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><span class="k">class</span> <span class="nc">VoxelGrid</span><span class="p">:</span>
+</span><span id="__span-1-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Voxel Index Enumerator</span>
+</span><span id="__span-1-3"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-1-4">    <span class="k">def</span> <span class="nf">VoxelIndices</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-1-5">        <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Count</span>
+</span><span id="__span-1-6">        <span class="k">for</span> <span class="n">ix</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">nx</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">):</span>
+</span><span id="__span-1-7">            <span class="k">for</span> <span class="n">iy</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">ny</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">):</span>
+</span><span id="__span-1-8">                <span class="k">for</span> <span class="n">iz</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">nz</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">):</span>
+</span><span id="__span-1-9">                    <span class="k">yield</span> <span class="p">(</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="p">)</span>
+</span><span id="__span-1-10">
+</span><span id="__span-1-11"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Voxel Points at Index</span>
+</span><span id="__span-1-12"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-1-13">    <span class="k">def</span> <span class="nf">VoxelPointsAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="p">):</span>
+</span><span id="__span-1-14">        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">ix</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="n">iy</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="n">iz</span> <span class="o">+</span> <span class="mi">0</span> <span class="p">),</span>
+</span><span id="__span-1-15">                <span class="bp">self</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">ix</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">iy</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="n">iz</span> <span class="o">+</span> <span class="mi">0</span> <span class="p">),</span>
+</span><span id="__span-1-16">                <span class="bp">self</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">ix</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">iy</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">iz</span> <span class="o">+</span> <span class="mi">0</span> <span class="p">),</span>
+</span><span id="__span-1-17">                <span class="bp">self</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">ix</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="n">iy</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">iz</span> <span class="o">+</span> <span class="mi">0</span> <span class="p">),</span>
+</span><span id="__span-1-18">
+</span><span id="__span-1-19">                <span class="bp">self</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">ix</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="n">iy</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="n">iz</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">),</span>
+</span><span id="__span-1-20">                <span class="bp">self</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">ix</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">iy</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="n">iz</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">),</span>
+</span><span id="__span-1-21">                <span class="bp">self</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">ix</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">iy</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">iz</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">),</span>
+</span><span id="__span-1-22">                <span class="bp">self</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">ix</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="n">iy</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">iz</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)]</span>
+</span><span id="__span-1-23">
+</span><span id="__span-1-24"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Voxel Enumerator</span>
+</span><span id="__span-1-25"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-1-26">    <span class="k">def</span> <span class="nf">Voxels</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-1-27">        <span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">VoxelIndices</span><span class="p">(</span> <span class="p">):</span>
+</span><span id="__span-1-28">            <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">VoxelPointsAt</span><span class="p">(</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="p">)</span>
+</span><span id="__span-1-29">
+</span><span id="__span-1-30"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Bounding Box at Index</span>
+</span><span id="__span-1-31"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-1-32">    <span class="k">def</span> <span class="nf">VoxelBoundsAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="p">):</span>
+</span><span id="__span-1-33">        <span class="k">return</span> <span class="n">BoundingBox</span><span class="p">(</span>
+</span><span id="__span-1-34">            <span class="bp">self</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">ix</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="n">iy</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="n">iz</span> <span class="o">+</span> <span class="mi">0</span> <span class="p">),</span>
+</span><span id="__span-1-35">            <span class="bp">self</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">ix</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">iy</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">iz</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-1-36">
+</span><span id="__span-1-37"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Bounding Box Enumerator</span>
+</span><span id="__span-1-38"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-1-39">    <span class="k">def</span> <span class="nf">VoxelBounds</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-1-40">        <span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">VoxelIndices</span><span class="p">(</span> <span class="p">):</span>
+</span><span id="__span-1-41">            <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">VoxelBoxAt</span><span class="p">(</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="p">)</span>
+</span><span id="__span-1-42">
+</span><span id="__span-1-43"><span class="sd">&quot;&quot;&quot; All Bounding Boxes</span>
+</span><span id="__span-1-44"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-1-45"><span class="n">grid</span> <span class="o">=</span> <span class="n">VoxelGrid</span><span class="p">(</span>
+</span><span id="__span-1-46">    <span class="ne">Point3d</span><span class="p">(</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="p">),</span>
+</span><span id="__span-1-47">    <span class="ne">Point3d</span><span class="p">(</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span> <span class="p">),</span>
+</span><span id="__span-1-48">    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="p">)</span>
+</span><span id="__span-1-49">
+</span><span id="__span-1-50"><span class="n">boxes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span> <span class="n">grid</span><span class="o">.</span><span class="n">VoxelBounds</span><span class="p">(</span> <span class="p">)</span> <span class="p">)</span>
+</span></code></pre></div>
+<p>Using relative offsets <code>[ix + dx, iy + dy, iz + dz]</code> from the reference index <code>[ix, iy, iz]</code> is a very common idiom when using voxels. Instead of copying and pasting the same expression while adjusting the offsets, we can store them in a nested list,  also known as a look up table, and simplify life as seen below.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><span class="k">class</span> <span class="nc">VoxelGrid</span><span class="p">:</span>
+</span><span id="__span-2-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Voxel Vertex Index LUT</span>
+</span><span id="__span-2-3"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-2-4">    <span class="n">Vertices</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-2-5">        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+</span><span id="__span-2-6">        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+</span><span id="__span-2-7">
+</span><span id="__span-2-8"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Voxel Values at Index</span>
+</span><span id="__span-2-9"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-2-10">    <span class="k">def</span> <span class="nf">VoxelValuesAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="p">):</span>
+</span><span id="__span-2-11">        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">Values</span><span class="p">[</span><span class="n">ix</span> <span class="o">+</span> <span class="n">dx</span><span class="p">][</span><span class="n">iy</span> <span class="o">+</span> <span class="n">dy</span><span class="p">][</span><span class="n">iz</span> <span class="o">+</span> <span class="n">dz</span><span class="p">]</span>
+</span><span id="__span-2-12">            <span class="k">for</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">dz</span> <span class="ow">in</span> <span class="n">VoxelGrid</span><span class="o">.</span><span class="n">Vertices</span><span class="p">]</span>
+</span><span id="__span-2-13">
+</span><span id="__span-2-14"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Voxel Points at Index</span>
+</span><span id="__span-2-15"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-2-16">    <span class="k">def</span> <span class="nf">VoxelPointsAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="p">):</span>
+</span><span id="__span-2-17">        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">ix</span> <span class="o">+</span> <span class="n">dx</span><span class="p">,</span> <span class="n">iy</span> <span class="o">+</span> <span class="n">dy</span><span class="p">,</span> <span class="n">iz</span> <span class="o">+</span> <span class="n">dz</span> <span class="p">)</span>
+</span><span id="__span-2-18">            <span class="k">for</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">dz</span> <span class="ow">in</span> <span class="n">VoxelGrid</span><span class="o">.</span><span class="n">Vertices</span><span class="p">]</span>
+</span></code></pre></div>
+<h3 id="interpolation">Interpolation</h3>
+<p>Evaluating points and values within each voxel using normalized parameters <code>u</code>, <code>v</code> and <code>w</code>, with respect to the grid's directions, can be performed with trilinear interpolation. The process uses the concept of linear interpolation between two points at a parameter recursively. The ability to approximate a value at each position is space is what makes this representation special.</p>
+<p>Trilinear interpolation is computed by two bilinear interpolations for the upper <code>a, b, c, d</code> and lower <code>e, f, g, h</code> faces of the voxel using parameters <code>u</code> and <code>v</code>. The result are two points <code>p</code> and <code>q</code> within each face for which a linear interpolation using <code>w</code> computes the interior quantity.</p>
+<p>Bilinear interpolation within a face <code>a, b, c, d</code> is computed by two linear interpolations between the upper <code>a, b</code> and lower edges <code>d, c</code> of a face using parameter <code>u</code>. These yield two points <code>p</code> and <code>q</code> which are interpolated with parameter <code>v</code>.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><span class="k">class</span> <span class="nc">VoxelGrid</span><span class="p">:</span>
+</span><span id="__span-3-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Linear Interpolation</span>
+</span><span id="__span-3-3"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-3-4">    <span class="k">def</span> <span class="nf">Interpolate1D</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
+</span><span id="__span-3-5">        <span class="k">return</span> <span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">t</span> <span class="p">)</span> <span class="o">+</span> <span class="n">nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">t</span>
+</span><span id="__span-3-6">
+</span><span id="__span-3-7"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Bilinear Interpolation</span>
+</span><span id="__span-3-8"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-3-9">    <span class="k">def</span> <span class="nf">Interpolate2D</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="p">):</span>
+</span><span id="__span-3-10">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Interpolate1D</span><span class="p">(</span>
+</span><span id="__span-3-11">              <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">Interpolate1D</span><span class="p">(</span> <span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">u</span> <span class="p">),</span>
+</span><span id="__span-3-12">               <span class="bp">self</span><span class="o">.</span><span class="n">Interpolate1D</span><span class="p">(</span> <span class="n">nodes</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="n">u</span> <span class="p">)],</span> <span class="n">v</span> <span class="p">)</span>
+</span><span id="__span-3-13">
+</span><span id="__span-3-14"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Trilinear Interpolation</span>
+</span><span id="__span-3-15"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-3-16">    <span class="k">def</span> <span class="nf">Interpolate3D</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="p">):</span>
+</span><span id="__span-3-17">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Interpolate1D</span><span class="p">(</span>
+</span><span id="__span-3-18">              <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">Interpolate2D</span><span class="p">(</span> <span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="p">),</span>
+</span><span id="__span-3-19">               <span class="bp">self</span><span class="o">.</span><span class="n">Interpolate2D</span><span class="p">(</span> <span class="n">nodes</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">8</span><span class="p">],</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="p">)],</span> <span class="n">w</span> <span class="p">)</span>
+</span><span id="__span-3-20">
+</span><span id="__span-3-21"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Evaluate Point and Value at Parameters</span>
+</span><span id="__span-3-22"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-3-23">    <span class="k">def</span> <span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="p">):</span>
+</span><span id="__span-3-24">        <span class="n">points</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">VoxelPointsAt</span><span class="p">(</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="p">)</span>
+</span><span id="__span-3-25">        <span class="n">values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">VoxelValuesAt</span><span class="p">(</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="p">)</span>
+</span><span id="__span-3-26">
+</span><span id="__span-3-27">        <span class="k">return</span> <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Interpolate3D</span><span class="p">(</span> <span class="n">points</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="p">),</span>
+</span><span id="__span-3-28">                 <span class="bp">self</span><span class="o">.</span><span class="n">Interpolate3D</span><span class="p">(</span> <span class="n">values</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="p">)</span> <span class="p">)</span>
+</span></code></pre></div>
+<p>Interpolating points at values along edges can be performed also in the linear sense. For an edge defined by two points <code>p</code> and <code>q</code> and the associated values  <code>u</code> and <code>v</code>, the point at value <code>w</code> can be computed by first normalizing the value <code>t = ( w - u ) / ( v - u )</code> and then performing point interpolation <code>p * ( 1 - t ) + q * t</code>. If <code>w = u</code> or <code>w = v</code> then <code>t = 0</code> or <code>t = 1</code> and thus the result will be <code>p</code> and <code>q</code>, respectively. Note that if <code>u = v</code> the interpolation raises division by zero.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><span class="k">class</span> <span class="nc">VoxelGrid</span><span class="p">:</span>
+</span><span id="__span-4-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Interpolate Edge at Value</span>
+</span><span id="__span-4-3"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-4-4">    <span class="k">def</span> <span class="nf">InterpolateEdge</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="p">):</span>
+</span><span id="__span-4-5">        <span class="n">t</span> <span class="o">=</span> <span class="p">(</span> <span class="n">w</span> <span class="o">-</span> <span class="n">u</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="n">v</span> <span class="o">-</span> <span class="n">u</span> <span class="p">)</span>
+</span><span id="__span-4-6">        <span class="k">return</span> <span class="n">p</span> <span class="o">*</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">t</span> <span class="p">)</span> <span class="o">+</span> <span class="n">q</span> <span class="o">*</span> <span class="n">t</span>
+</span></code></pre></div>
+<h3 id="tetrahedra">Tetrahedra</h3>
+<p>While voxels are simple, using them directly for extracting surfaces can get fairly complicated. Instead, using tetrahedra simplifies computations significantly. There are two ways to convert a voxel box to a list of tetrahedra: (a) connecting from the reference index to all faces of the box which requires six tetras, and (b) using the minimum decomposition which requires only five.</p>
+<p><img alt="Voxel Tetrahedra Figure" src="../../../figures/voxel-tetras.svg" /></p>
+<p>Using fewer tetrahedra produces surfaces with fewer faces but there is a problem: Unlike the six-tetrahedron decomposition which tiles nicely by translation, the five-tetrahedron case requires consecutive voxels to be reflected such that their edges coincide.</p>
+<p><img alt="Voxel Tetrahedra Figure" src="../../../figures/voxel-flip.svg" /></p>
+<p>Reflecting voxels in a 3D checkerboard pattern can be expressed using bitwise operations, that is <code>( ix ^ iy ^ iz ) &amp; 1</code>. Using bitwise <code>&amp; 1</code> with any number returns its least significant bit. This is either <code>0</code> for even or <code>1</code> for odd numbers. The bitwise exclusive-or operation <code>x ^ y</code> between two numbers flips their bits using the truth table seen below.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><code>ix ^ iy</code></th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;"><code>( ix ^ iy ) ^ iz</code></th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<p>Computing the vertices of tetrahedra given a voxel at index <code>[ix, iy, iz]</code> is based on a look up table, namely <code>VoxelGrid.Tetras</code>. It contains <code>2</code> groups, one for even and one for odd voxels. A group contains <code>5</code> lists, one per tetrahedron, with <code>4</code> indices each, one per vertex. The numbers address the offsets we need to apply as defined in the <code>VoxelGrid.Vertices</code>.</p>
+<p>For example, the first entry <code>[0, 2, 5, 7]</code> represents a tetrahedron with (a) index <code>0</code> which maps to offset <code>[0, 0, 0]</code> that is the origin of the voxel, (b) index <code>2</code> which maps to offset <code>[1, 1, 0]</code> that is the upper-right node of the bottom face of the voxel, (c) index <code>5</code> which maps to offset <code>[1, 0, 1]</code> that is the upper-left node of the top face of the voxel, and (d) index <code>7</code> which maps to offset <code>[0, 1, 1]</code> that is the lower-right node of the top face of the voxel.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><span class="k">class</span> <span class="nc">VoxelGrid</span><span class="p">:</span>
+</span><span id="__span-5-2">    <span class="n">Tetras</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-5-3">        <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="c1">#-- Even</span>
+</span><span id="__span-5-4">         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+</span><span id="__span-5-5">         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]],</span>
+</span><span id="__span-5-6">
+</span><span id="__span-5-7">        <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="c1">#-- Odd</span>
+</span><span id="__span-5-8">         <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+</span><span id="__span-5-9">         <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]]</span>
+</span></code></pre></div>
+<p>With those concepts in place, the <code>TetrahedronPointsAt( )</code> method: (a) first computes the <code>parity</code> and selects the appropriate <code>reflection = Tetras[parity]</code>, (b) then it selects one of the five tetrahedra <code>tetra = reflection[index]</code>, where <code>index</code> is in <code>[0, 4]</code>, (c) then for each <code>vertex</code> in the <code>tetrahedron</code>, it looks up the associated <code>offset = Vertices[vertex]</code>, and (d) evaluates the grid point using the current voxel index <code>[ix, iy, iz]</code> with the computed offset using <code>point = PointAt( ix + dx, iy + dy, iz + dz )</code>.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><span class="k">class</span> <span class="nc">VoxelGrid</span><span class="p">:</span>
+</span><span id="__span-6-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Tetrahedron Points</span>
+</span><span id="__span-6-3"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-6-4">    <span class="k">def</span> <span class="nf">TetrahedronPointsAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span><span class="p">,</span> <span class="n">index</span> <span class="p">):</span>
+</span><span id="__span-6-5">        <span class="n">offsets</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">TetrahedronOffsetsAt</span><span class="p">(</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span><span class="p">,</span> <span class="n">index</span> <span class="p">)</span>
+</span><span id="__span-6-6">        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">ix</span> <span class="o">+</span> <span class="n">dx</span><span class="p">,</span> <span class="n">iy</span> <span class="o">+</span> <span class="n">dy</span><span class="p">,</span> <span class="n">iz</span> <span class="o">+</span> <span class="n">dz</span> <span class="p">)</span>
+</span><span id="__span-6-7">                    <span class="k">for</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">dz</span> <span class="ow">in</span> <span class="n">offsets</span><span class="p">]</span>
+</span><span id="__span-6-8">
+</span><span id="__span-6-9"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Tetrahedron Values</span>
+</span><span id="__span-6-10"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-6-11">    <span class="k">def</span> <span class="nf">TetrahedronValuesAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span><span class="p">,</span> <span class="n">index</span> <span class="p">):</span>
+</span><span id="__span-6-12">        <span class="n">offsets</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">TetrahedronOffsetsAt</span><span class="p">(</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span><span class="p">,</span> <span class="n">index</span> <span class="p">)</span>
+</span><span id="__span-6-13">        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">Values</span><span class="p">[</span><span class="n">ix</span> <span class="o">+</span> <span class="n">dx</span><span class="p">][</span><span class="n">iy</span> <span class="o">+</span> <span class="n">dy</span><span class="p">][</span><span class="n">iz</span> <span class="o">+</span> <span class="n">dz</span><span class="p">]</span>
+</span><span id="__span-6-14">                    <span class="k">for</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">dz</span> <span class="ow">in</span> <span class="n">offsets</span><span class="p">]</span>
+</span><span id="__span-6-15">
+</span><span id="__span-6-16"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Tetrahedron Points and Values</span>
+</span><span id="__span-6-17"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-6-18">    <span class="k">def</span> <span class="nf">TetrahedronPointsAndValuesAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span><span class="p">,</span> <span class="n">index</span> <span class="p">):</span>
+</span><span id="__span-6-19">        <span class="n">offsets</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">TetrahedronOffsetsAt</span><span class="p">(</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span><span class="p">,</span> <span class="n">index</span> <span class="p">)</span>
+</span><span id="__span-6-20">        <span class="n">points</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+</span><span id="__span-6-21">        <span class="k">for</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">dz</span> <span class="ow">in</span> <span class="n">offsets</span><span class="p">:</span>
+</span><span id="__span-6-22">            <span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">ix</span> <span class="o">+</span> <span class="n">dx</span><span class="p">,</span> <span class="n">iy</span> <span class="o">+</span> <span class="n">dy</span><span class="p">,</span> <span class="n">iz</span> <span class="o">+</span> <span class="n">dz</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-6-23">            <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Values</span><span class="p">[</span><span class="n">ix</span> <span class="o">+</span> <span class="n">dx</span><span class="p">][</span><span class="n">iy</span> <span class="o">+</span> <span class="n">dy</span><span class="p">][</span><span class="n">iz</span> <span class="o">+</span> <span class="n">dz</span><span class="p">]</span> <span class="p">)</span>
+</span><span id="__span-6-24">        <span class="k">return</span> <span class="p">(</span> <span class="n">points</span><span class="p">,</span> <span class="n">values</span> <span class="p">)</span>
+</span><span id="__span-6-25">
+</span><span id="__span-6-26"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Tetrahedra Points and Values Enumerator</span>
+</span><span id="__span-6-27"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-6-28">    <span class="k">def</span> <span class="nf">TetrahedraAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="p">):</span>
+</span><span id="__span-6-29">        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span> <span class="n">VoxelGrid</span><span class="o">.</span><span class="n">Tetras</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span> <span class="p">):</span>
+</span><span id="__span-6-30">            <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">TetrahedronPointsAndValuesAt</span><span class="p">(</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span><span class="p">,</span> <span class="n">index</span> <span class="p">)</span>
+</span><span id="__span-6-31">
+</span><span id="__span-6-32"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Vertex Offset for Tetrahedron</span>
+</span><span id="__span-6-33"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-6-34">    <span class="k">def</span> <span class="nf">TetrahedronOffsetsAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span><span class="p">,</span> <span class="n">index</span> <span class="p">):</span>
+</span><span id="__span-6-35">        <span class="n">tetrahedron</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">TetrahedronAt</span><span class="p">(</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span><span class="p">,</span> <span class="n">index</span> <span class="p">)</span>
+</span><span id="__span-6-36">        <span class="k">return</span> <span class="p">[</span><span class="n">VoxelGrid</span><span class="o">.</span><span class="n">Vertices</span><span class="p">[</span><span class="n">vertex</span><span class="p">]</span>
+</span><span id="__span-6-37">                    <span class="k">for</span> <span class="n">vertex</span> <span class="ow">in</span> <span class="n">tetrahedron</span><span class="p">]</span>
+</span><span id="__span-6-38">
+</span><span id="__span-6-39"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Tetrahedron for Decomposition</span>
+</span><span id="__span-6-40"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-6-41">    <span class="k">def</span> <span class="nf">TetrahedronAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span><span class="p">,</span> <span class="n">index</span> <span class="p">):</span>
+</span><span id="__span-6-42">        <span class="n">tetrahedra</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ReflectionAt</span><span class="p">(</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="p">)</span>
+</span><span id="__span-6-43">        <span class="k">return</span> <span class="n">tetrahedra</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+</span><span id="__span-6-44">
+</span><span id="__span-6-45"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Reflected Voxel Decomposition</span>
+</span><span id="__span-6-46"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-6-47">    <span class="k">def</span> <span class="nf">ReflectionAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="p">):</span>
+</span><span id="__span-6-48">        <span class="n">parity</span> <span class="o">=</span> <span class="p">(</span> <span class="n">ix</span> <span class="o">^</span> <span class="n">iy</span> <span class="o">^</span> <span class="n">iz</span> <span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span>
+</span><span id="__span-6-49">        <span class="k">return</span> <span class="n">VoxelGrid</span><span class="o">.</span><span class="n">Tetras</span><span class="p">[</span><span class="n">parity</span><span class="p">]</span>
+</span></code></pre></div>
+<p>The method <code>TetrahedronMeshAt( )</code> converts one tetrahedron of the voxel decomposition into a mesh that can be visualized and the <code>VoxelTetrahedraMeshesAt( )</code> method converts all of them.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><span class="k">class</span> <span class="nc">VoxelGrid</span><span class="p">:</span>
+</span><span id="__span-7-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Tetrahedron Face Indices</span>
+</span><span id="__span-7-3"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-7-4">    <span class="n">TetraFaces</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+</span><span id="__span-7-5">                  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+</span><span id="__span-7-6">                  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+</span><span id="__span-7-7">                  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+</span><span id="__span-7-8">
+</span><span id="__span-7-9"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Tetrahedron to Mesh</span>
+</span><span id="__span-7-10"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-7-11">    <span class="k">def</span> <span class="nf">TetrahedronMeshAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span><span class="p">,</span> <span class="n">index</span> <span class="p">):</span>
+</span><span id="__span-7-12">        <span class="n">mesh</span> <span class="o">=</span> <span class="ne">Mesh</span><span class="p">(</span> <span class="p">)</span>
+</span><span id="__span-7-13">        <span class="k">for</span> <span class="n">vertex</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">TetrahedronPointsAt</span><span class="p">(</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span><span class="p">,</span> <span class="n">index</span> <span class="p">):</span>
+</span><span id="__span-7-14">            <span class="n">mesh</span><span class="o">.</span><span class="n">Vertices</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span> <span class="n">vertex</span> <span class="p">)</span>
+</span><span id="__span-7-15">        <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">VoxelGrid</span><span class="o">.</span><span class="n">TetraFaces</span><span class="p">:</span>
+</span><span id="__span-7-16">            <span class="n">mesh</span><span class="o">.</span><span class="n">Faces</span><span class="o">.</span><span class="n">AddFace</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="p">)</span>
+</span><span id="__span-7-17">        <span class="k">return</span> <span class="n">mesh</span>
+</span><span id="__span-7-18">
+</span><span id="__span-7-19"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Voxel to Meshes</span>
+</span><span id="__span-7-20"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-7-21">    <span class="k">def</span> <span class="nf">VoxelTetrahedraMeshesAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="p">):</span>
+</span><span id="__span-7-22">        <span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span> <span class="n">VoxelGrid</span><span class="o">.</span><span class="n">Tetras</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span> <span class="c1">#-- Tetras = 5</span>
+</span><span id="__span-7-23">        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">TetrahedronMeshAt</span><span class="p">(</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span><span class="p">,</span> <span class="n">index</span> <span class="p">)</span>
+</span><span id="__span-7-24">            <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">count</span> <span class="p">)]</span>
+</span><span id="__span-7-25">
+</span><span id="__span-7-26"><span class="n">grid</span> <span class="o">=</span> <span class="n">VoxelGrid</span><span class="p">(</span>
+</span><span id="__span-7-27">    <span class="ne">Point3d</span><span class="p">(</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="p">),</span>
+</span><span id="__span-7-28">    <span class="ne">Point3d</span><span class="p">(</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span> <span class="p">),</span>
+</span><span id="__span-7-29">    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="p">)</span>
+</span><span id="__span-7-30">
+</span><span id="__span-7-31"><span class="n">tetras</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">VoxelTetrahedraMeshesAt</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">)</span>
+</span></code></pre></div>
+<h3 id="triangulation">Triangulation</h3>
+<p>With the ability to interpolate any point and value within the voxel grid one way to extract a shape is by choosing a constant desired value <code>w</code> and selecting all associated points and form surfaces. This process produces an envelope also known as an iso-surface.</p>
+<p>Consider two grid points <code>p</code> and <code>q</code> with values <code>u</code> and <code>v</code>. If the value <code>w</code> is within <code>u</code> and <code>v</code>, either <code>u ≤ w ≤ v</code> or <code>v ≤ w ≤ u</code>, then the line between <code>p</code> and <code>q</code> intersects the surface formed by all <code>w</code> values, because <code>u</code> and <code>v</code> are at the opposite sides of <code>w</code>. The point of intersection at <code>w</code> can be computed using the edge interpolation method developed earlier.</p>
+<p>This principle extends to all edges of a tetrahedron. First each node's value in relationship with the iso-surface is considered. If all node values are smaller than the desired iso-value, then the tetrahedron is completely inside the volume bounded by the iso-surface; and the opposite occurs when all values are greater. The remaining cases represent intersection between the iso-surface and the tetrahedron, which takes place at its edges. If three edges intersect, then a triangle is generated and a quadrilateral for four intersections. With <code>4</code> edges, we need to consider all <code>16</code> combinations of potential intersection.</p>
+<p><img alt="Voxel Cases Figure" src="../../../figures/voxel-cases.svg" /></p>
+<p>This algorithm is known as <a href="https://en.wikipedia.org/wiki/Marching_tetrahedra">marching tetrahedra</a>, which is simplification of the <a href="https://en.wikipedia.org/wiki/Marching_cubes">marching cubes</a> method. The equivalent look-up table for voxel-surface intersection requires 2<sup>8</sup> or 256 entries, see <a href="http://www.paulbourke.net/geometry/polygonise/">Paul Bourke's</a> detailed documentation.</p>
+<p>The combinations are encoded using look up tables which help avoiding nested if-statements. The <code>Polygons</code> table contains <code>16</code> bits that map to the type of polygonal face, where <code>1</code> is for quads and <code>0</code> for triangles. Note that the first and last entries <code>2</code>, that is completely inside and outside, are never used. The <code>Windings</code> table contains permutation information as for how to reorder the points of a tetrahedron in each case such that the interpolation between vertices and thus the surface normals of the resulting face are consistent.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><span class="k">class</span> <span class="nc">VoxelGrid</span><span class="p">:</span>
+</span><span id="__span-8-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Polygon IsQuad Table</span>
+</span><span id="__span-8-3"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-8-4">    <span class="n">Polygons</span> <span class="o">=</span>  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>  <span class="c1">#-- _ T T Q</span>
+</span><span id="__span-8-5">                 <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1">#-- T Q Q T</span>
+</span><span id="__span-8-6">                 <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1">#-- T Q Q T</span>
+</span><span id="__span-8-7">                 <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>  <span class="c1">#-- Q T T _</span>
+</span><span id="__span-8-8">
+</span><span id="__span-8-9"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Winding Order Table</span>
+</span><span id="__span-8-10"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-8-11">    <span class="n">Windings</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="c1">#--  0 - _ - 15</span>
+</span><span id="__span-8-12">                <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="c1">#--  1 - T - 14</span>
+</span><span id="__span-8-13">                <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="c1">#--  2 - T - 13</span>
+</span><span id="__span-8-14">                <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="c1">#--  3 - Q - 12</span>
+</span><span id="__span-8-15">                <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="c1">#--  4 - T - 11</span>
+</span><span id="__span-8-16">                <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="c1">#--  5 - Q - 10</span>
+</span><span id="__span-8-17">                <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="c1">#--  6 - Q - 9</span>
+</span><span id="__span-8-18">                <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="c1">#--  7 - T - 8</span>
+</span><span id="__span-8-19">                <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="c1">#--  8 - T - 7</span>
+</span><span id="__span-8-20">                <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="c1">#--  9 - Q - 6</span>
+</span><span id="__span-8-21">                <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="c1">#-- 10 - Q - 5</span>
+</span><span id="__span-8-22">                <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="c1">#-- 11 - T - 4</span>
+</span><span id="__span-8-23">                <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="c1">#-- 12 - Q - 3</span>
+</span><span id="__span-8-24">                <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="c1">#-- 13 - T - 2</span>
+</span><span id="__span-8-25">                <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="c1">#-- 14 - T - 1</span>
+</span><span id="__span-8-26">                <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span> <span class="c1">#-- 15 - _ - 0</span>
+</span><span id="__span-8-27">
+</span><span id="__span-8-28"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Reorders Points and Value for Consistent Normals</span>
+</span><span id="__span-8-29"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-8-30">    <span class="k">def</span> <span class="nf">Permutate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">case</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">values</span> <span class="p">):</span>
+</span><span id="__span-8-31">        <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span> <span class="o">=</span> <span class="n">VoxelGrid</span><span class="o">.</span><span class="n">Windings</span><span class="p">[</span><span class="n">case</span><span class="p">]</span>
+</span><span id="__span-8-32">        <span class="k">return</span> <span class="p">(</span> <span class="p">[</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="n">l</span><span class="p">]],</span>
+</span><span id="__span-8-33">                 <span class="p">[</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="n">l</span><span class="p">]]</span> <span class="p">)</span>
+</span></code></pre></div>
+<p>The sixteen scenarios of intersection between the iso-surface and the tetrahedron are encoded using four bits producing a case code with value from <code>0</code> to <code>15</code>. The <code>Scenario( )</code> method turns on a different bit for each node and combines them using addition (or bitwise or). The case code is used for selecting one of the data entries stored in the look up tables.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><span class="k">class</span> <span class="nc">VoxelGrid</span><span class="p">:</span>
+</span><span id="__span-9-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Scenario from Tetrahedron Values</span>
+</span><span id="__span-9-3"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-9-4">    <span class="k">def</span> <span class="nf">Scenario</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">value</span> <span class="p">):</span>
+</span><span id="__span-9-5">        <span class="k">return</span> <span class="p">(</span> <span class="p">(</span> <span class="mb">0b0001</span> <span class="k">if</span><span class="p">(</span> <span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">value</span> <span class="p">)</span> <span class="k">else</span> <span class="mb">0b0000</span> <span class="p">)</span> <span class="o">+</span>
+</span><span id="__span-9-6">                 <span class="p">(</span> <span class="mb">0b0010</span> <span class="k">if</span><span class="p">(</span> <span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">value</span> <span class="p">)</span> <span class="k">else</span> <span class="mb">0b0000</span> <span class="p">)</span> <span class="o">+</span>
+</span><span id="__span-9-7">                 <span class="p">(</span> <span class="mb">0b0100</span> <span class="k">if</span><span class="p">(</span> <span class="n">values</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">value</span> <span class="p">)</span> <span class="k">else</span> <span class="mb">0b0000</span> <span class="p">)</span> <span class="o">+</span>
+</span><span id="__span-9-8">                 <span class="p">(</span> <span class="mb">0b1000</span> <span class="k">if</span><span class="p">(</span> <span class="n">values</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">value</span> <span class="p">)</span> <span class="k">else</span> <span class="mb">0b0000</span> <span class="p">)</span> <span class="p">)</span>
+</span></code></pre></div>
+<p>The <code>IsoSurfaceAt( )</code> method iterates over all voxels and the associated tetrahedra per voxel. First it computes the scenario using the nodal values and then invokes the <code>AddFace( )</code> method, if the tetrahedron intersects the iso-surface. Adding a new face requires determining whether the face is a triangle or quadrilateral and performing point and value permutation.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-10-1"><span class="k">class</span> <span class="nc">VoxelGrid</span><span class="p">:</span>
+</span><span id="__span-10-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Iso-Surface at Value</span>
+</span><span id="__span-10-3"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-10-4">    <span class="k">def</span> <span class="nf">IsoSurfaceAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">value</span> <span class="p">):</span>
+</span><span id="__span-10-5">        <span class="n">mesh</span> <span class="o">=</span> <span class="ne">Mesh</span><span class="p">(</span> <span class="p">)</span>
+</span><span id="__span-10-6">        <span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">VoxelIndices</span><span class="p">(</span> <span class="p">):</span>
+</span><span id="__span-10-7">            <span class="k">for</span> <span class="n">points</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">TetrahedraAt</span><span class="p">(</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="p">):</span>
+</span><span id="__span-10-8">                <span class="n">case</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Scenario</span><span class="p">(</span> <span class="n">values</span><span class="p">,</span> <span class="n">value</span> <span class="p">)</span>
+</span><span id="__span-10-9">                <span class="k">if</span><span class="p">(</span> <span class="n">case</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">case</span> <span class="o">==</span> <span class="mi">15</span> <span class="p">):</span> <span class="k">continue</span>
+</span><span id="__span-10-10">                <span class="bp">self</span><span class="o">.</span><span class="n">AddFace</span><span class="p">(</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">case</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">value</span> <span class="p">)</span>
+</span><span id="__span-10-11">        <span class="k">return</span> <span class="n">mesh</span>
+</span><span id="__span-10-12">
+</span><span id="__span-10-13"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Create Iso-Surface Face at Value</span>
+</span><span id="__span-10-14"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-10-15">    <span class="k">def</span> <span class="nf">AddFace</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">case</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">value</span> <span class="p">):</span>
+</span><span id="__span-10-16">        <span class="n">points</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Permutate</span><span class="p">(</span> <span class="n">case</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">values</span> <span class="p">)</span>
+</span><span id="__span-10-17">        <span class="k">if</span><span class="p">(</span> <span class="n">VoxelGrid</span><span class="o">.</span><span class="n">Polygons</span><span class="p">[</span><span class="n">case</span><span class="p">]</span> <span class="p">):</span>
+</span><span id="__span-10-18">            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">AddQuad</span><span class="p">(</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">value</span> <span class="p">)</span>
+</span><span id="__span-10-19">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">AddTriangle</span><span class="p">(</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">value</span> <span class="p">)</span>
+</span></code></pre></div>
+<p>Computing triangle or quadrilateral faces of intersection is performed by first interpolating the edge and iso-surface intersection points, followed by forming  new mesh faces. Note that adding faces into a mesh in this manner, produces the equivalent of a triangle soup, where no vertices are shared across faces.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-11-1"><span class="k">class</span> <span class="nc">VoxelGrid</span><span class="p">:</span>
+</span><span id="__span-11-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Create Triangular Face</span>
+</span><span id="__span-11-3"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-11-4">    <span class="k">def</span> <span class="nf">AddTriangle</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">value</span> <span class="p">):</span>
+</span><span id="__span-11-5">        <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">points</span>
+</span><span id="__span-11-6">        <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="n">values</span>
+</span><span id="__span-11-7">
+</span><span id="__span-11-8">        <span class="n">e</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">InterpolateEdge</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">value</span> <span class="p">)</span>
+</span><span id="__span-11-9">        <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">InterpolateEdge</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">value</span> <span class="p">)</span>
+</span><span id="__span-11-10">        <span class="n">g</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">InterpolateEdge</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">value</span> <span class="p">)</span>
+</span><span id="__span-11-11">
+</span><span id="__span-11-12">        <span class="n">mesh</span><span class="o">.</span><span class="n">Faces</span><span class="o">.</span><span class="n">AddFace</span><span class="p">(</span>
+</span><span id="__span-11-13">            <span class="n">mesh</span><span class="o">.</span><span class="n">Vertices</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span> <span class="n">e</span> <span class="p">),</span>
+</span><span id="__span-11-14">            <span class="n">mesh</span><span class="o">.</span><span class="n">Vertices</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span> <span class="n">f</span> <span class="p">),</span>
+</span><span id="__span-11-15">            <span class="n">mesh</span><span class="o">.</span><span class="n">Vertices</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span> <span class="n">g</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-11-16">        <span class="k">return</span> <span class="bp">self</span>
+</span><span id="__span-11-17">
+</span><span id="__span-11-18"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Create Quadrilateral Face</span>
+</span><span id="__span-11-19"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-11-20">    <span class="k">def</span> <span class="nf">AddQuad</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">value</span> <span class="p">):</span>
+</span><span id="__span-11-21">        <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">points</span>
+</span><span id="__span-11-22">        <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="n">values</span>
+</span><span id="__span-11-23">
+</span><span id="__span-11-24">        <span class="n">e</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">InterpolateEdge</span><span class="p">(</span> <span class="n">d</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">value</span> <span class="p">)</span>
+</span><span id="__span-11-25">        <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">InterpolateEdge</span><span class="p">(</span> <span class="n">d</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">value</span> <span class="p">)</span>
+</span><span id="__span-11-26">        <span class="n">g</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">InterpolateEdge</span><span class="p">(</span> <span class="n">c</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">value</span> <span class="p">)</span>
+</span><span id="__span-11-27">        <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">InterpolateEdge</span><span class="p">(</span> <span class="n">c</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">value</span> <span class="p">)</span>
+</span><span id="__span-11-28">
+</span><span id="__span-11-29">        <span class="n">mesh</span><span class="o">.</span><span class="n">Faces</span><span class="o">.</span><span class="n">AddFace</span><span class="p">(</span>
+</span><span id="__span-11-30">            <span class="n">mesh</span><span class="o">.</span><span class="n">Vertices</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span> <span class="n">e</span> <span class="p">),</span>
+</span><span id="__span-11-31">            <span class="n">mesh</span><span class="o">.</span><span class="n">Vertices</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span> <span class="n">f</span> <span class="p">),</span>
+</span><span id="__span-11-32">            <span class="n">mesh</span><span class="o">.</span><span class="n">Vertices</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span> <span class="n">g</span> <span class="p">),</span>
+</span><span id="__span-11-33">            <span class="n">mesh</span><span class="o">.</span><span class="n">Vertices</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span> <span class="n">h</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-11-34">        <span class="k">return</span> <span class="bp">self</span>
+</span></code></pre></div>
+<p>This polygonization scheme may be improved by checking each voxel for complete inclusion or exclusion and skipping iterating its tetrahedra in those cases. Also by maintaining a dictionary of edge intersections can improve performance by avoiding duplicate computations and producing compact meshes with shared vertices.</p>
+<h2 id="implicit-surfaces">Implicit Surfaces</h2>
+<p>Voxel grids can be used for visualizing implicit surfaces <code>f( x, y, z ) = v</code> which are difficult to represent otherwise. This is because either there is no simple parametric representation or it is just algebraically too complicated to bring them in an explicit form. Implicit surfaces using voxel grids is trivial to implement. The method <code>Implicit( )</code> requires a function which receives the coordinates of each point <code>x, y, z</code> in the grid and expects a value <code>v</code>. The demonstration below, builds the genus 2 surface as seen in the <a href="https://en.wikipedia.org/wiki/Implicit_surface">implicit surfaces</a> article.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-12-1"><span class="k">class</span> <span class="nc">VoxelGrid</span><span class="p">:</span>
+</span><span id="__span-12-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Implicit Surfaces by v &lt;- f( x, y, z )</span>
+</span><span id="__span-12-3"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-12-4">    <span class="k">def</span> <span class="nf">ImplicitSurface</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">function</span> <span class="p">):</span>
+</span><span id="__span-12-5">        <span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">PointIndices</span><span class="p">(</span> <span class="p">):</span>
+</span><span id="__span-12-6">            <span class="n">point</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="p">)</span>
+</span><span id="__span-12-7">            <span class="n">value</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span> <span class="n">point</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">point</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="n">point</span><span class="o">.</span><span class="n">Z</span> <span class="p">)</span>
+</span><span id="__span-12-8">            <span class="bp">self</span><span class="o">.</span><span class="n">Values</span><span class="p">[</span><span class="n">ix</span><span class="p">][</span><span class="n">iy</span><span class="p">][</span><span class="n">iz</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span><span id="__span-12-9">        <span class="k">return</span> <span class="bp">self</span>
+</span><span id="__span-12-10">
+</span><span id="__span-12-11"><span class="n">grid</span> <span class="o">=</span> <span class="n">VoxelGrid</span><span class="p">(</span>
+</span><span id="__span-12-12">    <span class="ne">Point3d</span><span class="p">(</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="p">),</span>
+</span><span id="__span-12-13">    <span class="ne">Point3d</span><span class="p">(</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">2</span> <span class="p">),</span>
+</span><span id="__span-12-14">    <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">]</span> <span class="p">)</span>
+</span><span id="__span-12-15">
+</span><span id="__span-12-16"><span class="n">grid</span><span class="o">.</span><span class="n">ImplicitSurface</span><span class="p">(</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="p">(</span>
+</span><span id="__span-12-17">    <span class="mi">2</span> <span class="o">*</span> <span class="n">y</span> <span class="o">*</span> <span class="p">(</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="p">)</span> <span class="o">*</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">z</span> <span class="o">**</span> <span class="mi">2</span> <span class="p">)</span> <span class="o">+</span>
+</span><span id="__span-12-18">    <span class="p">(</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">2</span> <span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span>
+</span><span id="__span-12-19">    <span class="p">(</span> <span class="mi">9</span> <span class="o">*</span> <span class="n">z</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span> <span class="o">*</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">z</span> <span class="o">**</span> <span class="mi">2</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-12-20">
+</span><span id="__span-12-21"><span class="n">surface</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">IsoSurfaceAt</span><span class="p">(</span> <span class="mf">0.0</span> <span class="p">)</span>
+</span></code></pre></div>
+<h2 id="distance-fields">Distance Fields</h2>
+<p>Distance fields is a representation where solid primitives, and operations thereof, are expressed via their signed distance from a point, where the sign represents volume inclusion or exclusion. Given a point <code>p</code> in space and its projection point <code>o</code> with normal <code>n</code> onto an object, the signed distance is expressed by the dot product as <code>d = n · ( p - o )</code>.</p>
+<p>Visualizing signed distance fields may be performed using the voxel grid approach by computing the distances between objects and the points of the grid, storing them as the associated values and then performing meshing. It is also possible to directly render them using GPU shaders, see <a href="https://iquilezles.org/articles/distfunctions/">Inigo Quilez's</a> documentation.</p>
+<h3 id="primitives">Primitives</h3>
+<p>The implicit representation of spatial primitives such as spheres and cylinder was presented in the surfaces section earlier. The implementation below demonstrates the computation of their signed distances.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-13-1"><span class="sd">&quot;&quot;&quot; Sphere Primitive</span>
+</span><span id="__span-13-2"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-13-3"><span class="k">class</span> <span class="nc">Sphere</span><span class="p">:</span>
+</span><span id="__span-13-4">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">origin</span><span class="p">,</span> <span class="n">radius</span> <span class="p">):</span>
+</span><span id="__span-13-5">        <span class="bp">self</span><span class="o">.</span><span class="n">Origin</span> <span class="o">=</span> <span class="n">origin</span>
+</span><span id="__span-13-6">        <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span> <span class="o">=</span> <span class="n">radius</span>
+</span><span id="__span-13-7">
+</span><span id="__span-13-8">    <span class="k">def</span> <span class="nf">SignedDistance</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">point</span> <span class="p">):</span>
+</span><span id="__span-13-9">        <span class="n">o</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Origin</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span>
+</span><span id="__span-13-10">        <span class="k">return</span> <span class="n">o</span><span class="o">.</span><span class="n">DistanceTo</span><span class="p">(</span> <span class="n">point</span> <span class="p">)</span> <span class="o">-</span> <span class="n">r</span>
+</span><span id="__span-13-11">
+</span><span id="__span-13-12"><span class="sd">&quot;&quot;&quot; Cylinder Primitive</span>
+</span><span id="__span-13-13"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-13-14"><span class="k">class</span> <span class="nc">Cylinder</span><span class="p">:</span>
+</span><span id="__span-13-15">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">origin</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">radius</span> <span class="p">):</span>
+</span><span id="__span-13-16">        <span class="bp">self</span><span class="o">.</span><span class="n">Origin</span>    <span class="o">=</span> <span class="n">origin</span>
+</span><span id="__span-13-17">        <span class="bp">self</span><span class="o">.</span><span class="n">Direction</span> <span class="o">=</span> <span class="n">direction</span>
+</span><span id="__span-13-18">        <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span>    <span class="o">=</span> <span class="n">radius</span>
+</span><span id="__span-13-19">
+</span><span id="__span-13-20">    <span class="k">def</span> <span class="nf">SignedDistance</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">point</span> <span class="p">):</span>
+</span><span id="__span-13-21">        <span class="n">o</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Origin</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Direction</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span>
+</span><span id="__span-13-22">        <span class="n">projection</span> <span class="o">=</span> <span class="n">o</span> <span class="o">+</span> <span class="n">u</span> <span class="o">*</span> <span class="p">(</span> <span class="n">point</span> <span class="o">-</span> <span class="n">o</span> <span class="p">)</span> <span class="o">*</span> <span class="n">u</span>
+</span><span id="__span-13-23">        <span class="k">return</span> <span class="n">point</span><span class="o">.</span><span class="n">DistanceTo</span><span class="p">(</span> <span class="n">projection</span> <span class="p">)</span> <span class="o">-</span> <span class="n">r</span>
+</span></code></pre></div>
+<p>Parametric curves and surfaces can be converted to signed distance fields using their closest point methods. Curves are not orientable in the sense of a volume. Therefore, a radius can be used to express curved cylinders and pipes. Surfaces do provide normal vectors which may be used for slabs with directional thickness.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-14-1"><span class="sd">&quot;&quot;&quot; Pipe Primitive</span>
+</span><span id="__span-14-2"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-14-3"><span class="k">class</span> <span class="nc">Pipe</span><span class="p">:</span>
+</span><span id="__span-14-4">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">curve</span><span class="p">,</span> <span class="n">radius</span> <span class="p">):</span>
+</span><span id="__span-14-5">        <span class="bp">self</span><span class="o">.</span><span class="n">Curve</span>  <span class="o">=</span> <span class="n">curve</span>
+</span><span id="__span-14-6">        <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span> <span class="o">=</span> <span class="n">radius</span>
+</span><span id="__span-14-7">
+</span><span id="__span-14-8">    <span class="k">def</span> <span class="nf">SignedDistance</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">point</span> <span class="p">):</span>
+</span><span id="__span-14-9">        <span class="n">_</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Curve</span><span class="o">.</span><span class="n">ClosestPoint</span><span class="p">(</span> <span class="n">point</span> <span class="p">)</span>
+</span><span id="__span-14-10">        <span class="n">projection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Curve</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">t</span> <span class="p">)</span>
+</span><span id="__span-14-11">        <span class="k">return</span> <span class="n">projection</span><span class="o">.</span><span class="n">DistanceTo</span><span class="p">(</span> <span class="n">point</span> <span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span>
+</span><span id="__span-14-12">
+</span><span id="__span-14-13"><span class="sd">&quot;&quot;&quot; Slab Primitive</span>
+</span><span id="__span-14-14"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-14-15"><span class="k">class</span> <span class="nc">Slab</span><span class="p">:</span>
+</span><span id="__span-14-16">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">surface</span><span class="p">,</span> <span class="n">thickness</span> <span class="p">):</span>
+</span><span id="__span-14-17">        <span class="bp">self</span><span class="o">.</span><span class="n">Surface</span>   <span class="o">=</span> <span class="n">surface</span>
+</span><span id="__span-14-18">        <span class="bp">self</span><span class="o">.</span><span class="n">Thickness</span> <span class="o">=</span> <span class="n">thickness</span>
+</span><span id="__span-14-19">
+</span><span id="__span-14-20">    <span class="k">def</span> <span class="nf">SignedDistance</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">point</span> <span class="p">):</span>
+</span><span id="__span-14-21">        <span class="n">_</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Surface</span><span class="o">.</span><span class="n">ClosestPoint</span><span class="p">(</span> <span class="n">point</span> <span class="p">)</span>
+</span><span id="__span-14-22">        <span class="n">_</span><span class="p">,</span> <span class="n">plane</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Surface</span><span class="o">.</span><span class="n">FrameAt</span><span class="p">(</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="p">)</span>
+</span><span id="__span-14-23">        <span class="n">distance</span> <span class="o">=</span> <span class="n">plane</span><span class="o">.</span><span class="n">Normal</span> <span class="o">*</span> <span class="p">(</span> <span class="n">point</span> <span class="o">-</span> <span class="n">plane</span><span class="o">.</span><span class="n">Origin</span> <span class="p">)</span>
+</span><span id="__span-14-24">        <span class="k">return</span> <span class="n">distance</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">Thickness</span>
+</span></code></pre></div>
+<p>Implementing the signed distance field evaluation method is exactly the same as the implicit surface method. The signed distance of each point of the grid is evaluated against the subject primitive and the value is stored.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-15-1"><span class="k">class</span> <span class="nc">VoxelGrid</span><span class="p">:</span>
+</span><span id="__span-15-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Signed Distance Field Primitive</span>
+</span><span id="__span-15-3"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-15-4">    <span class="k">def</span> <span class="nf">SignedDistanceField</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">subject</span> <span class="p">):</span>
+</span><span id="__span-15-5">        <span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">PointIndices</span><span class="p">(</span> <span class="p">):</span>
+</span><span id="__span-15-6">            <span class="n">point</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">,</span> <span class="n">iz</span> <span class="p">)</span>
+</span><span id="__span-15-7">            <span class="n">distance</span> <span class="o">=</span> <span class="n">subject</span><span class="o">.</span><span class="n">SignedDistance</span><span class="p">(</span> <span class="n">point</span> <span class="p">)</span>
+</span><span id="__span-15-8">            <span class="bp">self</span><span class="o">.</span><span class="n">Values</span><span class="p">[</span><span class="n">ix</span><span class="p">][</span><span class="n">iy</span><span class="p">][</span><span class="n">iz</span><span class="p">]</span> <span class="o">=</span> <span class="n">distance</span>
+</span><span id="__span-15-9">
+</span><span id="__span-15-10"><span class="n">grid</span> <span class="o">=</span> <span class="n">VoxelGrid</span><span class="p">(</span>
+</span><span id="__span-15-11">    <span class="ne">Point3d</span><span class="p">(</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="p">),</span>
+</span><span id="__span-15-12">    <span class="ne">Point3d</span><span class="p">(</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">2</span> <span class="p">),</span>
+</span><span id="__span-15-13">    <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">]</span> <span class="p">)</span>
+</span><span id="__span-15-14">
+</span><span id="__span-15-15"><span class="n">grid</span><span class="o">.</span><span class="n">SignedDistanceField</span><span class="p">(</span>
+</span><span id="__span-15-16">    <span class="ne">Sphere</span><span class="p">(</span> <span class="ne">Point3d</span><span class="o">.</span><span class="n">Origin</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-15-17">
+</span><span id="__span-15-18"><span class="n">surface</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">IsoSurfaceAt</span><span class="p">(</span> <span class="mf">0.0</span> <span class="p">)</span>
+</span></code></pre></div>
+<h3 id="offsetting">Offsetting</h3>
+<p>Computing offset surfaces and creating solid shells with thin walls is trivial with signed distance fields, as seen below. These geometric operations are considerably more complex using BReps. Moreover, implementing them as classes, adhering to a <code>SignedDistance( point )</code> interface, enables a compositional style of expressing both geometric primitives and operations thereof.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-16-1"><span class="k">class</span> <span class="nc">Offset</span><span class="p">:</span>
+</span><span id="__span-16-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">distance</span> <span class="p">):</span>
+</span><span id="__span-16-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Subject</span>  <span class="o">=</span> <span class="n">subject</span>
+</span><span id="__span-16-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Distance</span> <span class="o">=</span> <span class="n">distance</span>
+</span><span id="__span-16-5">
+</span><span id="__span-16-6">    <span class="k">def</span> <span class="nf">SignedDistance</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">point</span> <span class="p">):</span>
+</span><span id="__span-16-7">        <span class="n">distance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Subject</span><span class="o">.</span><span class="n">SignedDistance</span><span class="p">(</span> <span class="n">point</span> <span class="p">)</span>
+</span><span id="__span-16-8">        <span class="k">return</span> <span class="n">distance</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">Distance</span>
+</span><span id="__span-16-9">
+</span><span id="__span-16-10"><span class="k">class</span> <span class="nc">Shell</span><span class="p">:</span>
+</span><span id="__span-16-11">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">thickness</span> <span class="p">):</span>
+</span><span id="__span-16-12">        <span class="bp">self</span><span class="o">.</span><span class="n">Subject</span>   <span class="o">=</span> <span class="n">subject</span>
+</span><span id="__span-16-13">        <span class="bp">self</span><span class="o">.</span><span class="n">Thickness</span> <span class="o">=</span> <span class="n">thickness</span>
+</span><span id="__span-16-14">
+</span><span id="__span-16-15">    <span class="k">def</span> <span class="nf">SignedDistance</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">point</span> <span class="p">):</span>
+</span><span id="__span-16-16">        <span class="n">distance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Subject</span><span class="o">.</span><span class="n">SignedDistance</span><span class="p">(</span> <span class="n">point</span> <span class="p">)</span>
+</span><span id="__span-16-17">        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span> <span class="n">distance</span> <span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">Thickness</span>
+</span><span id="__span-16-18">
+</span><span id="__span-16-19"><span class="n">grid</span> <span class="o">=</span> <span class="n">VoxelGrid</span><span class="p">(</span>
+</span><span id="__span-16-20">    <span class="ne">Point3d</span><span class="p">(</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="p">),</span>
+</span><span id="__span-16-21">    <span class="ne">Point3d</span><span class="p">(</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">2</span> <span class="p">),</span>
+</span><span id="__span-16-22">    <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">]</span> <span class="p">)</span>
+</span><span id="__span-16-23">
+</span><span id="__span-16-24"><span class="n">grid</span><span class="o">.</span><span class="n">SignedDistanceField</span><span class="p">(</span>
+</span><span id="__span-16-25">    <span class="n">Shell</span><span class="p">(</span> <span class="ne">Sphere</span><span class="p">(</span> <span class="ne">Point3d</span><span class="o">.</span><span class="n">Origin</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">),</span> <span class="mf">0.2</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-16-26">
+</span><span id="__span-16-27"><span class="n">surface</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">IsoSurfaceAt</span><span class="p">(</span> <span class="mf">0.0</span> <span class="p">)</span>
+</span></code></pre></div>
+<h3 id="booleans">Booleans</h3>
+<p>Boolean operations between solids can be also trivially implemented using signed distance fields using the <code>min( )</code> and <code>max( )</code> built-in functions. Moreover, these operations can be combined in complex hierarchies in the same sense as construction solid geometry.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-17-1"><span class="k">class</span> <span class="nc">BooleanUnion</span><span class="p">:</span>
+</span><span id="__span-17-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">subjects</span> <span class="p">):</span>
+</span><span id="__span-17-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Subjects</span> <span class="o">=</span> <span class="n">subjects</span>
+</span><span id="__span-17-4">
+</span><span id="__span-17-5">    <span class="k">def</span> <span class="nf">SignedDistance</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">point</span> <span class="p">):</span>
+</span><span id="__span-17-6">        <span class="n">distances</span> <span class="o">=</span> <span class="p">[</span><span class="n">subject</span><span class="o">.</span><span class="n">SignedDistance</span><span class="p">(</span> <span class="n">point</span> <span class="p">)</span>
+</span><span id="__span-17-7">            <span class="k">for</span> <span class="n">subject</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Subjects</span><span class="p">]</span>
+</span><span id="__span-17-8">        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span> <span class="n">distances</span> <span class="p">)</span>
+</span><span id="__span-17-9">
+</span><span id="__span-17-10"><span class="k">class</span> <span class="nc">BooleanIntersection</span><span class="p">:</span>
+</span><span id="__span-17-11">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">subjects</span> <span class="p">):</span>
+</span><span id="__span-17-12">        <span class="bp">self</span><span class="o">.</span><span class="n">Subjects</span> <span class="o">=</span> <span class="n">subjects</span>
+</span><span id="__span-17-13">
+</span><span id="__span-17-14">    <span class="k">def</span> <span class="nf">SignedDistance</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">point</span> <span class="p">):</span>
+</span><span id="__span-17-15">        <span class="n">distances</span> <span class="o">=</span> <span class="p">[</span><span class="n">subject</span><span class="o">.</span><span class="n">SignedDistance</span><span class="p">(</span> <span class="n">point</span> <span class="p">)</span>
+</span><span id="__span-17-16">            <span class="k">for</span> <span class="n">subject</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Subjects</span><span class="p">]</span>
+</span><span id="__span-17-17">        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span> <span class="n">distances</span> <span class="p">)</span>
+</span><span id="__span-17-18">
+</span><span id="__span-17-19"><span class="k">class</span> <span class="nc">BooleanDifference</span><span class="p">:</span>
+</span><span id="__span-17-20">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">_object</span> <span class="p">):</span>
+</span><span id="__span-17-21">        <span class="bp">self</span><span class="o">.</span><span class="n">Subject</span> <span class="o">=</span> <span class="n">subject</span>
+</span><span id="__span-17-22">        <span class="bp">self</span><span class="o">.</span><span class="n">Object</span>  <span class="o">=</span> <span class="n">_object</span>
+</span><span id="__span-17-23">
+</span><span id="__span-17-24">    <span class="k">def</span> <span class="nf">SignedDistance</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">point</span> <span class="p">):</span>
+</span><span id="__span-17-25">        <span class="n">subject</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Subject</span><span class="o">.</span><span class="n">SignedDistance</span><span class="p">(</span> <span class="n">point</span> <span class="p">)</span>
+</span><span id="__span-17-26">        <span class="n">_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Object</span> <span class="o">.</span><span class="n">SignedDistance</span><span class="p">(</span> <span class="n">point</span> <span class="p">)</span>
+</span><span id="__span-17-27">        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span> <span class="n">subject</span><span class="p">,</span> <span class="o">-</span><span class="n">_object</span> <span class="p">)</span>
+</span><span id="__span-17-28">
+</span><span id="__span-17-29"><span class="n">grid</span> <span class="o">=</span> <span class="n">VoxelGrid</span><span class="p">(</span>
+</span><span id="__span-17-30">    <span class="ne">Point3d</span><span class="p">(</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="p">),</span>
+</span><span id="__span-17-31">    <span class="ne">Point3d</span><span class="p">(</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">2</span> <span class="p">),</span>
+</span><span id="__span-17-32">    <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">]</span> <span class="p">)</span>
+</span><span id="__span-17-33">
+</span><span id="__span-17-34"><span class="n">grid</span><span class="o">.</span><span class="n">SignedDistanceField</span><span class="p">(</span> <span class="n">BooleanUnion</span><span class="p">(</span>
+</span><span id="__span-17-35">    <span class="p">[</span><span class="ne">Sphere</span><span class="p">(</span> <span class="ne">Point3d</span><span class="p">(</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">),</span> <span class="mi">1</span> <span class="p">),</span>
+</span><span id="__span-17-36">     <span class="ne">Sphere</span><span class="p">(</span> <span class="ne">Point3d</span><span class="p">(</span> <span class="o">+</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">),</span> <span class="mi">1</span> <span class="p">)]</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-17-37">
+</span><span id="__span-17-38"><span class="n">surface</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">IsoSurfaceAt</span><span class="p">(</span> <span class="mf">0.0</span> <span class="p">)</span>
+</span></code></pre></div>
+<h3 id="blending">Blending</h3>
+<p>Blending between shapes is also fairly straight forward to implement using a smooth version of the minimum function, see <a href="https://iquilezles.org/articles/smin/">Inigo Quilez's</a> presentation for additional details. The <code>Blend</code> class implements the quadratic interpolation scheme, where the parameter <code>kappa</code> adjust the strength of blending.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-18-1"><span class="k">class</span> <span class="nc">Blend</span><span class="p">:</span>
+</span><span id="__span-18-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">subjects</span><span class="p">,</span> <span class="n">kappa</span> <span class="p">):</span>
+</span><span id="__span-18-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Subjects</span> <span class="o">=</span> <span class="n">subjects</span>
+</span><span id="__span-18-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Kappa</span>    <span class="o">=</span> <span class="n">kappa</span> <span class="o">*</span> <span class="mf">4.0</span>
+</span><span id="__span-18-5">        <span class="bp">self</span><span class="o">.</span><span class="n">KappaInv</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">Kappa</span>
+</span><span id="__span-18-6">
+</span><span id="__span-18-7">    <span class="k">def</span> <span class="nf">QuadraticMin</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span>
+</span><span id="__span-18-8">        <span class="n">k</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Kappa</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">KappaInv</span>
+</span><span id="__span-18-9">        <span class="n">h</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span> <span class="n">k</span> <span class="o">-</span> <span class="nb">abs</span><span class="p">(</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span> <span class="p">),</span> <span class="mf">0.0</span> <span class="p">)</span> <span class="o">*</span> <span class="n">i</span>
+</span><span id="__span-18-10">        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">)</span> <span class="o">-</span> <span class="n">h</span> <span class="o">*</span>  <span class="n">h</span> <span class="o">*</span> <span class="n">k</span> <span class="o">*</span> <span class="mf">0.25</span>
+</span><span id="__span-18-11">
+</span><span id="__span-18-12">    <span class="k">def</span> <span class="nf">SignedDistance</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">point</span> <span class="p">):</span>
+</span><span id="__span-18-13">        <span class="n">distances</span> <span class="o">=</span> <span class="p">[</span><span class="n">subject</span><span class="o">.</span><span class="n">SignedDistance</span><span class="p">(</span> <span class="n">point</span> <span class="p">)</span>
+</span><span id="__span-18-14">            <span class="k">for</span> <span class="n">subject</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Subjects</span><span class="p">]</span>
+</span><span id="__span-18-15">        <span class="n">minimum</span> <span class="o">=</span> <span class="n">distances</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-18-16">        <span class="k">for</span> <span class="n">distance</span> <span class="ow">in</span> <span class="n">distances</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+</span><span id="__span-18-17">            <span class="n">minimum</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">QuadraticMin</span><span class="p">(</span>
+</span><span id="__span-18-18">                <span class="n">minimum</span><span class="p">,</span> <span class="n">distance</span> <span class="p">)</span>
+</span><span id="__span-18-19">        <span class="k">return</span> <span class="n">minimum</span>
+</span><span id="__span-18-20">
+</span><span id="__span-18-21"><span class="n">grid</span> <span class="o">=</span> <span class="n">VoxelGrid</span><span class="p">(</span>
+</span><span id="__span-18-22">    <span class="ne">Point3d</span><span class="p">(</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="p">),</span>
+</span><span id="__span-18-23">    <span class="ne">Point3d</span><span class="p">(</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">2</span> <span class="p">),</span>
+</span><span id="__span-18-24">    <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">]</span> <span class="p">)</span>
+</span><span id="__span-18-25">
+</span><span id="__span-18-26"><span class="n">grid</span><span class="o">.</span><span class="n">SignedDistanceField</span><span class="p">(</span> <span class="n">Blend</span><span class="p">(</span> <span class="p">[</span>
+</span><span id="__span-18-27">    <span class="ne">Sphere</span><span class="p">(</span> <span class="ne">Point3d</span><span class="p">(</span> <span class="o">-</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span> <span class="p">),</span> <span class="mf">0.4</span> <span class="p">),</span>
+</span><span id="__span-18-28">    <span class="ne">Sphere</span><span class="p">(</span> <span class="ne">Point3d</span><span class="p">(</span>  <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span> <span class="p">),</span> <span class="mf">0.4</span> <span class="p">),</span>
+</span><span id="__span-18-29">    <span class="ne">Sphere</span><span class="p">(</span> <span class="ne">Point3d</span><span class="p">(</span>  <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span> <span class="p">),</span> <span class="mf">0.4</span> <span class="p">)],</span> <span class="mf">0.15</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-18-30">
+</span><span id="__span-18-31"><span class="n">surface</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">IsoSurfaceAt</span><span class="p">(</span> <span class="mf">0.0</span> <span class="p">)</span>
+</span></code></pre></div>
+<h2 id="resources">Resources</h2>
+<p><a class="md-button" href="../voxels.gh">Grasshopper <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span></a>
+<a class="md-button" href="../voxels.py">Script <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span></a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright (c) 2024-2025 Digital Design and Fabrication
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+    
+  </body>
+</html>
