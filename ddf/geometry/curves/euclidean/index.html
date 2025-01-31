@@ -131,7 +131,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -141,7 +141,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -1688,21 +1688,21 @@
 <p>Euclidean curves, also known as conic sections, have been studied for centuries. They represent the most basic and commonly used curves in geometry. Traditionally they are considered in the plane but by transformation can be situated anywhere in space.</p>
 <h2 id="line">Line</h2>
 <p>Lines and finite segments thereof are the most common curves used in geometry. A line can be defined parametrically either by two points <code>p</code> and <code>q</code> as <code>L( t ) = p * ( 1 - t ) + q * t</code>, or by an origin point <code>o</code> and a direction <code>u</code> as <code>L( t ) = o + u * t</code>. Even though they are equivalent, the two-point representation is associated with linear interpolation and commonly used for line segments, where <code>t: [0, 1],</code> while the point-vector form is closer semantically to a ray or half-line, where <code>t: [0, +oo)</code>, or commonly used for infinite lines, where <code>t: (-oo, +oo)</code>.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-0-1"><span class="k">class</span> <span class="nc">Line</span><span class="p">:</span>
-</span><span id="__span-0-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><span class="k">class</span><span class="w"> </span><span class="nc">Line</span><span class="p">:</span>
+</span><span id="__span-0-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span> <span class="p">):</span>
 </span><span id="__span-0-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Source</span> <span class="o">=</span> <span class="n">source</span>
 </span><span id="__span-0-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Target</span> <span class="o">=</span> <span class="n">target</span>
 </span><span id="__span-0-5">
-</span><span id="__span-0-6">    <span class="k">def</span> <span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
+</span><span id="__span-0-6">    <span class="k">def</span><span class="w"> </span><span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
 </span><span id="__span-0-7">        <span class="k">return</span> <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Source</span> <span class="o">*</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">t</span> <span class="p">)</span> <span class="o">+</span>
 </span><span id="__span-0-8">                 <span class="bp">self</span><span class="o">.</span><span class="n">Target</span> <span class="o">*</span> <span class="n">t</span> <span class="p">)</span>
 </span><span id="__span-0-9">
-</span><span id="__span-0-10">    <span class="k">def</span> <span class="nf">Tangent</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
+</span><span id="__span-0-10">    <span class="k">def</span><span class="w"> </span><span class="nf">Tangent</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
 </span><span id="__span-0-11">        <span class="n">T</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Target</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">Source</span>
 </span><span id="__span-0-12">        <span class="n">T</span><span class="o">.</span><span class="n">Unitize</span><span class="p">(</span> <span class="p">)</span>
 </span><span id="__span-0-13">        <span class="k">return</span> <span class="n">T</span>
 </span><span id="__span-0-14">
-</span><span id="__span-0-15">    <span class="k">def</span> <span class="nf">Normal</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
+</span><span id="__span-0-15">    <span class="k">def</span><span class="w"> </span><span class="nf">Normal</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
 </span><span id="__span-0-16">        <span class="k">return</span> <span class="ne">Plane</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Source</span><span class="p">,</span>
 </span><span id="__span-0-17">            <span class="bp">self</span><span class="o">.</span><span class="n">Target</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">Source</span> <span class="p">)</span><span class="o">.</span><span class="n">XAxis</span>
 </span></code></pre></div>
@@ -1734,12 +1734,12 @@
 </span></code></pre></div>
 <h2 id="circle">Circle</h2>
 <p>Circle is the second most commonly used curve and can be defined in the plane by a center point <code>c</code> and a radius <code>r</code>. Additionally, in 3D space, a coordinate system or plane basis is required such as <code>P = { o, u, v }</code>, where <code>o</code> is the origin and <code>u</code> and <code>v</code> are its orthonormal basis vectors. By convention, spatial circle's centers coincide with the planes' origins <code>c = o</code>. Therefore, a general 3D circle is defined as <code>C = { o, u, v, r }</code>. The parametric equation of the circle based on those is <code>C( t ) = o + u * cos( t ) * r + v * sin( t ) * r</code>. It is also possible to absorb the radius into the basis vectors such that <code>|u| = |v| = r</code> and express the circle using just its basis <code>{ o, u, v }</code> as <code>C( t ) = o + u * cos( t ) + v * sin( t )</code>. The parameterization of a circle is typically in the angle sense, where <code>t: [0, 2π)</code>.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-2-1"><span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
-</span><span id="__span-2-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><span class="k">class</span><span class="w"> </span><span class="nc">Circle</span><span class="p">:</span>
+</span><span id="__span-2-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="p">):</span>
 </span><span id="__span-2-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span>  <span class="o">=</span> <span class="n">basis</span>
 </span><span id="__span-2-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span> <span class="o">=</span> <span class="n">radius</span>
 </span><span id="__span-2-5">
-</span><span id="__span-2-6">    <span class="k">def</span> <span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span>
+</span><span id="__span-2-6">    <span class="k">def</span><span class="w"> </span><span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span>
 </span><span id="__span-2-7">        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span> <span class="o">*</span> <span class="ne">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span> <span class="n">angle</span> <span class="p">)</span>
 </span><span id="__span-2-8">        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span> <span class="o">*</span> <span class="ne">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="n">angle</span> <span class="p">)</span>
 </span><span id="__span-2-9">
@@ -1747,14 +1747,14 @@
 </span><span id="__span-2-11">                 <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">XAxis</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span>
 </span><span id="__span-2-12">                 <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">YAxis</span> <span class="o">*</span> <span class="n">y</span> <span class="p">)</span>
 </span><span id="__span-2-13">
-</span><span id="__span-2-14">    <span class="k">def</span> <span class="nf">Tangent</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span>
+</span><span id="__span-2-14">    <span class="k">def</span><span class="w"> </span><span class="nf">Tangent</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span>
 </span><span id="__span-2-15">        <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="ne">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="n">angle</span> <span class="p">)</span>
 </span><span id="__span-2-16">        <span class="n">y</span> <span class="o">=</span>  <span class="ne">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span> <span class="n">angle</span> <span class="p">)</span>
 </span><span id="__span-2-17">
 </span><span id="__span-2-18">        <span class="k">return</span> <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">XAxis</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span>
 </span><span id="__span-2-19">                 <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">YAxis</span> <span class="o">*</span> <span class="n">y</span> <span class="p">)</span>
 </span><span id="__span-2-20">
-</span><span id="__span-2-21">    <span class="k">def</span> <span class="nf">Normal</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span>
+</span><span id="__span-2-21">    <span class="k">def</span><span class="w"> </span><span class="nf">Normal</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span>
 </span><span id="__span-2-22">        <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="ne">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span> <span class="n">angle</span> <span class="p">)</span>
 </span><span id="__span-2-23">        <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="ne">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="n">angle</span> <span class="p">)</span>
 </span><span id="__span-2-24">
@@ -1781,12 +1781,12 @@
 </span></code></pre></div>
 <h2 id="ellipse">Ellipse</h2>
 <p>In one sense, an ellipse is a generalization of a circle using two scaling factors <code>a</code> and <code>b</code> instead of a single one, namely its radius <code>r</code>. Points on an ellipse are expressed in space using the form <code>E( t ) = o + u * cos( t ) * a + v * sin( t ) * b</code>. The scalars <code>a</code> and <code>b</code> are also known as the semi-major and semi-minor axes coefficients. Again it is possible to absorb them into the basis vectors such that <code>|u| = a</code> and <code>|v| = b</code> and therefore use exactly the same equation as the circle <code>E( t ) = o + u * cos( t ) + v * sin( t )</code>. The parameterization is also in angle sense, where <code>t: [0, 2π)</code>.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-4-1"><span class="k">class</span> <span class="nc">Ellipse</span><span class="p">:</span>
-</span><span id="__span-4-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">major</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">minor</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><span class="k">class</span><span class="w"> </span><span class="nc">Ellipse</span><span class="p">:</span>
+</span><span id="__span-4-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">major</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">minor</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="p">):</span>
 </span><span id="__span-4-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span>  <span class="o">=</span> <span class="n">basis</span>
 </span><span id="__span-4-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span> <span class="o">=</span> <span class="ne">Vector2d</span><span class="p">(</span> <span class="n">major</span><span class="p">,</span> <span class="n">minor</span> <span class="p">)</span>
 </span><span id="__span-4-5">
-</span><span id="__span-4-6">    <span class="k">def</span> <span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span>
+</span><span id="__span-4-6">    <span class="k">def</span><span class="w"> </span><span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span>
 </span><span id="__span-4-7">        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span><span class="o">.</span><span class="n">X</span> <span class="o">*</span> <span class="ne">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span> <span class="n">angle</span> <span class="p">)</span>
 </span><span id="__span-4-8">        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span><span class="o">.</span><span class="n">Y</span> <span class="o">*</span> <span class="ne">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="n">angle</span> <span class="p">)</span>
 </span><span id="__span-4-9">
@@ -1794,7 +1794,7 @@
 </span><span id="__span-4-11">                 <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">XAxis</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span>
 </span><span id="__span-4-12">                 <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">YAxis</span> <span class="o">*</span> <span class="n">y</span> <span class="p">)</span>
 </span><span id="__span-4-13">
-</span><span id="__span-4-14">    <span class="k">def</span> <span class="nf">Tangent</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span>
+</span><span id="__span-4-14">    <span class="k">def</span><span class="w"> </span><span class="nf">Tangent</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span>
 </span><span id="__span-4-15">        <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">Radius</span><span class="o">.</span><span class="n">X</span> <span class="o">*</span> <span class="ne">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="n">angle</span> <span class="p">)</span>
 </span><span id="__span-4-16">        <span class="n">y</span> <span class="o">=</span>  <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span><span class="o">.</span><span class="n">Y</span> <span class="o">*</span> <span class="ne">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span> <span class="n">angle</span> <span class="p">)</span>
 </span><span id="__span-4-17">
@@ -1803,7 +1803,7 @@
 </span><span id="__span-4-20">        <span class="n">T</span><span class="o">.</span><span class="n">Unitize</span><span class="p">(</span> <span class="p">)</span>
 </span><span id="__span-4-21">        <span class="k">return</span> <span class="n">T</span>
 </span><span id="__span-4-22">
-</span><span id="__span-4-23">    <span class="k">def</span> <span class="nf">Normal</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span>
+</span><span id="__span-4-23">    <span class="k">def</span><span class="w"> </span><span class="nf">Normal</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span>
 </span><span id="__span-4-24">        <span class="k">return</span> <span class="ne">Vector3d</span><span class="o">.</span><span class="n">CrossProduct</span><span class="p">(</span>
 </span><span id="__span-4-25">            <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">ZAxis</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Tangent</span><span class="p">(</span> <span class="n">angle</span> <span class="p">)</span> <span class="p">)</span>
 </span></code></pre></div>
@@ -1813,7 +1813,7 @@
 </span><span id="__span-5-3"><span class="n">center</span> <span class="o">=</span> <span class="ne">Point3d</span><span class="p">(</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span> <span class="p">)</span>
 </span><span id="__span-5-4"><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="n">positive</span> <span class="p">),</span> <span class="nb">float</span><span class="p">(</span> <span class="n">positive</span> <span class="p">)</span>
 </span><span id="__span-5-5">
-</span><span id="__span-5-6"><span class="n">ellipse</span> <span class="o">=</span> <span class="n">Ellipse</span><span class="p">(</span> <span class="ne">Plane</span><span class="p">(</span> <span class="n">center</span><span class="p">,</span>
+</span><span id="__span-5-6"><span class="n">ellipse</span> <span class="o">=</span> <span class="ne">Ellipse</span><span class="p">(</span> <span class="ne">Plane</span><span class="p">(</span> <span class="n">center</span><span class="p">,</span>
 </span><span id="__span-5-7">    <span class="ne">Vector3d</span><span class="o">.</span><span class="n">XAxis</span><span class="p">,</span> <span class="ne">Vector3d</span><span class="o">.</span><span class="n">YAxis</span> <span class="p">),</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">)</span>
 </span><span id="__span-5-8">
 </span><span id="__span-5-9"><span class="sd">&quot;&quot;&quot; Circle&#39;s Properties</span>
@@ -1824,12 +1824,12 @@
 </span></code></pre></div>
 <h2 id="parabola">Parabola</h2>
 <p>Parabolas are quadratic polynomial curves defined as <em>y = ax<sup>2</sup></em>. There are more complex versions including additional linear terms such as <em>y = ax<sup>2</sup> + bx + c</em>. To spatialize a parabola a basis plane is required such that points on the curve can be expressed as seen below.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-6-1"><span class="k">class</span> <span class="nc">Parabola</span><span class="p">:</span>
-</span><span id="__span-6-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><span class="k">class</span><span class="w"> </span><span class="nc">Parabola</span><span class="p">:</span>
+</span><span id="__span-6-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">):</span>
 </span><span id="__span-6-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span> <span class="o">=</span> <span class="n">basis</span>
 </span><span id="__span-6-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Coefficients</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span>
 </span><span id="__span-6-5">
-</span><span id="__span-6-6">    <span class="k">def</span> <span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="p">):</span>
+</span><span id="__span-6-6">    <span class="k">def</span><span class="w"> </span><span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="p">):</span>
 </span><span id="__span-6-7">        <span class="n">y</span> <span class="o">=</span> <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Coefficients</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span>
 </span><span id="__span-6-8">              <span class="bp">self</span><span class="o">.</span><span class="n">Coefficients</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span>
 </span><span id="__span-6-9">              <span class="bp">self</span><span class="o">.</span><span class="n">Coefficients</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">)</span>
@@ -1838,7 +1838,7 @@
 </span><span id="__span-6-12">                 <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">XAxis</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span>
 </span><span id="__span-6-13">                 <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">YAxis</span> <span class="o">*</span> <span class="n">y</span> <span class="p">)</span>
 </span><span id="__span-6-14">
-</span><span id="__span-6-15">    <span class="k">def</span> <span class="nf">Tangent</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="p">):</span>
+</span><span id="__span-6-15">    <span class="k">def</span><span class="w"> </span><span class="nf">Tangent</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="p">):</span>
 </span><span id="__span-6-16">        <span class="n">y</span> <span class="o">=</span> <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Coefficients</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span>
 </span><span id="__span-6-17">              <span class="bp">self</span><span class="o">.</span><span class="n">Coefficients</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
 </span><span id="__span-6-18">
@@ -1847,7 +1847,7 @@
 </span><span id="__span-6-21">        <span class="n">T</span><span class="o">.</span><span class="n">Unitize</span><span class="p">(</span> <span class="p">)</span>
 </span><span id="__span-6-22">        <span class="k">return</span> <span class="n">T</span>
 </span><span id="__span-6-23">
-</span><span id="__span-6-24">    <span class="k">def</span> <span class="nf">Normal</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span>
+</span><span id="__span-6-24">    <span class="k">def</span><span class="w"> </span><span class="nf">Normal</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span>
 </span><span id="__span-6-25">        <span class="k">return</span> <span class="ne">Vector3d</span><span class="o">.</span><span class="n">CrossProduct</span><span class="p">(</span>
 </span><span id="__span-6-26">            <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">ZAxis</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Tangent</span><span class="p">(</span> <span class="n">angle</span> <span class="p">)</span> <span class="p">)</span>
 </span></code></pre></div>
@@ -1862,51 +1862,51 @@
 </span></code></pre></div>
 <h2 id="hyperbola">Hyperbola</h2>
 <p>Hyperbolas in their simplest form are curves defined as <em>y = a / x</em>. They also represent conic sections where the plane is parallel to the cone's axis. Alternatively, a hyperbola can be defined by the relationship where the difference of distances between two points, also known as focii, is fixed for all points on the curve, see <a href="https://en.wikipedia.org/wiki/Hyperbola">additional</a> information.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-8-1"><span class="k">class</span> <span class="nc">Hyperbola</span><span class="p">:</span>
-</span><span id="__span-8-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><span class="k">class</span><span class="w"> </span><span class="nc">Hyperbola</span><span class="p">:</span>
+</span><span id="__span-8-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">):</span>
 </span><span id="__span-8-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span> <span class="o">=</span> <span class="n">basis</span>
 </span><span id="__span-8-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Alpha</span> <span class="o">=</span> <span class="n">alpha</span>
 </span><span id="__span-8-5">
-</span><span id="__span-8-6">    <span class="k">def</span> <span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="p">):</span>
+</span><span id="__span-8-6">    <span class="k">def</span><span class="w"> </span><span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="p">):</span>
 </span><span id="__span-8-7">        <span class="k">return</span> <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">Origin</span> <span class="o">+</span>
 </span><span id="__span-8-8">                 <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">XAxis</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span>
 </span><span id="__span-8-9">                 <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">YAxis</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">Alpha</span> <span class="o">/</span> <span class="n">x</span> <span class="p">)</span>
 </span><span id="__span-8-10">
-</span><span id="__span-8-11">    <span class="k">def</span> <span class="nf">Tangent</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="p">):</span>
+</span><span id="__span-8-11">    <span class="k">def</span><span class="w"> </span><span class="nf">Tangent</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="p">):</span>
 </span><span id="__span-8-12">        <span class="n">T</span> <span class="o">=</span> <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">XAxis</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span>
 </span><span id="__span-8-13">              <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">YAxis</span> <span class="o">*</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">Alpha</span> <span class="o">/</span> <span class="p">(</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="p">)</span> <span class="p">)</span>
 </span><span id="__span-8-14">        <span class="n">T</span><span class="o">.</span><span class="n">Unitize</span><span class="p">(</span> <span class="p">)</span>
 </span><span id="__span-8-15">        <span class="k">return</span> <span class="n">T</span>
 </span><span id="__span-8-16">
-</span><span id="__span-8-17">    <span class="k">def</span> <span class="nf">Normal</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span>
+</span><span id="__span-8-17">    <span class="k">def</span><span class="w"> </span><span class="nf">Normal</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span>
 </span><span id="__span-8-18">        <span class="k">return</span> <span class="ne">Vector3d</span><span class="o">.</span><span class="n">CrossProduct</span><span class="p">(</span>
 </span><span id="__span-8-19">            <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">ZAxis</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Tangent</span><span class="p">(</span> <span class="n">angle</span> <span class="p">)</span> <span class="p">)</span>
 </span></code></pre></div>
 <p>Rhino does not provide a method for constructing hyperbolas programmatically even though it is possible to construct them via the user interface. The curves created are second degree rational Bezier curves.</p>
 <h2 id="spiral">Spiral</h2>
 <p>The term spiral captures a family of planar curves associated with a circular motion where the radius is continuously changing, or in other words the radius is a function of the angle. The definition below captures all spiral curves by requiring a callable radius parameter. The tangent and normal vectors are compute approximately using the finite differences scheme.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-9-1"><span class="k">class</span> <span class="nc">Spiral</span><span class="p">:</span>
-</span><span id="__span-9-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="kc">None</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><span class="k">class</span><span class="w"> </span><span class="nc">Spiral</span><span class="p">:</span>
+</span><span id="__span-9-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="kc">None</span> <span class="p">):</span>
 </span><span id="__span-9-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span>  <span class="o">=</span> <span class="n">basis</span>
 </span><span id="__span-9-4">        <span class="k">if</span><span class="p">(</span> <span class="n">radius</span> <span class="ow">is</span> <span class="kc">None</span> <span class="p">)</span>
 </span><span id="__span-9-5">            <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">angle</span><span class="p">:</span> <span class="n">angle</span>
 </span><span id="__span-9-6">        <span class="k">else</span><span class="p">:</span>
 </span><span id="__span-9-7">            <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span> <span class="o">=</span> <span class="n">radius</span>
 </span><span id="__span-9-8">
-</span><span id="__span-9-9">    <span class="k">def</span> <span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span>
+</span><span id="__span-9-9">    <span class="k">def</span><span class="w"> </span><span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span>
 </span><span id="__span-9-10">        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span><span class="p">(</span> <span class="n">angle</span> <span class="p">)</span> <span class="o">*</span> <span class="ne">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span> <span class="n">angle</span> <span class="p">)</span>
 </span><span id="__span-9-11">        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span><span class="p">(</span> <span class="n">angle</span> <span class="p">)</span> <span class="o">*</span> <span class="ne">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="n">angle</span> <span class="p">)</span>
 </span><span id="__span-9-12">        <span class="k">return</span> <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">Origin</span> <span class="o">+</span>
 </span><span id="__span-9-13">                 <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">XAxis</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span>
 </span><span id="__span-9-14">                 <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">YAxis</span> <span class="o">*</span> <span class="n">y</span> <span class="p">)</span>
 </span><span id="__span-9-15">
-</span><span id="__span-9-16">    <span class="k">def</span> <span class="nf">Tangent</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span> <span class="c1">#-- Approximate</span>
+</span><span id="__span-9-16">    <span class="k">def</span><span class="w"> </span><span class="nf">Tangent</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span> <span class="c1">#-- Approximate</span>
 </span><span id="__span-9-17">        <span class="n">T</span> <span class="o">=</span> <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Evaluate</span><span class="p">(</span> <span class="n">angle</span> <span class="o">+</span> <span class="mf">1e-5</span> <span class="p">)</span> <span class="o">-</span>
 </span><span id="__span-9-18">              <span class="bp">self</span><span class="o">.</span><span class="n">Evaluate</span><span class="p">(</span> <span class="n">angle</span>        <span class="p">)</span> <span class="p">)</span>
 </span><span id="__span-9-19">        <span class="n">T</span><span class="o">.</span><span class="n">Unitize</span><span class="p">(</span> <span class="p">)</span>
 </span><span id="__span-9-20">        <span class="k">return</span> <span class="n">T</span>
 </span><span id="__span-9-21">
-</span><span id="__span-9-22">    <span class="k">def</span> <span class="nf">Normal</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span> <span class="c1">#-- Approximate</span>
+</span><span id="__span-9-22">    <span class="k">def</span><span class="w"> </span><span class="nf">Normal</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span> <span class="c1">#-- Approximate</span>
 </span><span id="__span-9-23">        <span class="k">return</span> <span class="ne">Vector3d</span><span class="o">.</span><span class="n">CrossProduct</span><span class="p">(</span>
 </span><span id="__span-9-24">            <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">ZAxis</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Tangent</span><span class="p">(</span> <span class="n">angle</span> <span class="p">)</span> <span class="p">)</span>
 </span></code></pre></div>
@@ -1922,8 +1922,8 @@
 </span></code></pre></div>
 <h2 id="helix">Helix</h2>
 <p>Helices are associated with spirals but they three-dimensional curves. They are defined using a basis and a radius function. The helical shape is accomplished by translating along the basis' plane Z-axis, in typically linear fashion, as seen below.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-11-1"><span class="k">class</span> <span class="nc">Helix</span><span class="p">:</span>
-</span><span id="__span-11-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="kc">None</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-11-1"><span class="k">class</span><span class="w"> </span><span class="nc">Helix</span><span class="p">:</span>
+</span><span id="__span-11-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="kc">None</span> <span class="p">):</span>
 </span><span id="__span-11-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span>  <span class="o">=</span> <span class="n">basis</span>
 </span><span id="__span-11-4">        <span class="k">if</span><span class="p">(</span> <span class="n">radius</span> <span class="ow">is</span> <span class="kc">None</span> <span class="p">):</span>
 </span><span id="__span-11-5">            <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">angle</span><span class="p">:</span> <span class="mf">1.0</span>
@@ -1932,7 +1932,7 @@
 </span><span id="__span-11-8">        <span class="k">else</span><span class="p">:</span>
 </span><span id="__span-11-9">            <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span> <span class="o">=</span> <span class="n">radius</span>
 </span><span id="__span-11-10">
-</span><span id="__span-11-11">    <span class="k">def</span> <span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
+</span><span id="__span-11-11">    <span class="k">def</span><span class="w"> </span><span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
 </span><span id="__span-11-12">        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span><span class="p">(</span> <span class="n">t</span> <span class="p">)</span> <span class="o">*</span> <span class="ne">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span> <span class="n">t</span> <span class="o">*</span> <span class="ne">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">)</span>
 </span><span id="__span-11-13">        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span><span class="p">(</span> <span class="n">t</span> <span class="p">)</span> <span class="o">*</span> <span class="ne">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="n">t</span> <span class="o">*</span> <span class="ne">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">)</span>
 </span><span id="__span-11-14">        <span class="k">return</span> <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">Origin</span> <span class="o">+</span>
@@ -1940,13 +1940,13 @@
 </span><span id="__span-11-16">                 <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">YAxis</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span>
 </span><span id="__span-11-17">                 <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">ZAxis</span> <span class="o">*</span> <span class="n">t</span> <span class="p">)</span>
 </span><span id="__span-11-18">
-</span><span id="__span-11-19">    <span class="k">def</span> <span class="nf">Tangent</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span> <span class="c1">#-- Approximate</span>
+</span><span id="__span-11-19">    <span class="k">def</span><span class="w"> </span><span class="nf">Tangent</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span> <span class="c1">#-- Approximate</span>
 </span><span id="__span-11-20">        <span class="n">T</span> <span class="o">=</span> <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Evaluate</span><span class="p">(</span> <span class="n">angle</span> <span class="o">+</span> <span class="mf">1e-5</span> <span class="p">)</span> <span class="o">-</span>
 </span><span id="__span-11-21">              <span class="bp">self</span><span class="o">.</span><span class="n">Evaluate</span><span class="p">(</span> <span class="n">angle</span>        <span class="p">)</span> <span class="p">)</span>
 </span><span id="__span-11-22">        <span class="n">T</span><span class="o">.</span><span class="n">Unitize</span><span class="p">(</span> <span class="p">)</span>
 </span><span id="__span-11-23">        <span class="k">return</span> <span class="n">T</span>
 </span><span id="__span-11-24">
-</span><span id="__span-11-25">    <span class="k">def</span> <span class="nf">Normal</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span> <span class="c1">#-- Approximate</span>
+</span><span id="__span-11-25">    <span class="k">def</span><span class="w"> </span><span class="nf">Normal</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span> <span class="c1">#-- Approximate</span>
 </span><span id="__span-11-26">        <span class="k">return</span> <span class="ne">Vector3d</span><span class="o">.</span><span class="n">CrossProduct</span><span class="p">(</span>
 </span><span id="__span-11-27">            <span class="bp">self</span><span class="o">.</span><span class="n">Basis</span><span class="o">.</span><span class="n">ZAxis</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Tangent</span><span class="p">(</span> <span class="n">angle</span> <span class="p">)</span> <span class="p">)</span>
 </span></code></pre></div>

@@ -131,7 +131,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -141,7 +141,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -1851,11 +1851,11 @@
 <h2 id="representations">Representations</h2>
 <h3 id="triangle-lists">Triangle Lists</h3>
 <p>The simplest way to define a mesh is via a collection of 3D points, every three thereof describing a triangle. A table <code>( n, 3 )</code> of points <code>M = [[a1, b1, c1], ... [an, bn, cn]]</code> is often used, however, it is also common to use a <code>( n, 3, 3 )</code> tensors in <code>numpy</code> and <code>pytorch</code> or flat lists of  <code>( n * 9 )</code> coordinates when uploading the data to the GPU.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-0-1"><span class="k">class</span> <span class="nc">TriangleList</span><span class="p">:</span>
-</span><span id="__span-0-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">triangles</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><span class="k">class</span><span class="w"> </span><span class="nc">TriangleList</span><span class="p">:</span>
+</span><span id="__span-0-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">triangles</span> <span class="p">):</span>
 </span><span id="__span-0-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Triangles</span> <span class="o">=</span> <span class="n">triangles</span>
 </span><span id="__span-0-4">
-</span><span id="__span-0-5">    <span class="k">def</span> <span class="nf">ToFloats</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-0-5">    <span class="k">def</span><span class="w"> </span><span class="nf">ToFloats</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-0-6">        <span class="n">coordinates</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span id="__span-0-7">        <span class="k">for</span> <span class="n">triangle</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Triangles</span><span class="p">:</span>
 </span><span id="__span-0-8">            <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">triangle</span><span class="p">:</span>
@@ -1864,7 +1864,7 @@
 </span><span id="__span-0-11">                <span class="n">coordinates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">point</span><span class="o">.</span><span class="n">Z</span> <span class="p">)</span>
 </span><span id="__span-0-12">        <span class="k">return</span> <span class="n">coordinates</span>
 </span><span id="__span-0-13">
-</span><span id="__span-0-14">    <span class="k">def</span> <span class="nf">ToNumPy</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-0-14">    <span class="k">def</span><span class="w"> </span><span class="nf">ToNumPy</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-0-15">        <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span> <span class="nb">len</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Triangles</span> <span class="p">),</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span> <span class="p">)</span> <span class="p">)</span>
 </span><span id="__span-0-16">        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">triangle</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Triangles</span> <span class="p">):</span>
 </span><span id="__span-0-17">            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">point</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span> <span class="n">triangle</span> <span class="p">):</span>
@@ -1885,14 +1885,14 @@
 <p>This representation is the most unstructured way to describe meshes also known as a soup of triangles. It is used when each point is associated with a unique color <code>[r, g, b, a]</code> or a texture coordinate <code>[u, v]</code>. Otherwise, it is considered wasteful because often triangles share points which are duplicated here. For instance a cube has <code>8</code> vertices and <code>6 * 2 = 12</code> triangles, but with this representation we need <code>12 * 3 = 36</code> vertices! Note that this definition may be trivially extended to include quads or polygons instead of only triangles.</p>
 <h3 id="indexed-meshes">Indexed Meshes</h3>
 <p>The common way to represent meshes is using a list of points <code>P = [P0, P1, ..., Pn-1]</code>, also known as vertices, and a list of  indices <code>F = [F0, F1, ..., Fn-1]</code>, also known as faces. A face <code>F[i]</code> is a just list of integers <code>[a, b, c]</code>, where <code>a</code>, <code>b</code> and <code>c</code> describe which vertices to select from the vertex-list, by index, to form a triangle, namely <code>P[a]</code>, <code>P[b]</code> and <code>P[c]</code>. For example, the face <code>[4, 1, 6]</code> represents a triangle with points <code>P[4]</code>, <code>P[1]</code>, and <code>P[6]</code>. The motivation for this representation is primarily for saving memory. A cube only requires <code>8</code> vertices as opposed to <code>36</code> with the equivalent triangle soup representation.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-1-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
-</span><span id="__span-1-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><span class="k">class</span><span class="w"> </span><span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-1-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
 </span><span id="__span-1-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
 </span><span id="__span-1-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">indices</span>
 </span><span id="__span-1-5">
 </span><span id="__span-1-6"><span class="w">    </span><span class="sd">&#39;&#39;&#39; Face Index -&gt; Points</span>
 </span><span id="__span-1-7"><span class="sd">    &#39;&#39;&#39;</span>
-</span><span id="__span-1-8">    <span class="k">def</span> <span class="nf">TriangleAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">face</span> <span class="p">):</span>
+</span><span id="__span-1-8">    <span class="k">def</span><span class="w"> </span><span class="nf">TriangleAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">face</span> <span class="p">):</span>
 </span><span id="__span-1-9">        <span class="n">ia</span><span class="p">,</span> <span class="n">ib</span><span class="p">,</span> <span class="n">ic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span><span class="p">[</span><span class="n">face</span><span class="p">]</span>
 </span><span id="__span-1-10">
 </span><span id="__span-1-11">        <span class="n">pa</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span><span class="p">[</span><span class="n">ia</span><span class="p">]</span>
@@ -1941,7 +1941,7 @@
 </span><span id="__span-3-12">
 </span><span id="__span-3-13"><span class="sd">&quot;&quot;&quot; Convert to Point3f</span>
 </span><span id="__span-3-14"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-3-15"><span class="n">mesh</span><span class="o">.</span><span class="n">Vertices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">Point3f</span><span class="p">(</span> <span class="n">point</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">point</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="n">point</span><span class="o">.</span><span class="n">Z</span> <span class="p">)</span>
+</span><span id="__span-3-15"><span class="n">mesh</span><span class="o">.</span><span class="n">Vertices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="ne">Point3f</span><span class="p">(</span> <span class="n">point</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">point</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="n">point</span><span class="o">.</span><span class="n">Z</span> <span class="p">)</span>
 </span><span id="__span-3-16">
 </span><span id="__span-3-17"><span class="sd">&#39;&#39;&#39; equivalent &#39;&#39;&#39;</span>
 </span><span id="__span-3-18">
@@ -1949,22 +1949,22 @@
 </span></code></pre></div>
 <h3 id="conversions">Conversions</h3>
 <p>Converting between indexed meshes and triangle lists is straight forward application of the indexing logic to select the appropriate vertices and package them into a list.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-4-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
-</span><span id="__span-4-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><span class="k">class</span><span class="w"> </span><span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-4-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
 </span><span id="__span-4-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
 </span><span id="__span-4-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">indices</span>
 </span><span id="__span-4-5">
-</span><span id="__span-4-6">    <span class="k">def</span> <span class="nf">ToTriangleList</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-4-6">    <span class="k">def</span><span class="w"> </span><span class="nf">ToTriangleList</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-4-7">        <span class="n">triangles</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">TriangleAt</span><span class="p">(</span> <span class="n">index</span> <span class="p">)</span>
 </span><span id="__span-4-8">            <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span> <span class="p">)</span> <span class="p">)]</span>
 </span><span id="__span-4-9">        <span class="k">return</span> <span class="ne">TriangleList</span><span class="p">(</span> <span class="n">triangles</span> <span class="p">)</span>
 </span></code></pre></div>
 <p>The opposite conversion, from a triangle list to an indexed mesh, requires flattening all triangles into a list of vertices and serially numbering the faces <code>[0, 1, 2], [3, 4, 5] ...</code>. Note that this process will not merge duplicate vertices and provide a compact the triangle soup.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-5-1"><span class="k">class</span> <span class="nc">TriangleList</span><span class="p">:</span>
-</span><span id="__span-5-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">triangles</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><span class="k">class</span><span class="w"> </span><span class="nc">TriangleList</span><span class="p">:</span>
+</span><span id="__span-5-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">triangles</span> <span class="p">):</span>
 </span><span id="__span-5-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Triangles</span> <span class="o">=</span> <span class="n">triangles</span>
 </span><span id="__span-5-4">
-</span><span id="__span-5-5">    <span class="k">def</span> <span class="nf">ToIndexedMesh</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-5-5">    <span class="k">def</span><span class="w"> </span><span class="nf">ToIndexedMesh</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-5-6">        <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
 </span><span id="__span-5-7">        <span class="k">for</span> <span class="n">triangle</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Triangles</span><span class="p">:</span>
 </span><span id="__span-5-8">            <span class="n">index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span> <span class="n">vertices</span> <span class="p">)</span>
@@ -1978,8 +1978,8 @@
 <h2 id="mesh-normals">Mesh Normals</h2>
 <p>The concept of mesh normals is associated with ideas presented in the analytical curves and surfaces section. Mesh normals are defined per mesh point and express the locally tangent plane. Therefore, the number of normals is the same with the number of points. Mesh normals can be assigned arbitrarily or computed in the approximate sense, since there are no surface derivatives for meshes as they are fundamentally non-differentiable.</p>
 <p>This approximation is performed by averaging the plane normals from the triangles connected with each point. There are two common methods for computing mesh normals, namely weighted and unweighted. The difference is in accumulating unnormalized or normalized normals for each triangle. In other words, using the triangle's area as a weight encoded in the cross product of its sides or not. Weighted normals is motivated by the potential presence of tiny or sliver triangles which may affect the normal direction adversely.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-6-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
-</span><span id="__span-6-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span><span class="p">,</span> <span class="n">normals</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><span class="k">class</span><span class="w"> </span><span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-6-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span><span class="p">,</span> <span class="n">normals</span> <span class="p">):</span>
 </span><span id="__span-6-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
 </span><span id="__span-6-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
 </span><span id="__span-6-5">        <span class="bp">self</span><span class="o">.</span><span class="n">Normals</span>  <span class="o">=</span> <span class="n">normals</span>
@@ -1987,7 +1987,7 @@
 </span><span id="__span-6-7">        <span class="k">if</span><span class="p">(</span> <span class="n">normals</span> <span class="ow">is</span> <span class="kc">None</span> <span class="p">):</span>
 </span><span id="__span-6-8">            <span class="bp">self</span><span class="o">.</span><span class="n">ComputeNormals</span><span class="p">(</span> <span class="p">)</span>
 </span><span id="__span-6-9">
-</span><span id="__span-6-10">    <span class="k">def</span> <span class="nf">ComputeNormals</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">weighted</span> <span class="o">=</span> <span class="kc">False</span> <span class="p">):</span>
+</span><span id="__span-6-10">    <span class="k">def</span><span class="w"> </span><span class="nf">ComputeNormals</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">weighted</span> <span class="o">=</span> <span class="kc">False</span> <span class="p">):</span>
 </span><span id="__span-6-11">        <span class="bp">self</span><span class="o">.</span><span class="n">Normals</span> <span class="o">=</span> <span class="p">[</span><span class="ne">Vector3d</span><span class="o">.</span><span class="n">Zero</span>
 </span><span id="__span-6-12">            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span><span class="p">]</span>
 </span><span id="__span-6-13">
@@ -2041,15 +2041,15 @@
 <h3 id="flat-shading">Flat Shading</h3>
 <p>Mesh normals are used for smoothly shading triangles against light sources. However, a box expressed as an indexed mesh with <code>8</code> vertices and <code>12</code> triangles arguably looks weird. This is because the normals are averaged across faces with sharp angles.</p>
 <p>To avoid this artifact and/or in general to force a mesh to appear with each triangle flat shaded the following approach can be used. The method below copies every triangle but the points are duplicated or unshared such that the normals will not wrap around corners.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-9-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
-</span><span id="__span-9-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span><span class="p">,</span> <span class="n">normals</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><span class="k">class</span><span class="w"> </span><span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-9-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span><span class="p">,</span> <span class="n">normals</span> <span class="p">):</span>
 </span><span id="__span-9-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span>  <span class="o">=</span> <span class="n">vertices</span>
 </span><span id="__span-9-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>     <span class="o">=</span> <span class="n">faces</span>
 </span><span id="__span-9-5">        <span class="bp">self</span><span class="o">.</span><span class="n">Normals</span>   <span class="o">=</span> <span class="n">normals</span>
 </span><span id="__span-9-6">        <span class="k">if</span><span class="p">(</span> <span class="n">normals</span> <span class="ow">is</span> <span class="kc">None</span> <span class="p">):</span>
 </span><span id="__span-9-7">            <span class="bp">self</span><span class="o">.</span><span class="n">ComputeNormals</span><span class="p">(</span> <span class="p">)</span>
 </span><span id="__span-9-8">
-</span><span id="__span-9-9">    <span class="k">def</span> <span class="nf">ToFlatMesh</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-9-9">    <span class="k">def</span><span class="w"> </span><span class="nf">ToFlatMesh</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-9-10">        <span class="n">points</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span id="__span-9-11">        <span class="n">planes</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span id="__span-9-12">        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span> <span class="p">):</span>
@@ -2063,14 +2063,14 @@
 </span></code></pre></div>
 <h2 id="mesh-colors">Mesh Colors</h2>
 <p>Assigning colors to mesh vertices is common from old-school video games to 3d printing and scientific visualization. Supporting per vertex colors is usually implemented with a list containing as many colors as the number of points. Colors may be encoded as either RGB <code>[r, g, b]</code> or RGBA <code>[r, g, b, a]</code> values, where the color components <code>r</code>, <code>g</code>, <code>b</code> and <code>a</code>,  are either expressed as bytes <code>[0, 255]</code> or floats in <code>[0.0, 1.0]</code>.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-10-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
-</span><span id="__span-10-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span><span class="p">,</span> <span class="n">normals</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-10-1"><span class="k">class</span><span class="w"> </span><span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-10-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span><span class="p">,</span> <span class="n">normals</span> <span class="p">):</span>
 </span><span id="__span-10-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span>  <span class="o">=</span> <span class="n">vertices</span>
 </span><span id="__span-10-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>     <span class="o">=</span> <span class="n">faces</span>
 </span><span id="__span-10-5">        <span class="bp">self</span><span class="o">.</span><span class="n">Normals</span>   <span class="o">=</span> <span class="n">normals</span>
 </span><span id="__span-10-6">        <span class="bp">self</span><span class="o">.</span><span class="n">Colors</span>    <span class="o">=</span> <span class="n">colors</span>
 </span><span id="__span-10-7">
-</span><span id="__span-10-8">    <span class="k">def</span> <span class="nf">PaintNormals</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-10-8">    <span class="k">def</span><span class="w"> </span><span class="nf">PaintNormals</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-10-9">        <span class="bp">self</span><span class="o">.</span><span class="n">Colors</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span id="__span-10-10">        <span class="k">for</span> <span class="n">normal</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Normals</span><span class="p">:</span>
 </span><span id="__span-10-11"><span class="w">            </span><span class="sd">&#39;&#39;&#39; Float RGB values [0, 1]</span>
@@ -2088,7 +2088,7 @@
 </span><span id="__span-10-23">            <span class="bp">self</span><span class="o">.</span><span class="n">Colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="p">[</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span> <span class="p">)</span>
 </span><span id="__span-10-24">        <span class="k">return</span> <span class="bp">self</span>
 </span><span id="__span-10-25">
-</span><span id="__span-10-26">    <span class="k">def</span> <span class="nf">PaintZ</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-10-26">    <span class="k">def</span><span class="w"> </span><span class="nf">PaintZ</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-10-27"><span class="w">        </span><span class="sd">&#39;&#39;&#39; Min and Max Z-coordinates</span>
 </span><span id="__span-10-28"><span class="sd">        &#39;&#39;&#39;</span>
 </span><span id="__span-10-29">        <span class="n">zmin</span><span class="p">,</span> <span class="n">zmax</span> <span class="o">=</span> <span class="mf">1e10</span><span class="p">,</span> <span class="o">-</span><span class="mf">1e10</span>
@@ -2111,7 +2111,7 @@
 </span><span id="__span-10-46">        <span class="k">return</span> <span class="bp">self</span>
 </span></code></pre></div>
 <p>Rhino uses the color format representation of <a href="https://learn.microsoft.com/en-us/dotnet/api/system.drawing.color?view=netframework-4.8.1">.NET / Windows</a> where alpha, red, green and blue are packed into a single 32-bit integer.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-11-1"><span class="kn">from</span> <span class="nn">System.Drawing</span> <span class="kn">import</span> <span class="ne">Color</span>
+<div class="highlight"><pre><span></span><code><span id="__span-11-1"><span class="kn">from</span><span class="w"> </span><span class="nn">System.Drawing</span><span class="w"> </span><span class="kn">import</span> <span class="ne">Color</span>
 </span><span id="__span-11-2">
 </span><span id="__span-11-3"><span class="n">mesh</span> <span class="o">=</span> <span class="ne">Mesh</span><span class="p">(</span> <span class="p">)</span>
 </span><span id="__span-11-4">
@@ -2131,8 +2131,8 @@
 <h2 id="mesh-textures">Mesh Textures</h2>
 <p>Associating colors per vertex and letting the GPU smoothly bend them in the interior of triangles can only go as far as painting meshes with gradients. Texture mapping enables applying raster images with much more complex patterns. This is performed by associating each vertex with a texture coordinate, that is the pixel location in the image space.</p>
 <p>Texture coordinates <code>u</code> and <code>v</code> for the horizontal and vertical image direction, respectively, are not expressed in pixels but in the unit range <code>[0, 1]</code>. When the letters <code>s</code> and <code>t</code> are used instead of <code>u</code> and <code>v</code>, the vertical direction of the image is flipped, that is <code>u</code> and <code>s</code> are always left-to-right but <code>u</code> is bottom-to-top while <code>t</code> is top-to-bottom, that is <code>v = 1 - t</code>.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-12-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
-</span><span id="__span-12-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span><span class="p">,</span> <span class="n">textures</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-12-1"><span class="k">class</span><span class="w"> </span><span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-12-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span><span class="p">,</span> <span class="n">textures</span> <span class="p">):</span>
 </span><span id="__span-12-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span>  <span class="o">=</span> <span class="n">vertices</span>
 </span><span id="__span-12-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>     <span class="o">=</span> <span class="n">faces</span>
 </span><span id="__span-12-5">        <span class="bp">self</span><span class="o">.</span><span class="n">Textures</span>  <span class="o">=</span> <span class="n">textures</span>
@@ -2175,7 +2175,7 @@
 <p>Barycentric interpolation enables blending normals and colors by replacing the triangles' vertices with the associated vectors and RGB values. This technique produces smooth gradients and light shading in 3D graphics.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-14-1"><span class="sd">&quot;&quot;&quot; Barycentric Interpolation</span>
 </span><span id="__span-14-2"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-14-3"><span class="k">def</span> <span class="nf">ToBarycentric</span><span class="p">(</span> <span class="n">triangle</span><span class="p">,</span> <span class="n">point</span> <span class="p">):</span>
+</span><span id="__span-14-3"><span class="k">def</span><span class="w"> </span><span class="nf">ToBarycentric</span><span class="p">(</span> <span class="n">triangle</span><span class="p">,</span> <span class="n">point</span> <span class="p">):</span>
 </span><span id="__span-14-4">    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">triangle</span>
 </span><span id="__span-14-5">    <span class="n">area</span> <span class="o">=</span> <span class="ne">Vector3d</span><span class="o">.</span><span class="n">CrossProduct</span><span class="p">(</span> <span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">,</span> <span class="n">c</span> <span class="o">-</span> <span class="n">b</span> <span class="p">)</span><span class="o">.</span><span class="n">Length</span>
 </span><span id="__span-14-6">    <span class="k">return</span> <span class="ne">Point3d</span><span class="p">(</span>
@@ -2183,7 +2183,7 @@
 </span><span id="__span-14-8">        <span class="ne">Vector3d</span><span class="o">.</span><span class="n">CrossProduct</span><span class="p">(</span> <span class="n">c</span> <span class="o">-</span> <span class="n">point</span><span class="p">,</span> <span class="n">a</span> <span class="o">-</span> <span class="n">c</span> <span class="p">)</span><span class="o">.</span><span class="n">Length</span> <span class="o">/</span> <span class="n">area</span><span class="p">,</span>
 </span><span id="__span-14-9">        <span class="ne">Vector3d</span><span class="o">.</span><span class="n">CrossProduct</span><span class="p">(</span> <span class="n">a</span> <span class="o">-</span> <span class="n">point</span><span class="p">,</span> <span class="n">b</span> <span class="o">-</span> <span class="n">a</span> <span class="p">)</span><span class="o">.</span><span class="n">Length</span> <span class="o">/</span> <span class="n">area</span> <span class="p">)</span>
 </span><span id="__span-14-10">
-</span><span id="__span-14-11"><span class="k">def</span> <span class="nf">FromBarycentric</span><span class="p">(</span> <span class="n">triangle</span><span class="p">,</span> <span class="n">point</span> <span class="p">):</span>
+</span><span id="__span-14-11"><span class="k">def</span><span class="w"> </span><span class="nf">FromBarycentric</span><span class="p">(</span> <span class="n">triangle</span><span class="p">,</span> <span class="n">point</span> <span class="p">):</span>
 </span><span id="__span-14-12">    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">triangle</span>
 </span><span id="__span-14-13">    <span class="k">return</span> <span class="p">(</span> <span class="n">a</span> <span class="o">*</span> <span class="n">point</span><span class="o">.</span><span class="n">X</span> <span class="o">+</span>
 </span><span id="__span-14-14">             <span class="n">b</span> <span class="o">*</span> <span class="n">point</span><span class="o">.</span><span class="n">Y</span> <span class="o">+</span>
@@ -2192,13 +2192,13 @@
 <h2 id="operations">Operations</h2>
 <h3 id="surface-area">Surface Area</h3>
 <p>The surface area of a mesh is computed by the sum of the areas of its triangles. The area of triangles can be computed using the cross product.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-15-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
-</span><span id="__span-15-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-15-1"><span class="k">class</span><span class="w"> </span><span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-15-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
 </span><span id="__span-15-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
 </span><span id="__span-15-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
 </span><span id="__span-15-5">
 </span><span id="__span-15-6">    <span class="nd">@property</span>
-</span><span id="__span-15-7">    <span class="k">def</span> <span class="nf">Triangles</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-15-7">    <span class="k">def</span><span class="w"> </span><span class="nf">Triangles</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-15-8">        <span class="k">for</span> <span class="n">ia</span><span class="p">,</span> <span class="n">ib</span><span class="p">,</span> <span class="n">ic</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span><span class="p">:</span>
 </span><span id="__span-15-9">            <span class="n">pa</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span><span class="p">[</span><span class="n">ia</span><span class="p">]</span>
 </span><span id="__span-15-10">            <span class="n">pb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span><span class="p">[</span><span class="n">ib</span><span class="p">]</span>
@@ -2206,7 +2206,7 @@
 </span><span id="__span-15-12">            <span class="k">yield</span> <span class="p">[</span><span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span><span class="p">]</span>
 </span><span id="__span-15-13">
 </span><span id="__span-15-14">    <span class="nd">@property</span>
-</span><span id="__span-15-15">    <span class="k">def</span> <span class="nf">Area</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-15-15">    <span class="k">def</span><span class="w"> </span><span class="nf">Area</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-15-16">        <span class="n">area</span> <span class="o">=</span> <span class="mf">0.0</span>
 </span><span id="__span-15-17">        <span class="k">for</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Triangles</span><span class="p">:</span>
 </span><span id="__span-15-18">            <span class="n">area</span> <span class="o">+=</span> <span class="ne">Vector3d</span><span class="o">.</span><span class="n">CrossProduct</span><span class="p">(</span>
@@ -2222,13 +2222,13 @@
 </span></code></pre></div>
 <h3 id="mesh-volume">Mesh Volume</h3>
 <p>Mesh volume is computed as the sum of signed volumes of tetrahedra formed by each triangle and the world origin, see <a href="https://doi.org/10.1109/ICIP.2001.958278">detailed</a> derivation. The volume associated with a triangle <code>[a, b, c]</code> and the world origin <code>o = [0, 0, 0]</code> is surprisingly easy to compute using <code>a × b · c</code>. Note that only properly closed meshes have meaningful volume.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-17-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
-</span><span id="__span-17-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-17-1"><span class="k">class</span><span class="w"> </span><span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-17-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
 </span><span id="__span-17-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
 </span><span id="__span-17-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
 </span><span id="__span-17-5">
 </span><span id="__span-17-6">    <span class="nd">@property</span>
-</span><span id="__span-17-7">    <span class="k">def</span> <span class="nf">Volume</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-17-7">    <span class="k">def</span><span class="w"> </span><span class="nf">Volume</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-17-8">        <span class="n">volume</span> <span class="o">=</span> <span class="mf">0.0</span>
 </span><span id="__span-17-9">        <span class="k">for</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Triangles</span><span class="p">:</span>
 </span><span id="__span-17-10">            <span class="n">volume</span> <span class="o">+=</span> <span class="ne">Vector3d</span><span class="o">.</span><span class="n">CrossProduct</span><span class="p">(</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span> <span class="p">)</span> <span class="o">*</span> <span class="n">pc</span>
@@ -2248,21 +2248,21 @@
 <div class="highlight"><pre><span></span><code><span id="__span-19-1"><span class="sd">&#39;&#39;&#39; Checks if a point existing in a list of points</span>
 </span><span id="__span-19-2"><span class="sd">    Returns the index if present, or -1 otherwise.</span>
 </span><span id="__span-19-3"><span class="sd">&#39;&#39;&#39;</span>
-</span><span id="__span-19-4"><span class="k">def</span> <span class="nf">FindPoint</span><span class="p">(</span> <span class="n">target</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1e-5</span> <span class="p">):</span>
+</span><span id="__span-19-4"><span class="k">def</span><span class="w"> </span><span class="nf">FindPoint</span><span class="p">(</span> <span class="n">target</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1e-5</span> <span class="p">):</span>
 </span><span id="__span-19-5">    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">source</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span> <span class="n">points</span> <span class="p">):</span>
 </span><span id="__span-19-6">        <span class="k">if</span><span class="p">(</span> <span class="n">source</span><span class="o">.</span><span class="n">DistanceTo</span><span class="p">(</span> <span class="n">target</span> <span class="p">)</span> <span class="o">&lt;=</span> <span class="n">epsilon</span> <span class="p">):</span>
 </span><span id="__span-19-7">            <span class="k">return</span> <span class="n">index</span>
 </span><span id="__span-19-8">    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 </span><span id="__span-19-9">
-</span><span id="__span-19-10"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
-</span><span id="__span-19-11">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+</span><span id="__span-19-10"><span class="k">class</span><span class="w"> </span><span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-19-11">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
 </span><span id="__span-19-12">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
 </span><span id="__span-19-13">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
 </span><span id="__span-19-14">
 </span><span id="__span-19-15"><span class="w">    </span><span class="sd">&#39;&#39;&#39; Removes duplicate vertices and returns a</span>
 </span><span id="__span-19-16"><span class="sd">        new compacted mesh.</span>
 </span><span id="__span-19-17"><span class="sd">    &#39;&#39;&#39;</span>
-</span><span id="__span-19-18">    <span class="k">def</span> <span class="nf">RemoveDuplicateVertices</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1e-5</span> <span class="p">):</span>
+</span><span id="__span-19-18">    <span class="k">def</span><span class="w"> </span><span class="nf">RemoveDuplicateVertices</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1e-5</span> <span class="p">):</span>
 </span><span id="__span-19-19">        <span class="n">vertices</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#-- Unique vertices list</span>
 </span><span id="__span-19-20">        <span class="n">faces</span>    <span class="o">=</span> <span class="p">[]</span> <span class="c1">#-- Reindexed faces list</span>
 </span><span id="__span-19-21">        <span class="k">for</span> <span class="n">triangle</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Triangles</span><span class="p">:</span>

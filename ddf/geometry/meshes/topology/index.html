@@ -131,7 +131,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -141,7 +141,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -1930,27 +1930,27 @@
 <h2 id="connectivity">Connectivity</h2>
 <h3 id="face-to-node">Face to Node</h3>
 <p>The face-to-node map enables queries such as <em>which nodes are connected to a particular face</em>: face → list( node ). This information is already available in the mesh faces list.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-0-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
-</span><span id="__span-0-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><span class="k">class</span><span class="w"> </span><span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-0-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
 </span><span id="__span-0-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
 </span><span id="__span-0-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
 </span><span id="__span-0-5">
 </span><span id="__span-0-6"><span class="w">    </span><span class="sd">&#39;&#39;&#39; Face Index -&gt; Node Indices</span>
 </span><span id="__span-0-7"><span class="sd">    &#39;&#39;&#39;</span>
-</span><span id="__span-0-8">    <span class="k">def</span> <span class="nf">NodesFromFace</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">face</span> <span class="p">):</span>
+</span><span id="__span-0-8">    <span class="k">def</span><span class="w"> </span><span class="nf">NodesFromFace</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">face</span> <span class="p">):</span>
 </span><span id="__span-0-9">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span><span class="p">[</span><span class="n">face</span><span class="p">]</span>
 </span></code></pre></div>
 <h3 id="node-to-face">Node to Face</h3>
 <p>The node-to-face map enables queries such as <em>which faces are connected to a particular node</em>: node → list( face ). It is the exact opposite of a mesh's face list which conveys <em>which nodes are connected to a face</em>: face → list( node ). It may be represented as a list with the same length as the number of points, with each item containing another list of indices pointing to the mesh's faces. The faces about a node are also known as a fan or umbrella.</p>
 <p>The method <code>BuildNodeToFaceMap( )</code> creates a list of sets, one per node, and then iterates over each face updating the map with the node indices encountered. Sets are used because they cull duplicate node indices but they are simplified away into lists before completing the mapping. The method <code>FacesFromNode( )</code> returns a list of the faces connected to a node.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-1-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
-</span><span id="__span-1-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><span class="k">class</span><span class="w"> </span><span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-1-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
 </span><span id="__span-1-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
 </span><span id="__span-1-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
 </span><span id="__span-1-5">
 </span><span id="__span-1-6">        <span class="bp">self</span><span class="o">.</span><span class="n">BuildNodeToFaceMap</span><span class="p">(</span> <span class="p">)</span>
 </span><span id="__span-1-7">
-</span><span id="__span-1-8">    <span class="k">def</span> <span class="nf">BuildNodeToFaceMap</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-1-8">    <span class="k">def</span><span class="w"> </span><span class="nf">BuildNodeToFaceMap</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-1-9">        <span class="bp">self</span><span class="o">.</span><span class="n">NodeToFace</span> <span class="o">=</span> <span class="p">[</span><span class="nb">set</span><span class="p">(</span> <span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span><span class="p">]</span>
 </span><span id="__span-1-10">        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span> <span class="p">):</span>
 </span><span id="__span-1-11">            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
@@ -1961,19 +1961,19 @@
 </span><span id="__span-1-16">
 </span><span id="__span-1-17"><span class="w">    </span><span class="sd">&#39;&#39;&#39; Node Index -&gt; Face Indices</span>
 </span><span id="__span-1-18"><span class="sd">    &#39;&#39;&#39;</span>
-</span><span id="__span-1-19">    <span class="k">def</span> <span class="nf">FacesFromNode</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">node</span> <span class="p">):</span>
+</span><span id="__span-1-19">    <span class="k">def</span><span class="w"> </span><span class="nf">FacesFromNode</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">node</span> <span class="p">):</span>
 </span><span id="__span-1-20">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">NodeToFace</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
 </span></code></pre></div>
 <h3 id="face-to-edge">Face to Edge</h3>
 <p>The face-to-edge map enables queries such as <em>which edges are connected to a particular face</em>: face → list( edge ). Since these relationships are trivially computed from the face list, we do not need to store the data. Instead we can implement this in the form of an iterator. Additionally, in some cases we need the same edge expressed as both <code>( s, t )</code> and <code>( t, s )</code>.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-2-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
-</span><span id="__span-2-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><span class="k">class</span><span class="w"> </span><span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-2-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
 </span><span id="__span-2-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
 </span><span id="__span-2-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
 </span><span id="__span-2-5">
 </span><span id="__span-2-6"><span class="w">    </span><span class="sd">&#39;&#39;&#39; Face Index -&gt; Edge Indices</span>
 </span><span id="__span-2-7"><span class="sd">    &#39;&#39;&#39;</span>
-</span><span id="__span-2-8">    <span class="k">def</span> <span class="nf">EdgesFromFace</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">both_ways</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">):</span>
+</span><span id="__span-2-8">    <span class="k">def</span><span class="w"> </span><span class="nf">EdgesFromFace</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">both_ways</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">):</span>
 </span><span id="__span-2-9">        <span class="n">nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span><span class="p">[</span><span class="n">face</span><span class="p">]</span>
 </span><span id="__span-2-10">        <span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span> <span class="n">nodes</span> <span class="p">)</span>
 </span><span id="__span-2-11">        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">count</span> <span class="p">):</span>
@@ -1985,14 +1985,14 @@
 </span></code></pre></div>
 <h3 id="node-to-node">Node to Node</h3>
 <p>The node-to-node map enables queries such as <em>which nodes are connected to a particular node</em>: node → list( node ). It has as many items as the number of points, with each item containing a list of connected nodes. It is constructed by iterating over each face, collecting the three edges encountered. Again the use of sets is to prevent duplicates. The edges between a node and its adjacent nodes are also known as spokes.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-3-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
-</span><span id="__span-3-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><span class="k">class</span><span class="w"> </span><span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-3-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
 </span><span id="__span-3-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
 </span><span id="__span-3-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
 </span><span id="__span-3-5">
 </span><span id="__span-3-6">        <span class="bp">self</span><span class="o">.</span><span class="n">BuildNodeToNodeMap</span><span class="p">(</span> <span class="p">)</span>
 </span><span id="__span-3-7">
-</span><span id="__span-3-8">    <span class="k">def</span> <span class="nf">BuildNodeToNodeMap</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-3-8">    <span class="k">def</span><span class="w"> </span><span class="nf">BuildNodeToNodeMap</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-3-9">        <span class="bp">self</span><span class="o">.</span><span class="n">NodeToNode</span> <span class="o">=</span> <span class="p">[</span><span class="nb">set</span><span class="p">(</span> <span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span><span class="p">]</span>
 </span><span id="__span-3-10">        <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span><span class="p">:</span>
 </span><span id="__span-3-11">            <span class="bp">self</span><span class="o">.</span><span class="n">NodeToNode</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">b</span> <span class="p">)</span> <span class="c1">#-- a -&gt; b</span>
@@ -2009,19 +2009,19 @@
 </span><span id="__span-3-22">
 </span><span id="__span-3-23"><span class="w">    </span><span class="sd">&#39;&#39;&#39; Node Index -&gt; Node Indices</span>
 </span><span id="__span-3-24"><span class="sd">    &#39;&#39;&#39;</span>
-</span><span id="__span-3-25">    <span class="k">def</span> <span class="nf">NodesFromNode</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">node</span> <span class="p">):</span>
+</span><span id="__span-3-25">    <span class="k">def</span><span class="w"> </span><span class="nf">NodesFromNode</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">node</span> <span class="p">):</span>
 </span><span id="__span-3-26">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">NodeToNode</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
 </span></code></pre></div>
 <h3 id="edge-to-face">Edge to Face</h3>
 <p>The edge-to-face map enables queries such as <em>which faces are connected to a particular edge</em>: edge → list( face ). Unlike the previous maps, we do not know the number of edges in advance. Since an edge requires two indices <code>s</code> and <code>t</code>, we cannot use a lists but instead a dictionary with tuples <code>( s, t )</code> for keys. The edge-to-face map is constructed by iterating over each face, collecting the edges encountered. Again the use of sets is to prevent duplicates and we double store each edge <code>( s, t )</code> and <code>( t, s )</code> for convenience.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-4-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
-</span><span id="__span-4-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><span class="k">class</span><span class="w"> </span><span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-4-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
 </span><span id="__span-4-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
 </span><span id="__span-4-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
 </span><span id="__span-4-5">
 </span><span id="__span-4-6">        <span class="bp">self</span><span class="o">.</span><span class="n">BuildEdgeToFaceMap</span><span class="p">(</span> <span class="p">)</span>
 </span><span id="__span-4-7">
-</span><span id="__span-4-8">    <span class="k">def</span> <span class="nf">BuildEdgeToFaceMap</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-4-8">    <span class="k">def</span><span class="w"> </span><span class="nf">BuildEdgeToFaceMap</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-4-9">        <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span> <span class="o">=</span> <span class="p">{</span> <span class="p">}</span>
 </span><span id="__span-4-10">        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span> <span class="p">)</span> <span class="p">):</span>
 </span><span id="__span-4-11">            <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">EdgesFromFace</span><span class="p">(</span> <span class="n">index</span><span class="p">,</span> <span class="n">both_ways</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">):</span>
@@ -2034,20 +2034,20 @@
 </span><span id="__span-4-18">
 </span><span id="__span-4-19"><span class="w">    </span><span class="sd">&#39;&#39;&#39; Edge Indices -&gt; Face Indices</span>
 </span><span id="__span-4-20"><span class="sd">    &#39;&#39;&#39;</span>
-</span><span id="__span-4-21">    <span class="k">def</span> <span class="nf">FacesFromEdge</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">edge</span> <span class="p">):</span>
+</span><span id="__span-4-21">    <span class="k">def</span><span class="w"> </span><span class="nf">FacesFromEdge</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">edge</span> <span class="p">):</span>
 </span><span id="__span-4-22">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span><span class="p">[</span><span class="n">edge</span><span class="p">]</span>
 </span></code></pre></div>
 <h3 id="face-to-face">Face to Face</h3>
 <p>The face-to-face map enables queries such as <em>which faces are connected to a particular face</em>: face → list( face ). This map can be represented using a list since we know the number of faces in advance. The construction below uses the edge-to-face map as a shortcut. Since two faces are connected with one another through a shared edge, the values of the <code>EdgeToFace</code> dictionary contains faces that are incident. Thus, we just need to use their combinations making sure we don't make the superfluous association between a face and itself.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-5-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
-</span><span id="__span-5-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><span class="k">class</span><span class="w"> </span><span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-5-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
 </span><span id="__span-5-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
 </span><span id="__span-5-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
 </span><span id="__span-5-5">
 </span><span id="__span-5-6">        <span class="bp">self</span><span class="o">.</span><span class="n">BuildEdgeToFaceMap</span><span class="p">(</span> <span class="p">)</span>
 </span><span id="__span-5-7">        <span class="bp">self</span><span class="o">.</span><span class="n">BuildFaceToFaceMap</span><span class="p">(</span> <span class="p">)</span>
 </span><span id="__span-5-8">
-</span><span id="__span-5-9">    <span class="k">def</span> <span class="nf">BuildFaceToFaceMap</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-5-9">    <span class="k">def</span><span class="w"> </span><span class="nf">BuildFaceToFaceMap</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-5-10">        <span class="bp">self</span><span class="o">.</span><span class="n">FaceToFace</span> <span class="o">=</span> <span class="p">[</span><span class="nb">set</span><span class="p">(</span> <span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span><span class="p">]</span>
 </span><span id="__span-5-11">        <span class="k">for</span> <span class="n">faces</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span><span class="o">.</span><span class="n">values</span><span class="p">(</span> <span class="p">):</span>
 </span><span id="__span-5-12">            <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">:</span>
@@ -2060,7 +2060,7 @@
 </span><span id="__span-5-19">
 </span><span id="__span-5-20"><span class="w">    </span><span class="sd">&#39;&#39;&#39; Face Index -&gt; Face Indices</span>
 </span><span id="__span-5-21"><span class="sd">    &#39;&#39;&#39;</span>
-</span><span id="__span-5-22">    <span class="k">def</span> <span class="nf">FacesFromFace</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">face</span> <span class="p">):</span>
+</span><span id="__span-5-22">    <span class="k">def</span><span class="w"> </span><span class="nf">FacesFromFace</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">face</span> <span class="p">):</span>
 </span><span id="__span-5-23">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">FaceToFace</span><span class="p">[</span><span class="n">face</span><span class="p">]</span>
 </span></code></pre></div>
 <h2 id="rhino-topology">Rhino Topology</h2>
@@ -2106,18 +2106,18 @@
 <p>The connectivity maps developed enable understanding several interesting mesh properties and performing operations that require information about the local  neighborhood of a vertex or face.</p>
 <h3 id="boundary-edges">Boundary Edges</h3>
 <p>The number of faces incident to an edge provides insight regarding whether the mesh is an open surface or potentially a closed solid. Edges with only one adjacent face must be on a surface boundary. Therefore, such a mesh cannot not represent a closed solid, which ought to have no boundary edges. Boundary edges are also known as naked.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-10-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
-</span><span id="__span-10-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-10-1"><span class="k">class</span><span class="w"> </span><span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-10-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
 </span><span id="__span-10-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
 </span><span id="__span-10-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
 </span><span id="__span-10-5">
-</span><span id="__span-10-6">    <span class="k">def</span> <span class="nf">HasBoundaryEdges</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-10-6">    <span class="k">def</span><span class="w"> </span><span class="nf">HasBoundaryEdges</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-10-7">        <span class="k">for</span> <span class="n">faces</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span><span class="o">.</span><span class="n">values</span><span class="p">(</span> <span class="p">):</span>
 </span><span id="__span-10-8">            <span class="k">if</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span> <span class="n">faces</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">):</span>
 </span><span id="__span-10-9">                <span class="k">return</span> <span class="kc">True</span>
 </span><span id="__span-10-10">        <span class="k">return</span> <span class="kc">False</span>
 </span><span id="__span-10-11">
-</span><span id="__span-10-12">    <span class="k">def</span> <span class="nf">BoundaryEdges</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-10-12">    <span class="k">def</span><span class="w"> </span><span class="nf">BoundaryEdges</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-10-13">        <span class="n">edges</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span> <span class="p">)</span>
 </span><span id="__span-10-14">        <span class="k">for</span> <span class="p">(</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="p">),</span> <span class="n">faces</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span><span class="o">.</span><span class="n">items</span><span class="p">(</span> <span class="p">):</span>
 </span><span id="__span-10-15">            <span class="k">if</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span> <span class="n">faces</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">):</span>
@@ -2127,18 +2127,18 @@
 </span></code></pre></div>
 <h3 id="non-manifold-edges">Non-Manifold Edges</h3>
 <p>Edges with more than two incident faces are also known as non-manifold. Surfaces with non-manifold edges cannot be properly oriented in the sense of making their normals consistently points towards an interior and an exterior direction. Therefore, meshes with non-manifold edges cannot also represent closed solids.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-11-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
-</span><span id="__span-11-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-11-1"><span class="k">class</span><span class="w"> </span><span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-11-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
 </span><span id="__span-11-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
 </span><span id="__span-11-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
 </span><span id="__span-11-5">
-</span><span id="__span-11-6">    <span class="k">def</span> <span class="nf">HasNonManifoldEdges</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-11-6">    <span class="k">def</span><span class="w"> </span><span class="nf">HasNonManifoldEdges</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-11-7">        <span class="k">for</span> <span class="n">faces</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span><span class="o">.</span><span class="n">values</span><span class="p">(</span> <span class="p">):</span>
 </span><span id="__span-11-8">            <span class="k">if</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span> <span class="n">faces</span> <span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="p">):</span>
 </span><span id="__span-11-9">                <span class="k">return</span> <span class="kc">True</span>
 </span><span id="__span-11-10">        <span class="k">return</span> <span class="kc">False</span>
 </span><span id="__span-11-11">
-</span><span id="__span-11-12">    <span class="k">def</span> <span class="nf">NonManifoldEdges</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-11-12">    <span class="k">def</span><span class="w"> </span><span class="nf">NonManifoldEdges</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-11-13">        <span class="n">edges</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span> <span class="p">)</span>
 </span><span id="__span-11-14">        <span class="k">for</span> <span class="p">(</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="p">),</span> <span class="n">faces</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span><span class="o">.</span><span class="n">items</span><span class="p">(</span> <span class="p">):</span>
 </span><span id="__span-11-15">            <span class="k">if</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span> <span class="n">faces</span> <span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="p">):</span>
@@ -2148,12 +2148,12 @@
 </span></code></pre></div>
 <h3 id="two-manifold-edges">Two-Manifold Edges</h3>
 <p>One of the conditions for determining whether a mesh represents a solid object is such that all its edges have exactly two adjacent faces. This is easy to check using the edge-to-face map.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-12-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
-</span><span id="__span-12-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-12-1"><span class="k">class</span><span class="w"> </span><span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-12-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
 </span><span id="__span-12-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
 </span><span id="__span-12-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
 </span><span id="__span-12-5">
-</span><span id="__span-12-6">    <span class="k">def</span> <span class="nf">HasSolidEdges</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-12-6">    <span class="k">def</span><span class="w"> </span><span class="nf">HasSolidEdges</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-12-7">        <span class="k">for</span> <span class="n">faces</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">EdgeToFace</span><span class="o">.</span><span class="n">values</span><span class="p">(</span> <span class="p">):</span>
 </span><span id="__span-12-8">            <span class="k">if</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span> <span class="n">faces</span> <span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span> <span class="p">):</span>
 </span><span id="__span-12-9">                <span class="k">return</span> <span class="kc">False</span>
@@ -2161,12 +2161,12 @@
 </span></code></pre></div>
 <h3 id="multiple-domains">Multiple Domains</h3>
 <p>A mesh may contain multiple surface fragments that are not connected with one another. This is also known as a multiply connected domain condition. To check whether a mesh represents one continuously connected surface or solid we need to start from a face, say the first one, and walk from face to face until we visit all connected faces once. If by the end of this process the number of faces visited is not equal with total number of faces, then we know that the mesh has multiply connected domains.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-13-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
-</span><span id="__span-13-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-13-1"><span class="k">class</span><span class="w"> </span><span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-13-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
 </span><span id="__span-13-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
 </span><span id="__span-13-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
 </span><span id="__span-13-5">
-</span><span id="__span-13-6">    <span class="k">def</span> <span class="nf">HasMultipleDomains</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">):</span>
+</span><span id="__span-13-6">    <span class="k">def</span><span class="w"> </span><span class="nf">HasMultipleDomains</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">):</span>
 </span><span id="__span-13-7">        <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span> <span class="p">[</span><span class="n">seed</span><span class="p">]</span> <span class="p">)</span>
 </span><span id="__span-13-8">        <span class="n">queue</span> <span class="o">=</span> <span class="p">[</span><span class="n">seed</span><span class="p">]</span>
 </span><span id="__span-13-9">        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span> <span class="n">queue</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">):</span>
@@ -2179,19 +2179,19 @@
 </span></code></pre></div>
 <h3 id="face-orientation">Face Orientation</h3>
 <p>Checking whether the normals of a simply connected mesh are consistently oriented can be performed by examining pairs of adjacent faces and evaluating the sign of their dot products. If all normals are aligned then the mesh fulfils another necessary condition for representing a solid.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-14-1"><span class="k">class</span> <span class="nc">IndexedMesh</span><span class="p">:</span>
-</span><span id="__span-14-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-14-1"><span class="k">class</span><span class="w"> </span><span class="nc">IndexedMesh</span><span class="p">:</span>
+</span><span id="__span-14-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">faces</span> <span class="p">):</span>
 </span><span id="__span-14-3">        <span class="bp">self</span><span class="o">.</span><span class="n">Vertices</span> <span class="o">=</span> <span class="n">vertices</span>
 </span><span id="__span-14-4">        <span class="bp">self</span><span class="o">.</span><span class="n">Faces</span>    <span class="o">=</span> <span class="n">faces</span>
 </span><span id="__span-14-5">
 </span><span id="__span-14-6"><span class="w">    </span><span class="sd">&#39;&#39;&#39; Face Index -&gt; Face Normal</span>
 </span><span id="__span-14-7"><span class="sd">    &#39;&#39;&#39;</span>
-</span><span id="__span-14-8">    <span class="k">def</span> <span class="nf">FaceNormalAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">face</span> <span class="p">):</span>
+</span><span id="__span-14-8">    <span class="k">def</span><span class="w"> </span><span class="nf">FaceNormalAt</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">face</span> <span class="p">):</span>
 </span><span id="__span-14-9">        <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">TriangleAt</span><span class="p">(</span> <span class="n">face</span> <span class="p">)</span>
 </span><span id="__span-14-10">        <span class="k">return</span> <span class="ne">Vector3d</span><span class="o">.</span><span class="n">CrossProduct</span><span class="p">(</span>
 </span><span id="__span-14-11">            <span class="n">pb</span> <span class="o">-</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pc</span> <span class="o">-</span> <span class="n">pb</span> <span class="p">)</span>
 </span><span id="__span-14-12">
-</span><span id="__span-14-13">    <span class="k">def</span> <span class="nf">HasInconsistentNormals</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-14-13">    <span class="k">def</span><span class="w"> </span><span class="nf">HasInconsistentNormals</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-14-14">        <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
 </span><span id="__span-14-15">        <span class="n">stack</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </span><span id="__span-14-16">        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span> <span class="n">queue</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">):</span>

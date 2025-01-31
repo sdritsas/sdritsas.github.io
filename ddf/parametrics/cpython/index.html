@@ -131,7 +131,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -141,7 +141,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -1685,14 +1685,14 @@
 <p>There are some conventions to be followed for bridging between IronPython and CPython. The code below provides a template.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><span class="sd">&quot;&quot;&quot; CPython Code</span>
 </span><span id="__span-0-2"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-0-3"><span class="k">def</span> <span class="nf">PythonCode</span><span class="p">(</span> <span class="n">params</span> <span class="p">):</span>
-</span><span id="__span-0-4">    <span class="kn">import</span> <span class="nn">sys</span>
+</span><span id="__span-0-3"><span class="k">def</span><span class="w"> </span><span class="nf">PythonCode</span><span class="p">(</span> <span class="n">params</span> <span class="p">):</span>
+</span><span id="__span-0-4">    <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 </span><span id="__span-0-5">    <span class="k">return</span> <span class="n">params</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&lt;&lt;--- Python &#39;</span> <span class="o">+</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span>
 </span><span id="__span-0-6">
 </span><span id="__span-0-7"><span class="sd">&quot;&quot;&quot; IronPython -&gt; CPython Parameter Conversion</span>
 </span><span id="__span-0-8"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-0-9"><span class="k">def</span> <span class="nf">PythonParams</span><span class="p">(</span> <span class="n">params</span> <span class="p">):</span>
-</span><span id="__span-0-10">    <span class="kn">import</span> <span class="nn">sys</span>
+</span><span id="__span-0-9"><span class="k">def</span><span class="w"> </span><span class="nf">PythonParams</span><span class="p">(</span> <span class="n">params</span> <span class="p">):</span>
+</span><span id="__span-0-10">    <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 </span><span id="__span-0-11">    <span class="k">if</span><span class="p">(</span> <span class="n">params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="p">):</span>
 </span><span id="__span-0-12">        <span class="k">return</span> <span class="n">params</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">---&gt;&gt; Python &#39;</span> <span class="o">+</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span>
 </span><span id="__span-0-13">    <span class="k">else</span><span class="p">:</span>
@@ -1700,8 +1700,8 @@
 </span><span id="__span-0-15">
 </span><span id="__span-0-16"><span class="sd">&quot;&quot;&quot; CPython -&gt; IronPython Result Conversion</span>
 </span><span id="__span-0-17"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-0-18"><span class="k">def</span> <span class="nf">PythonResult</span><span class="p">(</span> <span class="n">params</span> <span class="p">):</span>
-</span><span id="__span-0-19">    <span class="kn">import</span> <span class="nn">sys</span>
+</span><span id="__span-0-18"><span class="k">def</span><span class="w"> </span><span class="nf">PythonResult</span><span class="p">(</span> <span class="n">params</span> <span class="p">):</span>
+</span><span id="__span-0-19">    <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 </span><span id="__span-0-20">    <span class="k">return</span> <span class="n">params</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">---&gt;&gt; Python &#39;</span> <span class="o">+</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span>
 </span><span id="__span-0-21">
 </span><span id="__span-0-22"><span class="n">Context</span> <span class="o">=</span> <span class="p">(</span> <span class="n">ghenv</span><span class="p">,</span>          <span class="c1">#-- Required</span>
@@ -1728,21 +1728,21 @@
 <p>The sample below demonstrates how to use <code>numpy</code> to compute the average among a list of points. It assumes that <code>numpy</code> is already installed, otherwise use <code>pip install numpy</code>. The <code>PointAverage( )</code> function expects a list of point coordinates, which it converts to a <code>numpy</code> array, computes the mean value and returns a list of coordinates. The <code>ToNumPy( )</code> as well as the <code>ToRhino( )</code> functions take care of the conversion between <code>Point3d</code> and <code>list[float]</code>.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-1-1"><span class="sd">&quot;&quot;&quot; Point Average using NumPy</span>
 </span><span id="__span-1-2"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-1-3"><span class="k">def</span> <span class="nf">PointAverage</span><span class="p">(</span> <span class="n">points</span> <span class="p">):</span>
-</span><span id="__span-1-4">    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span><span id="__span-1-3"><span class="k">def</span><span class="w"> </span><span class="nf">PointAverage</span><span class="p">(</span> <span class="n">points</span> <span class="p">):</span>
+</span><span id="__span-1-4">    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </span><span id="__span-1-5">    <span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="n">points</span> <span class="p">),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">)</span>
 </span><span id="__span-1-6">    <span class="k">return</span> <span class="n">mean</span><span class="o">.</span><span class="n">tolist</span><span class="p">(</span> <span class="p">)</span>
 </span><span id="__span-1-7">
 </span><span id="__span-1-8"><span class="sd">&quot;&quot;&quot; Points to Coordinate Lists</span>
 </span><span id="__span-1-9"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-1-10"><span class="k">def</span> <span class="nf">ToNumPy</span><span class="p">(</span> <span class="n">points</span> <span class="p">):</span>
+</span><span id="__span-1-10"><span class="k">def</span><span class="w"> </span><span class="nf">ToNumPy</span><span class="p">(</span> <span class="n">points</span> <span class="p">):</span>
 </span><span id="__span-1-11">    <span class="k">return</span> <span class="p">[[</span><span class="n">point</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">point</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="n">point</span><span class="o">.</span><span class="n">Z</span><span class="p">]</span>
 </span><span id="__span-1-12">        <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">points</span><span class="p">]</span>
 </span><span id="__span-1-13">
 </span><span id="__span-1-14"><span class="sd">&quot;&quot;&quot; Coordinate List to Point</span>
 </span><span id="__span-1-15"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-1-16"><span class="k">def</span> <span class="nf">ToRhino</span><span class="p">(</span> <span class="n">point</span> <span class="p">):</span>
-</span><span id="__span-1-17">    <span class="kn">from</span> <span class="nn">Rhino.Geometry</span> <span class="kn">import</span> <span class="ne">Point3d</span>
+</span><span id="__span-1-16"><span class="k">def</span><span class="w"> </span><span class="nf">ToRhino</span><span class="p">(</span> <span class="n">point</span> <span class="p">):</span>
+</span><span id="__span-1-17">    <span class="kn">from</span><span class="w"> </span><span class="nn">Rhino.Geometry</span><span class="w"> </span><span class="kn">import</span> <span class="ne">Point3d</span>
 </span><span id="__span-1-18">    <span class="k">return</span> <span class="ne">Point3d</span><span class="p">(</span> <span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">point</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">)</span>
 </span><span id="__span-1-19">
 </span><span id="__span-1-20"><span class="n">Context</span> <span class="o">=</span> <span class="p">(</span> <span class="n">ghenv</span><span class="p">,</span> <span class="n">PointAverage</span><span class="p">,</span> <span class="n">ToNumPy</span><span class="p">(</span> <span class="n">Points</span> <span class="p">),</span> <span class="n">ToRhino</span> <span class="p">)</span>
@@ -1807,23 +1807,23 @@
 <p>The example below demonstrates passing a curve object across boundaries, splitting into two parts and returning it back.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-2-1"><span class="sd">&quot;&quot;&quot; Load Curve from Json Data</span>
 </span><span id="__span-2-2"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-2-3"><span class="k">def</span> <span class="nf">Exchange</span><span class="p">(</span> <span class="n">data</span> <span class="p">):</span>
-</span><span id="__span-2-4">    <span class="kn">import</span> <span class="nn">json</span>
-</span><span id="__span-2-5">    <span class="kn">from</span> <span class="nn">rhino3dm</span> <span class="kn">import</span> <span class="n">Curve</span>
-</span><span id="__span-2-6">    <span class="n">curve</span> <span class="o">=</span> <span class="n">Curve</span><span class="o">.</span><span class="n">Decode</span><span class="p">(</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span> <span class="n">data</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-2-3"><span class="k">def</span><span class="w"> </span><span class="nf">Exchange</span><span class="p">(</span> <span class="n">data</span> <span class="p">):</span>
+</span><span id="__span-2-4">    <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+</span><span id="__span-2-5">    <span class="kn">from</span><span class="w"> </span><span class="nn">rhino3dm</span><span class="w"> </span><span class="kn">import</span> <span class="ne">Curve</span>
+</span><span id="__span-2-6">    <span class="n">curve</span> <span class="o">=</span> <span class="ne">Curve</span><span class="o">.</span><span class="n">Decode</span><span class="p">(</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span> <span class="n">data</span> <span class="p">)</span> <span class="p">)</span>
 </span><span id="__span-2-7">    <span class="n">parts</span> <span class="o">=</span> <span class="n">curve</span><span class="o">.</span><span class="n">Split</span><span class="p">(</span> <span class="mf">0.5</span> <span class="p">)</span>
 </span><span id="__span-2-8">    <span class="k">return</span> <span class="p">[</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span> <span class="n">part</span><span class="o">.</span><span class="n">Encode</span><span class="p">(</span> <span class="p">)</span> <span class="p">)</span>
 </span><span id="__span-2-9">        <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">]</span>
 </span><span id="__span-2-10">
 </span><span id="__span-2-11"><span class="sd">&quot;&quot;&quot; Encode Curve to Json Data</span>
 </span><span id="__span-2-12"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-2-13"><span class="k">def</span> <span class="nf">Encode</span><span class="p">(</span> <span class="n">curve</span> <span class="p">):</span>
+</span><span id="__span-2-13"><span class="k">def</span><span class="w"> </span><span class="nf">Encode</span><span class="p">(</span> <span class="n">curve</span> <span class="p">):</span>
 </span><span id="__span-2-14">    <span class="k">return</span> <span class="n">curve</span><span class="o">.</span><span class="n">ToJSON</span><span class="p">(</span> <span class="kc">None</span> <span class="p">)</span>
 </span><span id="__span-2-15">
 </span><span id="__span-2-16"><span class="sd">&quot;&quot;&quot; Load Curves from Json Data</span>
 </span><span id="__span-2-17"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-2-18"><span class="k">def</span> <span class="nf">Decode</span><span class="p">(</span> <span class="n">data</span> <span class="p">):</span>
-</span><span id="__span-2-19">    <span class="kn">from</span> <span class="nn">Rhino.Runtime</span> <span class="kn">import</span> <span class="n">CommonObject</span>
+</span><span id="__span-2-18"><span class="k">def</span><span class="w"> </span><span class="nf">Decode</span><span class="p">(</span> <span class="n">data</span> <span class="p">):</span>
+</span><span id="__span-2-19">    <span class="kn">from</span><span class="w"> </span><span class="nn">Rhino.Runtime</span><span class="w"> </span><span class="kn">import</span> <span class="n">CommonObject</span>
 </span><span id="__span-2-20">    <span class="n">parts</span> <span class="o">=</span> <span class="p">[</span><span class="n">CommonObject</span><span class="o">.</span><span class="n">FromJSON</span><span class="p">(</span> <span class="n">item</span> <span class="p">)</span>
 </span><span id="__span-2-21">        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
 </span><span id="__span-2-22">    <span class="k">return</span> <span class="n">parts</span>
@@ -1832,9 +1832,9 @@
 </span></code></pre></div>
 <h2 id="advanced-topics">Advanced Topics</h2>
 <p>The source of the <code>cpy</code> component is listed below for potential customization, such as activating virtual environments etc. Overall, the function <code>InvokePython( )</code>: (a) extracts the relevant code from the connected <code>ipy</code> component; (b) it appends some boilerplate code and writes the code into a CPython file saved on the desktop; (c) then the python code is executed and the results are saved in a json file also on the desktop; finally, (d) the result value is read, decoded and exported as the <code>Result</code> parameter. Errors are reported through the <code>Messages</code> output parameter and a success or failure <code>Status</code> code is also exported.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-3-1"><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">json</span><span class="o">,</span> <span class="nn">traceback</span><span class="o">,</span> <span class="nn">ast</span>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span><span class="o">,</span><span class="w"> </span><span class="nn">json</span><span class="o">,</span><span class="w"> </span><span class="nn">traceback</span><span class="o">,</span><span class="w"> </span><span class="nn">ast</span>
 </span><span id="__span-3-2">
-</span><span id="__span-3-3"><span class="k">def</span> <span class="nf">InvokePython</span><span class="p">(</span> <span class="n">context</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">callback</span> <span class="p">):</span>
+</span><span id="__span-3-3"><span class="k">def</span><span class="w"> </span><span class="nf">InvokePython</span><span class="p">(</span> <span class="n">context</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">callback</span> <span class="p">):</span>
 </span><span id="__span-3-4"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Extract Source Code from Connected Component</span>
 </span><span id="__span-3-5"><span class="sd">        Note: The method&#39;s co_code member is empty.</span>
 </span><span id="__span-3-6"><span class="sd">    &quot;&quot;&quot;</span>
@@ -1916,7 +1916,7 @@
 </span><span id="__span-3-82">            <span class="n">python</span> <span class="o">=</span> <span class="s1">&#39;python&#39;</span>
 </span><span id="__span-3-83">        <span class="n">command</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> &quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">python</span><span class="p">,</span> <span class="n">source</span> <span class="p">)</span>
 </span><span id="__span-3-84">        <span class="k">if</span><span class="p">(</span> <span class="n">Debug</span> <span class="p">):</span> <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;#-- Command</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">command</span> <span class="p">)</span> <span class="p">)</span>
-</span><span id="__span-3-85">        <span class="kn">import</span> <span class="nn">subprocess</span>
+</span><span id="__span-3-85">        <span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
 </span><span id="__span-3-86">        <span class="n">info</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">STARTUPINFO</span><span class="p">(</span> <span class="p">)</span>
 </span><span id="__span-3-87">        <span class="n">info</span><span class="o">.</span><span class="n">dwFlags</span> <span class="o">|=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">STARTF_USESHOWWINDOW</span>
 </span><span id="__span-3-88">        <span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span> <span class="n">command</span><span class="p">,</span>

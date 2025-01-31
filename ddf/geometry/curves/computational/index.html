@@ -131,7 +131,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -141,7 +141,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -2057,35 +2057,35 @@
 <p>Polylines are piece-wise continuous line segment curves represented by lists of points. Polylines where the first and last points coincide are considered closed or otherwise open. The length of a polyline is the sum of its linear segments.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><span class="sd">&quot;&quot;&quot; Polyline Class</span>
 </span><span id="__span-0-2"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-0-3"><span class="k">class</span> <span class="nc">Poly</span><span class="p">:</span>
+</span><span id="__span-0-3"><span class="k">class</span><span class="w"> </span><span class="nc">Poly</span><span class="p">:</span>
 </span><span id="__span-0-4"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Construction</span>
 </span><span id="__span-0-5"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-0-6">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">points</span> <span class="p">):</span>
+</span><span id="__span-0-6">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">points</span> <span class="p">):</span>
 </span><span id="__span-0-7">        <span class="bp">self</span><span class="o">.</span><span class="n">Points</span> <span class="o">=</span> <span class="n">points</span>
 </span><span id="__span-0-8">
 </span><span id="__span-0-9"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Source/Start Point</span>
 </span><span id="__span-0-10"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="__span-0-11">    <span class="nd">@property</span>
-</span><span id="__span-0-12">    <span class="k">def</span> <span class="nf">Source</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-0-12">    <span class="k">def</span><span class="w"> </span><span class="nf">Source</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-0-13">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </span><span id="__span-0-14">
 </span><span id="__span-0-15"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Target/End Point</span>
 </span><span id="__span-0-16"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="__span-0-17">    <span class="nd">@property</span>
-</span><span id="__span-0-18">    <span class="k">def</span> <span class="nf">Target</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-0-18">    <span class="k">def</span><span class="w"> </span><span class="nf">Target</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-0-19">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </span><span id="__span-0-20">
 </span><span id="__span-0-21"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Is Polyline Closed?</span>
 </span><span id="__span-0-22"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="__span-0-23">    <span class="nd">@property</span>
-</span><span id="__span-0-24">    <span class="k">def</span> <span class="nf">IsClosed</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-0-24">    <span class="k">def</span><span class="w"> </span><span class="nf">IsClosed</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-0-25">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Source</span><span class="o">.</span><span class="n">DistanceTo</span><span class="p">(</span>
 </span><span id="__span-0-26">               <span class="bp">self</span><span class="o">.</span><span class="n">Target</span> <span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">1e-5</span>
 </span><span id="__span-0-27">
 </span><span id="__span-0-28"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Line Segments Enumerator</span>
 </span><span id="__span-0-29"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="__span-0-30">    <span class="nd">@property</span>
-</span><span id="__span-0-31">    <span class="k">def</span> <span class="nf">Segments</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-0-31">    <span class="k">def</span><span class="w"> </span><span class="nf">Segments</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-0-32">        <span class="k">for</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
 </span><span id="__span-0-33">                <span class="bp">self</span><span class="o">.</span><span class="n">Points</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">Points</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="p">)</span>
 </span><span id="__span-0-34">            <span class="k">yield</span> <span class="p">(</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span> <span class="p">)</span>
@@ -2093,17 +2093,17 @@
 </span><span id="__span-0-36"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Length of Polyline</span>
 </span><span id="__span-0-37"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="__span-0-38">    <span class="nd">@property</span>
-</span><span id="__span-0-39">    <span class="k">def</span> <span class="nf">Length</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-0-39">    <span class="k">def</span><span class="w"> </span><span class="nf">Length</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-0-40">        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span> <span class="p">[</span><span class="n">source</span><span class="o">.</span><span class="n">DistanceTo</span><span class="p">(</span> <span class="n">target</span> <span class="p">)</span>
 </span><span id="__span-0-41">            <span class="k">for</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Segments</span><span class="p">]</span> <span class="p">)</span>
 </span></code></pre></div>
 <h3 id="smoothing">Smoothing</h3>
 <p>Polylines are often used for representing time-series, where a value or position is tracked over time. Signals collected from sensors often contain numerous points as well as errors. A simple process for decimating the points and simultaneously deriving a smooth trend curve involves averaging consecutive points.</p>
 <p>In each iteration, every line segment is collapsed to its mid-point, and thus the polyline is reduced by one point. Averaging is repeated recursively producing a smooth approximations of the initial curve. The start and end points of the polyline may be retained, or pinned, because otherwise the curve will geometrically shrink, theoretically down to a single point.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-1-1"><span class="k">class</span> <span class="nc">Poly</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><span class="k">class</span><span class="w"> </span><span class="nc">Poly</span><span class="p">:</span>
 </span><span id="__span-1-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Average Consecutive Points</span>
 </span><span id="__span-1-3"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-1-4">    <span class="k">def</span> <span class="nf">Average</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">pinned</span> <span class="p">):</span>
+</span><span id="__span-1-4">    <span class="k">def</span><span class="w"> </span><span class="nf">Average</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">pinned</span> <span class="p">):</span>
 </span><span id="__span-1-5">        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span id="__span-1-6">        <span class="k">if</span><span class="p">(</span> <span class="n">pinned</span> <span class="p">):</span>
 </span><span id="__span-1-7">            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Source</span> <span class="p">)</span>
@@ -2117,18 +2117,18 @@
 </span><span id="__span-1-15">
 </span><span id="__span-1-16"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Polyline Smoothing</span>
 </span><span id="__span-1-17"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-1-18">    <span class="k">def</span> <span class="nf">Smooth</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">iterations</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="n">pinned</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">):</span>
+</span><span id="__span-1-18">    <span class="k">def</span><span class="w"> </span><span class="nf">Smooth</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">iterations</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="n">pinned</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">):</span>
 </span><span id="__span-1-19">        <span class="n">points</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Points</span>
 </span><span id="__span-1-20">        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">iterations</span> <span class="p">):</span>
 </span><span id="__span-1-21">            <span class="n">points</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Average</span><span class="p">(</span> <span class="n">points</span><span class="p">,</span> <span class="n">pinned</span> <span class="p">)</span>
 </span><span id="__span-1-22">        <span class="k">return</span> <span class="ne">Poly</span><span class="p">(</span> <span class="n">points</span> <span class="p">)</span>
 </span><span id="__span-1-23">
-</span><span id="__span-1-24">    <span class="k">def</span> <span class="nf">ToPolyline</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-1-24">    <span class="k">def</span><span class="w"> </span><span class="nf">ToPolyline</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-1-25">        <span class="k">return</span> <span class="ne">Polyline</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Points</span> <span class="p">)</span>
 </span><span id="__span-1-26">
 </span><span id="__span-1-27"><span class="sd">&quot;&quot;&quot; Smoothing Noisy Signal</span>
 </span><span id="__span-1-28"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-1-29"><span class="kn">import</span> <span class="nn">math</span><span class="o">,</span> <span class="nn">random</span>
+</span><span id="__span-1-29"><span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="o">,</span><span class="w"> </span><span class="nn">random</span>
 </span><span id="__span-1-30">
 </span><span id="__span-1-31"><span class="n">points</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span id="__span-1-32"><span class="n">count</span> <span class="o">=</span> <span class="mi">50</span>
@@ -2184,8 +2184,8 @@
 <p>The number of points <code>n</code> after each iteration is almost double <code>2 * n - 1</code>, therefore the curve rapidly reaches its smooth limiting shape. Open and closed control polygons require attention such that the new points wrap around properly.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-3-1"><span class="sd">&quot;&quot;&quot; Subdivision Curve</span>
 </span><span id="__span-3-2"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-3-3"><span class="k">class</span> <span class="nc">SubDivisionCurve</span><span class="p">(</span> <span class="ne">Poly</span> <span class="p">):</span>
-</span><span id="__span-3-4">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">weight</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">):</span>
+</span><span id="__span-3-3"><span class="k">class</span><span class="w"> </span><span class="nc">SubDivisionCurve</span><span class="p">(</span> <span class="ne">Poly</span> <span class="p">):</span>
+</span><span id="__span-3-4">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">weight</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">):</span>
 </span><span id="__span-3-5">        <span class="ne">Poly</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">points</span> <span class="p">)</span>
 </span><span id="__span-3-6">        <span class="n">scale</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span> <span class="n">weight</span> <span class="o">+</span> <span class="mi">2</span> <span class="p">)</span>
 </span><span id="__span-3-7">        <span class="bp">self</span><span class="o">.</span><span class="n">Kernel</span> <span class="o">=</span> <span class="p">[</span><span class="n">scale</span><span class="p">,</span>
@@ -2194,7 +2194,7 @@
 </span><span id="__span-3-10">
 </span><span id="__span-3-11"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Evaluate Kernel</span>
 </span><span id="__span-3-12"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-3-13">    <span class="k">def</span> <span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="p">):</span>
+</span><span id="__span-3-13">    <span class="k">def</span><span class="w"> </span><span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="p">):</span>
 </span><span id="__span-3-14">        <span class="n">A</span> <span class="o">=</span> <span class="p">(</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 </span><span id="__span-3-15">        <span class="n">C</span> <span class="o">=</span> <span class="p">(</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 </span><span id="__span-3-16">
@@ -2205,7 +2205,7 @@
 </span><span id="__span-3-21">
 </span><span id="__span-3-22"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Subdivision Iteration</span>
 </span><span id="__span-3-23"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-3-24">    <span class="k">def</span> <span class="nf">Subdivide</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">closed</span> <span class="p">):</span>
+</span><span id="__span-3-24">    <span class="k">def</span><span class="w"> </span><span class="nf">Subdivide</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">closed</span> <span class="p">):</span>
 </span><span id="__span-3-25">        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span id="__span-3-26">        <span class="k">if</span><span class="p">(</span> <span class="n">closed</span> <span class="p">):</span>
 </span><span id="__span-3-27">            <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Evaluate</span><span class="p">(</span>
@@ -2232,7 +2232,7 @@
 </span><span id="__span-3-48">
 </span><span id="__span-3-49"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Curve Approximation</span>
 </span><span id="__span-3-50"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-3-51">    <span class="k">def</span> <span class="nf">Approximate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">iterations</span> <span class="o">=</span> <span class="mi">8</span> <span class="p">):</span>
+</span><span id="__span-3-51">    <span class="k">def</span><span class="w"> </span><span class="nf">Approximate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">iterations</span> <span class="o">=</span> <span class="mi">8</span> <span class="p">):</span>
 </span><span id="__span-3-52">        <span class="n">points</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Points</span>
 </span><span id="__span-3-53">        <span class="n">closed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">IsClosed</span>
 </span><span id="__span-3-54">        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">iterations</span> <span class="p">):</span>
@@ -2271,21 +2271,21 @@
 <div class="highlight"><pre><span></span><code><span id="__span-4-1"><span class="sd">&quot;&quot;&quot; Binomial Coefficient for python &lt; 3.8</span>
 </span><span id="__span-4-2"><span class="sd">    or just math.comb( ) for python &gt; 3.8</span>
 </span><span id="__span-4-3"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-4-4"><span class="k">def</span> <span class="nf">math_comb</span><span class="p">(</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span> <span class="p">):</span>
+</span><span id="__span-4-4"><span class="k">def</span><span class="w"> </span><span class="nf">math_comb</span><span class="p">(</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span> <span class="p">):</span>
 </span><span id="__span-4-5">    <span class="k">return</span> <span class="ne">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span> <span class="n">n</span> <span class="p">)</span> <span class="o">//</span> <span class="p">(</span>
 </span><span id="__span-4-6">           <span class="ne">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span> <span class="n">k</span> <span class="p">)</span> <span class="o">*</span> <span class="ne">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span> <span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="p">)</span> <span class="p">)</span>
 </span><span id="__span-4-7">
 </span><span id="__span-4-8"><span class="sd">&quot;&quot;&quot; Evaluate Bezier at Parameter</span>
 </span><span id="__span-4-9"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-4-10"><span class="k">class</span> <span class="nc">BezierCurve</span><span class="p">:</span>
-</span><span id="__span-4-11">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">points</span> <span class="p">):</span>
+</span><span id="__span-4-10"><span class="k">class</span><span class="w"> </span><span class="nc">BezierCurve</span><span class="p">:</span>
+</span><span id="__span-4-11">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">points</span> <span class="p">):</span>
 </span><span id="__span-4-12">        <span class="bp">self</span><span class="o">.</span><span class="n">Points</span> <span class="o">=</span> <span class="n">points</span>
 </span><span id="__span-4-13">
 </span><span id="__span-4-14">    <span class="nd">@property</span>
-</span><span id="__span-4-15">    <span class="k">def</span> <span class="nf">Degree</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-4-15">    <span class="k">def</span><span class="w"> </span><span class="nf">Degree</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-4-16">        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Points</span> <span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
 </span><span id="__span-4-17">
-</span><span id="__span-4-18">    <span class="k">def</span> <span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
+</span><span id="__span-4-18">    <span class="k">def</span><span class="w"> </span><span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
 </span><span id="__span-4-19">        <span class="n">point</span> <span class="o">=</span> <span class="ne">Point3d</span><span class="o">.</span><span class="n">Origin</span>
 </span><span id="__span-4-20">        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">control</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Points</span> <span class="p">):</span>
 </span><span id="__span-4-21">            <span class="n">alpha</span> <span class="o">=</span> <span class="n">t</span> <span class="o">**</span> <span class="n">index</span>
@@ -2298,9 +2298,9 @@
 <p>The expression is derived is by expanding <code>( ( 1 - t ) + t ) ** d</code>, hence the binomial coefficients and combinations of <code>( 1 - t )</code> and <code>t</code> raised in respective powers. When those terms are combined with the control points, they produce continuous curves. This also explains why the degree + 1 equals the number of control points required.</p>
 <h3 id="evaluation">Evaluation</h3>
 <p>An alternative approach for evaluating Bézier curves deploys recursive linear interpolation: For every pair of consecutive control points <code>P[i]</code> and <code>P[i+1]</code> we compute a new point <code>Q</code> as the linear combination <code>P[i] * ( 1 - t ) + P[i+1] * t</code>. Processing all <code>n</code> points results into a new list of <code>n-1</code> points. Thereafter, the process is repeated until we are left with a single point.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-5-1"><span class="k">class</span> <span class="nc">BezierCurve</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><span class="k">class</span><span class="w"> </span><span class="nc">BezierCurve</span><span class="p">:</span>
 </span><span id="__span-5-2">    <span class="nd">@staticmethod</span>
-</span><span id="__span-5-3">    <span class="k">def</span> <span class="nf">DeCasteljau</span><span class="p">(</span> <span class="n">points</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
+</span><span id="__span-5-3">    <span class="k">def</span><span class="w"> </span><span class="nf">DeCasteljau</span><span class="p">(</span> <span class="n">points</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
 </span><span id="__span-5-4">        <span class="k">if</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span> <span class="n">points</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">):</span>
 </span><span id="__span-5-5">            <span class="k">return</span> <span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </span><span id="__span-5-6">        <span class="n">new_points</span> <span class="o">=</span> <span class="p">[]</span>
@@ -2308,15 +2308,15 @@
 </span><span id="__span-5-8">            <span class="n">new_points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">source</span> <span class="o">*</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">t</span> <span class="p">)</span> <span class="o">+</span> <span class="n">target</span> <span class="o">*</span> <span class="n">t</span> <span class="p">)</span>
 </span><span id="__span-5-9">        <span class="k">return</span> <span class="ne">BezierCurve</span><span class="o">.</span><span class="n">DeCasteljau</span><span class="p">(</span> <span class="n">new_points</span><span class="p">,</span> <span class="n">t</span> <span class="p">)</span>
 </span><span id="__span-5-10">
-</span><span id="__span-5-11">    <span class="k">def</span> <span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
+</span><span id="__span-5-11">    <span class="k">def</span><span class="w"> </span><span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
 </span><span id="__span-5-12">        <span class="k">return</span> <span class="ne">BezierCurve</span><span class="o">.</span><span class="n">DeCasteljau</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Points</span><span class="p">,</span> <span class="n">t</span> <span class="p">)</span>
 </span></code></pre></div>
 <h3 id="derivatives">Derivatives</h3>
 <p>The derivatives of Bezier curves follow exactly the same rules used for deriving polynomials, namely for f( x ) = x<sup>d</sup> its derivative is f'( x ) = d * x<sup>d-1</sup>. Therefore, to compute the derivative of a Bezier curve, the differences of consecutive control points are scaled by the number of points, effectively dropping a degree, see <a href="https://pages.mtu.edu/~shene/COURSES/cs3621/NOTES/spline/Bezier/bezier-der.html">derivation details</a>.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-6-1"><span class="k">class</span> <span class="nc">BezierCurve</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><span class="k">class</span><span class="w"> </span><span class="nc">BezierCurve</span><span class="p">:</span>
 </span><span id="__span-6-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Derivative / Hodograph Curve</span>
 </span><span id="__span-6-3"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-6-4">    <span class="k">def</span> <span class="nf">Derive</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-6-4">    <span class="k">def</span><span class="w"> </span><span class="nf">Derive</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-6-5">        <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Degree</span>
 </span><span id="__span-6-6">        <span class="n">points</span> <span class="o">=</span> <span class="p">[(</span> <span class="n">target</span> <span class="o">-</span> <span class="n">source</span> <span class="p">)</span> <span class="o">*</span> <span class="n">d</span>
 </span><span id="__span-6-7">            <span class="k">for</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
@@ -2340,10 +2340,10 @@
 </span><span id="__span-6-25"><span class="n">vector</span><span class="o">.</span><span class="n">Unitize</span><span class="p">(</span> <span class="p">)</span>
 </span></code></pre></div>
 <p>Higher order derivatives can be computed using the same principle. The <code>Derivatives( )</code> method computes a number of requested derivatives which can be used for producing the tangent, normal, frame, curvature and torsion as seen below.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-7-1"><span class="k">class</span> <span class="nc">BezierCurve</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><span class="k">class</span><span class="w"> </span><span class="nc">BezierCurve</span><span class="p">:</span>
 </span><span id="__span-7-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Derivatives at Parameter</span>
 </span><span id="__span-7-3"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-7-4">    <span class="k">def</span> <span class="nf">Derivatives</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="p">):</span>
+</span><span id="__span-7-4">    <span class="k">def</span><span class="w"> </span><span class="nf">Derivatives</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="p">):</span>
 </span><span id="__span-7-5">        <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Degree</span>
 </span><span id="__span-7-6">        <span class="k">if</span><span class="p">(</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span>
 </span><span id="__span-7-7">            <span class="n">n</span> <span class="o">&gt;</span> <span class="n">d</span> <span class="p">):</span>
@@ -2357,14 +2357,14 @@
 </span><span id="__span-7-15">
 </span><span id="__span-7-16"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Tangent Vector</span>
 </span><span id="__span-7-17"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-7-18">    <span class="k">def</span> <span class="nf">Tangent</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
+</span><span id="__span-7-18">    <span class="k">def</span><span class="w"> </span><span class="nf">Tangent</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
 </span><span id="__span-7-19">        <span class="n">_</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Derivatives</span><span class="p">(</span> <span class="n">t</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
 </span><span id="__span-7-20">        <span class="n">u</span><span class="o">.</span><span class="n">Unitize</span><span class="p">(</span> <span class="p">)</span>
 </span><span id="__span-7-21">        <span class="k">return</span> <span class="n">u</span>
 </span><span id="__span-7-22">
 </span><span id="__span-7-23"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Normal Vector</span>
 </span><span id="__span-7-24"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-7-25">    <span class="k">def</span> <span class="nf">Normal</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
+</span><span id="__span-7-25">    <span class="k">def</span><span class="w"> </span><span class="nf">Normal</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
 </span><span id="__span-7-26">        <span class="n">_</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Derivatives</span><span class="p">(</span> <span class="n">t</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>
 </span><span id="__span-7-27">        <span class="n">n</span> <span class="o">=</span> <span class="ne">Vector3d</span><span class="o">.</span><span class="n">CrossProduct</span><span class="p">(</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="p">)</span>
 </span><span id="__span-7-28">        <span class="n">n</span><span class="o">.</span><span class="n">Unitize</span><span class="p">(</span> <span class="p">)</span>
@@ -2372,19 +2372,19 @@
 </span><span id="__span-7-30">
 </span><span id="__span-7-31"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Fresnet Frame</span>
 </span><span id="__span-7-32"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-7-33">    <span class="k">def</span> <span class="nf">Frame</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
+</span><span id="__span-7-33">    <span class="k">def</span><span class="w"> </span><span class="nf">Frame</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
 </span><span id="__span-7-34">        <span class="n">o</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Derivatives</span><span class="p">(</span> <span class="n">t</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>
 </span><span id="__span-7-35">        <span class="k">return</span> <span class="ne">Plane</span><span class="p">(</span> <span class="n">o</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="p">)</span>
 </span><span id="__span-7-36">
 </span><span id="__span-7-37"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Curvature</span>
 </span><span id="__span-7-38"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-7-39">    <span class="k">def</span> <span class="nf">Curvature</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
+</span><span id="__span-7-39">    <span class="k">def</span><span class="w"> </span><span class="nf">Curvature</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
 </span><span id="__span-7-40">        <span class="n">_</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Derivatives</span><span class="p">(</span> <span class="n">t</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>
 </span><span id="__span-7-41">        <span class="k">return</span> <span class="ne">Vector3d</span><span class="o">.</span><span class="n">CrossProduct</span><span class="p">(</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="p">)</span><span class="o">.</span><span class="n">Length</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">Length</span> <span class="o">**</span> <span class="mi">3</span>
 </span><span id="__span-7-42">
 </span><span id="__span-7-43"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Torsion</span>
 </span><span id="__span-7-44"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-7-45">    <span class="k">def</span> <span class="nf">Torsion</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
+</span><span id="__span-7-45">    <span class="k">def</span><span class="w"> </span><span class="nf">Torsion</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
 </span><span id="__span-7-46">        <span class="n">o</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Derivatives</span><span class="p">(</span> <span class="n">t</span><span class="p">,</span> <span class="mi">3</span> <span class="p">)</span>
 </span><span id="__span-7-47">        <span class="n">x</span> <span class="o">=</span> <span class="ne">Vector3d</span><span class="o">.</span><span class="n">CrossProduct</span><span class="p">(</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="p">)</span>
 </span><span id="__span-7-48">        <span class="k">return</span> <span class="p">(</span> <span class="n">x</span> <span class="o">*</span> <span class="n">w</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="p">)</span>
@@ -2393,7 +2393,7 @@
 <p>Rhino implements Bezier curves via the <code>BezierCurve</code> class, see <a href="https://developer.rhino3d.com/api/rhinocommon/rhino.geometry.beziercurve">documentation</a>. However, Bezier curves can be represented using Nurbs curves, where their degree equals their number of points plus one, as seen below.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-8-1"><span class="sd">&quot;&quot;&quot; Using Rhino&#39;s Bezier Curve</span>
 </span><span id="__span-8-2"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-8-3"><span class="kn">from</span> <span class="nn">Rhino.Geometry</span> <span class="kn">import</span> <span class="ne">BezierCurve</span>
+</span><span id="__span-8-3"><span class="kn">from</span><span class="w"> </span><span class="nn">Rhino.Geometry</span><span class="w"> </span><span class="kn">import</span> <span class="ne">BezierCurve</span>
 </span><span id="__span-8-4">
 </span><span id="__span-8-5"><span class="n">curve</span> <span class="o">=</span> <span class="ne">BezierCurve</span><span class="p">(</span> <span class="n">controls</span> <span class="p">)</span>
 </span><span id="__span-8-6"><span class="n">point</span> <span class="o">=</span> <span class="n">curve</span><span class="o">.</span><span class="n">PointAt</span><span class="p">(</span> <span class="n">t</span> <span class="p">)</span>
@@ -2401,7 +2401,7 @@
 </span><span id="__span-8-8">
 </span><span id="__span-8-9"><span class="sd">&quot;&quot;&quot; Using Rhino&#39;s Nurbs Curve</span>
 </span><span id="__span-8-10"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-8-11"><span class="kn">from</span> <span class="nn">Rhino.Geometry</span> <span class="kn">import</span> <span class="ne">NurbsCurve</span>
+</span><span id="__span-8-11"><span class="kn">from</span><span class="w"> </span><span class="nn">Rhino.Geometry</span><span class="w"> </span><span class="kn">import</span> <span class="ne">NurbsCurve</span>
 </span><span id="__span-8-12">
 </span><span id="__span-8-13"><span class="n">periodic</span><span class="p">,</span> <span class="n">degree</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span> <span class="n">controls</span> <span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
 </span><span id="__span-8-14"><span class="n">curve</span> <span class="o">=</span> <span class="ne">NurbsCurve</span><span class="o">.</span><span class="n">Create</span><span class="p">(</span> <span class="n">periodic</span><span class="p">,</span> <span class="n">degree</span><span class="p">,</span> <span class="n">controls</span> <span class="p">)</span>
@@ -2411,24 +2411,24 @@
 <h2 id="bspline-curves">BSpline Curves</h2>
 <h3 id="definition_3">Definition</h3>
 <p>Basis splines solve the limitation of Bezier curves, where a curve's degree is bound to the number of its control points. BSplines achieve this by stitching lower degree polynomials in piece-wise continuous manner, see <a href="https://en.wikipedia.org/wiki/B-spline">additional</a> information. Stitching is encoded using a list with the domain parameters where the pieces of polynomial of the same degree meet one another, known as the knot vector.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-9-1"><span class="k">class</span> <span class="nc">BasisSplineCurve</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><span class="k">class</span><span class="w"> </span><span class="nc">BasisSplineCurve</span><span class="p">:</span>
 </span><span id="__span-9-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Construction</span>
 </span><span id="__span-9-3"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-9-4">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">degree</span> <span class="p">):</span>
+</span><span id="__span-9-4">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">degree</span> <span class="p">):</span>
 </span><span id="__span-9-5">        <span class="bp">self</span><span class="o">.</span><span class="n">Points</span> <span class="o">=</span> <span class="n">points</span>
 </span><span id="__span-9-6">        <span class="bp">self</span><span class="o">.</span><span class="n">Degree</span> <span class="o">=</span> <span class="n">degree</span>
 </span><span id="__span-9-7">        <span class="bp">self</span><span class="o">.</span><span class="n">Knots</span>  <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ClampedKnots</span><span class="p">(</span> <span class="p">)</span>
 </span><span id="__span-9-8">
 </span><span id="__span-9-9"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Open Knot Vector</span>
 </span><span id="__span-9-10"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-9-11">    <span class="k">def</span> <span class="nf">OpenKnots</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-9-11">    <span class="k">def</span><span class="w"> </span><span class="nf">OpenKnots</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-9-12">        <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Points</span> <span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">Degree</span>
 </span><span id="__span-9-13">        <span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="o">/</span> <span class="p">(</span> <span class="n">n</span> <span class="o">+</span> <span class="n">d</span> <span class="p">)</span>
 </span><span id="__span-9-14">            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">n</span> <span class="o">+</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)]</span>
 </span><span id="__span-9-15">
 </span><span id="__span-9-16"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Clamped Knot Vector</span>
 </span><span id="__span-9-17"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-9-18">    <span class="k">def</span> <span class="nf">ClampedKnots</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-9-18">    <span class="k">def</span><span class="w"> </span><span class="nf">ClampedKnots</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-9-19">        <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Points</span> <span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">Degree</span>
 </span><span id="__span-9-20">        <span class="n">k_min</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span>
 </span><span id="__span-9-21">        <span class="n">k_mid</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">/</span> <span class="p">(</span> <span class="n">n</span> <span class="o">-</span> <span class="n">d</span> <span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">n</span> <span class="o">-</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)]</span>
@@ -2437,17 +2437,17 @@
 </span><span id="__span-9-24">
 </span><span id="__span-9-25"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Periodic Knot Vector</span>
 </span><span id="__span-9-26"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-9-27">    <span class="k">def</span> <span class="nf">PeriodicKnots</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-9-27">    <span class="k">def</span><span class="w"> </span><span class="nf">PeriodicKnots</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-9-28">        <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Points</span> <span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">Degree</span>
 </span><span id="__span-9-29">        <span class="k">return</span> <span class="p">[(</span> <span class="n">i</span> <span class="o">-</span> <span class="n">d</span>  <span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="n">n</span> <span class="o">-</span> <span class="n">d</span> <span class="p">)</span>
 </span><span id="__span-9-30">            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">n</span> <span class="o">+</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)]</span>
 </span></code></pre></div>
 <h3 id="evaluation_1">Evaluation</h3>
 <p>Evaluating points on BSplines is slightly more involved compared to Bezier curves.  However, the logic is not unlike De Casteljau's repeated interpolation scheme. First, the polynomial curve piece is identified by locating the knot interval <code>[k_min, k_max]</code> containing the parameter <code>t</code>. Finally, adjacent control points are interpolated in a linear fashion using the basis functions associated with the knot values. Only up to degree + 1 points are used unlike Bezier curves which process the entire list of control points. The <code>Evaluate( )</code> method below follows the <a href="https://en.wikipedia.org/wiki/De_Boor's_algorithm">De Boor's</a> algorithm. A more efficient implementation is presented by Piegl and Tiller in <a href="https://link.springer.com/book/10.1007/978-3-642-59223-2">The NURBS Book</a>.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-10-1"><span class="k">class</span> <span class="nc">BasisSplineCurve</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span id="__span-10-1"><span class="k">class</span><span class="w"> </span><span class="nc">BasisSplineCurve</span><span class="p">:</span>
 </span><span id="__span-10-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Find Knot Span Containing Parameter</span>
 </span><span id="__span-10-3"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-10-4">    <span class="k">def</span> <span class="nf">KnotSpan</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
+</span><span id="__span-10-4">    <span class="k">def</span><span class="w"> </span><span class="nf">KnotSpan</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
 </span><span id="__span-10-5">        <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Points</span> <span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">Degree</span>
 </span><span id="__span-10-6">        <span class="k">if</span><span class="p">(</span> <span class="n">t</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Knots</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="p">):</span> <span class="k">return</span> <span class="n">d</span><span class="p">,</span> <span class="n">d</span>
 </span><span id="__span-10-7">        <span class="k">if</span><span class="p">(</span> <span class="n">t</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Knots</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="p">):</span> <span class="k">return</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
@@ -2459,7 +2459,7 @@
 </span><span id="__span-10-13">
 </span><span id="__span-10-14"><span class="w">    </span><span class="sd">&quot;&quot;&quot; De Boor&#39;s Algorithm</span>
 </span><span id="__span-10-15"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-10-16">    <span class="k">def</span> <span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
+</span><span id="__span-10-16">    <span class="k">def</span><span class="w"> </span><span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
 </span><span id="__span-10-17">        <span class="c1">#-- Relevant Knots and Points</span>
 </span><span id="__span-10-18">        <span class="c1">#--</span>
 </span><span id="__span-10-19">        <span class="n">d</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">KnotSpan</span><span class="p">(</span> <span class="n">t</span> <span class="p">)</span>
@@ -2531,10 +2531,10 @@
 </span></code></pre></div>
 <h3 id="derivatives_1">Derivatives</h3>
 <p>The derivative of a BSpline curve is another one-degree-lower BSpline curve. Its control points are computed from the differences of the original control points, scaled by the degree and knot span differences. Finally, its knot vector is a copy of the original knots without the first and last items, see <a href="https://pages.mtu.edu/~shene/COURSES/cs3621/NOTES/spline/B-spline/bspline-derv.html">derivation details</a>. Higher order derivatives and differential properties are computed using the same principles as seen in Bezier curves.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-13-1"><span class="k">class</span> <span class="nc">BasisSplineCurve</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span id="__span-13-1"><span class="k">class</span><span class="w"> </span><span class="nc">BasisSplineCurve</span><span class="p">:</span>
 </span><span id="__span-13-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Derivative / Hodograph Curve</span>
 </span><span id="__span-13-3"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-13-4">    <span class="k">def</span> <span class="nf">Derive</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-13-4">    <span class="k">def</span><span class="w"> </span><span class="nf">Derive</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-13-5">        <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Degree</span>
 </span><span id="__span-13-6">        <span class="n">points</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span id="__span-13-7">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Points</span> <span class="p">)</span> <span class="p">):</span>
@@ -2546,7 +2546,7 @@
 </span><span id="__span-13-13">        <span class="n">curve</span><span class="o">.</span><span class="n">Knots</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Knots</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </span><span id="__span-13-14">        <span class="k">return</span> <span class="n">curve</span>
 </span><span id="__span-13-15">
-</span><span id="__span-13-16">    <span class="k">def</span> <span class="nf">Derivatives</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="p">):</span>
+</span><span id="__span-13-16">    <span class="k">def</span><span class="w"> </span><span class="nf">Derivatives</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="p">):</span>
 </span><span id="__span-13-17">        <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Degree</span>
 </span><span id="__span-13-18">        <span class="k">if</span><span class="p">(</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span>
 </span><span id="__span-13-19">            <span class="n">n</span> <span class="o">&gt;</span> <span class="n">d</span> <span class="p">):</span>
@@ -2575,7 +2575,7 @@
 <p>Rhino does not provide a specialized BSpline class but the functionality is supported via Nurbs curves, see next section, which represent a superset or generalization thereof.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-14-1"><span class="sd">&quot;&quot;&quot; Using Rhino&#39;s Nurbs Curve</span>
 </span><span id="__span-14-2"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-14-3"><span class="kn">from</span> <span class="nn">Rhino.Geometry</span> <span class="kn">import</span> <span class="ne">NurbsCurve</span>
+</span><span id="__span-14-3"><span class="kn">from</span><span class="w"> </span><span class="nn">Rhino.Geometry</span><span class="w"> </span><span class="kn">import</span> <span class="ne">NurbsCurve</span>
 </span><span id="__span-14-4">
 </span><span id="__span-14-5"><span class="n">controls</span> <span class="o">=</span> <span class="p">[</span>
 </span><span id="__span-14-6">    <span class="ne">Point3d</span><span class="p">(</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span> <span class="p">),</span>
@@ -2598,15 +2598,15 @@
 <p>Note that BSpline curves express a general polynomial scheme for smoothly interpolating values, which may be points or just simple numbers as in the case of the weight's curve.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-15-1"><span class="sd">&quot;&quot;&quot; Nurbs Curve</span>
 </span><span id="__span-15-2"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-15-3"><span class="k">class</span> <span class="nc">RationalBSplineCurve</span><span class="p">(</span> <span class="ne">BasisSplineCurve</span> <span class="p">):</span>
+</span><span id="__span-15-3"><span class="k">class</span><span class="w"> </span><span class="nc">RationalBSplineCurve</span><span class="p">(</span> <span class="ne">BasisSplineCurve</span> <span class="p">):</span>
 </span><span id="__span-15-4"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Construction</span>
 </span><span id="__span-15-5"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-15-6">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">degree</span> <span class="p">):</span>
+</span><span id="__span-15-6">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">degree</span> <span class="p">):</span>
 </span><span id="__span-15-7">        <span class="ne">BasisSplineCurve</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">degree</span> <span class="p">)</span>
 </span><span id="__span-15-8">
 </span><span id="__span-15-9"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Decouple Points and Weights</span>
 </span><span id="__span-15-10"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-15-11">    <span class="k">def</span> <span class="nf">Decouple</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">points</span> <span class="p">):</span>
+</span><span id="__span-15-11">    <span class="k">def</span><span class="w"> </span><span class="nf">Decouple</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">points</span> <span class="p">):</span>
 </span><span id="__span-15-12">        <span class="n">P</span> <span class="o">=</span> <span class="p">[</span><span class="ne">Point3d</span><span class="p">(</span> <span class="n">p</span><span class="o">.</span><span class="n">X</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">W</span><span class="p">,</span>
 </span><span id="__span-15-13">                      <span class="n">p</span><span class="o">.</span><span class="n">Y</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">W</span><span class="p">,</span>
 </span><span id="__span-15-14">                      <span class="n">p</span><span class="o">.</span><span class="n">Z</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">W</span> <span class="p">)</span>
@@ -2616,7 +2616,7 @@
 </span><span id="__span-15-18">
 </span><span id="__span-15-19"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Evaluate Point</span>
 </span><span id="__span-15-20"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-15-21">    <span class="k">def</span> <span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
+</span><span id="__span-15-21">    <span class="k">def</span><span class="w"> </span><span class="nf">Evaluate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
 </span><span id="__span-15-22">        <span class="n">d</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">KnotSpan</span><span class="p">(</span> <span class="n">t</span> <span class="p">)</span>
 </span><span id="__span-15-23">        <span class="n">P</span><span class="p">,</span> <span class="n">W</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Decouple</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Points</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="n">d</span><span class="p">:</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
 </span><span id="__span-15-24">        <span class="n">K</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Knots</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="n">d</span><span class="p">:</span><span class="n">k</span><span class="o">+</span><span class="n">d</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
@@ -2629,11 +2629,11 @@
 </span><span id="__span-15-31"><span class="sd">&quot;&quot;&quot; Rational Cubic Curve</span>
 </span><span id="__span-15-32"><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="__span-15-33"><span class="n">controls</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="__span-15-34">    <span class="n">Point4d</span><span class="p">(</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">),</span>
-</span><span id="__span-15-35">    <span class="n">Point4d</span><span class="p">(</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span> <span class="p">),</span> <span class="c1">#-- Rational</span>
-</span><span id="__span-15-36">    <span class="n">Point4d</span><span class="p">(</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">),</span>
-</span><span id="__span-15-37">    <span class="n">Point4d</span><span class="p">(</span> <span class="mf">3.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span> <span class="p">),</span> <span class="c1">#-- Rational</span>
-</span><span id="__span-15-38">    <span class="n">Point4d</span><span class="p">(</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">)]</span>
+</span><span id="__span-15-34">    <span class="ne">Point4d</span><span class="p">(</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">),</span>
+</span><span id="__span-15-35">    <span class="ne">Point4d</span><span class="p">(</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span> <span class="p">),</span> <span class="c1">#-- Rational</span>
+</span><span id="__span-15-36">    <span class="ne">Point4d</span><span class="p">(</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">),</span>
+</span><span id="__span-15-37">    <span class="ne">Point4d</span><span class="p">(</span> <span class="mf">3.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span> <span class="p">),</span> <span class="c1">#-- Rational</span>
+</span><span id="__span-15-38">    <span class="ne">Point4d</span><span class="p">(</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">)]</span>
 </span><span id="__span-15-39">
 </span><span id="__span-15-40"><span class="n">curve</span> <span class="o">=</span> <span class="ne">RationalBSplineCurve</span><span class="p">(</span> <span class="n">controls</span><span class="p">,</span> <span class="mi">3</span> <span class="p">)</span>
 </span><span id="__span-15-41">
@@ -2641,15 +2641,15 @@
 </span><span id="__span-15-43"><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="__span-15-44"><span class="n">r</span> <span class="o">=</span> <span class="mf">1.0</span>                            <span class="c1">#-- Radius</span>
 </span><span id="__span-15-45"><span class="n">o</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="ne">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="mf">2.0</span> <span class="p">)</span>         <span class="c1">#-- Weight</span>
-</span><span id="__span-15-46"><span class="n">controls</span> <span class="o">=</span> <span class="p">[</span><span class="n">Point4d</span><span class="p">(</span> <span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="p">),</span>
-</span><span id="__span-15-47">            <span class="n">Point4d</span><span class="p">(</span> <span class="n">r</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">o</span> <span class="p">),</span>
-</span><span id="__span-15-48">            <span class="n">Point4d</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="p">),</span>
-</span><span id="__span-15-49">            <span class="n">Point4d</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">o</span> <span class="p">),</span>
+</span><span id="__span-15-46"><span class="n">controls</span> <span class="o">=</span> <span class="p">[</span><span class="ne">Point4d</span><span class="p">(</span> <span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="p">),</span>
+</span><span id="__span-15-47">            <span class="ne">Point4d</span><span class="p">(</span> <span class="n">r</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">o</span> <span class="p">),</span>
+</span><span id="__span-15-48">            <span class="ne">Point4d</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="p">),</span>
+</span><span id="__span-15-49">            <span class="ne">Point4d</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">o</span> <span class="p">),</span>
 </span><span id="__span-15-50">
-</span><span id="__span-15-51">            <span class="n">Point4d</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="p">),</span>
-</span><span id="__span-15-52">            <span class="n">Point4d</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="p">,</span><span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">o</span> <span class="p">),</span>
-</span><span id="__span-15-53">            <span class="n">Point4d</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="p">),</span>
-</span><span id="__span-15-54">            <span class="n">Point4d</span><span class="p">(</span> <span class="n">r</span><span class="p">,</span><span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">o</span> <span class="p">)]</span>
+</span><span id="__span-15-51">            <span class="ne">Point4d</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="p">),</span>
+</span><span id="__span-15-52">            <span class="ne">Point4d</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="p">,</span><span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">o</span> <span class="p">),</span>
+</span><span id="__span-15-53">            <span class="ne">Point4d</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="p">),</span>
+</span><span id="__span-15-54">            <span class="ne">Point4d</span><span class="p">(</span> <span class="n">r</span><span class="p">,</span><span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">o</span> <span class="p">)]</span>
 </span><span id="__span-15-55"><span class="n">controls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">controls</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
 </span><span id="__span-15-56">
 </span><span id="__span-15-57"><span class="n">circle</span> <span class="o">=</span> <span class="ne">RationalBSplineCurve</span><span class="p">(</span> <span class="n">controls</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>
@@ -2660,10 +2660,10 @@
 </span></code></pre></div>
 <h3 id="derivatives_2">Derivatives</h3>
 <p>The derivatives of Nurbs curves are significantly more complicated when compared to BSplines, see <a href="https://en.wikipedia.org/wiki/Quotient_rule">quotient rule</a>. Additionally, there is no hodograph Nurbs curve representation. Therefore, they are computed per parameter. Conceptually, a Nurbs curve is converted into two BSpline curves, one for the pre-weighted control points and one for the weights themselves. Their derivatives are computed and their combinations are used to reconstruct the Nurbs curve's derivatives, see <a href="https://link.springer.com/book/10.1007/978-3-642-59223-2">The NURBS Book</a> for additional information.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-16-1"><span class="k">class</span> <span class="nc">RationalBSplineCurve</span><span class="p">(</span> <span class="ne">BasisSplineCurve</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-16-1"><span class="k">class</span><span class="w"> </span><span class="nc">RationalBSplineCurve</span><span class="p">(</span> <span class="ne">BasisSplineCurve</span> <span class="p">):</span>
 </span><span id="__span-16-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Nurbs Derivatives</span>
 </span><span id="__span-16-3"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-16-4">    <span class="k">def</span> <span class="nf">Derivatives</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="p">):</span>
+</span><span id="__span-16-4">    <span class="k">def</span><span class="w"> </span><span class="nf">Derivatives</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="p">):</span>
 </span><span id="__span-16-5">        <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Degree</span>
 </span><span id="__span-16-6">        <span class="k">if</span><span class="p">(</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span>
 </span><span id="__span-16-7">            <span class="n">n</span> <span class="o">&gt;</span> <span class="n">d</span> <span class="p">):</span>
@@ -2709,11 +2709,11 @@
 </span><span id="__span-17-17"><span class="sd">&quot;&quot;&quot; Manual Nurbs Curve Construction</span>
 </span><span id="__span-17-18"><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="__span-17-19"><span class="n">controls</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="__span-17-20">    <span class="n">Point4d</span><span class="p">(</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">),</span>
-</span><span id="__span-17-21">    <span class="n">Point4d</span><span class="p">(</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span> <span class="p">),</span> <span class="c1">#-- Rational</span>
-</span><span id="__span-17-22">    <span class="n">Point4d</span><span class="p">(</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">),</span>
-</span><span id="__span-17-23">    <span class="n">Point4d</span><span class="p">(</span> <span class="mf">4.5</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span> <span class="p">),</span> <span class="c1">#-- Rational</span>
-</span><span id="__span-17-24">    <span class="n">Point4d</span><span class="p">(</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">)]</span>
+</span><span id="__span-17-20">    <span class="ne">Point4d</span><span class="p">(</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">),</span>
+</span><span id="__span-17-21">    <span class="ne">Point4d</span><span class="p">(</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span> <span class="p">),</span> <span class="c1">#-- Rational</span>
+</span><span id="__span-17-22">    <span class="ne">Point4d</span><span class="p">(</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">),</span>
+</span><span id="__span-17-23">    <span class="ne">Point4d</span><span class="p">(</span> <span class="mf">4.5</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span> <span class="p">),</span> <span class="c1">#-- Rational</span>
+</span><span id="__span-17-24">    <span class="ne">Point4d</span><span class="p">(</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">)]</span>
 </span><span id="__span-17-25">
 </span><span id="__span-17-26"><span class="n">dimensions</span><span class="p">,</span> <span class="n">degree</span><span class="p">,</span> <span class="n">rational</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">True</span>
 </span><span id="__span-17-27"><span class="n">curve</span> <span class="o">=</span> <span class="ne">NurbsCurve</span><span class="p">(</span> <span class="n">dimensions</span><span class="p">,</span>

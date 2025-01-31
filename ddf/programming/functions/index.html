@@ -131,7 +131,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -141,7 +141,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -1740,27 +1740,27 @@
 <p>This section presents python functions and some common use cases.</p>
 <h2 id="definition">Definition</h2>
 <p>Functions are used for capturing logic that is intended to be used multiple times. In this sense they help avoiding copying and pasting code. Standard python function are defined using the <code>def</code> keyword followed by the name of the function.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-0-1"><span class="k">def</span> <span class="nf">Name</span><span class="p">(</span> <span class="n">args</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><span class="k">def</span><span class="w"> </span><span class="nf">Name</span><span class="p">(</span> <span class="n">args</span> <span class="p">):</span>
 </span><span id="__span-0-2">    <span class="k">return</span> <span class="n">result</span>
 </span></code></pre></div>
 <p>Function may require parameters, also known as arguments, passed when calling them. They perform some computation and return a result in the mathematical sense of <em>y = f( x )</em>, where <code>y</code> is the result value and <code>x</code> is the supplied value or vector of values.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-1-1"><span class="k">def</span> <span class="nf">Constant</span><span class="p">(</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><span class="k">def</span><span class="w"> </span><span class="nf">Constant</span><span class="p">(</span> <span class="p">):</span>
 </span><span id="__span-1-2">    <span class="k">return</span> <span class="mf">1.0</span>
 </span><span id="__span-1-3">
-</span><span id="__span-1-4"><span class="k">def</span> <span class="nf">NumberSquared</span><span class="p">(</span> <span class="n">value</span> <span class="p">):</span>
+</span><span id="__span-1-4"><span class="k">def</span><span class="w"> </span><span class="nf">NumberSquared</span><span class="p">(</span> <span class="n">value</span> <span class="p">):</span>
 </span><span id="__span-1-5">    <span class="k">return</span> <span class="n">value</span> <span class="o">**</span> <span class="mi">2</span>
 </span><span id="__span-1-6">
-</span><span id="__span-1-7"><span class="k">def</span> <span class="nf">Addition</span><span class="p">(</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span> <span class="p">):</span>
+</span><span id="__span-1-7"><span class="k">def</span><span class="w"> </span><span class="nf">Addition</span><span class="p">(</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span> <span class="p">):</span>
 </span><span id="__span-1-8">    <span class="k">return</span> <span class="n">alpha</span> <span class="o">+</span> <span class="n">beta</span>
 </span></code></pre></div>
 <p>Functions may return a single, multiple or no values at all. Functions that do not return a value are also known as procedures. On the other hand, multiple values can be return by being wrapped in a list or tuple.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-2-1"><span class="k">def</span> <span class="nf">PrintHelloWorld</span><span class="p">(</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><span class="k">def</span><span class="w"> </span><span class="nf">PrintHelloWorld</span><span class="p">(</span> <span class="p">):</span>
 </span><span id="__span-2-2">    <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Hello World&#39;</span> <span class="p">)</span>
 </span><span id="__span-2-3">
-</span><span id="__span-2-4"><span class="k">def</span> <span class="nf">InverseSquareRoot</span><span class="p">(</span> <span class="n">value</span> <span class="p">):</span>
+</span><span id="__span-2-4"><span class="k">def</span><span class="w"> </span><span class="nf">InverseSquareRoot</span><span class="p">(</span> <span class="n">value</span> <span class="p">):</span>
 </span><span id="__span-2-5">    <span class="k">return</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="ne">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">value</span> <span class="p">)</span>
 </span><span id="__span-2-6">
-</span><span id="__span-2-7"><span class="k">def</span> <span class="nf">PointOnUnitCircle</span><span class="p">(</span> <span class="n">radius</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span>
+</span><span id="__span-2-7"><span class="k">def</span><span class="w"> </span><span class="nf">PointOnUnitCircle</span><span class="p">(</span> <span class="n">radius</span><span class="p">,</span> <span class="n">angle</span> <span class="p">):</span>
 </span><span id="__span-2-8">    <span class="k">return</span> <span class="p">(</span> <span class="n">radius</span> <span class="o">*</span> <span class="ne">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span> <span class="n">angle</span> <span class="p">),</span>
 </span><span id="__span-2-9">             <span class="n">radius</span> <span class="o">*</span> <span class="ne">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="n">angle</span> <span class="p">)</span> <span class="p">)</span>
 </span></code></pre></div>
@@ -1789,15 +1789,15 @@
 <h2 id="scopes">Scopes</h2>
 <p>Functions have access to variables defined globally. In other words, values defined outside a function's body can be accessed within. In fact they can be also modified but this must be avoided because most often it leads to confusing logical errors.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-5-1"><span class="n">constant</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span id="__span-5-2"><span class="k">def</span> <span class="nf">Compute</span><span class="p">(</span> <span class="n">param</span> <span class="p">):</span>
+</span><span id="__span-5-2"><span class="k">def</span><span class="w"> </span><span class="nf">Compute</span><span class="p">(</span> <span class="n">param</span> <span class="p">):</span>
 </span><span id="__span-5-3">    <span class="k">return</span> <span class="n">param</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">constant</span>
 </span><span id="__span-5-4">
-</span><span id="__span-5-5"><span class="k">def</span> <span class="nf">Avoid</span><span class="p">(</span> <span class="n">param</span> <span class="p">):</span>
+</span><span id="__span-5-5"><span class="k">def</span><span class="w"> </span><span class="nf">Avoid</span><span class="p">(</span> <span class="n">param</span> <span class="p">):</span>
 </span><span id="__span-5-6">    <span class="n">constant</span> <span class="o">=</span> <span class="mi">3</span> <span class="s2">&quot;&quot;&quot; Don&#39;t modify &quot;&quot;&quot;</span>
 </span><span id="__span-5-7">    <span class="k">return</span> <span class="n">param</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">constant</span>
 </span></code></pre></div>
 <p>However, the opposite is not true: code outside a function cannot access variables defined within a function.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-6-1"><span class="k">def</span> <span class="nf">Compute</span><span class="p">(</span> <span class="n">param</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><span class="k">def</span><span class="w"> </span><span class="nf">Compute</span><span class="p">(</span> <span class="n">param</span> <span class="p">):</span>
 </span><span id="__span-6-2">    <span class="n">constant</span> <span class="o">=</span> <span class="mi">1</span>
 </span><span id="__span-6-3">    <span class="k">return</span> <span class="n">param</span> <span class="o">+</span> <span class="n">constant</span>
 </span><span id="__span-6-4">
@@ -1806,7 +1806,7 @@
 </span></code></pre></div>
 <h2 id="defaults">Defaults</h2>
 <p>Parameters may have default values which are used if the parameter is not passed when the function is called. Therefore, parameters with default values may be considered as optional.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-7-1"><span class="k">def</span> <span class="nf">InverseSquareRoot</span><span class="p">(</span> <span class="n">value</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><span class="k">def</span><span class="w"> </span><span class="nf">InverseSquareRoot</span><span class="p">(</span> <span class="n">value</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="p">):</span>
 </span><span id="__span-7-2">    <span class="k">return</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="ne">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">value</span> <span class="p">)</span>
 </span><span id="__span-7-3">
 </span><span id="__span-7-4"><span class="n">one</span>  <span class="o">=</span> <span class="n">InverseSquareRoot</span><span class="p">(</span>   <span class="p">)</span>
@@ -1815,11 +1815,11 @@
 <p>There is a special rule about default parameter values: all parameter must have a default value after the first instance. Otherwise, a syntax error is raised. For example below, beta must also have a default value because alpha is optional.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-8-1"><span class="sd">&quot;&quot;&quot; Invalid syntax!</span>
 </span><span id="__span-8-2"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-8-3"><span class="k">def</span> <span class="nf">Addition</span><span class="p">(</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">beta</span> <span class="p">):</span>
+</span><span id="__span-8-3"><span class="k">def</span><span class="w"> </span><span class="nf">Addition</span><span class="p">(</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">beta</span> <span class="p">):</span>
 </span><span id="__span-8-4">    <span class="k">return</span> <span class="n">alpha</span> <span class="o">+</span> <span class="n">beta</span>
 </span></code></pre></div>
 <p>A typical idiom for optional parameters where we want to know if the parameter was passed or it is missing is to set the default to <code>None</code> and check as follows.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-9-1"><span class="k">def</span> <span class="nf">Operation</span><span class="p">(</span> <span class="n">required</span><span class="p">,</span> <span class="n">optional</span> <span class="o">=</span> <span class="kc">None</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><span class="k">def</span><span class="w"> </span><span class="nf">Operation</span><span class="p">(</span> <span class="n">required</span><span class="p">,</span> <span class="n">optional</span> <span class="o">=</span> <span class="kc">None</span> <span class="p">):</span>
 </span><span id="__span-9-2">    <span class="k">if</span><span class="p">(</span> <span class="n">optional</span> <span class="ow">is</span> <span class="kc">None</span> <span class="p">):</span> <span class="s2">&quot;&quot;&quot; Is missing? &quot;&quot;&quot;</span>
 </span><span id="__span-9-3">        <span class="n">optional</span> <span class="o">=</span> <span class="s1">&#39;assign value&#39;</span>
 </span><span id="__span-9-4">    <span class="c1"># ...</span>
@@ -1827,17 +1827,17 @@
 <h2 id="as-values">As Values</h2>
 <p>Functions in python can be used as values. It is possible to store a function in a variable for instance. As long as the parentheses syntax for calling the function is not used, its name can be used as a value. Variables that contain function values are callable.</p>
 <p>In the example below there are two functions with the same parameters defined <code>L1</code> and <code>L2</code>. The first computes the Manhattan distance and the second the Euclidean distance. We can assign either function is a variable called <code>norm</code> based on some condition and invoke the function using the alias.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-10-1"><span class="k">def</span> <span class="nf">L1</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-10-1"><span class="k">def</span><span class="w"> </span><span class="nf">L1</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span>
 </span><span id="__span-10-2">    <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span> <span class="n">b</span> <span class="p">)</span>
 </span><span id="__span-10-3">
-</span><span id="__span-10-4"><span class="k">def</span> <span class="nf">L2</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span>
+</span><span id="__span-10-4"><span class="k">def</span><span class="w"> </span><span class="nf">L2</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span>
 </span><span id="__span-10-5">    <span class="k">return</span> <span class="ne">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">a</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">b</span> <span class="o">**</span> <span class="mi">2</span> <span class="p">)</span>
 </span><span id="__span-10-6">
 </span><span id="__span-10-7"><span class="n">norm</span> <span class="o">=</span> <span class="n">L2</span> <span class="k">if</span><span class="p">(</span> <span class="n">metric</span> <span class="o">==</span> <span class="s1">&#39;Euclidean&#39;</span> <span class="p">)</span> <span class="k">else</span> <span class="n">L1</span>
 </span><span id="__span-10-8"><span class="nb">print</span><span class="p">(</span> <span class="n">norm</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span> <span class="p">)</span>
 </span></code></pre></div>
 <p>It is possible to pass functions as arguments to another function or use it as a default value as seen in the example below.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-11-1"><span class="k">def</span> <span class="nf">Norm</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">L2</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-11-1"><span class="k">def</span><span class="w"> </span><span class="nf">Norm</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">L2</span> <span class="p">):</span>
 </span><span id="__span-11-2">    <span class="k">return</span> <span class="n">method</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">)</span>
 </span><span id="__span-11-3">
 </span><span id="__span-11-4"><span class="n">l1</span> <span class="o">=</span> <span class="n">Norm</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">L1</span> <span class="p">)</span>
@@ -1846,7 +1846,7 @@
 <p>It is also possible to store functions in lists or dictionaries associated with a key.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-12-1"><span class="sd">&quot;&quot;&quot; List of functions</span>
 </span><span id="__span-12-2"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-12-3"><span class="k">def</span> <span class="nf">L0</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span>
+</span><span id="__span-12-3"><span class="k">def</span><span class="w"> </span><span class="nf">L0</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span>
 </span><span id="__span-12-4">    <span class="k">return</span> <span class="mf">0.0</span>
 </span><span id="__span-12-5">
 </span><span id="__span-12-6"><span class="n">norms</span> <span class="o">=</span> <span class="p">[</span><span class="n">L0</span><span class="p">,</span> <span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">]</span>
@@ -1862,29 +1862,29 @@
 </span></code></pre></div>
 <h2 id="recursion">Recursion</h2>
 <p>Recursion is a pattern where a function calls itself. Some computations are more intuitive using this approach. However, it is also possible to create infinite calls which will drain memory and raise a stack overflow exception.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-13-1"><span class="k">def</span> <span class="nf">Fibonacci</span><span class="p">(</span> <span class="n">number</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-13-1"><span class="k">def</span><span class="w"> </span><span class="nf">Fibonacci</span><span class="p">(</span> <span class="n">number</span> <span class="p">):</span>
 </span><span id="__span-13-2">    <span class="k">if</span><span class="p">(</span> <span class="n">number</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="p">):</span> <span class="k">return</span> <span class="n">number</span>
 </span><span id="__span-13-3">    <span class="k">return</span> <span class="p">(</span> <span class="n">Fibonacci</span><span class="p">(</span> <span class="n">number</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span> <span class="o">+</span>
 </span><span id="__span-13-4">             <span class="n">Fibonacci</span><span class="p">(</span> <span class="n">number</span> <span class="o">-</span> <span class="mi">2</span> <span class="p">)</span> <span class="p">)</span>
 </span><span id="__span-13-5">
-</span><span id="__span-13-6"><span class="k">def</span> <span class="nf">StackOverflow</span><span class="p">(</span> <span class="n">value</span> <span class="p">):</span>
+</span><span id="__span-13-6"><span class="k">def</span><span class="w"> </span><span class="nf">StackOverflow</span><span class="p">(</span> <span class="n">value</span> <span class="p">):</span>
 </span><span id="__span-13-7">    <span class="k">return</span> <span class="n">StackOverflow</span><span class="p">(</span> <span class="n">value</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)</span>
 </span></code></pre></div>
 <h2 id="nesting">Nesting</h2>
 <p>Functions can be nested by placing one definition inside another. This feature is not so commonly used. The intent is to contain functions that have only local use within a scope.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-14-1"><span class="k">def</span> <span class="nf">GlobalUse</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span>
-</span><span id="__span-14-2">    <span class="k">def</span> <span class="nf">LocalUse</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-14-1"><span class="k">def</span><span class="w"> </span><span class="nf">GlobalUse</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span>
+</span><span id="__span-14-2">    <span class="k">def</span><span class="w"> </span><span class="nf">LocalUse</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span>
 </span><span id="__span-14-3">        <span class="k">return</span> <span class="n">a</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">b</span> <span class="o">**</span> <span class="mi">2</span>
 </span><span id="__span-14-4">    <span class="k">return</span> <span class="ne">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">LocalUse</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">)</span> <span class="p">)</span>
 </span></code></pre></div>
 <h2 id="lambdas">Lambdas</h2>
 <p>Since functions are like values, it is possible to define them without names. Those are known as anonymous or lambda functions. The example below shows two functions with equivalent logic defined using the <code>def</code> and      <code>lambda</code> syntax.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-15-1"><span class="k">def</span> <span class="nf">Add</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span> <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<div class="highlight"><pre><span></span><code><span id="__span-15-1"><span class="k">def</span><span class="w"> </span><span class="nf">Add</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span> <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 </span><span id="__span-15-2">
 </span><span id="__span-15-3"><span class="n">Add</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 </span></code></pre></div>
 <p>Note that lambdas do not allow defining local variables unlike regular functions. They are used for passing inline a function like a predicate to filter or sort a list for instance, see <a href="../collections/#ordering">ordering lists</a>.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-16-1"><span class="k">def</span> <span class="nf">Select</span><span class="p">(</span> <span class="n">items</span><span class="p">,</span> <span class="n">predicate</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-16-1"><span class="k">def</span><span class="w"> </span><span class="nf">Select</span><span class="p">(</span> <span class="n">items</span><span class="p">,</span> <span class="n">predicate</span> <span class="p">):</span>
 </span><span id="__span-16-2">    <span class="k">return</span> <span class="p">[</span><span class="n">item</span>
 </span><span id="__span-16-3">        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span>
 </span><span id="__span-16-4">            <span class="k">if</span><span class="p">(</span> <span class="n">predicate</span><span class="p">(</span> <span class="n">item</span> <span class="p">)</span> <span class="p">)]</span>
@@ -1897,20 +1897,20 @@
 </span></code></pre></div>
 <h2 id="patching">Patching</h2>
 <p>If multiple definitions of a function with the same name are encountered, the latest one is overwrites the previous. In the example below, the <code>Apply</code> function perform subtraction because it overwrote the earlier definition that performs addition.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-17-1"><span class="k">def</span> <span class="nf">Apply</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-17-1"><span class="k">def</span><span class="w"> </span><span class="nf">Apply</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span>
 </span><span id="__span-17-2">    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 </span><span id="__span-17-3">
-</span><span id="__span-17-4"><span class="k">def</span> <span class="nf">Apply</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span>
+</span><span id="__span-17-4"><span class="k">def</span><span class="w"> </span><span class="nf">Apply</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">):</span>
 </span><span id="__span-17-5">    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
 </span></code></pre></div>
 <p>This can be used for overriding or patching functions. In the example below the builtin <code>print( )</code> function is redefined to prefix each message with a status code. The original function is stored in a global variable <code>builtin_print</code> and the new definition will overwrite the default.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-18-1"><span class="k">class</span> <span class="nc">Status</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span id="__span-18-1"><span class="k">class</span><span class="w"> </span><span class="nc">Status</span><span class="p">:</span>
 </span><span id="__span-18-2">    <span class="n">Message</span> <span class="o">=</span> <span class="s1">&#39;Message&#39;</span>
 </span><span id="__span-18-3">    <span class="n">Failure</span> <span class="o">=</span> <span class="s1">&#39;Failure&#39;</span>
 </span><span id="__span-18-4">    <span class="ne">Warning</span> <span class="o">=</span> <span class="s1">&#39;Warning&#39;</span>
 </span><span id="__span-18-5">
 </span><span id="__span-18-6"><span class="n">builtin_print</span> <span class="o">=</span> <span class="nb">print</span>
-</span><span id="__span-18-7"><span class="k">def</span> <span class="nf">print</span><span class="p">(</span> <span class="n">message</span><span class="p">,</span> <span class="n">status</span> <span class="o">=</span> <span class="n">Status</span><span class="o">.</span><span class="n">Message</span> <span class="p">):</span>
+</span><span id="__span-18-7"><span class="k">def</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span> <span class="n">message</span><span class="p">,</span> <span class="n">status</span> <span class="o">=</span> <span class="n">Status</span><span class="o">.</span><span class="n">Message</span> <span class="p">):</span>
 </span><span id="__span-18-8">    <span class="n">builtin_print</span><span class="p">(</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">status</span><span class="p">,</span> <span class="n">message</span> <span class="p">)</span> <span class="p">)</span>
 </span><span id="__span-18-9">    <span class="k">return</span> <span class="n">status</span>
 </span><span id="__span-18-10">
@@ -1941,13 +1941,13 @@
 </span></code></pre></div>
 <p>Generators can be identified easily because instead of using the <code>return</code> keyword they instead use <code>yield</code>. While <code>return</code> exits the function permanently passing back a result, yield does not exit the function but just places a value in a notional conveyor belt and suspends until the next value is requested or sequence ends whereby the function runs out of scope.</p>
 <p>The example below demonstrates two usage-wise equivalent functions for generating a sequence of squared numbers. The key difference is that <code>ListOfSquares</code> constructs a list of numbers, while the <code>EnumOfSquares</code> returns one at a time without inserting them in a collection.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-20-1"><span class="k">def</span> <span class="nf">ListOfSquares</span><span class="p">(</span> <span class="n">count</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-20-1"><span class="k">def</span><span class="w"> </span><span class="nf">ListOfSquares</span><span class="p">(</span> <span class="n">count</span> <span class="p">):</span>
 </span><span id="__span-20-2">    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span id="__span-20-3">    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">count</span> <span class="p">):</span>
 </span><span id="__span-20-4">        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">index</span> <span class="o">**</span> <span class="mi">2</span> <span class="p">)</span>
 </span><span id="__span-20-5">    <span class="k">return</span> <span class="n">result</span>
 </span><span id="__span-20-6">
-</span><span id="__span-20-7"><span class="k">def</span> <span class="nf">EnumOfSquares</span><span class="p">(</span> <span class="n">count</span> <span class="p">):</span>
+</span><span id="__span-20-7"><span class="k">def</span><span class="w"> </span><span class="nf">EnumOfSquares</span><span class="p">(</span> <span class="n">count</span> <span class="p">):</span>
 </span><span id="__span-20-8">    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">count</span> <span class="p">)</span>
 </span><span id="__span-20-9">        <span class="k">yield</span> <span class="n">index</span> <span class="o">**</span> <span class="mi">2</span>
 </span><span id="__span-20-10">
@@ -1963,7 +1963,7 @@
 <p>This is achieved using the patterning strategy presented earlier to yield-return each pair of points one by one. The <code>wrap</code> parameter is for controlling whether the function treats the sequence of points as an open polyline or a closed polygon, in which case the last-to-first side must also be returned.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-21-1"><span class="sd">&quot;&quot;&quot; Polyline&#39;s Sides Enumeration</span>
 </span><span id="__span-21-2"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-21-3"><span class="k">def</span> <span class="nf">PolySides</span><span class="p">(</span> <span class="n">points</span><span class="p">,</span> <span class="n">wrap</span> <span class="o">=</span> <span class="kc">False</span> <span class="p">):</span>
+</span><span id="__span-21-3"><span class="k">def</span><span class="w"> </span><span class="nf">PolySides</span><span class="p">(</span> <span class="n">points</span><span class="p">,</span> <span class="n">wrap</span> <span class="o">=</span> <span class="kc">False</span> <span class="p">):</span>
 </span><span id="__span-21-4">    <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span> <span class="n">points</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="p">):</span>
 </span><span id="__span-21-5">        <span class="k">yield</span> <span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">)</span>
 </span><span id="__span-21-6">    <span class="k">if</span><span class="p">(</span> <span class="n">wrap</span> <span class="p">):</span> <span class="k">yield</span> <span class="n">points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>

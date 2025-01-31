@@ -131,7 +131,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -141,7 +141,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -1762,10 +1762,10 @@
 <p>The following syntax is used for declaring a <code>Triangle</code> class. Geometrically we can define a triangle by three points in space or in the plane. The class' name is used as a function for constructing triangle objects. The parameters are passed to the <code>__init__( )</code> method and the new object is returned.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><span class="sd">&quot;&quot;&quot; Declaring a triangle class</span>
 </span><span id="__span-0-2"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-0-3"><span class="k">class</span> <span class="nc">Triangle</span><span class="p">:</span>
+</span><span id="__span-0-3"><span class="k">class</span><span class="w"> </span><span class="nc">Triangle</span><span class="p">:</span>
 </span><span id="__span-0-4"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Constructor</span>
 </span><span id="__span-0-5"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-0-6">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
+</span><span id="__span-0-6">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
 </span><span id="__span-0-7">        <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span> <span class="o">=</span> <span class="n">pa</span>
 </span><span id="__span-0-8">        <span class="bp">self</span><span class="o">.</span><span class="n">PointB</span> <span class="o">=</span> <span class="n">pb</span>
 </span><span id="__span-0-9">        <span class="bp">self</span><span class="o">.</span><span class="n">PointC</span> <span class="o">=</span> <span class="n">pc</span>
@@ -1793,15 +1793,15 @@
 <p>In the example below triangle objects now support translation using the <code>Translate( )</code> method. The <em>object-dot-method</em> syntax is used for calling such functions. Note that the translation method is modifying the triangle itself or in-place instead of creating a new translated copy.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-1-1"><span class="sd">&quot;&quot;&quot; Declaring a triangle class</span>
 </span><span id="__span-1-2"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-1-3"><span class="k">class</span> <span class="nc">Triangle</span><span class="p">:</span>
-</span><span id="__span-1-4">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
+</span><span id="__span-1-3"><span class="k">class</span><span class="w"> </span><span class="nc">Triangle</span><span class="p">:</span>
+</span><span id="__span-1-4">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
 </span><span id="__span-1-5">        <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span> <span class="o">=</span> <span class="n">pa</span>
 </span><span id="__span-1-6">        <span class="bp">self</span><span class="o">.</span><span class="n">PointB</span> <span class="o">=</span> <span class="n">pb</span>
 </span><span id="__span-1-7">        <span class="bp">self</span><span class="o">.</span><span class="n">PointC</span> <span class="o">=</span> <span class="n">pc</span>
 </span><span id="__span-1-8">
 </span><span id="__span-1-9"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Translate Method</span>
 </span><span id="__span-1-10"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-1-11">    <span class="k">def</span> <span class="nf">Translate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">direction</span> <span class="p">):</span>
+</span><span id="__span-1-11">    <span class="k">def</span><span class="w"> </span><span class="nf">Translate</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">direction</span> <span class="p">):</span>
 </span><span id="__span-1-12">        <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span> <span class="o">+=</span> <span class="n">direction</span>
 </span><span id="__span-1-13">        <span class="bp">self</span><span class="o">.</span><span class="n">PointB</span> <span class="o">+=</span> <span class="n">direction</span>
 </span><span id="__span-1-14">        <span class="bp">self</span><span class="o">.</span><span class="n">PointC</span> <span class="o">+=</span> <span class="n">direction</span>
@@ -1824,22 +1824,22 @@
 <p>In the example below, the <code>GetCentroid( )</code> method computes the triangle's centroid from its points. The notion  a triangle's centroid computed as the mean of its points is mathematically objective and unambiguous.</p>
 <p>The <code>SetCentroid( )</code> method requires a centroid to be passed as a parameter such that the triangle is modified accordingly. This operation requires some assumptions such as the area of triangle should not change and/or it should only be transformed in a rigid manner without rotation etc.</p>
 <p>The implementation below uses the current (computed) and desired (passed as parameter) centroids to form a vector and translate the triangle.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-2-1"><span class="k">class</span> <span class="nc">Triangle</span><span class="p">:</span>
-</span><span id="__span-2-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><span class="k">class</span><span class="w"> </span><span class="nc">Triangle</span><span class="p">:</span>
+</span><span id="__span-2-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
 </span><span id="__span-2-3">        <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span> <span class="o">=</span> <span class="n">pa</span>
 </span><span id="__span-2-4">        <span class="bp">self</span><span class="o">.</span><span class="n">PointB</span> <span class="o">=</span> <span class="n">pb</span>
 </span><span id="__span-2-5">        <span class="bp">self</span><span class="o">.</span><span class="n">PointC</span> <span class="o">=</span> <span class="n">pc</span>
 </span><span id="__span-2-6">
 </span><span id="__span-2-7"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Centroid Getter</span>
 </span><span id="__span-2-8"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-2-9">    <span class="k">def</span> <span class="nf">GetCentroid</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-2-9">    <span class="k">def</span><span class="w"> </span><span class="nf">GetCentroid</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-2-10">        <span class="k">return</span> <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span> <span class="o">+</span>
 </span><span id="__span-2-11">                 <span class="bp">self</span><span class="o">.</span><span class="n">PointB</span> <span class="o">+</span>
 </span><span id="__span-2-12">                 <span class="bp">self</span><span class="o">.</span><span class="n">PointC</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>
 </span><span id="__span-2-13">
 </span><span id="__span-2-14"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Centroid Setter</span>
 </span><span id="__span-2-15"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-2-16">    <span class="k">def</span> <span class="nf">SetCentroid</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">centroid</span> <span class="p">):</span>
+</span><span id="__span-2-16">    <span class="k">def</span><span class="w"> </span><span class="nf">SetCentroid</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">centroid</span> <span class="p">):</span>
 </span><span id="__span-2-17">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Translate</span><span class="p">(</span>
 </span><span id="__span-2-18">            <span class="bp">self</span><span class="o">.</span><span class="n">GetCentroid</span><span class="p">(</span> <span class="p">)</span> <span class="o">-</span> <span class="n">centroid</span> <span class="p">)</span>
 </span><span id="__span-2-19">
@@ -1860,8 +1860,8 @@
 <h2 id="properties">Properties</h2>
 <p>Class properties are supported in python version &gt;= 3 and Rhino &gt;= 8. They provide a stylistic improvement over getter and setter methods, such that object properties look and feel like member variables even though they are methods.</p>
 <p>Property getters must be annotated using the <code>@property</code> symbol before their definition and setters using the <code>@PropertyName.setter</code>, here <code>@Centroid.setter</code> symbol as seen below. Thereafter, the centroid property can be accessed as it was a member variable.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-3-1"><span class="k">class</span> <span class="nc">Triangle</span><span class="p">:</span>
-</span><span id="__span-3-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><span class="k">class</span><span class="w"> </span><span class="nc">Triangle</span><span class="p">:</span>
+</span><span id="__span-3-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
 </span><span id="__span-3-3">        <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span> <span class="o">=</span> <span class="n">pa</span>
 </span><span id="__span-3-4">        <span class="bp">self</span><span class="o">.</span><span class="n">PointB</span> <span class="o">=</span> <span class="n">pb</span>
 </span><span id="__span-3-5">        <span class="bp">self</span><span class="o">.</span><span class="n">PointC</span> <span class="o">=</span> <span class="n">pc</span>
@@ -1869,7 +1869,7 @@
 </span><span id="__span-3-7"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Centroid Property Getter</span>
 </span><span id="__span-3-8"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="__span-3-9">    <span class="nd">@property</span>
-</span><span id="__span-3-10">    <span class="k">def</span> <span class="nf">Centroid</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-3-10">    <span class="k">def</span><span class="w"> </span><span class="nf">Centroid</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-3-11">        <span class="k">return</span> <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span> <span class="o">+</span>
 </span><span id="__span-3-12">                 <span class="bp">self</span><span class="o">.</span><span class="n">PointB</span> <span class="o">+</span>
 </span><span id="__span-3-13">                 <span class="bp">self</span><span class="o">.</span><span class="n">PointC</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>
@@ -1877,7 +1877,7 @@
 </span><span id="__span-3-15"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Centroid Property Setter</span>
 </span><span id="__span-3-16"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="__span-3-17">    <span class="nd">@Centroid</span><span class="o">.</span><span class="n">setter</span>
-</span><span id="__span-3-18">    <span class="k">def</span> <span class="nf">Centroid</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">centroid</span> <span class="p">):</span>
+</span><span id="__span-3-18">    <span class="k">def</span><span class="w"> </span><span class="nf">Centroid</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">centroid</span> <span class="p">):</span>
 </span><span id="__span-3-19">        <span class="bp">self</span><span class="o">.</span><span class="n">Translate</span><span class="p">(</span>
 </span><span id="__span-3-20">            <span class="bp">self</span><span class="o">.</span><span class="n">GetCentroid</span><span class="p">(</span> <span class="p">)</span> <span class="o">-</span> <span class="n">centroid</span> <span class="p">)</span>
 </span><span id="__span-3-21">
@@ -1897,8 +1897,8 @@
 </span></code></pre></div>
 <p>Note that we don't need to use the <em>GetSomething</em> and <em>SetSomething</em> style anymore. In addition, the setter methods by convention must require a new value passed as a parameter and cannot return a value themselves.</p>
 <p>However, it is not required to provide both getters and setters for every property. Some properties may just support only getting their value. This is conceptually equivalent to being read-only.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-4-1"><span class="k">class</span> <span class="nc">Triangle</span><span class="p">:</span>
-</span><span id="__span-4-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><span class="k">class</span><span class="w"> </span><span class="nc">Triangle</span><span class="p">:</span>
+</span><span id="__span-4-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
 </span><span id="__span-4-3">        <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span> <span class="o">=</span> <span class="n">pa</span>
 </span><span id="__span-4-4">        <span class="bp">self</span><span class="o">.</span><span class="n">PointB</span> <span class="o">=</span> <span class="n">pb</span>
 </span><span id="__span-4-5">        <span class="bp">self</span><span class="o">.</span><span class="n">PointC</span> <span class="o">=</span> <span class="n">pc</span>
@@ -1906,7 +1906,7 @@
 </span><span id="__span-4-7"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Read-Only Property</span>
 </span><span id="__span-4-8"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="__span-4-9">    <span class="nd">@property</span>
-</span><span id="__span-4-10">    <span class="k">def</span> <span class="nf">Area</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-4-10">    <span class="k">def</span><span class="w"> </span><span class="nf">Area</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-4-11">        <span class="k">return</span> <span class="ne">Vector3d</span><span class="o">.</span><span class="n">CrossProduct</span><span class="p">(</span>
 </span><span id="__span-4-12">            <span class="bp">self</span><span class="o">.</span><span class="n">PointB</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span><span class="p">,</span>
 </span><span id="__span-4-13">            <span class="bp">self</span><span class="o">.</span><span class="n">PointC</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span> <span class="p">)</span><span class="o">.</span><span class="n">Length</span> <span class="o">/</span> <span class="mi">2</span>
@@ -1925,12 +1925,12 @@
 <p>In the example below we tag each triangle created with a serial number. In order to do so we need to keep track for how many objects have been constructed. We can use a static variable named <code>SerialNumbers</code> representing the next available serial number. Every time a new triangle is created its <code>SerialNumber</code> is assigned by looking up what is the next available serial number. But since we used the currently available we also need to increment the static member.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-5-1"><span class="sd">&#39;&#39;&#39; Triangle class declared -&gt; S/N = 0</span>
 </span><span id="__span-5-2"><span class="sd">&#39;&#39;&#39;</span>
-</span><span id="__span-5-3"><span class="k">class</span> <span class="nc">Triangle</span><span class="p">:</span>
+</span><span id="__span-5-3"><span class="k">class</span><span class="w"> </span><span class="nc">Triangle</span><span class="p">:</span>
 </span><span id="__span-5-4"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Shared Static Member</span>
 </span><span id="__span-5-5"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="__span-5-6">    <span class="n">SerialNumbers</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="__span-5-7">
-</span><span id="__span-5-8">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
+</span><span id="__span-5-8">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
 </span><span id="__span-5-9">        <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span> <span class="o">=</span> <span class="n">pa</span>
 </span><span id="__span-5-10">        <span class="bp">self</span><span class="o">.</span><span class="n">PointB</span> <span class="o">=</span> <span class="n">pb</span>
 </span><span id="__span-5-11">        <span class="bp">self</span><span class="o">.</span><span class="n">PointC</span> <span class="o">=</span> <span class="n">pc</span>
@@ -1960,8 +1960,8 @@
 <p>Static class methods are commonly used for (a) performing operations that are semantically relevant to the concept captured by the class but without creating new objects, and (b) for defining alternative methods of construction. Static methods must be annotated with the <code>@staticmethod</code> symbol prior to their definition.</p>
 <p>The example below demonstrates these use cases. The <code>AreaFromPoints( )</code> can be used without first constructing a triangle from three points only to just measure its area using the <code>Area</code> property. Additionally, the <code>Equilateral( )</code> methods provides a shortcut for constructing a specialized form of a triangle by passing in only its side's length.</p>
 <p>Note that static methods do not support the <code>self</code> keyword because there is no object constructed and thus cannot be referenced.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-6-1"><span class="k">class</span> <span class="nc">Triangle</span><span class="p">:</span>
-</span><span id="__span-6-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><span class="k">class</span><span class="w"> </span><span class="nc">Triangle</span><span class="p">:</span>
+</span><span id="__span-6-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
 </span><span id="__span-6-3">        <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span> <span class="o">=</span> <span class="n">pa</span>
 </span><span id="__span-6-4">        <span class="bp">self</span><span class="o">.</span><span class="n">PointB</span> <span class="o">=</span> <span class="n">pb</span>
 </span><span id="__span-6-5">        <span class="bp">self</span><span class="o">.</span><span class="n">PointC</span> <span class="o">=</span> <span class="n">pc</span>
@@ -1969,12 +1969,12 @@
 </span><span id="__span-6-7"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Static Utility Method</span>
 </span><span id="__span-6-8"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="__span-6-9">    <span class="nd">@staticmethod</span>
-</span><span id="__span-6-10">    <span class="k">def</span> <span class="nf">ComputeArea</span><span class="p">(</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
+</span><span id="__span-6-10">    <span class="k">def</span><span class="w"> </span><span class="nf">ComputeArea</span><span class="p">(</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
 </span><span id="__span-6-11">        <span class="k">return</span> <span class="ne">Vector3d</span><span class="o">.</span><span class="n">CrossProduct</span><span class="p">(</span>
 </span><span id="__span-6-12">            <span class="n">pb</span> <span class="o">-</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pc</span> <span class="o">-</span> <span class="n">pa</span> <span class="p">)</span><span class="o">.</span><span class="n">Length</span> <span class="o">/</span> <span class="mi">2</span>
 </span><span id="__span-6-13">
 </span><span id="__span-6-14">    <span class="nd">@property</span>
-</span><span id="__span-6-15">    <span class="k">def</span> <span class="nf">Area</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-6-15">    <span class="k">def</span><span class="w"> </span><span class="nf">Area</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-6-16">        <span class="k">return</span> <span class="ne">Triangle</span><span class="o">.</span><span class="n">ComputeArea</span><span class="p">(</span>
 </span><span id="__span-6-17">            <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span><span class="p">,</span>
 </span><span id="__span-6-18">            <span class="bp">self</span><span class="o">.</span><span class="n">PointB</span><span class="p">,</span>
@@ -1983,7 +1983,7 @@
 </span><span id="__span-6-21"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Static Construction Method</span>
 </span><span id="__span-6-22"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="__span-6-23">    <span class="nd">@staticmethod</span>
-</span><span id="__span-6-24">    <span class="k">def</span> <span class="nf">Equilateral</span><span class="p">(</span> <span class="n">alpha</span> <span class="p">):</span>
+</span><span id="__span-6-24">    <span class="k">def</span><span class="w"> </span><span class="nf">Equilateral</span><span class="p">(</span> <span class="n">alpha</span> <span class="p">):</span>
 </span><span id="__span-6-25">        <span class="k">return</span> <span class="ne">Triangle</span><span class="p">(</span>
 </span><span id="__span-6-26">            <span class="ne">Point3d</span><span class="p">(</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span> <span class="p">),</span>
 </span><span id="__span-6-27">            <span class="ne">Point3d</span><span class="p">(</span> <span class="n">alpha</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span> <span class="p">),</span>
@@ -2006,15 +2006,15 @@
 <h2 id="overloading">Overloading</h2>
 <p>Operator overloading enables (re)defining how arithmetics are performed with object values. Typical mathematical operators such as addition <code>+</code>, subtraction <code>-</code>, multiplication <code>*</code> etc can be overloaded by implementing a special member method, namely <code>__add__</code>, <code>__sub__</code> and <code>__mul__</code>, respectively. Complete list of all operators is available by python <a href="https://docs.python.org/3/library/operator.html">documentation</a>.</p>
 <p>In the example below the addition operation between a triangle and vector is associated with performing translation. Note that by convention operators should return a new value instead of modifying and existing one, hence constructing a new translated triangle.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-7-1"><span class="k">class</span> <span class="nc">Triangle</span><span class="p">:</span>
-</span><span id="__span-7-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><span class="k">class</span><span class="w"> </span><span class="nc">Triangle</span><span class="p">:</span>
+</span><span id="__span-7-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
 </span><span id="__span-7-3">        <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span> <span class="o">=</span> <span class="n">pa</span>
 </span><span id="__span-7-4">        <span class="bp">self</span><span class="o">.</span><span class="n">PointB</span> <span class="o">=</span> <span class="n">pb</span>
 </span><span id="__span-7-5">        <span class="bp">self</span><span class="o">.</span><span class="n">PointC</span> <span class="o">=</span> <span class="n">pc</span>
 </span><span id="__span-7-6">
 </span><span id="__span-7-7"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Operator self + other -&gt; new result</span>
 </span><span id="__span-7-8"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-7-9">    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">direction</span> <span class="p">):</span>
+</span><span id="__span-7-9">    <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">direction</span> <span class="p">):</span>
 </span><span id="__span-7-10">        <span class="k">return</span> <span class="ne">Triangle</span><span class="p">(</span>
 </span><span id="__span-7-11">            <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span> <span class="o">+</span> <span class="n">direction</span><span class="p">,</span>
 </span><span id="__span-7-12">            <span class="bp">self</span><span class="o">.</span><span class="n">PointB</span> <span class="o">+</span> <span class="n">direction</span><span class="p">,</span>
@@ -2033,20 +2033,20 @@
 </span></code></pre></div>
 <h2 id="indexing">Indexing</h2>
 <p>The <code>__getitem__</code>, <code>__setitem__</code> and <code>__len__</code> methods when defined by a class allow to make objects behave like collections of data values such as lists or dictionaries. The example below presents a scenario where a triangle's points can be read or written using the same notation as with lists, namely the square brackets notation with an index.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-8-1"><span class="k">class</span> <span class="nc">Triangle</span><span class="p">:</span>
-</span><span id="__span-8-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><span class="k">class</span><span class="w"> </span><span class="nc">Triangle</span><span class="p">:</span>
+</span><span id="__span-8-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
 </span><span id="__span-8-3">        <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span> <span class="o">=</span> <span class="n">pa</span>
 </span><span id="__span-8-4">        <span class="bp">self</span><span class="o">.</span><span class="n">PointB</span> <span class="o">=</span> <span class="n">pb</span>
 </span><span id="__span-8-5">        <span class="bp">self</span><span class="o">.</span><span class="n">PointC</span> <span class="o">=</span> <span class="n">pc</span>
 </span><span id="__span-8-6">
 </span><span id="__span-8-7"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Operator len( self )</span>
 </span><span id="__span-8-8"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-8-9">    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-8-9">    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-8-10">        <span class="k">return</span> <span class="mi">3</span>
 </span><span id="__span-8-11">
 </span><span id="__span-8-12"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Operator self[index] -&gt; value</span>
 </span><span id="__span-8-13"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-8-14">    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">index</span> <span class="p">):</span>
+</span><span id="__span-8-14">    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">index</span> <span class="p">):</span>
 </span><span id="__span-8-15">        <span class="k">if</span><span class="p">(</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">):</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span>
 </span><span id="__span-8-16">        <span class="k">if</span><span class="p">(</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">):</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">PointB</span>
 </span><span id="__span-8-17">        <span class="k">if</span><span class="p">(</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">):</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">PointC</span>
@@ -2054,7 +2054,7 @@
 </span><span id="__span-8-19">
 </span><span id="__span-8-20"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Operator self[index] &lt;- value</span>
 </span><span id="__span-8-21"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-8-22">    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">point</span> <span class="p">):</span>
+</span><span id="__span-8-22">    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">point</span> <span class="p">):</span>
 </span><span id="__span-8-23">        <span class="k">if</span><span class="p">(</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">):</span>
 </span><span id="__span-8-24">            <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span> <span class="o">=</span> <span class="n">point</span>
 </span><span id="__span-8-25">        <span class="k">elif</span><span class="p">(</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">):</span>
@@ -2088,8 +2088,8 @@
 </span></code></pre></div>
 <h2 id="enumerating">Enumerating</h2>
 <p>We can make object behave like enumerable collections using generator methods. This allows using them in standard for-loops without the <code>range( len( ) )</code> syntax. Note that generators are supported in python version &gt;= 3 and Rhino &gt;= 8.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-9-1"><span class="k">class</span> <span class="nc">Triangle</span><span class="p">:</span>
-</span><span id="__span-9-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><span class="k">class</span><span class="w"> </span><span class="nc">Triangle</span><span class="p">:</span>
+</span><span id="__span-9-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
 </span><span id="__span-9-3">        <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span> <span class="o">=</span> <span class="n">pa</span>
 </span><span id="__span-9-4">        <span class="bp">self</span><span class="o">.</span><span class="n">PointB</span> <span class="o">=</span> <span class="n">pb</span>
 </span><span id="__span-9-5">        <span class="bp">self</span><span class="o">.</span><span class="n">PointC</span> <span class="o">=</span> <span class="n">pc</span>
@@ -2097,7 +2097,7 @@
 </span><span id="__span-9-7"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Enumerator Property</span>
 </span><span id="__span-9-8"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="__span-9-9">    <span class="nd">@property</span>
-</span><span id="__span-9-10">    <span class="k">def</span> <span class="nf">Points</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-9-10">    <span class="k">def</span><span class="w"> </span><span class="nf">Points</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-9-11">        <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span>
 </span><span id="__span-9-12">        <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">PointB</span>
 </span><span id="__span-9-13">        <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">PointC</span>
@@ -2114,15 +2114,15 @@
 </span></code></pre></div>
 <h2 id="dumping">Dumping</h2>
 <p>Classes may define a special method named <code>__repr__</code> which is used for expressing an object's data in a text string representation. This is useful for development purposes because such objects can be dumped into the terminal with the builtin <code>print( )</code> function, or in general converted to strings.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-10-1"><span class="k">class</span> <span class="nc">Triangle</span><span class="p">:</span>
-</span><span id="__span-10-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-10-1"><span class="k">class</span><span class="w"> </span><span class="nc">Triangle</span><span class="p">:</span>
+</span><span id="__span-10-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">):</span>
 </span><span id="__span-10-3">        <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span> <span class="o">=</span> <span class="n">pa</span>
 </span><span id="__span-10-4">        <span class="bp">self</span><span class="o">.</span><span class="n">PointB</span> <span class="o">=</span> <span class="n">pb</span>
 </span><span id="__span-10-5">        <span class="bp">self</span><span class="o">.</span><span class="n">PointC</span> <span class="o">=</span> <span class="n">pc</span>
 </span><span id="__span-10-6">
 </span><span id="__span-10-7"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Operator self -&gt; str</span>
 </span><span id="__span-10-8"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-10-9">    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-10-9">    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-10-10">        <span class="k">return</span> <span class="s1">&#39;Triangle A:[</span><span class="si">{}</span><span class="s1">] B:[</span><span class="si">{}</span><span class="s1">] C:[</span><span class="si">{}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
 </span><span id="__span-10-11">            <span class="bp">self</span><span class="o">.</span><span class="n">PointA</span><span class="p">,</span>
 </span><span id="__span-10-12">            <span class="bp">self</span><span class="o">.</span><span class="n">PointB</span><span class="p">,</span>
@@ -2140,8 +2140,8 @@
 <h2 id="inheriting">Inheriting</h2>
 <p>Classes are often used for creating hierarchies via the concept of inheritance. The idea is that concepts can be extended by reusing some existing, instead of rewriting, code. To create a derived class, the type of the base class must be provided parenthesised next to the class' name. Additionally, the constructor typically calls the base class' constructor and initializes any additional member variables. A derived class automatically inherits all of the base class' member variables and methods. Those can be extended or redefined.</p>
 <p>In the example below a triangular prism extends the base triangle class providing semantics for an extruded solid object with a triangular profile. In this scenario apart from the three points that define the profile we also need an extrusion height, therefore the constructor requires four parameters. Inside the constructor the base class is first initialized using only the points and then the member <code>Height</code> is stored. As an example of how the derived class can use its parent's methods, the <code>Volume</code> property is defined, whereby the result is computed as the product of the triangle's area property times its extrusion height.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-11-1"><span class="k">class</span> <span class="nc">ExtrudedTriangle</span><span class="p">(</span> <span class="ne">Triangle</span> <span class="p">):</span>
-</span><span id="__span-11-2">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span><span class="p">,</span> <span class="n">height</span> <span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span id="__span-11-1"><span class="k">class</span><span class="w"> </span><span class="nc">ExtrudedTriangle</span><span class="p">(</span> <span class="ne">Triangle</span> <span class="p">):</span>
+</span><span id="__span-11-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span><span class="p">,</span> <span class="n">height</span> <span class="p">):</span>
 </span><span id="__span-11-3"><span class="w">        </span><span class="sd">&quot;&quot;&quot; Construct parent class</span>
 </span><span id="__span-11-4"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="__span-11-5">        <span class="ne">Triangle</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">pc</span> <span class="p">)</span>
@@ -2153,7 +2153,7 @@
 </span><span id="__span-11-11"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Use parent class methods</span>
 </span><span id="__span-11-12"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="__span-11-13">    <span class="nd">@property</span>
-</span><span id="__span-11-14">    <span class="k">def</span> <span class="nf">Volume</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-11-14">    <span class="k">def</span><span class="w"> </span><span class="nf">Volume</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-11-15">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Area</span> <span class="o">*</span> <span class="n">height</span>
 </span></code></pre></div>
 <h2 id="interfaces">Interfaces</h2>
@@ -2161,32 +2161,32 @@
 <p>In the example below the <code>Shape</code> interface is defined. It establishes the requirement whereby all derived classes must define a method <code>CenterOfMass( )</code> that returns the center of mass. Next we can derive specific shapes, such as lines and circles, and implement <code>CenterOfMass( )</code> appropriately. Then we can process collections of shapes knowing that they all support this feature.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-12-1"><span class="sd">&quot;&quot;&quot; Shape requires CenterOfMass( )</span>
 </span><span id="__span-12-2"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-12-3"><span class="k">class</span> <span class="nc">Shape</span><span class="p">:</span>
-</span><span id="__span-12-4">    <span class="k">def</span> <span class="nf">CenterOfMass</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-12-3"><span class="k">class</span><span class="w"> </span><span class="nc">Shape</span><span class="p">:</span>
+</span><span id="__span-12-4">    <span class="k">def</span><span class="w"> </span><span class="nf">CenterOfMass</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-12-5">        <span class="k">pass</span>
 </span><span id="__span-12-6">
 </span><span id="__span-12-7"><span class="sd">&quot;&quot;&quot; Line extends Shape</span>
 </span><span id="__span-12-8"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-12-9"><span class="k">class</span> <span class="nc">Line</span><span class="p">(</span> <span class="n">Shape</span> <span class="p">):</span>
-</span><span id="__span-12-10">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span> <span class="p">):</span>
+</span><span id="__span-12-9"><span class="k">class</span><span class="w"> </span><span class="nc">Line</span><span class="p">(</span> <span class="n">Shape</span> <span class="p">):</span>
+</span><span id="__span-12-10">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span> <span class="p">):</span>
 </span><span id="__span-12-11">        <span class="bp">self</span><span class="o">.</span><span class="n">Source</span> <span class="o">=</span> <span class="n">source</span>
 </span><span id="__span-12-12">        <span class="bp">self</span><span class="o">.</span><span class="n">Target</span> <span class="o">=</span> <span class="n">target</span>
 </span><span id="__span-12-13">
 </span><span id="__span-12-14"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Line implements Shape</span>
 </span><span id="__span-12-15"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-12-16">    <span class="k">def</span> <span class="nf">CenterOfMass</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-12-16">    <span class="k">def</span><span class="w"> </span><span class="nf">CenterOfMass</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-12-17">        <span class="k">return</span> <span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">Source</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">Target</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 </span><span id="__span-12-18">
 </span><span id="__span-12-19"><span class="sd">&quot;&quot;&quot; Circle extends Shape</span>
 </span><span id="__span-12-20"><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-12-21"><span class="k">class</span> <span class="nc">Circle</span><span class="p">(</span> <span class="n">Shape</span> <span class="p">):</span>
-</span><span id="__span-12-22">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">radius</span> <span class="p">):</span>
+</span><span id="__span-12-21"><span class="k">class</span><span class="w"> </span><span class="nc">Circle</span><span class="p">(</span> <span class="n">Shape</span> <span class="p">):</span>
+</span><span id="__span-12-22">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">radius</span> <span class="p">):</span>
 </span><span id="__span-12-23">        <span class="bp">self</span><span class="o">.</span><span class="n">Center</span> <span class="o">=</span> <span class="n">center</span>
 </span><span id="__span-12-24">        <span class="bp">self</span><span class="o">.</span><span class="n">Radius</span> <span class="o">=</span> <span class="n">radius</span>
 </span><span id="__span-12-25">
 </span><span id="__span-12-26"><span class="w">    </span><span class="sd">&quot;&quot;&quot; Circle implements Shape</span>
 </span><span id="__span-12-27"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-12-28">    <span class="k">def</span> <span class="nf">CenterOfMass</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+</span><span id="__span-12-28">    <span class="k">def</span><span class="w"> </span><span class="nf">CenterOfMass</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
 </span><span id="__span-12-29">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Center</span>
 </span><span id="__span-12-30">
 </span><span id="__span-12-31"><span class="sd">&quot;&quot;&quot; Create a list containing different shapes</span>
