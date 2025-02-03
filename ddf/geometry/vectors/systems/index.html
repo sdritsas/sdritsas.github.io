@@ -808,6 +808,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#non-orthogonal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Orthogonal
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1445,6 +1454,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../constructions/intersections/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intersection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../constructions/mappings/" class="md-nav__link">
         
   
@@ -1651,6 +1681,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#non-orthogonal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Orthogonal
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1827,6 +1866,73 @@ world basis <code>{ O, X, Y, Z }</code> and two  bases <code>{ d, a, b, c }</cod
 </span><span id="__span-9-28">      <span class="n">target</span><span class="o">.</span><span class="n">YAxis</span> <span class="o">*</span> <span class="n">p_t</span><span class="o">.</span><span class="n">Y</span> <span class="o">+</span>
 </span><span id="__span-9-29">      <span class="n">target</span><span class="o">.</span><span class="n">ZAxis</span> <span class="o">*</span> <span class="n">p_t</span><span class="o">.</span><span class="n">Z</span> <span class="p">)</span>
 </span></code></pre></div>
+<h2 id="non-orthogonal">Non-Orthogonal</h2>
+<p>Mapping a world point <code>p = [px, py, pz]</code> into a non-orthogonal basis <code>( o, u, v, n )</code>, which origin point <code>o</code> and basis vectors <code>u</code>, <code>v</code> and <code>n</code>, is slightly more complicated. What we are looking for are 3 scaling factors <code>r</code>, <code>s</code> and <code>t</code>, such that <code>p = o + u * r + v * s + n * t</code>. This can be approached by  moving the origin to the other side and expanding the equation into coordinates.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-10-1"><span class="p">[</span> <span class="n">ux</span> <span class="o">*</span> <span class="n">r</span> <span class="o">+</span> <span class="n">vx</span> <span class="o">*</span> <span class="n">s</span> <span class="o">+</span> <span class="n">nx</span> <span class="o">*</span> <span class="n">t</span> <span class="p">]</span>   <span class="p">[</span> <span class="n">px</span> <span class="o">-</span> <span class="n">ox</span> <span class="p">]</span>
+</span><span id="__span-10-2"><span class="p">[</span> <span class="n">uy</span> <span class="o">*</span> <span class="n">r</span> <span class="o">+</span> <span class="n">vy</span> <span class="o">*</span> <span class="n">s</span> <span class="o">+</span> <span class="n">ny</span> <span class="o">*</span> <span class="n">t</span> <span class="p">]</span> <span class="o">=</span> <span class="p">[</span> <span class="n">py</span> <span class="o">-</span> <span class="n">oy</span> <span class="p">]</span>
+</span><span id="__span-10-3"><span class="p">[</span> <span class="n">uz</span> <span class="o">*</span> <span class="n">r</span> <span class="o">+</span> <span class="n">vz</span> <span class="o">*</span> <span class="n">s</span> <span class="o">+</span> <span class="n">nz</span> <span class="o">*</span> <span class="n">t</span> <span class="p">]</span>   <span class="p">[</span> <span class="n">pz</span> <span class="o">-</span> <span class="n">oz</span> <span class="p">]</span>
+</span></code></pre></div>
+<p>This yields a system of three equations with three unknowns <code>r</code>, <code>s</code> and <code>t</code> which can be solved using linear algebra. For example with Cramer's rule and determinants.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-11-1"><span class="sd">&#39;&#39;&#39; Determinant 3x3</span>
+</span><span id="__span-11-2"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-11-3"><span class="k">def</span><span class="w"> </span><span class="nf">Det3x3</span><span class="p">(</span> <span class="n">xx</span><span class="p">,</span> <span class="n">yx</span><span class="p">,</span> <span class="n">zx</span><span class="p">,</span>
+</span><span id="__span-11-4">            <span class="n">xy</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">zy</span><span class="p">,</span>
+</span><span id="__span-11-5">            <span class="n">xz</span><span class="p">,</span> <span class="n">yz</span><span class="p">,</span> <span class="n">zz</span> <span class="p">):</span>
+</span><span id="__span-11-6">    <span class="k">return</span> <span class="p">(</span> <span class="n">xx</span> <span class="o">*</span> <span class="p">(</span> <span class="n">yy</span> <span class="o">*</span> <span class="n">zz</span> <span class="o">-</span> <span class="n">zy</span> <span class="o">*</span> <span class="n">yz</span> <span class="p">)</span> <span class="o">-</span>
+</span><span id="__span-11-7">             <span class="n">yx</span> <span class="o">*</span> <span class="p">(</span> <span class="n">xy</span> <span class="o">*</span> <span class="n">zz</span> <span class="o">-</span> <span class="n">zy</span> <span class="o">*</span> <span class="n">xz</span> <span class="p">)</span> <span class="o">+</span>
+</span><span id="__span-11-8">             <span class="n">zx</span> <span class="o">*</span> <span class="p">(</span> <span class="n">xy</span> <span class="o">*</span> <span class="n">yz</span> <span class="o">-</span> <span class="n">yy</span> <span class="o">*</span> <span class="n">xz</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-11-9">
+</span><span id="__span-11-10"><span class="k">def</span><span class="w"> </span><span class="nf">PointToBasis</span><span class="p">(</span> <span class="n">p</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">n</span> <span class="p">):</span>
+</span><span id="__span-11-11"><span class="w">    </span><span class="sd">&#39;&#39;&#39; Right Hand Side</span>
+</span><span id="__span-11-12"><span class="sd">    &#39;&#39;&#39;</span>
+</span><span id="__span-11-13">    <span class="n">d</span> <span class="o">=</span> <span class="ne">Vector3d</span><span class="p">(</span> <span class="n">p</span><span class="o">.</span><span class="n">X</span> <span class="o">-</span> <span class="n">o</span><span class="o">.</span><span class="n">X</span><span class="p">,</span>
+</span><span id="__span-11-14">                  <span class="n">p</span><span class="o">.</span><span class="n">Y</span> <span class="o">-</span> <span class="n">o</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span>
+</span><span id="__span-11-15">                  <span class="n">p</span><span class="o">.</span><span class="n">Z</span> <span class="o">-</span> <span class="n">o</span><span class="o">.</span><span class="n">Z</span> <span class="p">)</span>
+</span><span id="__span-11-16">
+</span><span id="__span-11-17"><span class="w">    </span><span class="sd">&#39;&#39;&#39; Left Hand Side Determinant</span>
+</span><span id="__span-11-18"><span class="sd">    &#39;&#39;&#39;</span>
+</span><span id="__span-11-19">    <span class="n">do</span> <span class="o">=</span> <span class="n">Det3x3</span><span class="p">(</span> <span class="n">u</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">X</span><span class="p">,</span>
+</span><span id="__span-11-20">                 <span class="n">u</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span>
+</span><span id="__span-11-21">                 <span class="n">u</span><span class="o">.</span><span class="n">Z</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">Z</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">Z</span> <span class="p">)</span>
+</span><span id="__span-11-22">    <span class="k">if</span><span class="p">(</span> <span class="n">do</span> <span class="o">==</span> <span class="mf">0.0</span> <span class="p">):</span>
+</span><span id="__span-11-23">        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span> <span class="s1">&#39;Degenerate Basis&#39;</span> <span class="p">)</span>
+</span><span id="__span-11-24">
+</span><span id="__span-11-25"><span class="w">    </span><span class="sd">&#39;&#39;&#39; Projections</span>
+</span><span id="__span-11-26"><span class="sd">    &#39;&#39;&#39;</span>
+</span><span id="__span-11-27">    <span class="n">du</span> <span class="o">=</span> <span class="n">Det3x3</span><span class="p">(</span> <span class="n">d</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">X</span><span class="p">,</span>
+</span><span id="__span-11-28">                 <span class="n">d</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span>
+</span><span id="__span-11-29">                 <span class="n">d</span><span class="o">.</span><span class="n">Z</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">Z</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">Z</span> <span class="p">)</span>
+</span><span id="__span-11-30">
+</span><span id="__span-11-31">    <span class="n">dv</span> <span class="o">=</span> <span class="n">Det3x3</span><span class="p">(</span> <span class="n">u</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">X</span><span class="p">,</span>
+</span><span id="__span-11-32">                 <span class="n">u</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span>
+</span><span id="__span-11-33">                 <span class="n">u</span><span class="o">.</span><span class="n">Z</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">Z</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">Z</span> <span class="p">)</span>
+</span><span id="__span-11-34">
+</span><span id="__span-11-35">    <span class="n">dn</span> <span class="o">=</span> <span class="n">Det3x3</span><span class="p">(</span> <span class="n">u</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">X</span><span class="p">,</span>
+</span><span id="__span-11-36">                 <span class="n">u</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span>
+</span><span id="__span-11-37">                 <span class="n">u</span><span class="o">.</span><span class="n">Z</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">Z</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">Z</span> <span class="p">)</span>
+</span><span id="__span-11-38">
+</span><span id="__span-11-39">    <span class="k">return</span> <span class="p">(</span> <span class="n">du</span> <span class="o">/</span> <span class="n">do</span><span class="p">,</span>
+</span><span id="__span-11-40">             <span class="n">dv</span> <span class="o">/</span> <span class="n">do</span><span class="p">,</span>
+</span><span id="__span-11-41">             <span class="n">dn</span> <span class="o">/</span> <span class="n">do</span> <span class="p">)</span>
+</span><span id="__span-11-42">
+</span><span id="__span-11-43"><span class="sd">&#39;&#39;&#39; Demonstration</span>
+</span><span id="__span-11-44"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-11-45"><span class="n">p</span> <span class="o">=</span>  <span class="ne">Point3d</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">)</span>
+</span><span id="__span-11-46"><span class="n">o</span> <span class="o">=</span>  <span class="ne">Point3d</span><span class="p">(</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">)</span>
+</span><span id="__span-11-47"><span class="n">u</span> <span class="o">=</span> <span class="ne">Vector3d</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">)</span>
+</span><span id="__span-11-48"><span class="n">v</span> <span class="o">=</span> <span class="ne">Vector3d</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+</span><span id="__span-11-49"><span class="n">n</span> <span class="o">=</span> <span class="ne">Vector3d</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+</span><span id="__span-11-50">
+</span><span id="__span-11-51"><span class="n">r</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">PointToBasis</span><span class="p">(</span> <span class="n">p</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">n</span> <span class="p">)</span>
+</span><span id="__span-11-52"><span class="nb">print</span><span class="p">(</span> <span class="n">r</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="p">)</span>
+</span><span id="__span-11-53">
+</span><span id="__span-11-54"><span class="sd">&#39;&#39;&#39; Must be Point3d( 1, 2, 3 )</span>
+</span><span id="__span-11-55"><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-11-56"><span class="nb">print</span><span class="p">(</span> <span class="n">o</span> <span class="o">+</span> <span class="n">u</span> <span class="o">*</span> <span class="n">r</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="n">s</span> <span class="o">+</span> <span class="n">n</span> <span class="o">*</span> <span class="n">t</span> <span class="p">)</span>
+</span></code></pre></div>
+<p>Note that while this process seems convoluted, the determinant can be interpreted as just a dot product between one vector and the cross product of two others. In this sense, it represents the projection of a vector onto a normal of a plane.</p>
+<p>Consider the case of a basis where its vectors are orthonormal for instance. The determinant of its basis vectors is  <code>do = 1.0</code>, because projecting the one vector onto the direction orthogonal to the other two is just the same unit-length vector.</p>
+<p>Moreover, consider mapping a point onto an orthonormal basis using the determinants above. It is easy to see that we are just projecting the <code>p - o</code> vector onto the normals of each plane. That is to compute <code>r</code>, <code>s</code>, and <code>t</code> we project to the normal of the <code>( v, n )</code>, <code>( u, n )</code> and <code>( u, v )</code> planes, which are just <code>u</code>, <code>v</code> and <code>n</code>, respectively.</p>
 
 
 

@@ -1595,6 +1595,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../constructions/intersections/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intersection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../constructions/mappings/" class="md-nav__link">
         
   
@@ -2088,7 +2109,7 @@
 </span><span id="__span-6-6"><span class="n">y_axis</span> <span class="o">=</span> <span class="n">plane</span><span class="o">.</span><span class="n">YAxis</span>
 </span></code></pre></div>
 <h3 id="explicit">Explicit</h3>
-<p>Yet, another form for a plane's equation is <code>Ax + By + Cz + D = 0</code>, where <code>A</code>, <code>B</code>, <code>C</code>, and <code>D</code> real numbers, and <code>x</code>, <code>y</code> and <code>z</code> are the point's coordinates <code>p = [x, y, z]</code>. The linear coefficients seem geometrically void of semantics. However, we can expand the earlier implicit equation into <code>nx * ( x - ox ) + ny * ( y - oy ) + nz * ( z - oz )</code>, and then group the terms such as <code>nx * x + ny * y + nz * z - ( nx * ox + ny * oy + nz * oz )</code>. From this we can conclude that <code>A = nx</code>, <code>B = ny</code>, <code>C = nz</code>, thus the first three terms encode the normal vector. Moreover, the term <code>D = -( nx * ox + ny * oy + nz * oz )</code>, or <code>D = -n · o</code> in short, can be interpreted as an offset from the world's origin along the normal direction by distance <code>D</code>.</p>
+<p>Yet, another form for a plane's equation is <code>Ax + By + Cz + D = 0</code>, where <code>A</code>, <code>B</code>, <code>C</code>, and <code>D</code> real numbers, and <code>x</code>, <code>y</code> and <code>z</code> are the point's coordinates <code>p = [x, y, z]</code>. The coefficients seem geometrically void of semantics. However, expanding the implicit equation  <code>n · ( x - o ) = 0</code>, into <code>n · x - n · o = 0</code> and further into <code>nx * x + ny * y + nz * z - n · o = 0</code> it becomes evident that <code>A = nx</code>, <code>B = ny</code>, <code>C = nz</code>. Therefore, the first three terms encode the normal vector, which may not be normalized. Moreover, the term <code>D = -n · o</code> can be interpreted as an offset from the world's origin along the normal direction.</p>
 <div class="highlight"><pre><span></span><code><span id="__span-7-1"><span class="k">class</span><span class="w"> </span><span class="nc">PlaneExplicit</span><span class="p">:</span>
 </span><span id="__span-7-2">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">D</span> <span class="p">):</span>
 </span><span id="__span-7-3">        <span class="bp">self</span><span class="o">.</span><span class="n">A</span> <span class="o">=</span> <span class="n">A</span>
