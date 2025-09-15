@@ -1,0 +1,2485 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Stylianos Dritsas">
+      
+      
+      
+        <link rel="prev" href="../../geometry/constructions/reflections/">
+      
+      
+        <link rel="next" href="../software/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>Hardware - Digital Design and Fabrication</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%2022c5.5%200%2010-4.5%2010-10S17.5%202%2012%202%202%206.5%202%2012s4.5%2010%2010%2010M11%207h2v2h-2zm3%2010h-4v-2h1v-2h-1v-2h3v4h1z%22/%3E%3C/svg%3E');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#abb-robot-introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Digital Design and Fabrication" class="md-header__button md-logo" aria-label="Digital Design and Fabrication" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 2 4 4h-3v7.85l6.53 3.76L21 15.03l1.5 5.47-5.5 1.46 1.53-2.61L12 15.58l-6.53 3.77L7 21.96 1.5 20.5 3 15.03l1.47 2.58L11 13.85V6H8z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Digital Design and Fabrication
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Hardware
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Digital Design and Fabrication" class="md-nav__button md-logo" aria-label="Digital Design and Fabrication" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 2 4 4h-3v7.85l6.53 3.76L21 15.03l1.5 5.47-5.5 1.46 1.53-2.61L12 15.58l-6.53 3.77L7 21.96 1.5 20.5 3 15.03l1.47 2.58L11 13.85V6H8z"/></svg>
+
+    </a>
+    Digital Design and Fabrication
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Parametrics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Parametrics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parametrics/components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Components
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parametrics/template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Template
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parametrics/loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Graph Loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parametrics/cpython/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CPython
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Programming
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/collections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Collections
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Geometry
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Geometry
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Vectors
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Vectors
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/distances/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Distance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/addition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Addition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/subtraction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Subtraction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/multiplication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multiplication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/normalize/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Normalization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/dot-product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dot Product
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/cross-product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cross Product
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Coordinate Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/transforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Transformations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Curves
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Curves
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/curves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/curves/euclidean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Euclidean
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/curves/computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computational
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Surfaces
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Surfaces
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/surfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/surfaces/euclidean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Euclidean
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/surfaces/computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computational
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Meshes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Meshes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/meshes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Geometry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/meshes/topology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Topology
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Solids
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Solids
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/solids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/solids/constructive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Constructive
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/solids/boundary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Boundary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/solids/voxels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Volumetric
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/solids/clouds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Point Clouds
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Constructions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Constructions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/angles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Angles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Areas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/centroids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Centroids
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/clashes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clashes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/containment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Containment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/intersections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intersection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/mappings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mappings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/offsets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Offsets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/perpendiculars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Perpendiculars
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/polygons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Polygons
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/projections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Projections
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/reflections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reflections
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Robotics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Robotics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Hardware
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hardware
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-robot" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Robot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-gripper" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Gripper
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Controller
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-pendant" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Pendant
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Actions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#turn-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      Turn On
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Out
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log In
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn-off" class="md-nav__link">
+    <span class="md-ellipsis">
+      Turn Off
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jogging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jogging
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Jogging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Speed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joint-angles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joint Angles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#world-axes" class="md-nav__link">
+    <span class="md-ellipsis">
+      World Axes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#singularities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Singularities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disengagement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disengagement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Robot Programs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Robot Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#playback" class="md-nav__link">
+    <span class="md-ellipsis">
+      Playback
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stepping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stepping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speed_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Speed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Networking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calibration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Calibration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zeroing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zeroing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resetting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resetting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Planning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Experiments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-robot" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Robot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-gripper" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Gripper
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Controller
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-pendant" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Pendant
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Actions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#turn-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      Turn On
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Out
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log In
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn-off" class="md-nav__link">
+    <span class="md-ellipsis">
+      Turn Off
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jogging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jogging
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Jogging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Speed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joint-angles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joint Angles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#world-axes" class="md-nav__link">
+    <span class="md-ellipsis">
+      World Axes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#singularities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Singularities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disengagement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disengagement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Robot Programs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Robot Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#playback" class="md-nav__link">
+    <span class="md-ellipsis">
+      Playback
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stepping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stepping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speed_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Speed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Networking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calibration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Calibration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zeroing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zeroing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resetting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resetting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="abb-robot-introduction">ABB Robot Introduction</h1>
+<h2 id="the-robot">The Robot</h2>
+<p>The robot is an ABB model number IRB1200 featuring six joints, J1 to J6, and it come with not tools attached. Including any custom tools in total it can lift up to 5kg of payload. The robot indexes space using a right-handed coordinate system situated at the center of its base under J1. The X-axis is the forward/backward direction, Y-axis is sideways and Z-axis is vertical.</p>
+<p>Additionally, the coordinate system at robot's flange, at J6, is also a right-handed with the Z-axis normal to the flange and the Y-axis pointing down in the home position, as seen in the figure below. The home position is where all joint angles are zero. Information regarding the conversion between joint angles and world coordinates is provided in the kinematics section of the robot modeling chapter.</p>
+<p><img alt="Robot Figure" src="../../figures/abb-irb.png" /></p>
+<h2 id="the-gripper">The Gripper</h2>
+<p>The robot comes with a parallel pneumatic gripper with range between 18-28mm. The general dimension of the bracket and the gripper itself are seen below. The tool may be removed and replaced with another. Note that the flange's bolt-hole circle diameter is 31.5mm and the screws used are M5. Drawing are available in the IRB1200's documentation. For attaching customized eg. 3D printed fingers on the gripper use M3 screws as seen below. The model number of the gripper is Festo DHPS-16.</p>
+<p><img alt="Gripper Figure" src="../../figures/abb-tool.png" /></p>
+<h2 id="the-controller">The Controller</h2>
+<p>The controller is located under the base of the robot inside the cabinet. The only operation you are required to know is the location of the on/off switch at position (1) in the figure below. The switch (2) is an emergency stop push-in/twist-out button rarely used because there is another one on the teaching pendant. The controller is setup for manual operations where the deadman switch must be held down during robot motion. To operate in automatic mode the key switch (3) must be turned accordingly and the activation button (4) pressed. Do not switch to automatic mode without checking first for safety precautions.</p>
+<p><img alt="Controller Figure" src="../../figures/abb-irc.png" /></p>
+<h2 id="the-pendant">The Pendant</h2>
+<p>The teaching pendant features a Windows-like user interface, a set of physical buttons, the joystick, the emergency stop red button and the deadman switch on the side. The main menu expands by pressing the upper-left corner. There are several application modules accessible from here discussed below. Next to it is the messages/notifications bar. You may need to expand it to acknowledge errors when they occur.</p>
+<p><img alt="Pendant Figure" src="../../figures/abb-pendant.png" /></p>
+<h2 id="basic-actions">Basic Actions</h2>
+<p>Basic actions include turning on and off the robot/controller and logging in and out from the robot's operating system. The actions are listed below in the order performed in a typical usage scenario. Do follow these steps carefully for both safety and avoidance of damaging the robots.</p>
+<h3 id="turn-on">Turn On</h3>
+<p>The robot turns on by switching the controller on and waiting until the operating system is loaded and the teaching pendant becomes active. Make sure the power cable is plugged in the wall socket before turning it on and also make sure to unplug the power cable and store it inside the base cabinet after turning off the controller, explained below. Locking the power cable in the cabinet is for safety purposes.</p>
+<h3 id="log-out">Log Out</h3>
+<p>Before being able to do much with the robot you need to first change the user settings. This is a precaution for safety purposes. The default user has very limited control over the robot. The first thing you must do once the robot's operating system has loaded is to log out as the default user by selecting the relevant option in the start menu.</p>
+<p><img alt="Log Out Figure" src="../../figures/abb-log-out.png" /></p>
+<h3 id="log-in">Log In</h3>
+<p>Then log-in as a student or faculty user. Certain operations such as robot calibration are not accessible as a student. The password will be provided after the safety training session.</p>
+<p><img alt="Log In Figure" src="../../figures/abb-log-in.png" /></p>
+<h3 id="turn-off">Turn Off</h3>
+<p>Shutting down the robot requires a peculiar sequence of steps. Do not just turn off the robot by switching off the controller! First shut down the main computer and then the controller. In the start menu select the restart button as seen below.</p>
+<p><img alt="Turn Off Figure" src="../../figures/abb-log-restart.png" /></p>
+<p>From here there are two options available: (a) restart/reboot the controller and (b) log off and shut down the controller. Restarting is obvious, however, shutting down requires first to select the advanced option.</p>
+<p><img alt="Turn Off Figure" src="../../figures/abb-log-advanced.png" /></p>
+<p>Finally, select the shut down the main computer option and the next button as seen below. Then wait for a few seconds and when the pendant reports that the computer has shut down, you may turn off the controller,</p>
+<p><img alt="Turn Off Figure" src="../../figures/abb-log-down.png" /></p>
+<h2 id="jogging">Jogging</h2>
+<p>There are two modes for manually moving, aka jogging, the robot: (a) by axis angles, where the angle for each of the six axes can be adjusted, and (b) by world coordinates, where the position of the TCP can be adjusted in relationship to the world's axes. The joystick has three degrees of freedom, up/down, left/right, cw/ccw. Those map to three axes at a time, namely 1-2-3, 4-5-6, or X-Y-Z. The joystick is force-sensitive, the more you push in one direction the faster the robot will move. Additionally, for being able to jog the robot you need to hold constantly down the deadman switch on the side of the pendant. Press until you hear the motor breaks loosen. Pressing too hard puts the robot in an emergency hold position mode. So press firmly but not too hard.</p>
+<h3 id="speed">Speed</h3>
+<p>Before jogging the robot it is best to set its jogging speed low to avoid accidental crashes. Pressing the highlighted button at the bottom right corner of the screen brings up the settings panel. In the vertical pop-up menu select the topmost action and expand the details by pressing the relevant button. You can adjust the jogging speed using the +/- button as seen below.</p>
+<p><img alt="Speed Figure" src="../../figures/abb-jogging-speed.png" /></p>
+<h3 id="joint-angles">Joint Angles</h3>
+<p>The 1|2 physical button selects the robot's motor axis-angles mode of jogging. Note the correspondence between the robot's axes and the joystick's axes: (R1) left/right, (R2) up/down and (R3) cw/ccw.</p>
+<p><img alt="Joint Figure" src="../../figures/abb-jogging-123.png" /></p>
+<p>Pressing the same button toggles between the 1-2-3 and 4-5-6 axes. The relationship between the robot's axes and joystick is now (R4) left/right (R5) up/down and (R6) cw/ccw.</p>
+<p><img alt="Joint Figure" src="../../figures/abb-jogging-456.png" /></p>
+<h3 id="world-axes">World Axes</h3>
+<p>To jog about the world axes, the highlighted button must be pushed first. Then the pendant will report the position of the TCP and its orientation in quaternion form. The joystick's directions map to world (X) up/down, (Y) left/right, and (Z) cw/ccw.</p>
+<p><img alt="World Figure" src="../../figures/abb-jogging-xyz.png" /></p>
+<h3 id="singularities">Singularities</h3>
+<p>When the robot is at certain configurations, such as at its home position where all joint angles are zero, jogging using world axes throws near singularity errors. To avoid this it is recommended to bias the robot by jogging it using joint angles such as (J1) 0.0, (J2) -15.0, (J3) 25.0, (J4) 0.0, (J5) -10.0 and (J6) 0.0. Note that the values for J2, J3 and J5 are selected as such that the TCP is in a horizontal pose.</p>
+<p><img alt="Singularities Figure" src="../../figures/abb-jogging-bias.png" /></p>
+<h3 id="disengagement">Disengagement</h3>
+<p>During touching off workspace points it is common to bring the robot very close to a hard surface. To avoid crashing the robot against the surface pay attention to the directions of the arrows in the icons. For example, to move the robot up in the Z-direction away from the table you need to twist the joystick counter-clockwise, because up in the physical world is in the positive Z-direction as indicated by the relevant icon.</p>
+<p><img alt="Disengagement Figure" src="../../figures/abb-jogging-up.png" /></p>
+<h2 id="robot-programs">Robot Programs</h2>
+<p>Robot programs are loaded and run via the production window applet selected from the main menu. To load a program saved/uploaded from the robot's controller, select the load program button at the bottom right. Then browse for the project file in the Windows Explorer-like window and select load.</p>
+<p><img alt="Programs Figure" src="../../figures/abb-prod-load.png" /></p>
+<h3 id="playback">Playback</h3>
+<p>If there are no errors with the program, then the screen will update and the program pointer will move to the start of the main function. To run the program first you need to hold down the deadman switch and then press the play button. To stop the program execution you may either release the deadman switch or press the stop button.</p>
+<p><img alt="Playback Figure" src="../../figures/abb-prod-play.png" /></p>
+<h3 id="stepping">Stepping</h3>
+<p>The forward/backward buttons allow executing each line of code / instructions one by one, aka debugging. This is useful for the first time you run a program and want to make sure things are correct and safe. To restart the program from the beginning you need to press the PP to Main, which stands for send the program pointer to the start of the main function.</p>
+<p><img alt="Stepping Figure" src="../../figures/abb-prod-step.png" /></p>
+<h3 id="speed_1">Speed</h3>
+<p>Another very important feature is that you may want to slow down the program execution the very first you run it. The robot's motion speed can be adjusted globally using the pop-up speed menu as seen below.</p>
+<p><img alt="Speed Figure" src="../../figures/abb-prod-speed.png" /></p>
+<h2 id="signals">Signals</h2>
+<p>The robot's controller supports 16 input and 16 output digital signals some of which have been already assigned to various tool operations. The digital output signals are named as <code>DO00</code> to <code>DO15</code> and the inputs <code>DI00</code> to <code>DI15</code>.  To inspect and modify the output signals use the <code>Inputs and Outputs</code> application from the start menu. Note that the <code>DO15</code> toggles the pneumatic gripper and <code>DO14</code> toggles the vacuum line for the suction gripper.</p>
+<p><img alt="Signals Figure" src="../../figures/abb-signals.png" /></p>
+<h2 id="networking">Networking</h2>
+<p>In order to connect to the robot's controller please use the ethernet cable with the USB adapter provided. The first time the USB-to-Ethernet device is connected to your computer you need to perform a few steps for establishing communications. It is recommended to use the USB dongle even if your laptop has an ethernet port because you may not want to mess with the automatic settings of your built-in adapter. Additionally, Windows remembers the settings per adapter so the following steps need to be performed only once.</p>
+<ol>
+<li>In the <code>Start Menu</code> type <code>Control Panel</code> to bring up the relevant settings window.</li>
+<li>Select the <code>Network and Sharing Center</code> system settings.<ul>
+<li>If it is not visible, then select the <code>View by: Small Icons</code> option first.</li>
+</ul>
+</li>
+<li>Select the <code>Change Adapter Settings</code>, on the left side of the window.</li>
+<li>In the new window right click over the ethernet connection and select <code>Properties</code>.</li>
+<li>Select the <code>Internet Protocol Version 4 (TCP/IPv4)</code> from the list and click <code>Properties</code>.</li>
+<li>Select <code>Use the following IP address</code> and enter<ul>
+<li>IP Address: <code>192.168.125.11</code></li>
+<li>Subnet Mask: <code>255.255.255.0</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="calibration">Calibration</h2>
+<p>If the robot's battery is low, the motor encoders may lose their position counters when starting up. In this case, the pendant will notify you that the robot is not calibrated and needs to be zeroed. The joint angles in the jogging window will be displayed in red color and the controller will not allow world-space jogging. To resolve this, first acknowledge the warning, then manually jog each robot axis to its zero position slowly.</p>
+<h3 id="zeroing">Zeroing</h3>
+<p>Note the joint angle values seen on the pendant are not correct if the encoders have lost track of their counts. Zeroing is performed by eyeballing the markers on the actual robot!</p>
+<p><img alt="Zeroing Figure" src="../../figures/abb-cal.png" /></p>
+<h3 id="resetting">Resetting</h3>
+<p>From the start menu select the calibration application and then in the new window select the robot from the list.</p>
+<p><img alt="Resetting Figure" src="../../figures/abb-calib-select.png" /></p>
+<p>In the new window select the manual / advanced calibration option. Note that this may look a bit different based on the version of the pendant's software.</p>
+<p><img alt="Resetting Figure" src="../../figures/abb-calib-advanced.png" /></p>
+<p>Finally, select the update the revolution counters and accept the changes. There will be additional windows warning about accepting the calibration settings. Just accept all and wait till the counters are reset. In the jogging screen the joint angles will be now all zero in black color font face.</p>
+<p><img alt="Resetting Figure" src="../../figures/abb-calib-update.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright (c) 2024-2025 Digital Design and Fabrication
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

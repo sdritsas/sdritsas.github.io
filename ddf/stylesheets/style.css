@@ -18,3 +18,17 @@
 .highlight .ne { color: light-dark( #c08000, #f0c674 ); } /* except   */
 .highlight .fm { color: light-dark( #0084dc, #90c7f7 ); } /* overload */
 .highlight .c1 { color: light-dark( #707880, #707880 ); }
+
+
+.md-typeset table:not([class]) {
+  width: 100%;
+  table-layout: fixed;
+  display: table;
+  overflow-wrap: break-word;
+}
+
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}

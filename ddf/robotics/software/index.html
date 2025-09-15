@@ -1,0 +1,2383 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Stylianos Dritsas">
+      
+      
+      
+        <link rel="prev" href="../hardware/">
+      
+      
+        <link rel="next" href="../planning/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>Software - Digital Design and Fabrication</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%2022c5.5%200%2010-4.5%2010-10S17.5%202%2012%202%202%206.5%202%2012s4.5%2010%2010%2010M11%207h2v2h-2zm3%2010h-4v-2h1v-2h-1v-2h3v4h1z%22/%3E%3C/svg%3E');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#stdlib-parametric-robotics-library" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Digital Design and Fabrication" class="md-header__button md-logo" aria-label="Digital Design and Fabrication" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 2 4 4h-3v7.85l6.53 3.76L21 15.03l1.5 5.47-5.5 1.46 1.53-2.61L12 15.58l-6.53 3.77L7 21.96 1.5 20.5 3 15.03l1.47 2.58L11 13.85V6H8z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Digital Design and Fabrication
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Software
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Digital Design and Fabrication" class="md-nav__button md-logo" aria-label="Digital Design and Fabrication" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 2 4 4h-3v7.85l6.53 3.76L21 15.03l1.5 5.47-5.5 1.46 1.53-2.61L12 15.58l-6.53 3.77L7 21.96 1.5 20.5 3 15.03l1.47 2.58L11 13.85V6H8z"/></svg>
+
+    </a>
+    Digital Design and Fabrication
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Parametrics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Parametrics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parametrics/components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Components
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parametrics/template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Template
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parametrics/loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Graph Loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parametrics/cpython/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CPython
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Programming
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/collections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Collections
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Geometry
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Geometry
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Vectors
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Vectors
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/distances/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Distance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/addition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Addition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/subtraction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Subtraction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/multiplication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multiplication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/normalize/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Normalization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/dot-product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dot Product
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/cross-product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cross Product
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Coordinate Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/transforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Transformations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Curves
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Curves
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/curves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/curves/euclidean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Euclidean
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/curves/computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computational
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Surfaces
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Surfaces
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/surfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/surfaces/euclidean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Euclidean
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/surfaces/computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computational
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Meshes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Meshes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/meshes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Geometry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/meshes/topology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Topology
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Solids
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Solids
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/solids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/solids/constructive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Constructive
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/solids/boundary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Boundary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/solids/voxels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Volumetric
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/solids/clouds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Point Clouds
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Constructions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Constructions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/angles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Angles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Areas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/centroids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Centroids
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/clashes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clashes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/containment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Containment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/intersections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intersection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/mappings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mappings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/offsets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Offsets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/perpendiculars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Perpendiculars
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/polygons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Polygons
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/projections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Projections
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/reflections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reflections
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Robotics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Robotics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hardware
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Software
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-robot-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Robot Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forward-kinematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forward Kinematics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Forward Kinematics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#joint-planes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joint Planes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcp-snapshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP Snapshot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-robot-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display Robot Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Display Robot Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#publish" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publish
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inverse-kinematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inverse Kinematics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pose-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pose Settings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Robot Tasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Robot Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Motion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modify" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modify
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-robot-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display Robot Motion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-joint-traces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display Joint Traces
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#machine-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Machine Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-transfer-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Transfer Request
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot-communications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Robot Communications
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Planning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Experiments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-robot-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Robot Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forward-kinematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forward Kinematics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Forward Kinematics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#joint-planes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joint Planes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcp-snapshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP Snapshot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-robot-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display Robot Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Display Robot Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#publish" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publish
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inverse-kinematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inverse Kinematics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pose-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pose Settings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Robot Tasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Robot Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Motion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modify" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modify
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-robot-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display Robot Motion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-joint-traces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display Joint Traces
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#machine-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Machine Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-transfer-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Transfer Request
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot-communications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Robot Communications
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="stdlib-parametric-robotics-library">StdLib Parametric Robotics Library</h1>
+<h2 id="installation">Installation</h2>
+<p>First start Rhino for Windows, version 7 or 8, and then enter the string <code>Grasshopper Folders</code> in the command line and select <code>Components</code>. Using the file browser copy the <code>stdlib.gha</code> file in that location. Right click on the file and select <code>Properties</code>. Make sure that the executable is not blocked because it was downloaded. Finally, start <code>Grasshopper</code> and the component library will appear in the <code>StdLib</code> toolbar panel. Note that the software does not work in MacOS.</p>
+<h2 id="the-robot-model">The Robot Model</h2>
+<p>The <code>Model Robot</code> component requires a string input that specifies the robot's model to load. For the small ABB robot enter <code>IRB1205</code> and for the larger robot <code>IRB2620</code>. It outputs a <code>Robot</code> data structure containing the robot's kinematics and visual models as well as the <code>Ranges</code> of its axes.</p>
+<p><img alt="Robot Model Figure" src="../../figures/stdlib-robot.png" /></p>
+<h2 id="forward-kinematics">Forward Kinematics</h2>
+<p>The <code>Forward Kinematics</code> component requires the <code>Robot</code> model defined above and the <code>Joints</code> in the form of a list of angles in radians. It outputs the robot's <code>State</code> structure containing all the geometric transformations of each axis as well as the coordinate systems in the form of <code>Planes</code> for each. In the example below the <code>Number Vector</code> component becomes a multi-slider after being connected to the robot's <code>Ranges</code>, where each slider can be used to interpolate the angles for each of its six axes.</p>
+<p><img alt="Forward Kinematics Figure" src="../../figures/stdlib-forward.png" /></p>
+<p><a class="md-button" href="../StdLibFK.gh">Grasshopper <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span></a></p>
+<h3 id="joint-planes">Joint Planes</h3>
+<p>The <code>Planes</code> output is useful for attaching dynamic geometry that follows the robot's movement such as cables, ducts and tools in general. The last plane is particularly useful because it is associated with coordinate system at the flange of the robot.</p>
+<h3 id="tcp-snapshot">TCP Snapshot</h3>
+<p>The component features a <code>Bake CS</code> menu option when right-clicked over its label. The command stores a visual representation of the coordinate system at the flange in the active document. This is useful for probing locations from the physical world as well as recording the orientation of the robot's TCP.</p>
+<h2 id="display-robot-model">Display Robot Model</h2>
+<p>The <code>Display Robot Model</code> component requires the <code>Robot</code> model and its <code>State</code> to produce a dynamic visualization in the viewport. There are several option toggle buttons rendered on the component that can be used to change display settings and show and hide various robot parts.</p>
+<p><img alt=" Display Robot Model Figure" src="../../figures/stdlib-display-robot.png" /></p>
+<h3 id="publish">Publish</h3>
+<p>The component features a <code>Publish</code> menu option when right-clicked over its label. The command stores the robot's mesh in the active document. It may be used for visualization and figures.</p>
+<h2 id="inverse-kinematics">Inverse Kinematics</h2>
+<p>The <code>Inverse Kinematics</code> component requires the <code>Robot</code> model and a <code>Target</code> plane to produce a table of joint angle configurations associated with the pose. Note that not all configurations are feasible due to physical limitations of the robot.</p>
+<p><img alt=" Inverse Kinematics Figure" src="../../figures/stdlib-inverse.png" /></p>
+<p><a class="md-button" href="../StdLibIK.gh">Grasshopper <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span></a></p>
+<h2 id="pose-settings">Pose Settings</h2>
+<p>The <code>Pose Settings</code> component serves a dual purpose: (a) It assists in semantically selecting one of the joint angle configurations returned by the <code>Inverse Kinematics</code> component, and (b) It can be used without input as a setting selector for specifying the initial pose for a motion task.</p>
+<p><img alt=" Pose Settings Figure" src="../../figures/stdlib-pose.png" /></p>
+<p>Typically six-axes robots have three axis of symmetry which require selecting one of the two available options for each. The two options represent the rotation of a joint between 0 and 180 degrees. Therefore, this amounts to <code>2^3=8</code> solutions of the inverse kinematics function for the same target pose. The axes of symmetry are at the base (J1), elbow (J3) and wrist (J4).</p>
+<h2 id="robot-tasks">Robot Tasks</h2>
+<p>The <code>Robot Task</code> component captures several robot programming operations presented below. It features a page-based user interface style with primary options and a clickable list of sub-options.</p>
+<h3 id="motion">Motion</h3>
+<p>The <code>Motion</code> page contains different ways to define motion paths, namely by (a) Joint angle sequences, (b) Plane sequences with joint angle interpolations, which is supported by UR systems, (c) Linear plane-to-plane sequences, which is the most commonly used path type, and (d) Universal, which is an advanced option for custom motion instructions. The input parameters vary based on motion path waypoint type but they all can optionally provide information regarding operations that can take place before the motion begins, during every waypoint and after the motion has completed.</p>
+<h4 id="forward-kinematics_1">Forward Kinematics</h4>
+<p>Paths defined by joint angle waypoints, or forward kinematics paths, require a sequence of joint angles stacked into a list. Note that the <code>Robot Task</code> requires a list of lists of joint angles which may be constructed using the <code>List Edit</code> component using the <code>Stack</code> option. Note that the motion between the waypoints is interpolated in the joint angles space, therefore the shape of the trajectory is non-linear.</p>
+<p><img alt="Forward Kinematics Path Figure" src="../../figures/stdlib-fk-path.png" /></p>
+<p><a class="md-button" href="../StdLibFkPath.gh">Grasshopper <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span></a></p>
+<h4 id="inverse-kinematics_1">Inverse Kinematics</h4>
+<p>Paths defined by plane waypoints, or inverse kinematics paths, require a sequence of target coordinate systems, that capture the position and orientation of the robot, in a list. Note that the interpolation between waypoints is performed linearly, therefore the shape of the trajectory is a line-string. Additionally, the pose of the robot must be supplied for selecting the appropriate inverse kinematics solution.</p>
+<p><img alt="Inverse Kinematics Path Figure" src="../../figures/stdlib-ik-path.png" /></p>
+<p><a class="md-button" href="../StdLibIkPath.gh">Grasshopper <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span></a></p>
+<h3 id="signals">Signals</h3>
+<p>The <code>Signals</code> page contains operations pertaining clearing, setting and toggling output signals. This is for controlling tools such as gripper and any other devices that have been integrated with the robot's controller. The component requires the name of the signal, as a string, and optionally a value. Note that it is important to provide the correct type of data for the value: analog signals may be supplied with a real / floating point value, digital bit signals require integers <code>0|1</code>, and digital group signals unsigned integers expressing their bit values.</p>
+<p><img alt="Signals Figure" src="../../figures/stdlib-signals.png" /></p>
+<h3 id="control">Control</h3>
+<p>The <code>Control</code> page contains operations for setting the motion speed, introducing delays and pausing the program. The motion speed input parameters include the position and rotation acceleration and velocity as well as the blending radius of the motion path. The value are in metric units such as 50mm/sec and 500deg/sec.</p>
+<p>Blend radius of 0mm forces the robot to hit the waypoints exactly following a trapezoidal motion profile, while larger values allow the robot to maintain its velocity but miss interim waypoints by the radius provided. Note that the blend radius must be appropriate for the speed and waypoint distance provided otherwise the controller will be able to meet the requirements and miss waypoints altogether!</p>
+<p>The <code>Sleep</code> operation introduces a delay, in seconds, between consecutive instructions. This may be used for synchronization procedures such as waiting for a pneumatic gripper to properly open or close at the beginning or end of a motion path. The <code>Pause</code> operation inserts an instruction that pauses the program from executing until the user has selected a halt or proceed action.</p>
+<p><img alt="Control Figure" src="../../figures/stdlib-control.png" /></p>
+<h3 id="syntax">Syntax</h3>
+<p>The <code>Syntax</code> page contains operations for modifying the program directly by injecting chunks of code locally or globally. The <code>Comment</code> operation places the content of the input parameter as a code comment locally into the program stream. The <code>Message</code> operation print in the pendant messages window the string provided. The <code>Local</code> operation injects the code provided at the point of execution, that is before, at every waypoint or after a motion task has completed. Finally, the <code>Global</code> operation injects the code snippet supplied at the global section of program. Note that the <code>Local</code> and <code>Global</code> operations require code snippets in the particular programming language used by the robot, so they are not portable.</p>
+<p><img alt="Syntax Figure" src="../../figures/stdlib-syntax.png" /></p>
+<h3 id="modify">Modify</h3>
+<p>The <code>Modify</code> page contains a few advanced operations for adjusting tasks and operations. The <code>Drop</code> task command converts an inverse kinematics motion path to a forward kinematics path. This may be useful for motion debugging purposes, because joint angle paths are unambiguous, and it is rarely used.</p>
+<p>The <code>Merge</code> tasks command combines multiple tasks into one. A task is roughly associated with programming language function called from the main function. Using merge causes all the code that would have been separate functions to fuse into the same function body. This is equivalent to code inlining.</p>
+<p>The <code>Fuse</code> operations command enables combining multiple operations into one. An operation is equivalent to a single programming language instruction. Fusing operations is equivalent to constructing a group of instructions. This is useful for instance for setting the speed and signals before a motion task. The result is thus a group operation which can be used for the before, every and after parameters.</p>
+<p>The <code>Explode</code> command dumps the joint angles of a motion task into a data tree. This is also for debugging and advanced custom code generation purposes and rarely used.</p>
+<h2 id="display-robot-motion">Display Robot Motion</h2>
+<p>The <code>Display Robot Motion</code> is a geometric motion simulation component that allows visualizing robot tasks before running them on the physical device. It features two stacked sliders, where the top one interpolates the entire sequence of waypoints, and the bottom one interpolates between two consecutive waypoints. The buttons from left-to-right correspond to: go to the first/last waypoint, go to the next/previous waypoint, and animate forward/backward, depending on whether they are left or right clicked, respectively.</p>
+<p><img alt="Display Robot Motion Figure" src="../../figures/stdlib-motion.png" /></p>
+<p><a class="md-button" href="../StdLibMotion.gh">Grasshopper <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span></a></p>
+<h2 id="display-joint-traces">Display Joint Traces</h2>
+<p>The <code>Display Joint Traces</code> component is used for visualizing the motion traces of the robot's joints as they move in space. This is often useful for debugging motions that produce excessive joint rotations and for viewing the shape of waypoint interpolations. The <code>Points</code> parameter is for specifying the number of points per curve to record, which is set to 32 by default.</p>
+<h2 id="machine-code">Machine Code</h2>
+<p>The <code>Machine Code</code> component translates one or more robot tasks into the programming language required by the particular robot manufacturer. There are various languages supported as well as code generation options such as whether to emit flange or tool poses, the number of decimal points and level of code verbosity. Note that uploading the wrong type of machine code file to the controller can cause problems, so make sure to select the correct language first!</p>
+<p><img alt="Code Figure" src="../../figures/stdlib-code.png" /></p>
+<h2 id="file-transfer-request">File Transfer Request</h2>
+<p>The <code>File Transfer Request</code> component is used for uploading the machine code to the robot's controller. It requires the IP address of the robot's controller, for ABB it is <code>192.168.125.1</code> and the port number <code>21</code> is for regular or unsafe FTP. The username and password are also required as well as the file path to store the module contents.</p>
+<p>Note that the file must be placed in an existing folder. The command will not construct any new folders specified in the path string. If the folder is not present in the file system the command will just fail. The file must have the <code>.mod</code> extension and there should be a project file <code>.prg</code> that references the module.</p>
+<p>Additionally, note that the <code>Machine Code</code> component emits the program line-by-line because Grasshopper freezes when rendering very large strings in panels. The <code>Text Join</code> component combines all the lines of code with the new line characters <code>CRLF</code> into a single string which is provided as the content of the upload. If the program is long do not try to visualize the code in a panel to avoid freezing the system!</p>
+<p>If the robot controller and your laptop can communicate via ethernet and all goes well the message <code>Transfer Complete</code> will appear in the Result output parameter. Otherwise an error message, most likely caused by bad network configuration, will appear. If the robot suddenly starts failing FTP request after a while, do restart the controller.</p>
+<p>Finally, it is recommended to disable the component when not connected to the robot, otherwise your computer will freeze while trying to contact the robot until the request times out with an error. So disable first, then save the parametric model and only enable when ready to upload.</p>
+<p><img alt="Upload Figure" src="../../figures/stdlib-upload.png" /></p>
+<h2 id="robot-communications">Robot Communications</h2>
+<p>The <code>Robot Communications</code> component allows for connecting to the robot's controller over the ethernet to obtain its current state. In this sense it is possible to monitor and record the robots actions while it is manually jogging or executing code. The command requires the IP address of the controller, here <code>192.168.125.1</code> and service port number <code>5515</code>, as well as the polling frequency in milliseconds. Note that to avoid flooding the controller do not use rates faster than 100ms. The component returns the current joint angles which can be used for visualization as seen below.</p>
+<p>Activating and deactivating the communications component is performed by the relevant pop up menu option that appears after right clicking over the component's label. If your computer can communicate with the robot, then <code>Messages</code> output parameter will keep updating with a heartbeat signal, otherwise it will report errors.</p>
+<p><img alt="Robot Communications Figure" src="../../figures/stdlib-coms.png" /></p>
+<p><a class="md-button" href="../StdLibComs.gh">Grasshopper <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span></a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright (c) 2024-2025 Digital Design and Fabrication
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
