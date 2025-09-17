@@ -154,46 +154,6 @@
     
     
     
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-      
-    
     
   </nav>
   
@@ -1867,17 +1827,44 @@
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application
+    </span>
+  </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
       Resources
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1996,17 +1983,44 @@
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application
+    </span>
+  </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
       Resources
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2031,12 +2045,12 @@
 <p>The purpose of performing a factorial design of experiment is to build a model that allows you to specify a number of input parameter values, aka factors, and get a good approximation of the expected outputs, aka responses. Instead of trying input combinations by trial and error, it makes sense to perform a series of experiments and built a statistical predictive model. If a desired outcome is required, then it is a matter of inverting the model, using optimization, to obtain the associated  control parameters. To construct a DoE model one need to follow the step below.</p>
 <h3 id="parameters">Parameters</h3>
 <p>Generally the number of factors is between <code>2</code> to <code>6</code> because the number of experiments required scales exponentially to the number of parameters. For <code>k</code> factors, <code>2^k</code> experiments are needed for linear model. But because each experiment is performed several times <code>n</code>, aka replications, the total is <code>n*2^k</code>. The parameters may be quantitative, such as weight, time, length, but they can also be qualitative such as <code>on/off</code>, <code>s/m/l</code>.</p>
-<h4 id="case-study">Case Study</h4>
-<p>Consider the scenario where a calligraphy brush is attached to the robot. The objective is to be able to produce consistent strokes of varying line width by adjusting motion parameters. For simplicity the factors selected are the robot's linear motion <code>Speed</code> and the vertical <code>Offset</code> from the brush tip to the drawing surface, which represent stroke pressure.</p>
-<p><img alt="Calligraphy Figure" src="../../figures/stdlib-doe-setup.jpg" /></p>
+<h4 id="case-studies">Case Studies</h4>
+<p>Consider the scenario where a calligraphy brush is attached to the robot. The objective is to be able to produce consistent strokes of varying line width by adjusting motion parameters. The same is also be relevant for extruding material using a pneumatic syringe. For simplicity the factors selected are the robot's linear motion <code>Speed</code> and the vertical <code>Offset</code> from the brush/nozzle tip to the surface.</p>
+<p><img alt="Setup Figure" src="../../figures/stdlib-doe-setup.jpg" /></p>
 <h3 id="levels">Levels</h3>
 <p>For simple linear models only two levels are required, a low value <code>(-)</code> and a high value <code>(+)</code>, for each factor. Care must be taken for choosing the levels. If the range of values is too small then it may be pointless to build a model because there may be no significant change. If however the range is too big and the underlying shape is non-linear then the model will produce bogus results.</p>
-<h4 id="case-study_1">Case Study</h4>
+<h4 id="case-studies_1">Case Studies</h4>
 <p>Initial testing with the brush allows estimating the levels for the factors, namely between <code>5mm/s</code> to <code>50mm/s</code> for the <code>Speed</code>, and <code>1mm</code> to <code>5mm</code> for the <code>Offset</code> factor. Note that with <code>1mm</code> the brush barely touches the paper, while with <code>5mm</code> there is significant downward pressure on the paper.</p>
 <table>
 <thead>
@@ -2071,19 +2085,57 @@
 </tr>
 </tbody>
 </table>
+<p>The extrusion process requires careful level selection because moving too slow causes over-extrusion while moving too fast causes under-extrusion. Thus an experiment with varying the speed was conducted with values between 0.5mm/s to 10mm/s.</p>
+<p><img alt="Speed Figure" src="../../figures/stdlib-doe-speed.jpg" /></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Factor</th>
+<th style="text-align: center;">Coded</th>
+<th style="text-align: center;">↔</th>
+<th style="text-align: center;">Actual</th>
+<th style="text-align: center;">Coded</th>
+<th style="text-align: center;">↔</th>
+<th style="text-align: center;">Actual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Speed</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">↔</td>
+<td style="text-align: center;">1 mm/s</td>
+<td style="text-align: center;">+1</td>
+<td style="text-align: center;">↔</td>
+<td style="text-align: center;">6  mm/s</td>
+</tr>
+<tr>
+<td style="text-align: center;">Offset</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">↔</td>
+<td style="text-align: center;">0.2 mm</td>
+<td style="text-align: center;">+1</td>
+<td style="text-align: center;">↔</td>
+<td style="text-align: center;">2 mm</td>
+</tr>
+</tbody>
+</table>
 <h3 id="replications">Replications</h3>
 <p>Each experiment is performed a few times to pick up the variations in the statistic. Perhaps at minimum <code>3</code> replications  keeping the same inputs is ok. Use a larger number if higher variability control is needed. Use a lower number if the parameters are too many.</p>
-<h4 id="case-study_2">Case Study</h4>
+<h4 id="case-studies_2">Case Studies</h4>
 <p>Since this is <code>2</code> factor experiment we can run <code>3</code> to <code>5</code> replications per combination of factors. Using <code>3</code> requires only <code>12</code> experiments in total. Since the robot will perform the operations, the replications can be higher however consider the effort required in measurement.</p>
 <h3 id="measurements">Measurements</h3>
 <p>Try to measure values from the experiment results consistently and consider measuring more than one output metric. Using more than one output means that you will develop several models for each response.</p>
-<h4 id="case-study_3">Case Study</h4>
+<h4 id="case-studies_3">Case Studies</h4>
 <p>The obvious thing to measure is the relationship between <code>Speed</code> and <code>Offset</code> to stroke <code>Width</code>. This can be done using calipers or easier with a photography or a scanner. Additionally, we can observe that the same control factors affect the intensity as well as the length of the stroke. These can also be measured and used to build additional models.</p>
-<p><img alt="Measurements Figure" src="../../figures/stdlib-doe-lines.jpg" /></p>
+<p><img alt="Strokes Figure" src="../../figures/stdlib-doe-lines.jpg" /></p>
+<p>In both cases instead of measuring the <code>Width</code> at one location, it is also reasonable to do so at a few intervals. Three measurements were taken and the mean values used.</p>
+<p><img alt="Beads Figure" src="../../figures/stdlib-doe-extrude.jpg" /></p>
 <h3 id="experiments">Experiments</h3>
 <p>Create the experiment matrix to guide you using either the python notebook or excel spreadsheet provided. Run the experiments randomly, not serially. Consider the setup initialization because it may introduce artifacts. Write down the measurements and take pictures. It is good to have a reference for double checking later.</p>
-<h4 id="case-study_4">Case Study</h4>
+<h4 id="case-studies_4">Case Studies</h4>
 <p>The matrix for recording the measurements for a <code>2^3</code> model is first generated. The experiments need to follow the <code>Order</code> column and the values tabulated in the <code>Repl</code> cells. Note that a new table is required for each measurement.</p>
+<h5 id="brush-stroke-width">Brush Stroke Width</h5>
 <table>
 <thead>
 <tr>
@@ -2102,48 +2154,204 @@
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">5.0</td>
 <td style="text-align: center;">1.0</td>
-<td style="text-align: center;">...</td>
-<td style="text-align: center;">...</td>
-<td style="text-align: center;">...</td>
+<td style="text-align: center;">1.253</td>
+<td style="text-align: center;">1.550</td>
+<td style="text-align: center;">0.900</td>
 </tr>
 <tr>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">50.0</td>
 <td style="text-align: center;">1.0</td>
-<td style="text-align: center;">...</td>
-<td style="text-align: center;">...</td>
-<td style="text-align: center;">...</td>
+<td style="text-align: center;">1.053</td>
+<td style="text-align: center;">1.458</td>
+<td style="text-align: center;">0.944</td>
 </tr>
 <tr>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">5.0</td>
 <td style="text-align: center;">5.0</td>
-<td style="text-align: center;">...</td>
-<td style="text-align: center;">...</td>
-<td style="text-align: center;">...</td>
+<td style="text-align: center;">3.669</td>
+<td style="text-align: center;">3.504</td>
+<td style="text-align: center;">3.164</td>
 </tr>
 <tr>
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">50.0</td>
 <td style="text-align: center;">5.0</td>
-<td style="text-align: center;">...</td>
-<td style="text-align: center;">...</td>
-<td style="text-align: center;">...</td>
+<td style="text-align: center;">2.601</td>
+<td style="text-align: center;">3.660</td>
+<td style="text-align: center;">2.640</td>
 </tr>
 </tbody>
 </table>
+<h5 id="extrusion-bead-width">Extrusion Bead Width</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Index</th>
+<th style="text-align: center;">Order</th>
+<th style="text-align: center;">Speed</th>
+<th style="text-align: center;">Offset</th>
+<th style="text-align: center;">Repl1</th>
+<th style="text-align: center;">Repl2</th>
+<th style="text-align: center;">Repl3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0.2</td>
+<td style="text-align: center;">2.0</td>
+<td style="text-align: center;">5.491</td>
+<td style="text-align: center;">4.943</td>
+<td style="text-align: center;">5.198</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.2</td>
+<td style="text-align: center;">6.0</td>
+<td style="text-align: center;">3.478</td>
+<td style="text-align: center;">3.504</td>
+<td style="text-align: center;">4.036</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;">2.0</td>
+<td style="text-align: center;">2.140</td>
+<td style="text-align: center;">2.020</td>
+<td style="text-align: center;">2.693</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;">6.0</td>
+<td style="text-align: center;">1.600</td>
+<td style="text-align: center;">1.365</td>
+<td style="text-align: center;">1.545</td>
+</tr>
+</tbody>
+</table>
+<p>After tabulating the measured data it is a good practice to perform a validation to check for normality. Below are the Q-Q plots for both case studies. What we are looking at here is the line fitted to the data points. Theoretically it must be <code>y = x</code>, thus <code>a=1.0</code> and <code>b=0.0</code>. The python notebook reports the <code>R^2</code> and p-Value of the fit. This should not be confused with the Shapiro-Wilk test where we expect p-Value &gt; <code>0.05</code>. In both cases the results look reasonable.</p>
+<p><img alt="QQ Plots Figure" src="../../figures/stdlib-doe-qqin.svg" style="width:100%" /></p>
 <h3 id="construction">Construction</h3>
 <p>The python notebook and excel spreadsheet provided construct a linear model based on the data recorded. First verify that the recorded measurements are normally distributed. Then look at the coefficient of determinations and significance values of each factor and combinations thereof. You may zero the coefficients of those that are not significant to obtain a smaller model.</p>
-<h4 id="case-study_5">Case Study</h4>
+<h4 id="case-studies_5">Case Studies</h4>
 <p>Building the model is straight forward. The result is a series of coefficients that can be used for evaluating the model in the range of <code>[-1, 1]</code> for each factor. For a linear two factor model the equation is <code>f( a, b ) = c0 + c1 * a + c2 * b + c3 * a * b</code> , where <code>a, b</code> are the coded factor values and <code>c0, c1, c2, c3</code> are the model's coefficients fitted. Note that <code>c0</code> is always the mean value of the experimental data. Conversion between coded values <code>[-1, 1]</code> and actual values <code>[min, max]</code> can be done with linear interpolation.  </p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><span class="n">Stroke</span> <span class="n">Width</span>            <span class="n">Bead</span> <span class="n">Width</span>
+</span><span id="__span-0-2"><span class="n">y</span> <span class="o">=</span>   <span class="mf">2.1997</span>            <span class="n">y</span> <span class="o">=</span>   <span class="mf">3.1678</span>
+</span><span id="__span-0-3">  <span class="o">-</span>   <span class="mf">0.1403</span> <span class="o">*</span> <span class="n">a</span>          <span class="o">-</span>   <span class="mf">0.5797</span> <span class="o">*</span> <span class="n">a</span>
+</span><span id="__span-0-4">  <span class="o">+</span>   <span class="mf">1.0067</span> <span class="o">*</span> <span class="n">b</span>          <span class="o">-</span>   <span class="mf">1.2739</span> <span class="o">*</span> <span class="n">b</span>
+</span><span id="__span-0-5">  <span class="o">-</span>   <span class="mf">0.0990</span> <span class="o">*</span> <span class="n">ab</span>         <span class="o">+</span>   <span class="mf">0.1892</span> <span class="o">*</span> <span class="n">ab</span>
+</span><span id="__span-0-6">
+</span><span id="__span-0-7"><span class="n">where</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Speed</span>  <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-0-8">      <span class="n">b</span> <span class="o">=</span> <span class="n">Offset</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-0-9">      <span class="n">y</span> <span class="o">=</span> <span class="n">Width</span>  <span class="ow">in</span> <span class="n">mm</span>
+</span></code></pre></div>
 <h3 id="validation">Validation</h3>
 <p>Validate the model using the statistics generated and the Q-Q, residual vs. run, histogram and predicted vs. residuals plots. Additionally, you can validate the model by choosing an input point, such as <code>[0, 0]</code> and run an experiment to verify that the predicted and measured responses match. </p>
-<h4 id="case-study_6">Case Study</h4>
-<p>The python notebook contains data for various measurements, some of which work and some don't. For instance, in the model for the <code>Width</code> of the stroke, we can see that the significance of the <code>Speed</code> factor and its combination with <code>Offset</code> is rather low. <code>Offset</code> seems to dominate the results. The model for stroke's <code>Length</code> shows irregularities in the input data distribution which then manifests it self in the <code>R^2</code> coefficient. This is likely because of poor robot calibration. The third dataset, which is fictional, on the other hand seems to pass the statistical tests. Finally, the 3-factor experiment shows a case where some factors alone do not seem significant but their combined effect with others do.</p>
-<h2 id="resources">Resources</h2>
+<p><img alt="Validation Figure" src="../../figures/stdlib-doe-valid.svg" style="width:100%" /></p>
+<h4 id="case-studies_6">Case Studies</h4>
+<p>The python notebook contains data for various measurements, some of which work and some don't. For instance, in the model for the <code>Width</code> of the stroke, we can see that the significance of the <code>Speed</code> factor and its combination with <code>Offset</code> is rather low. <code>Offset</code> seems to dominate the results. </p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><span class="s1">&#39;R^2 reg&#39;</span><span class="p">:</span> <span class="mf">91.2</span><span class="o">%</span>
+</span><span id="__span-1-2"><span class="s1">&#39;R^2 adj&#39;</span><span class="p">:</span> <span class="mf">87.9</span><span class="o">%</span>
+</span><span id="__span-1-3">
+</span><span id="__span-1-4"><span class="n">p</span><span class="o">-</span><span class="n">Values</span>
+</span><span id="__span-1-5">    <span class="n">a</span> <span class="p">:</span> <span class="mf">0.11537</span>
+</span><span id="__span-1-6">    <span class="n">b</span> <span class="p">:</span> <span class="mf">0.00000</span>
+</span><span id="__span-1-7">   <span class="n">ab</span> <span class="p">:</span> <span class="mf">0.24804</span>
+</span><span id="__span-1-8">
+</span><span id="__span-1-9"><span class="n">where</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Speed</span>  
+</span><span id="__span-1-10">      <span class="n">b</span> <span class="o">=</span> <span class="n">Offset</span>  
+</span></code></pre></div>
+<p>The model for the stroke's <code>Length</code> shows irregularities in the input data distribution which then manifests it self in the <code>R^2</code> coefficient. This is likely because of poor robot calibration. </p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><span class="s1">&#39;R^2 reg&#39;</span><span class="p">:</span> <span class="mf">61.9</span><span class="o">%</span>
+</span><span id="__span-2-2"><span class="s1">&#39;R^2 adj&#39;</span><span class="p">:</span> <span class="mf">47.5</span><span class="o">%</span>
+</span><span id="__span-2-3">
+</span><span id="__span-2-4"><span class="n">p</span><span class="o">-</span><span class="n">Values</span>
+</span><span id="__span-2-5">    <span class="n">a</span> <span class="p">:</span> <span class="mf">0.46759</span>
+</span><span id="__span-2-6">    <span class="n">b</span> <span class="p">:</span> <span class="mf">0.00106</span>
+</span><span id="__span-2-7">   <span class="n">ab</span> <span class="p">:</span> <span class="mf">0.52111</span>
+</span><span id="__span-2-8">
+</span><span id="__span-2-9"><span class="n">where</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Speed</span>  
+</span><span id="__span-2-10">      <span class="n">b</span> <span class="o">=</span> <span class="n">Offset</span>  
+</span></code></pre></div>
+<p>The model for the extrusion bead's <code>Width</code> was conducted carefully and this is reflected in the results. Here both <code>Speed</code> and <code>Offset</code> are significant but also their interaction.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><span class="s1">&#39;R^2 reg&#39;</span><span class="p">:</span> <span class="mf">97.4</span><span class="o">%</span>
+</span><span id="__span-3-2"><span class="s1">&#39;R^2 adj&#39;</span><span class="p">:</span> <span class="mf">96.4</span><span class="o">%</span>
+</span><span id="__span-3-3">
+</span><span id="__span-3-4"><span class="n">p</span><span class="o">-</span><span class="n">Values</span>
+</span><span id="__span-3-5">    <span class="n">a</span> <span class="p">:</span> <span class="mf">0.00001</span>
+</span><span id="__span-3-6">    <span class="n">b</span> <span class="p">:</span> <span class="mf">0.00000</span>
+</span><span id="__span-3-7">   <span class="n">ab</span> <span class="p">:</span> <span class="mf">0.01108</span>
+</span><span id="__span-3-8">
+</span><span id="__span-3-9"><span class="n">where</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Speed</span>  
+</span><span id="__span-3-10">      <span class="n">b</span> <span class="o">=</span> <span class="n">Offset</span>  
+</span></code></pre></div>
+<h3 id="application">Application</h3>
+<p>Once the model is computed and validated we can use it as a regular python function. The model produced by fitting works with coded values in the <code>[-1.0, 1.0]</code> range. Using actual values can be achieved using normalization as seen below.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><span class="k">def</span><span class="w"> </span><span class="nf">BeadWidthCoded</span><span class="p">(</span> <span class="n">speed</span><span class="p">,</span> <span class="n">offset</span> <span class="p">):</span>
+</span><span id="__span-4-2">    <span class="k">return</span> <span class="p">(</span> <span class="mf">3.1678</span> <span class="o">-</span> 
+</span><span id="__span-4-3">             <span class="mf">0.5797</span> <span class="o">*</span> <span class="n">speed</span>  <span class="o">-</span>   
+</span><span id="__span-4-4">             <span class="mf">1.2739</span> <span class="o">*</span> <span class="n">offset</span> <span class="o">+</span> 
+</span><span id="__span-4-5">             <span class="mf">0.1892</span> <span class="o">*</span> <span class="n">speed</span> <span class="o">*</span> <span class="n">offset</span> <span class="p">)</span>
+</span><span id="__span-4-6">
+</span><span id="__span-4-7"><span class="k">def</span><span class="w"> </span><span class="nf">Normalize</span><span class="p">(</span> <span class="n">value</span><span class="p">,</span> <span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span> <span class="p">):</span>
+</span><span id="__span-4-8">    <span class="n">normalized</span> <span class="o">=</span> <span class="p">(</span> <span class="n">value</span> <span class="o">-</span> <span class="n">vmin</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="n">vmax</span> <span class="o">-</span> <span class="n">vmin</span> <span class="p">)</span>
+</span><span id="__span-4-9">    <span class="k">return</span> <span class="n">normalized</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+</span><span id="__span-4-10">
+</span><span id="__span-4-11"><span class="k">def</span><span class="w"> </span><span class="nf">BeadWidthActual</span><span class="p">(</span> <span class="n">speed</span><span class="p">,</span> <span class="n">offset</span> <span class="p">):</span>
+</span><span id="__span-4-12">    <span class="k">return</span> <span class="n">BeadWidthCoded</span><span class="p">(</span>
+</span><span id="__span-4-13">        <span class="n">Normalize</span><span class="p">(</span> <span class="n">speed</span><span class="p">,</span>  <span class="mf">1.0</span><span class="p">,</span> <span class="mf">6.0</span> <span class="p">),</span> 
+</span><span id="__span-4-14">        <span class="n">Normalize</span><span class="p">(</span> <span class="n">offset</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">2.0</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-4-15">
+</span><span id="__span-4-16"><span class="nb">print</span><span class="p">(</span> <span class="n">BeadWidthCoded</span> <span class="p">(</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span> <span class="p">)</span> <span class="p">)</span>
+</span><span id="__span-4-17"><span class="nb">print</span><span class="p">(</span> <span class="n">BeadWidthActual</span><span class="p">(</span>  <span class="mf">1.0</span><span class="p">,</span>  <span class="mf">0.2</span> <span class="p">)</span> <span class="p">)</span>
+</span></code></pre></div>
+<h3 id="visualization">Visualization</h3>
+<p>The model can be also visualized using either matplotlib, plotly, as seen below, or a regular Excel graph. Selecting a pair of input parameters produces the expected bead width interactively.</p>
+<div>
+    <script type="text/javascript">window.PlotlyConfig = { MathJaxConfig: 'local' };</script>
+    <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.1.0.min.js"
+        integrity="sha256-Ei4740bWZhaUTQuD6q9yQlgVCMPBz6CZWhevDYPv93A=" crossorigin="anonymous"></script>
+    <div id="a2888f8a-7497-4883-b9a1-5248bff9c6f3" class="plotly-graph-div" style="height:400px; width:450px;"></div>
+    <script
+        type="text/javascript">                window.PLOTLYENV = window.PLOTLYENV || {}; if (document.getElementById("a2888f8a-7497-4883-b9a1-5248bff9c6f3")) { Plotly.newPlot("a2888f8a-7497-4883-b9a1-5248bff9c6f3", [{ "colorscale": [[0.0, "#440154"], [0.1111111111111111, "#482878"], [0.2222222222222222, "#3e4989"], [0.3333333333333333, "#31688e"], [0.4444444444444444, "#26828e"], [0.5555555555555556, "#1f9e89"], [0.6666666666666666, "#35b779"], [0.7777777777777778, "#6ece58"], [0.8888888888888888, "#b5de2b"], [1.0, "#fde725"]], "opacity": 0.75, "showscale": false, "x": { "dtype": "f8", "bdata": "AAAAAAAA8L85juM4juPov3Icx3Ecx+G\u002fVlVVVVVV1b8gx3Ecx3G8vyDHcRzHcbw\u002fVFVVVVVV1T9wHMdxHMfhPziO4ziO4+g\u002fAAAAAAAA8D8AAAAAAADwvzmO4ziO4+i\u002fchzHcRzH4b9WVVVVVVXVvyDHcRzHcby\u002fIMdxHMdxvD9UVVVVVVXVP3Acx3Ecx+E\u002fOI7jOI7j6D8AAAAAAADwPwAAAAAAAPC\u002fOY7jOI7j6L9yHMdxHMfhv1ZVVVVVVdW\u002fIMdxHMdxvL8gx3Ecx3G8P1RVVVVVVdU\u002fcBzHcRzH4T84juM4juPoPwAAAAAAAPA\u002fAAAAAAAA8L85juM4juPov3Icx3Ecx+G\u002fVlVVVVVV1b8gx3Ecx3G8vyDHcRzHcbw\u002fVFVVVVVV1T9wHMdxHMfhPziO4ziO4+g\u002fAAAAAAAA8D8AAAAAAADwvzmO4ziO4+i\u002fchzHcRzH4b9WVVVVVVXVvyDHcRzHcby\u002fIMdxHMdxvD9UVVVVVVXVP3Acx3Ecx+E\u002fOI7jOI7j6D8AAAAAAADwPwAAAAAAAPC\u002fOY7jOI7j6L9yHMdxHMfhv1ZVVVVVVdW\u002fIMdxHMdxvL8gx3Ecx3G8P1RVVVVVVdU\u002fcBzHcRzH4T84juM4juPoPwAAAAAAAPA\u002fAAAAAAAA8L85juM4juPov3Icx3Ecx+G\u002fVlVVVVVV1b8gx3Ecx3G8vyDHcRzHcbw\u002fVFVVVVVV1T9wHMdxHMfhPziO4ziO4+g\u002fAAAAAAAA8D8AAAAAAADwvzmO4ziO4+i\u002fchzHcRzH4b9WVVVVVVXVvyDHcRzHcby\u002fIMdxHMdxvD9UVVVVVVXVP3Acx3Ecx+E\u002fOI7jOI7j6D8AAAAAAADwPwAAAAAAAPC\u002fOY7jOI7j6L9yHMdxHMfhv1ZVVVVVVdW\u002fIMdxHMdxvL8gx3Ecx3G8P1RVVVVVVdU\u002fcBzHcRzH4T84juM4juPoPwAAAAAAAPA\u002fAAAAAAAA8L85juM4juPov3Icx3Ecx+G\u002fVlVVVVVV1b8gx3Ecx3G8vyDHcRzHcbw\u002fVFVVVVVV1T9wHMdxHMfhPziO4ziO4+g\u002fAAAAAAAA8D8=", "shape": "10, 10" }, "y": { "dtype": "f8", "bdata": "AAAAAAAA8L8AAAAAAADwvwAAAAAAAPC\u002fAAAAAAAA8L8AAAAAAADwvwAAAAAAAPC\u002fAAAAAAAA8L8AAAAAAADwvwAAAAAAAPC\u002fAAAAAAAA8L85juM4juPovzmO4ziO4+i\u002fOY7jOI7j6L85juM4juPovzmO4ziO4+i\u002fOY7jOI7j6L85juM4juPovzmO4ziO4+i\u002fOY7jOI7j6L85juM4juPov3Icx3Ecx+G\u002fchzHcRzH4b9yHMdxHMfhv3Icx3Ecx+G\u002fchzHcRzH4b9yHMdxHMfhv3Icx3Ecx+G\u002fchzHcRzH4b9yHMdxHMfhv3Icx3Ecx+G\u002fVlVVVVVV1b9WVVVVVVXVv1ZVVVVVVdW\u002fVlVVVVVV1b9WVVVVVVXVv1ZVVVVVVdW\u002fVlVVVVVV1b9WVVVVVVXVv1ZVVVVVVdW\u002fVlVVVVVV1b8gx3Ecx3G8vyDHcRzHcby\u002fIMdxHMdxvL8gx3Ecx3G8vyDHcRzHcby\u002fIMdxHMdxvL8gx3Ecx3G8vyDHcRzHcby\u002fIMdxHMdxvL8gx3Ecx3G8vyDHcRzHcbw\u002fIMdxHMdxvD8gx3Ecx3G8PyDHcRzHcbw\u002fIMdxHMdxvD8gx3Ecx3G8PyDHcRzHcbw\u002fIMdxHMdxvD8gx3Ecx3G8PyDHcRzHcbw\u002fVFVVVVVV1T9UVVVVVVXVP1RVVVVVVdU\u002fVFVVVVVV1T9UVVVVVVXVP1RVVVVVVdU\u002fVFVVVVVV1T9UVVVVVVXVP1RVVVVVVdU\u002fVFVVVVVV1T9wHMdxHMfhP3Acx3Ecx+E\u002fcBzHcRzH4T9wHMdxHMfhP3Acx3Ecx+E\u002fcBzHcRzH4T9wHMdxHMfhP3Acx3Ecx+E\u002fcBzHcRzH4T9wHMdxHMfhPziO4ziO4+g\u002fOI7jOI7j6D84juM4juPoPziO4ziO4+g\u002fOI7jOI7j6D84juM4juPoPziO4ziO4+g\u002fOI7jOI7j6D84juM4juPoPziO4ziO4+g\u002fAAAAAAAA8D8AAAAAAADwPwAAAAAAAPA\u002fAAAAAAAA8D8AAAAAAADwPwAAAAAAAPA\u002fAAAAAAAA8D8AAAAAAADwPwAAAAAAAPA\u002fAAAAAAAA8D8=", "shape": "10, 10" }, "z": { "dtype": "f8", "bdata": "PsOuALnXFEAHp3qBuygUQM+KRgK+eRNAmG4Sg8DKEkBgUt4DwxsSQCg2qoTFbBFA8Rl2Bci9EEC6\u002fUGGyg4QQAXDGw6avw5AloqzD59hDUBaKNRdxYoTQEjqhshZ5RJANqw5M+4\u002fEkAjbuydgpoRQBEwnwgX9RBA\u002fvFRc6tPEEDYZwm8f1QPQLTrbpGoCQ5Ajm\u002fUZtG+DEBq8zk8+nMLQHeN+brRPRJAii2TD\u002fihEUCczSxkHgYRQK9txrhEahBAgxvAGtacD0CoW\u002fPDImUOQM6bJm1vLQ1A89tZFrz1C0AYHI2\u002fCL4KQD1cwGhVhglAk\u002fIeGN7wEEDLcJ9Wll4QQAXePyqdmA9AddpApw10DkDk1kEkfk8NQFPTQqHuKgxAw89DHl8GC0AzzESbz+EJQKLIRRhAvQhAEcVGlbCYB0Bfr4jq1EcPQBloVztpNg5A0iAmjP0kDUCM2fTckRMMQEWSwy0mAgtA\u002f0qSfrrwCUC4A2HPTt8IQHK8LyDjzQdALHX+cHe8BkDlLc3BC6sFQJh506TtrQxAm+5vyaWvC0CfYwzuXbEKQKPYqBIWswlApk1FN860CECqwuFbhrYHQK43foA+uAZAsawapfa5BUC1IbfJrrsEQLiWU+5mvQNA0EMeXwYUCkAedYhX4igJQGym8k++PQhAutdcSJpSB0AICcdAdmcGQFU6MTlSfAVAo2ubMS6RBEDxnAUqCqYDQD\u002fObyLmugJAjP\u002fZGsLPAUAJDmkZH3oHQKH7oOUeogZAOenYsR7KBUDR1hB+HvIEQGnESEoeGgRAAbKAFh5CA0CZn7jiHWoCQDGN8K4dkgFAyHooex26AEDC0MCOOsT\u002fP0LYs9M34ARAJIK5c1sbBEAGLL8Tf1YDQOjVxLOikQJAyn\u002fKU8bMAUCsKdDz6QcBQI7T1ZMNQwBA4fq2Z2L8\u002fj+kTsKnqXL9P2mizefw6Ps\u002feqL+jVBGAkCmCNIBmJQBQNJupXXf4gBA\u002ftR46SYxAEBWdpi63P7+P65CP6Jrm\u002f0\u002fBw\u002fmifo3\u002fD9g24xxidT6P7enM1kYcfk\u002fEHTaQKcN+D8=", "shape": "10, 10" }, "type": "surface" }, { "marker": { "color": "#636EFA", "size": 8 }, "mode": "markers", "name": "5.21mm", "x": [-1], "y": [-1], "z": [5.210666666666667], "type": "scatter3d" }, { "marker": { "color": "#EF553B", "size": 8 }, "mode": "markers", "name": "2.28mm", "x": [-1], "y": [1], "z": [2.2843333333333335], "type": "scatter3d" }, { "marker": { "color": "#00CC96", "size": 8 }, "mode": "markers", "name": "3.17mm", "x": [0], "y": [0], "z": [3.1677500000000003], "type": "scatter3d" }, { "marker": { "color": "#AB63FA", "size": 8 }, "mode": "markers", "name": "3.67mm", "x": [1], "y": [-1], "z": [3.672666666666667], "type": "scatter3d" }, { "marker": { "color": "#FFA15A", "size": 8 }, "mode": "markers", "name": "1.50mm", "x": [1], "y": [1], "z": [1.5033333333333339], "type": "scatter3d" }], { "template": { "data": { "histogram2dcontour": [{ "type": "histogram2dcontour", "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]] }], "choropleth": [{ "type": "choropleth", "colorbar": { "outlinewidth": 0, "ticks": "" } }], "histogram2d": [{ "type": "histogram2d", "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]] }], "heatmap": [{ "type": "heatmap", "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]] }], "contourcarpet": [{ "type": "contourcarpet", "colorbar": { "outlinewidth": 0, "ticks": "" } }], "contour": [{ "type": "contour", "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]] }], "surface": [{ "type": "surface", "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]] }], "mesh3d": [{ "type": "mesh3d", "colorbar": { "outlinewidth": 0, "ticks": "" } }], "scatter": [{ "fillpattern": { "fillmode": "overlay", "size": 10, "solidity": 0.2 }, "type": "scatter" }], "parcoords": [{ "type": "parcoords", "line": { "colorbar": { "outlinewidth": 0, "ticks": "" } } }], "scatterpolargl": [{ "type": "scatterpolargl", "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } } }], "bar": [{ "error_x": { "color": "#2a3f5f" }, "error_y": { "color": "#2a3f5f" }, "marker": { "line": { "color": "#E5ECF6", "width": 0.5 }, "pattern": { "fillmode": "overlay", "size": 10, "solidity": 0.2 } }, "type": "bar" }], "scattergeo": [{ "type": "scattergeo", "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } } }], "scatterpolar": [{ "type": "scatterpolar", "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } } }], "histogram": [{ "marker": { "pattern": { "fillmode": "overlay", "size": 10, "solidity": 0.2 } }, "type": "histogram" }], "scattergl": [{ "type": "scattergl", "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } } }], "scatter3d": [{ "type": "scatter3d", "line": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } } }], "scattermap": [{ "type": "scattermap", "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } } }], "scattermapbox": [{ "type": "scattermapbox", "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } } }], "scatterternary": [{ "type": "scatterternary", "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } } }], "scattercarpet": [{ "type": "scattercarpet", "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } } }], "carpet": [{ "aaxis": { "endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f" }, "baxis": { "endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f" }, "type": "carpet" }], "table": [{ "cells": { "fill": { "color": "#EBF0F8" }, "line": { "color": "white" } }, "header": { "fill": { "color": "#C8D4E3" }, "line": { "color": "white" } }, "type": "table" }], "barpolar": [{ "marker": { "line": { "color": "#E5ECF6", "width": 0.5 }, "pattern": { "fillmode": "overlay", "size": 10, "solidity": 0.2 } }, "type": "barpolar" }], "pie": [{ "automargin": true, "type": "pie" }] }, "layout": { "autotypenumbers": "strict", "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": { "color": "#2a3f5f" }, "hovermode": "closest", "hoverlabel": { "align": "left" }, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": { "bgcolor": "#E5ECF6", "angularaxis": { "gridcolor": "white", "linecolor": "white", "ticks": "" }, "radialaxis": { "gridcolor": "white", "linecolor": "white", "ticks": "" } }, "ternary": { "bgcolor": "#E5ECF6", "aaxis": { "gridcolor": "white", "linecolor": "white", "ticks": "" }, "baxis": { "gridcolor": "white", "linecolor": "white", "ticks": "" }, "caxis": { "gridcolor": "white", "linecolor": "white", "ticks": "" } }, "coloraxis": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "colorscale": { "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]] }, "xaxis": { "gridcolor": "white", "linecolor": "white", "ticks": "", "title": { "standoff": 15 }, "zerolinecolor": "white", "automargin": true, "zerolinewidth": 2 }, "yaxis": { "gridcolor": "white", "linecolor": "white", "ticks": "", "title": { "standoff": 15 }, "zerolinecolor": "white", "automargin": true, "zerolinewidth": 2 }, "scene": { "xaxis": { "backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2 }, "yaxis": { "backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2 }, "zaxis": { "backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2 } }, "shapedefaults": { "line": { "color": "#2a3f5f" } }, "annotationdefaults": { "arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1 }, "geo": { "bgcolor": "white", "landcolor": "#E5ECF6", "subunitcolor": "white", "showland": true, "showlakes": true, "lakecolor": "white" }, "title": { "x": 0.05 }, "mapbox": { "style": "light" } } }, "margin": { "l": 10, "r": 10, "b": 10, "t": 10 }, "scene": { "xaxis": { "title": { "text": "Speed" }, "showspikes": false }, "yaxis": { "title": { "text": "Offset" }, "showspikes": false }, "zaxis": { "title": { "text": "Extrusion Width" }, "showspikes": false }, "camera": { "eye": { "x": -2.5, "y": -2.5, "z": 2 }, "projection": { "type": "orthographic" } } }, "width": 450, "height": 400 }, { "responsive": true }) };            </script>
+</div>
+
+<h3 id="optimization">Optimization</h3>
+<p>While the model is useful as is, it is often the case that we want to derive the process settings that achieve a specific goal. This model inversion process can be approached using optimization. The minimum or maximum model value can be found using <code>scipy</code>. Nevertheless, such values can be directly inspected from the graphs.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-5-2"><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">minimize</span>
+</span><span id="__span-5-3">
+</span><span id="__span-5-4"><span class="n">xo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="n">Factors</span> <span class="p">)</span>
+</span><span id="__span-5-5"><span class="n">result</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span> <span class="n">model</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> 
+</span><span id="__span-5-6">    <span class="n">bounds</span><span class="o">=</span><span class="p">[(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">*</span> <span class="n">Factors</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;L-BFGS-B&#39;</span> <span class="p">)</span>
+</span><span id="__span-5-7">
+</span><span id="__span-5-8"><span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;Factors: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1"> -&gt; Minimum: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">fun</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1">Factors: [1. 1.] -&gt; Minimum: 1.503
+</span></code></pre></div>
+<p>To obtain specific target values, such as 2.0mm bead width, we need to create an objective function as seen below. The function computes an error value that increases in a parabolic sense away from the target. Thus the desired value is situated at the minimum of the error function.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><span class="k">def</span><span class="w"> </span><span class="nf">TargetValue</span><span class="p">(</span> <span class="n">x</span> <span class="p">):</span>
+</span><span id="__span-7-2">    <span class="k">return</span> <span class="p">(</span> <span class="n">model</span><span class="p">(</span> <span class="n">x</span> <span class="p">)</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+</span><span id="__span-7-3">
+</span><span id="__span-7-4"><span class="n">xo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="n">Factors</span> <span class="p">)</span>
+</span><span id="__span-7-5"><span class="n">result</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span> <span class="n">TargetValue</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> 
+</span><span id="__span-7-6">    <span class="n">bounds</span><span class="o">=</span><span class="p">[(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">*</span> <span class="n">Factors</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;L-BFGS-B&#39;</span> <span class="p">)</span>
+</span><span id="__span-7-7">
+</span><span id="__span-7-8"><span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;Factors: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1"> -&gt; Error: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">fun</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-8-1">Factors: [0.70204336 0.66670002] -&gt; Error: 0.000
+</span></code></pre></div>
+<h3 id="resources">Resources</h3>
 <p><a class="md-button" href="../experiments.ipynb">Python Notebook <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span></a>
 <a class="md-button" href="../experiments.xlsx">Excel Spreadsheet <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span></a>
 <a class="md-button" href="../StdLibDoE.gh">Grasshopper Script <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span></a></p>
