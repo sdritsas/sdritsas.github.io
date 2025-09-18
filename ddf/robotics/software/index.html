@@ -1739,18 +1739,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#joint-planes" class="md-nav__link">
+  <a href="#planes" class="md-nav__link">
     <span class="md-ellipsis">
-      Joint Planes
+      Planes
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tcp-snapshot" class="md-nav__link">
+  <a href="#publish" class="md-nav__link">
     <span class="md-ellipsis">
-      TCP Snapshot
+      Publish
     </span>
   </a>
   
@@ -1772,7 +1772,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#publish" class="md-nav__link">
+  <a href="#publish_1" class="md-nav__link">
     <span class="md-ellipsis">
       Publish
     </span>
@@ -2025,18 +2025,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#joint-planes" class="md-nav__link">
+  <a href="#planes" class="md-nav__link">
     <span class="md-ellipsis">
-      Joint Planes
+      Planes
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tcp-snapshot" class="md-nav__link">
+  <a href="#publish" class="md-nav__link">
     <span class="md-ellipsis">
-      TCP Snapshot
+      Publish
     </span>
   </a>
   
@@ -2058,7 +2058,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#publish" class="md-nav__link">
+  <a href="#publish_1" class="md-nav__link">
     <span class="md-ellipsis">
       Publish
     </span>
@@ -2220,14 +2220,14 @@
 <p>The <code>Forward Kinematics</code> component requires the <code>Robot</code> model defined above and the <code>Joints</code> in the form of a list of angles in radians. It outputs the robot's <code>State</code> structure containing all the geometric transformations of each axis as well as the coordinate systems in the form of <code>Planes</code> for each. In the example below the <code>Number Vector</code> component becomes a multi-slider after being connected to the robot's <code>Ranges</code>, where each slider can be used to interpolate the angles for each of its six axes.</p>
 <p><img alt="Forward Kinematics Figure" src="../../figures/stdlib-forward.png" /></p>
 <p><a class="md-button" href="../StdLibFK.gh">Grasshopper <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span></a></p>
-<h3 id="joint-planes">Joint Planes</h3>
+<h3 id="planes">Planes</h3>
 <p>The <code>Planes</code> output is useful for attaching dynamic geometry that follows the robot's movement such as cables, ducts and tools in general. The last plane is particularly useful because it is associated with coordinate system at the flange of the robot.</p>
-<h3 id="tcp-snapshot">TCP Snapshot</h3>
-<p>The component features a <code>Bake CS</code> menu option when right-clicked over its label. The command stores a visual representation of the coordinate system at the flange in the active document. This is useful for probing locations from the physical world as well as recording the orientation of the robot's TCP.</p>
+<h3 id="publish">Publish</h3>
+<p>The component features  three <code>Publish</code> menu options when right-clicked over its label. The <code>Publish System</code> command stores a visual representation of the coordinate system at the flange in the active document. This is useful for probing locations from the physical world as well as recording the orientation of the robot's TCP. The <code>Publish Joints</code> command appends a list of joint angles and the <code>Publish Plane</code> command appends a plane object in the current document.</p>
 <h2 id="display-robot-model">Display Robot Model</h2>
 <p>The <code>Display Robot Model</code> component requires the <code>Robot</code> model and its <code>State</code> to produce a dynamic visualization in the viewport. There are several option toggle buttons rendered on the component that can be used to change display settings and show and hide various robot parts.</p>
 <p><img alt=" Display Robot Model Figure" src="../../figures/stdlib-display-robot.png" /></p>
-<h3 id="publish">Publish</h3>
+<h3 id="publish_1">Publish</h3>
 <p>The component features a <code>Publish</code> menu option when right-clicked over its label. The command stores the robot's mesh in the active document. It may be used for visualization and figures.</p>
 <h2 id="inverse-kinematics">Inverse Kinematics</h2>
 <p>The <code>Inverse Kinematics</code> component requires the <code>Robot</code> model and a <code>Target</code> plane to produce a table of joint angle configurations associated with the pose. Note that not all configurations are feasible due to physical limitations of the robot.</p>
