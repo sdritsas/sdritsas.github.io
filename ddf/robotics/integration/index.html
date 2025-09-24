@@ -1,0 +1,2603 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Stylianos Dritsas">
+      
+      
+      
+        <link rel="prev" href="../planning/">
+      
+      
+        <link rel="next" href="../experiments/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>Integration - Digital Design and Fabrication</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%2022c5.5%200%2010-4.5%2010-10S17.5%202%2012%202%202%206.5%202%2012s4.5%2010%2010%2010M11%207h2v2h-2zm3%2010h-4v-2h1v-2h-1v-2h3v4h1z%22/%3E%3C/svg%3E');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#electronic-and-mechanical-devices" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Digital Design and Fabrication" class="md-header__button md-logo" aria-label="Digital Design and Fabrication" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 2 4 4h-3v7.85l6.53 3.76L21 15.03l1.5 5.47-5.5 1.46 1.53-2.61L12 15.58l-6.53 3.77L7 21.96 1.5 20.5 3 15.03l1.47 2.58L11 13.85V6H8z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Digital Design and Fabrication
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Integration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Digital Design and Fabrication" class="md-nav__button md-logo" aria-label="Digital Design and Fabrication" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 2 4 4h-3v7.85l6.53 3.76L21 15.03l1.5 5.47-5.5 1.46 1.53-2.61L12 15.58l-6.53 3.77L7 21.96 1.5 20.5 3 15.03l1.47 2.58L11 13.85V6H8z"/></svg>
+
+    </a>
+    Digital Design and Fabrication
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Parametrics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Parametrics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parametrics/components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Components
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parametrics/template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Template
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parametrics/loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Graph Loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parametrics/cpython/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CPython
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Programming
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/collections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Collections
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Geometry
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Geometry
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Vectors
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Vectors
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/distances/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Distance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/addition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Addition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/subtraction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Subtraction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/multiplication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multiplication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/normalize/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Normalization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/dot-product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dot Product
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/cross-product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cross Product
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Coordinate Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/vectors/transforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Transformations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Curves
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Curves
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/curves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/curves/euclidean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Euclidean
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/curves/computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computational
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Surfaces
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Surfaces
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/surfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/surfaces/euclidean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Euclidean
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/surfaces/computational/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computational
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Meshes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Meshes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/meshes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Geometry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/meshes/topology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Topology
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Solids
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Solids
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/solids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/solids/constructive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Constructive
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/solids/boundary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Boundary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/solids/voxels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Volumetric
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/solids/clouds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Point Clouds
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Constructions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Constructions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/angles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Angles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Areas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/centroids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Centroids
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/clashes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clashes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/containment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Containment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/intersections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intersection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/mappings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mappings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/offsets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Offsets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/perpendiculars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Perpendiculars
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/polygons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Polygons
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/projections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Projections
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/constructions/reflections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reflections
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Robotics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Robotics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hardware
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Planning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Integration
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integration
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Output
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analog-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analog Output
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Input
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analog-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analog Input
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-to-digital" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital to Digital
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-to-analog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital to Analog
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot-to-arduino" class="md-nav__link">
+    <span class="md-ellipsis">
+      Robot to Arduino
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relay-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relay Module
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dc-motor" class="md-nav__link">
+    <span class="md-ellipsis">
+      DC Motor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servo-motor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Servo Motor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stepper-motor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stepper Motor
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Experiments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Output
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analog-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analog Output
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Input
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analog-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analog Input
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-to-digital" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital to Digital
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-to-analog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital to Analog
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot-to-arduino" class="md-nav__link">
+    <span class="md-ellipsis">
+      Robot to Arduino
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relay-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relay Module
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dc-motor" class="md-nav__link">
+    <span class="md-ellipsis">
+      DC Motor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servo-motor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Servo Motor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stepper-motor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stepper Motor
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="electronic-and-mechanical-devices">Electronic and Mechanical Devices</h1>
+<h2 id="components">Components</h2>
+<h4 id="breadboard">Breadboard</h4>
+<p>The breadboard is an electronics prototyping piece of kit where jumper wires are used to connect between device pins without  soldering. The pin holes form a grid which follows a strange pattern: The power rails at the edges of the board are connected vertically, while the interior grid pins are connected horizontally. Additionally, there is a gutter in the middle for mounting double sided through-hole chips. The connectivity is shown below. Note that for double length breadboard the power rails are not powered all the way from one end to the other.  </p>
+<p><img alt="Wiring Figure" src="../../figures/dev-breadboard.svg" width="40%" /></p>
+<h4 id="arduino">Arduino</h4>
+<p>The micro controllers used are mainly Arduino <a href="https://docs.arduino.cc/hardware/nano/" target="elsewhere">Nano</a>. There are some 
+<a href="https://docs.arduino.cc/hardware/uno-rev3" target="elsewhere">Uno</a> also available as well as <a href="https://docs.arduino.cc/hardware/leonardo/" target="elsewhere">Leonardo</a> used in the Ardbox PCL units. Arduino Nano fits nicely in a breadboard and can be used for building glue logic between the robot's controller and external devices. The GPIO pins are labeled on the board and additional information are available at the official <a href="https://docs.arduino.cc/hardware/nano/" target="elsewhere">documentation</a> page. To program the micro, download and install the <a href="https://www.arduino.cc/en/software/" target="elsewhere">Arduino IDE</a>. </p>
+<p>The first example below is shown to demonstrate how to power the side rails and how to connect across. It requires no programming, just connect the <code>5V</code> supply and ground <code>GND</code> to an LED via a resistor of value e.g. <code>470K</code>. The in-series resistor is used for limiting the current passing through the LED and controls its brightness. Without it, it will still work but burn soon enough. The LED, aka Light Emitting Diode, allows current only in one direction. Diodes behave like this in general. LEDs have two legs, one longer that the other, known as the positive or anode and negative or cathode, respectively. The negative goes to <code>GND</code> and positive to the <code>5V</code>.</p>
+<p><img alt="Wiring Figure" src="../../figures/dev-led.svg" width="40%" /></p>
+<h4 id="level-shifter">Level Shifter</h4>
+<p>The robot's controller, like most industrial equipment work with <code>24V</code> DC instead of <code>5V</code> or <code>3.3V</code> used by micro controllers. It is thus not possible to directly connect wires between them without some voltage level shifting logic. The boards shown below allow the output pins of the robot's controller to be connected to input pins of the micros. They use optocouplers to isolate both sides, which behave like switches. </p>
+<p><img alt="Wiring Figure" src="../../figures/dev-24to5.svg" width="40%" /></p>
+<h2 id="digital-output">Digital Output</h2>
+<p>Arduino pins can be configured as either inputs or outputs. Some are digital, as in they use only <code>5V</code> and <code>0V</code> to represent <code>1</code> and <code>0</code>, while some can produce interim voltages to represent analog values. LED blinking is the most basic demonstrator for toggling digital output pins. The wiring is not unlike the previous example, however, instead of powering the LED from the positive rail, it is connected to digital pin <code>D3</code>. Then nano must be programmed to toggle the power to the LED.</p>
+<h4 id="wiring">Wiring</h4>
+<p><img alt="Wiring Figure" src="../../figures/dev-do.svg" width="40%" /></p>
+<h4 id="coding">Coding</h4>
+<p>Arduinos use the <code>C</code> programming language, which is slightly more complicated compared to python. The concepts are the same-ish but the syntax is a bit different. There are three sections in a micro program: (a) general declarations and definitions at the top, (b) the initialization logic upon power up contained in the <code>setup( )</code> function, and (c) the continuous processing cycle captured by the <code>loop( )</code> function.</p>
+<p>In the code below, first the constant variable <code>DO03</code> is used for labeling Arduino's pin 3. The <code>setup</code> function declared that <code>DO03</code> will be used for output. The infinite <code>loop</code> turns on the LED by setting <code>DO03</code> to <code>HIGH</code> or <code>1</code>, which sends <code>5V</code> to it. Then there is delay of <code>1000</code> milliseconds, followed by setting the pin back down to <code>LOW</code> or <code>0</code>, which sets the output to <code>GND</code> or <code>0V</code>.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO03</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-0-2">
+</span><span id="__span-0-3"><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-0-4"><span class="p">{</span>
+</span><span id="__span-0-5"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO03</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-0-6"><span class="p">}</span>
+</span><span id="__span-0-7">
+</span><span id="__span-0-8"><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-0-9"><span class="p">{</span>
+</span><span id="__span-0-10"><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="w"> </span><span class="n">DO03</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="p">);</span><span class="w">                      </span>
+</span><span id="__span-0-11"><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="w"> </span><span class="n">DO03</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="w">  </span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="p">);</span><span class="w">                     </span>
+</span><span id="__span-0-12"><span class="p">}</span>
+</span></code></pre></div>
+<p>LEDs are the simplest form of indicating something from the code side to the user. It is also possible to use more informative devices to do so such as LCD displays. To use them is actually quite easy because there are libraries available, however, wiring up the display, as seen below, is messy. The specification or datasheet for the display can be often found using the part code printed on the board. For example a search for <code>LCD 1206 datasheet</code> brings up the a similar device <a href="https://www.vishay.com/docs/37484/lcd016n002bcfhet.pdf" target="elsewhere">datasheet</a>.</p>
+<h4 id="wiring_1">Wiring</h4>
+<p><img alt="Wiring Figure" src="../../figures/dev-lcd.svg" width="80%" /></p>
+<h4 id="coding_1">Coding</h4>
+<p>The code below uses the <a href="https://docs.arduino.cc/libraries/liquidcrystal/" target="elsewhere">Liquid Crystal Library</a> to display a simple message. The device is first declared in the globals section with the associated pins used. The <code>setup</code> function initializes the display to a 16x2 character configuration and clears the screen. The <code>loop</code> prints out a string, one per line, clears it after a delay.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;LiquidCrystal.h&gt;</span>
+</span><span id="__span-1-2">
+</span><span id="__span-1-3"><span class="n">LiquidCrystal</span><span class="w"> </span><span class="nf">lcd</span><span class="p">(</span><span class="w"> </span><span class="n">A0</span><span class="p">,</span><span class="w"> </span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="n">A2</span><span class="p">,</span><span class="w"> </span><span class="n">A3</span><span class="p">,</span><span class="w"> </span><span class="n">A4</span><span class="p">,</span><span class="w"> </span><span class="n">A5</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-1-4">
+</span><span id="__span-1-5"><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-1-6"><span class="p">{</span>
+</span><span id="__span-1-7"><span class="w">    </span><span class="n">lcd</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-1-8"><span class="w">    </span><span class="n">lcd</span><span class="p">.</span><span class="n">clear</span><span class="p">(</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-1-9"><span class="p">}</span>
+</span><span id="__span-1-10">
+</span><span id="__span-1-11"><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-1-12"><span class="p">{</span>
+</span><span id="__span-1-13"><span class="w">    </span><span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;Warning&quot;</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-1-14"><span class="w">    </span><span class="n">lcd</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-1-15"><span class="w">    </span><span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;Voltage&quot;</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-1-16"><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-1-17">
+</span><span id="__span-1-18"><span class="w">    </span><span class="n">lcd</span><span class="p">.</span><span class="n">clear</span><span class="p">(</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-1-19"><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-1-20"><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="analog-output">Analog Output</h2>
+<p>Analog output in Arduino is available in some but not all of the pins. These are marked with a tilde <code>~</code> or a <code>PWM</code> marker in the datasheet. An analog value between <code>0V</code> and <code>5V</code> is created by pulsing on and off an output pin really fast. The duration ratio between on and off produces interim values. The example below dims an LED using the Pulse Width Modulation approach. </p>
+<h4 id="wiring_2">Wiring</h4>
+<p>The digital pin 3 can support <code>PWM</code> so the wiring is exactly the same as previously. Instead of sending either <code>0V</code> or <code>5V</code> we will send varying levels of voltage using only code.</p>
+<p><img alt="Wiring Figure" src="../../figures/dev-do.svg" width="40%" /></p>
+<h4 id="coding_2">Coding</h4>
+<p>To produce analog voltage, instead of using <code>digitalWrite( )</code>, the <code>analogWrite( )</code> function is used. The second parameter is a byte value in <code>[0, 255]</code>. Thus, there are <code>256</code> levels between <code>0V</code> and <code>5V</code>. Additionally, the serial interface is activated such that the current value is sent to the computer terminal. Serial output is used for debugging so comment them out when not needed because they take processing power.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO03</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-2-2">
+</span><span id="__span-2-3"><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-2-4"><span class="p">{</span>
+</span><span id="__span-2-5"><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="w"> </span><span class="mi">9600</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-2-6"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO03</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-2-7"><span class="p">}</span>
+</span><span id="__span-2-8">
+</span><span id="__span-2-9"><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-2-10"><span class="kt">int</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-2-11">
+</span><span id="__span-2-12"><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-2-13"><span class="p">{</span>
+</span><span id="__span-2-14"><span class="w">    </span><span class="n">analogWrite</span><span class="p">(</span><span class="w"> </span><span class="n">DO03</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-2-15"><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-2-16"><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-2-17">
+</span><span id="__span-2-18"><span class="w">    </span><span class="n">value</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">delta</span><span class="p">;</span>
+</span><span id="__span-2-19"><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-2-20"><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-2-21"><span class="w">        </span><span class="n">delta</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+</span><span id="__span-2-22"><span class="w">        </span><span class="n">value</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">delta</span><span class="p">;</span>
+</span><span id="__span-2-23"><span class="w">    </span><span class="p">}</span><span class="w">         </span>
+</span><span id="__span-2-24"><span class="p">}</span><span class="w">      </span>
+</span></code></pre></div>
+<h2 id="digital-input">Digital Input</h2>
+<p>To receive information, such as external triggers and sensor data, the pins can be configured in either <code>INPUT</code> or <code>INPUT_PULLUP</code> mode. The example below demonstrates reading the state of a push button and printing out a relevant message.</p>
+<h4 id="wiring_3">Wiring</h4>
+<p>Buttons have four legs connected horizontally across. Once pressed they create a continuous path between their pins in a diagonal fashion. Buttons are wired such that once pressed they pull a positive line to the ground. This is because the response is faster and cleaner than pulling a line to the positive side. </p>
+<p>However, when a button is not pressed the circuit is broken. This is a problem because it is not possible to read its state from a floating pin. Floating pins produce random noise. Thus it is common to use an in-series pull-up resistor which keeps the line high until the button is pressed. Arduino supports software-controlled internal pull-up input arrangement therefore two options are presented below and in the coding section. </p>
+<p><img alt="Wiring Figure" src="../../figures/dev-di.svg" width="80%" /></p>
+<h4 id="coding_3">Coding</h4>
+<p>Depending on the arrangement, a digital pin can be set as either <code>INPUT</code> or <code>INPUT_PULLUP</code>, that is with external or internal resistor, respectively. The state of a digital input pin is read using the <code>digitalRead( )</code> function. Note that because of the pull-up logic, the relationship between the <code>HIGH</code> vs. <code>LOW</code> and <code>"Pressed"</code> vs. <code>"Released"</code> is inverted.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-3-2">
+</span><span id="__span-3-3"><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-3-4"><span class="p">{</span>
+</span><span id="__span-3-5"><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="w"> </span><span class="mi">9600</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-3-6"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO02</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="w"> </span><span class="p">);</span><span class="w">  </span><span class="c1">//-- Internal</span>
+</span><span id="__span-3-7"><span class="w">    </span><span class="c1">//pinMode( DO02, INPUT );       //-- External</span>
+</span><span id="__span-3-8"><span class="p">}</span>
+</span><span id="__span-3-9">
+</span><span id="__span-3-10"><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-3-11"><span class="p">{</span>
+</span><span id="__span-3-12"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">do02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="w"> </span><span class="n">DO02</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-3-13"><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="w"> </span><span class="n">do02</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;Released&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;Pressed&quot;</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-3-14"><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-3-15"><span class="p">}</span><span class="w">  </span>
+</span></code></pre></div>
+<h2 id="analog-input">Analog Input</h2>
+<p>Reading analog values is supported by only a subset of Arduino pins, namely these that start with the letter <code>A</code>. The expected input voltage is in the <code>[0, 5]</code> volts range. The example demonstrates reading the value from a rotary potentiometer. More generally analog inputs are used for reading sensors that output analog signals. The potentiometer is a rotation angle measuring device. </p>
+<h4 id="wiring_4">Wiring</h4>
+<p>Pots are variable resistors and they typically feature three legs with two accepting the positive and negative rail, while the third one emits the voltage dropped by the resistor. The pot's resistance used below ranges in the <code>[0, 10,000]</code> Ohms.</p>
+<p><img alt="Wiring Figure" src="../../figures/dev-ai.svg" width="40%" /></p>
+<h4 id="coding_4">Coding</h4>
+<p>Values are read using the <code>analogRead( )</code> function. It returns a 10-bit value in the <code>[0, 1023]</code> range. The value by it self is associated with a voltage but this is subject to knowing the exact maximum, typically <code>5V</code> as well as whether the device produces values in a linear or not sense.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">AI00</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A0</span><span class="p">;</span>
+</span><span id="__span-4-2">
+</span><span id="__span-4-3"><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-4-4"><span class="p">{</span>
+</span><span id="__span-4-5"><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="w"> </span><span class="mi">9600</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-4-6"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">AI00</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-4-7"><span class="p">}</span>
+</span><span id="__span-4-8">
+</span><span id="__span-4-9"><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-4-10"><span class="p">{</span>
+</span><span id="__span-4-11"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="w"> </span><span class="n">AI00</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-4-12"><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-4-13"><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-4-14"><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="digital-to-digital">Digital to Digital</h2>
+<p>The example below represents a scenario where an incoming digital signal triggers some action associated with a digital output. The incoming signal for simplicity is from a button, which once pressed it turns on an LED. Of course the signal can be sent from the robot's controller, read by the Arduino to trigger some external digital device. More on this is below.</p>
+<h4 id="wiring_5">Wiring</h4>
+<p><img alt="Wiring Figure" src="../../figures/dev-d2d.svg" width="40%" /></p>
+<h4 id="coding_5">Coding</h4>
+<p>The code is very simple requiring reading one pin and setting another. Note that the signal is inverted using the not operator <code>!</code>. This is because of the pull-up logic explained earlier.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-5-2"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO09</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+</span><span id="__span-5-3">
+</span><span id="__span-5-4"><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-5-5"><span class="p">{</span>
+</span><span id="__span-5-6"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO02</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-5-7"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO09</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-5-8"><span class="p">}</span>
+</span><span id="__span-5-9">
+</span><span id="__span-5-10"><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-5-11"><span class="p">{</span>
+</span><span id="__span-5-12"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">do02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">digitalRead</span><span class="p">(</span><span class="w"> </span><span class="n">DO02</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-5-13"><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="w"> </span><span class="n">CO09</span><span class="p">,</span><span class="w"> </span><span class="n">do02</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-5-14"><span class="p">}</span><span class="w">      </span>
+</span></code></pre></div>
+<h2 id="digital-to-analog">Digital to Analog</h2>
+<p>The following demonstration presents the case for how to convert a group of digital inputs to an analog output. This is for sending a voltage to an external analog device, such as a motor, from the robot's controller, which supports only digital signals. The digital inputs are four buttons which represent a 4-bit binary number, and the output is a dimming LED.</p>
+<h4 id="wiring_6">Wiring</h4>
+<p><img alt="Wiring Figure" src="../../figures/dev-d2a.svg" width="40%" /></p>
+<h4 id="coding_6">Coding</h4>
+<p>The code is not very different than the previously presented one-button scenario. However, once all button states are read and inverted, they are combined into a single 4-bit value using left bit shifts <code>&lt;&lt;</code> and bitwise ors <code>|</code>. The result is a value in the <code>[0, 15]</code> range. In other words, with 4-bits it possible to represent <code>2^4=16</code> unique states. Note that the order of combining the bits is important. </p>
+<p>Note also that the abstract 4-bit value is often transformed appropriately into something that makes sense. For instance, here it is multiplied by 4 and then sent to <code>analogWrite( )</code>. In this sense it converted to a voltage value in the range of <code>[0, ~1.2]</code> because it is sufficient to fully turn on/off the LED. To fully use the available 8-bit <code>PWM</code> resolution, we would need to multiply the 4-bit value by <code>value * 255 / 15</code>.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><span class="cp">#define DEBUG</span>
+</span><span id="__span-6-2">
+</span><span id="__span-6-3"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-6-4"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO03</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-6-5"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO04</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span id="__span-6-6"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO05</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-6-7"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO09</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+</span><span id="__span-6-8">
+</span><span id="__span-6-9"><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-6-10"><span class="p">{</span>
+</span><span id="__span-6-11"><span class="w">    </span><span class="cp">#ifdef DEBUG</span>
+</span><span id="__span-6-12"><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="w"> </span><span class="mi">9600</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-6-13"><span class="w">    </span><span class="cp">#endif</span>
+</span><span id="__span-6-14">
+</span><span id="__span-6-15"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO02</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-6-16"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO03</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-6-17"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO04</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-6-18"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO05</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-6-19">
+</span><span id="__span-6-20"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO09</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-6-21"><span class="p">}</span>
+</span><span id="__span-6-22">
+</span><span id="__span-6-23"><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-6-24"><span class="p">{</span>
+</span><span id="__span-6-25"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">do02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">digitalRead</span><span class="p">(</span><span class="w"> </span><span class="n">DO02</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-6-26"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">do03</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">digitalRead</span><span class="p">(</span><span class="w"> </span><span class="n">DO03</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-6-27"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">do04</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">digitalRead</span><span class="p">(</span><span class="w"> </span><span class="n">DO04</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-6-28"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">do05</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">digitalRead</span><span class="p">(</span><span class="w"> </span><span class="n">DO05</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-6-29">
+</span><span id="__span-6-30"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">do02</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="c1">// LSB</span>
+</span><span id="__span-6-31"><span class="w">                  </span><span class="p">(</span><span class="w"> </span><span class="n">do03</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span>
+</span><span id="__span-6-32"><span class="w">                  </span><span class="p">(</span><span class="w"> </span><span class="n">do04</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span>
+</span><span id="__span-6-33"><span class="w">                  </span><span class="p">(</span><span class="w"> </span><span class="n">do05</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="c1">// MSB</span>
+</span><span id="__span-6-34">
+</span><span id="__span-6-35"><span class="w">    </span><span class="n">analogWrite</span><span class="p">(</span><span class="w"> </span><span class="n">DO09</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-6-36">
+</span><span id="__span-6-37"><span class="w">    </span><span class="cp">#ifdef DEBUG</span>
+</span><span id="__span-6-38"><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="w"> </span><span class="n">do05</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+</span><span id="__span-6-39"><span class="w">                    </span><span class="n">String</span><span class="p">(</span><span class="w"> </span><span class="n">do04</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+</span><span id="__span-6-40"><span class="w">                    </span><span class="n">String</span><span class="p">(</span><span class="w"> </span><span class="n">do03</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+</span><span id="__span-6-41"><span class="w">                    </span><span class="n">String</span><span class="p">(</span><span class="w"> </span><span class="n">do02</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; -&gt; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+</span><span id="__span-6-42"><span class="w">                    </span><span class="n">String</span><span class="p">(</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-6-43"><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-6-44"><span class="w">    </span><span class="cp">#endif</span>
+</span><span id="__span-6-45"><span class="p">}</span><span class="w">      </span>
+</span></code></pre></div>
+<h2 id="robot-to-arduino">Robot to Arduino</h2>
+<p>The following example demonstrates receiving 4-bits of information from the robot's controller digital outputs into Arduino's digital inputs. Those are combined to build a state which can be used for performing at maximum <code>16</code> different independent predefined tasks. </p>
+<h4 id="wiring_7">Wiring</h4>
+<p><img alt="Wiring Figure" src="../../figures/dev-24to5.svg" width="40%" /></p>
+<h4 id="coding_7">Coding</h4>
+<p>The code is pretty similar to the digital to analog example. However, instead of interpreting the combined value as a continuous quantity, here is used in a switch construct to perform discrete tasks. Note that the <code>default</code> keyword is used for catching all non individually specified cases.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-7-2"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO03</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-7-3"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO04</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span id="__span-7-4"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO05</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-7-5">
+</span><span id="__span-7-6"><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-7-7"><span class="p">{</span>
+</span><span id="__span-7-8"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO02</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-7-9"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO03</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-7-10"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO04</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-7-11"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO05</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-7-12">
+</span><span id="__span-7-13"><span class="w">    </span><span class="c1">//-- Outputs ...</span>
+</span><span id="__span-7-14"><span class="p">}</span>
+</span><span id="__span-7-15">
+</span><span id="__span-7-16"><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-7-17"><span class="p">{</span>
+</span><span id="__span-7-18"><span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">do02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="w"> </span><span class="n">DO02</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-7-19"><span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">do03</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="w"> </span><span class="n">DO03</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-7-20"><span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">do04</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="w"> </span><span class="n">DO04</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-7-21"><span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">do05</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="w"> </span><span class="n">DO05</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-7-22">
+</span><span id="__span-7-23"><span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">do02</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="c1">// LSB</span>
+</span><span id="__span-7-24"><span class="w">                    </span><span class="p">(</span><span class="w"> </span><span class="n">do03</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span>
+</span><span id="__span-7-25"><span class="w">                    </span><span class="p">(</span><span class="w"> </span><span class="n">do04</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span>
+</span><span id="__span-7-26"><span class="w">                    </span><span class="p">(</span><span class="w"> </span><span class="n">do05</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="c1">// MSB</span>
+</span><span id="__span-7-27">
+</span><span id="__span-7-28"><span class="w">      </span><span class="k">switch</span><span class="p">(</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-7-29"><span class="w">      </span><span class="p">{</span>
+</span><span id="__span-7-30"><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-7-31"><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-7-32"><span class="w">                </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;Case 0&quot;</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-7-33"><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-7-34"><span class="w">            </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-7-35">
+</span><span id="__span-7-36"><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-7-37"><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-7-38"><span class="w">                </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;Case 1&quot;</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-7-39"><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-7-40"><span class="w">            </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-7-41">
+</span><span id="__span-7-42"><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+</span><span id="__span-7-43"><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-7-44"><span class="w">                </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;Case 2&quot;</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-7-45"><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-7-46"><span class="w">            </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-7-47">
+</span><span id="__span-7-48"><span class="w">            </span><span class="k">default</span><span class="o">:</span>
+</span><span id="__span-7-49"><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-7-50"><span class="w">                </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;Cases 3 to 15&quot;</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-7-51"><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-7-52"><span class="w">            </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-7-53"><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-7-54"><span class="p">}</span><span class="w">      </span>
+</span></code></pre></div>
+<h2 id="relay-module">Relay Module</h2>
+<p>A mechanical relay is a device used for controlling high voltage loads from a low voltage micro controller safely. They can be used for both AC and DC, inductive and capacitive loads. However, care must be taken to not exceed the capability of the device and cause damage or injuries.</p>
+<h4 id="wiring_8">Wiring</h4>
+<p><img alt="Breadboard Figure" src="../../figures/dev-relay.svg" width="40%" /></p>
+<h4 id="coding_8">Coding</h4>
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">AI02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A2</span><span class="p">;</span>
+</span><span id="__span-8-2"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO02</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-8-3">
+</span><span id="__span-8-4"><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-8-5"><span class="p">{</span>
+</span><span id="__span-8-6"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">AI02</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="w">  </span><span class="p">);</span>
+</span><span id="__span-8-7"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO02</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-8-8"><span class="p">}</span>
+</span><span id="__span-8-9">
+</span><span id="__span-8-10"><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-8-11"><span class="p">{</span>
+</span><span id="__span-8-12"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="w"> </span><span class="n">AI02</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-8-13"><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="w"> </span><span class="n">DO02</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="p">);</span><span class="w">                                       </span>
+</span><span id="__span-8-14"><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="dc-motor">DC Motor</h2>
+<p>DC motors are the simplest to operate requiring only effectively one signal that associates voltage to speed. Generally only one <code>PWM</code> signal is required to control the motor's speed. However, motors require significantly more power than the micro can provide so a secondary power supply is used. Note that mixing the two power sources can result to damages so it is recommended to use driver modules to handle the power management.</p>
+<h4 id="mosfet-module">MOSFET Module</h4>
+<p>The driver modules typically feature two sides, one for the motor / high voltage and one for the signals / low voltage part of the system. An example using a mosfet module is demonstrated below. It is not very different than the analog output logic presented earlier.</p>
+<h4 id="wiring_9">Wiring</h4>
+<p><img alt="Breadboard Figure" src="../../figures/dev-dcmotor.svg" width="40%" /></p>
+<h4 id="coding_9">Coding</h4>
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">AI02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A2</span><span class="p">;</span>
+</span><span id="__span-9-2"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO03</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-9-3">
+</span><span id="__span-9-4"><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-9-5"><span class="p">{</span>
+</span><span id="__span-9-6"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">AI02</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="w">  </span><span class="p">);</span>
+</span><span id="__span-9-7"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO03</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-9-8"><span class="p">}</span>
+</span><span id="__span-9-9">
+</span><span id="__span-9-10"><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-9-11"><span class="p">{</span>
+</span><span id="__span-9-12"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="w"> </span><span class="n">AI02</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-9-13"><span class="w">    </span><span class="n">analogWrite</span><span class="p">(</span><span class="w"> </span><span class="n">DO03</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="p">);</span><span class="w">                                       </span>
+</span><span id="__span-9-14"><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="l293dne">L293DNE</h4>
+<p>Using ICs for DC motor driving is presented below, even though using a dedicated module is recommended. This is because the spikes produced by motors can damage the logic side. It is also very easy to make a wrong connection and fry the logic board. The chip is <code>L293</code> which can drive two motors, see the <a href="https://www.ti.com/lit/ds/symlink/l293.pdf" target="elsewhere">documentation</a>. Note that the logic and power grounds are connected together which is a typical pattern with motor drivers. </p>
+<h4 id="wiring_10">Wiring</h4>
+<p><img alt="Breadboard Figure" src="../../figures/dev-l293dne.svg" width="40%" /></p>
+<h4 id="coding_10">Coding</h4>
+<p>The driver requires three wires for control. The expected <code>PWM</code> voltage/speed signal as well as two for setting the direction of the motor. Additionally, they must be set to <code>01</code> or <code>10</code> states for switching direction, while <code>00</code> represent halting. These combinations are handled in the <code>move( )</code> function by bit manipulation such that the application logic in the <code>loop( )</code> function is simple and readable.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-10-1"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PWM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-10-2"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IN1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-10-3"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IN2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+</span><span id="__span-10-4">
+</span><span id="__span-10-5"><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="w">  </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-10-6"><span class="p">{</span>
+</span><span id="__span-10-7"><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">PWM</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="w"> </span><span class="n">PWM</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-10-8"><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="w"> </span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-10-9"><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="w"> </span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-10-10"><span class="p">}</span>
+</span><span id="__span-10-11">
+</span><span id="__span-10-12"><span class="kt">void</span><span class="w"> </span><span class="nf">move</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">speed</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-10-13"><span class="p">{</span>
+</span><span id="__span-10-14"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sign</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">speed</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">speed</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">-1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-10-15"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">bits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">sign</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-10-16"><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="w"> </span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">bits</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-10-17"><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="w"> </span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">bits</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-10-18"><span class="w">    </span><span class="n">analogWrite</span><span class="p">(</span><span class="w"> </span><span class="n">PWM</span><span class="p">,</span><span class="w"> </span><span class="n">speed</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sign</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-10-19"><span class="p">}</span>
+</span><span id="__span-10-20">
+</span><span id="__span-10-21"><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-22"><span class="w">  </span><span class="n">move</span><span class="p">(</span><span class="w">  </span><span class="mi">100</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-10-23"><span class="w">  </span><span class="n">move</span><span class="p">(</span><span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-10-24"><span class="w">  </span><span class="n">move</span><span class="p">(</span><span class="w"> </span><span class="mi">-100</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-10-25"><span class="w">  </span><span class="n">move</span><span class="p">(</span><span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-10-26"><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="servo-motor">Servo Motor</h2>
+<p>Servomotors are another type of devices used for mechanical actuation. Again we need an external power source to run the motor effectively even though small servos can be theoretically connected directly to Arduino. Additionally, the power and logic grounds need to be commoned.</p>
+<h4 id="wiring_11">Wiring</h4>
+<p><img alt="Breadboard Figure" src="../../figures/dev-servo.svg" width="40%" /></p>
+<h4 id="coding_11">Coding</h4>
+<div class="highlight"><pre><span></span><code><span id="__span-11-1"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Servo.h&gt;</span>
+</span><span id="__span-11-2">
+</span><span id="__span-11-3"><span class="n">Servo</span><span class="w"> </span><span class="n">motor</span><span class="p">;</span>
+</span><span id="__span-11-4">
+</span><span id="__span-11-5"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO09</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+</span><span id="__span-11-6">
+</span><span id="__span-11-7"><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-11-8"><span class="p">{</span>
+</span><span id="__span-11-9"><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="w"> </span><span class="mi">9600</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-11-10"><span class="w">    </span><span class="n">motor</span><span class="p">.</span><span class="n">attach</span><span class="p">(</span><span class="w"> </span><span class="n">DO09</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-11-11"><span class="p">}</span>
+</span><span id="__span-11-12">
+</span><span id="__span-11-13"><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-11-14"><span class="p">{</span>
+</span><span id="__span-11-15"><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-11-16"><span class="w">    </span><span class="n">motor</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">);</span><span class="w">    </span>
+</span><span id="__span-11-17"><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="w"> </span><span class="mi">2000</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-11-18">
+</span><span id="__span-11-19"><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="w"> </span><span class="mi">180</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-11-20"><span class="w">    </span><span class="n">motor</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="w"> </span><span class="mi">180</span><span class="w"> </span><span class="p">);</span><span class="w">    </span>
+</span><span id="__span-11-21"><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="w"> </span><span class="mi">2000</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-11-22"><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="stepper-motor">Stepper Motor</h2>
+<p>Stepper motors are yet another type of motor that are used with micro controllers. They are indexed in that they take discrete positions around a cycle, as is they have a finite number of steps around a circle. For small steppers such as the <a href="https://www.digikey.com/en/htmldatasheets/production/1839399/0/0/1/28byj-48" target="elsewhere">28BYJ-48</a> a simple <code>UL2003</code> module can be used as seen below, or even directly driven by the IC itself. For larger motors a micro step driver is preferable.</p>
+<h4 id="ul2003-module">UL2003 Module</h4>
+<h4 id="wiring_12">Wiring</h4>
+<p>There are four wires required to drive the motor which map to the two windings of a bipolar stepper, two for each. The <code>28BYJ-48</code> stepper features five wires that connect via a molex connector to the module directly.</p>
+<p><img alt="Breadboard Figure" src="../../figures/dev-stepper.svg" width="40%" /></p>
+<h4 id="coding-library">Coding / Library</h4>
+<p>The easiest way to run a stepper motor used the <a href="https://docs.arduino.cc/libraries/stepper/" target="elsewhere">Stepper Library</a>. It requires defining the number of steps per revolution and the four pins connected to the driver module. The motor is controlled by issuing the number of steps and direction to use.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-12-1"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Stepper.h&quot;</span>
+</span><span id="__span-12-2">
+</span><span id="__span-12-3"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">STEPS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2048</span><span class="p">;</span>
+</span><span id="__span-12-4">
+</span><span id="__span-12-5"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-12-6"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO03</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-12-7"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO04</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span id="__span-12-8"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO05</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-12-9">
+</span><span id="__span-12-10"><span class="n">Stepper</span><span class="w"> </span><span class="n">motor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Stepper</span><span class="p">(</span><span class="w"> </span><span class="n">STEPS</span><span class="p">,</span><span class="w"> </span><span class="n">DO02</span><span class="p">,</span><span class="w"> </span><span class="n">DO04</span><span class="p">,</span><span class="w"> </span><span class="n">DO03</span><span class="p">,</span><span class="w"> </span><span class="n">DO05</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-12-11">
+</span><span id="__span-12-12"><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-12-13"><span class="p">{</span>
+</span><span id="__span-12-14"><span class="w">    </span><span class="n">motor</span><span class="p">.</span><span class="n">setSpeed</span><span class="p">(</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-12-15"><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="w"> </span><span class="mi">9600</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-12-16"><span class="p">}</span>
+</span><span id="__span-12-17">
+</span><span id="__span-12-18"><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-12-19"><span class="p">{</span>
+</span><span id="__span-12-20"><span class="w">    </span><span class="n">motor</span><span class="p">.</span><span class="n">step</span><span class="p">(</span><span class="w">  </span><span class="n">STEPS</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-12-21"><span class="w">    </span><span class="n">motor</span><span class="p">.</span><span class="n">step</span><span class="p">(</span><span class="w"> </span><span class="o">-</span><span class="n">STEPS</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-12-22"><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="coding-manual">Coding / Manual</h4>
+<p>It is possible to directly drive steppers without the <code>Stepper</code> library and/or without the module by using directly the <a href="https://www.ti.com/lit/ds/symlink/uln2003a.pdf" target="elsewhere">ULN2003A</a> IC. This is done by pulsing the output pins in a specific sequence as seen below. Again, because it is very easy to make mistakes and fry electronics, it is highly recommended to use dedicated driver modules.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-13-1"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-13-2"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO03</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-13-3"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO04</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span id="__span-13-4"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO05</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-13-5">
+</span><span id="__span-13-6"><span class="c1">// const int STEPS[8][4] = </span>
+</span><span id="__span-13-7"><span class="c1">// {</span>
+</span><span id="__span-13-8"><span class="c1">//     { 1, 0, 0, 0 },</span>
+</span><span id="__span-13-9"><span class="c1">//     { 1, 1, 0, 0 },</span>
+</span><span id="__span-13-10"><span class="c1">//     { 0, 1, 0, 0 },</span>
+</span><span id="__span-13-11"><span class="c1">//     { 0, 1, 1, 0 },</span>
+</span><span id="__span-13-12"><span class="c1">//     { 0, 0, 1, 0 },</span>
+</span><span id="__span-13-13"><span class="c1">//     { 0, 0, 1, 1 },</span>
+</span><span id="__span-13-14"><span class="c1">//     { 0, 0, 0, 1 },</span>
+</span><span id="__span-13-15"><span class="c1">//     { 1, 0, 0, 1 }</span>
+</span><span id="__span-13-16"><span class="c1">// };</span>
+</span><span id="__span-13-17">
+</span><span id="__span-13-18"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">STEPS</span><span class="p">[</span><span class="mi">8</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+</span><span id="__span-13-19"><span class="p">{</span>
+</span><span id="__span-13-20"><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">},</span><span class="w">  </span>
+</span><span id="__span-13-21"><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">},</span><span class="w">  </span>
+</span><span id="__span-13-22"><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">},</span><span class="w">  </span>
+</span><span id="__span-13-23"><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span><span class="w">   </span>
+</span><span id="__span-13-24"><span class="p">};</span>
+</span><span id="__span-13-25">
+</span><span id="__span-13-26"><span class="kt">int</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-13-27"><span class="kt">int</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2000</span><span class="p">;</span>
+</span><span id="__span-13-28">
+</span><span id="__span-13-29"><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-13-30"><span class="p">{</span>
+</span><span id="__span-13-31"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO02</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-13-32"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO03</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-13-33"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO04</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-13-34"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO05</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-13-35"><span class="p">}</span>
+</span><span id="__span-13-36">
+</span><span id="__span-13-37"><span class="kt">void</span><span class="w"> </span><span class="nf">move</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">direction</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-13-38"><span class="p">{</span>
+</span><span id="__span-13-39"><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">count</span><span class="p">;</span><span class="w"> </span><span class="n">index</span><span class="o">++</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-13-40"><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-13-41"><span class="w">        </span><span class="n">step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">direction</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+</span><span id="__span-13-42"><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="w"> </span><span class="n">DO02</span><span class="p">,</span><span class="w"> </span><span class="n">STEPS</span><span class="p">[</span><span class="n">step</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-13-43"><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="w"> </span><span class="n">DO03</span><span class="p">,</span><span class="w"> </span><span class="n">STEPS</span><span class="p">[</span><span class="n">step</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-13-44"><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="w"> </span><span class="n">DO04</span><span class="p">,</span><span class="w"> </span><span class="n">STEPS</span><span class="p">[</span><span class="n">step</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-13-45"><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="w"> </span><span class="n">DO05</span><span class="p">,</span><span class="w"> </span><span class="n">STEPS</span><span class="p">[</span><span class="n">step</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-13-46"><span class="w">        </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-13-47"><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-13-48"><span class="p">}</span>
+</span><span id="__span-13-49">
+</span><span id="__span-13-50"><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-13-51"><span class="p">{</span>
+</span><span id="__span-13-52"><span class="w">    </span><span class="n">move</span><span class="p">(</span><span class="w"> </span><span class="mi">1024</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-13-53"><span class="w">    </span><span class="n">move</span><span class="p">(</span><span class="w"> </span><span class="mi">1024</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-13-54"><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="stepper-driver-module">Stepper Driver Module</h4>
+<p>For larger steppers there are convenient driver devices that require only a pulse and direction wire to hook up. Additionally, they take care of the external power supply circuitry. For bipolar steppers there are four winding motor wires connected to the driver. If it is unclear which wires are on the same coil, use the multimeter in continuity mode to buzz the wires and group them. Arduino-wise, stepping is performed via a pulsing pin and the direction using a digital pin.</p>
+<h4 id="wiring_13">Wiring</h4>
+<p><img alt="Breadboard Figure" src="../../figures/dev-driver.svg" width="80%" /></p>
+<h4 id="coding_12">Coding</h4>
+<div class="highlight"><pre><span></span><code><span id="__span-14-1"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-14-2"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DO03</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-14-3">
+</span><span id="__span-14-4"><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-14-5"><span class="p">{</span>
+</span><span id="__span-14-6"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO02</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-14-7"><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="w"> </span><span class="n">DO03</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-14-8"><span class="p">}</span>
+</span><span id="__span-14-9">
+</span><span id="__span-14-10"><span class="kt">void</span><span class="w"> </span><span class="nf">move</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">direction</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-14-11"><span class="p">{</span>
+</span><span id="__span-14-12"><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="w"> </span><span class="n">DO03</span><span class="p">,</span><span class="w"> </span><span class="n">direction</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">HIGH</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">LOW</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-14-13"><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">count</span><span class="p">;</span><span class="w"> </span><span class="n">index</span><span class="o">++</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-14-14"><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-14-15"><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="w"> </span><span class="n">DO02</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="w"> </span><span class="p">);</span><span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-14-16"><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="w"> </span><span class="n">DO02</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="w">  </span><span class="p">);</span><span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-14-17"><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-14-18"><span class="p">}</span>
+</span><span id="__span-14-19">
+</span><span id="__span-14-20"><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-14-21"><span class="p">{</span>
+</span><span id="__span-14-22"><span class="w">    </span><span class="n">move</span><span class="p">(</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-14-23"><span class="w">    </span><span class="n">move</span><span class="p">(</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-14-24"><span class="p">}</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright (c) 2024-2025 Digital Design and Fabrication
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
