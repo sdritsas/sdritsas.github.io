@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casu 2.0</title>
+    <link href="javascript/nouislider.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="pyodide/pyodide.js"></script>
+    <script type="module" src="index.js"></script>
+</head>
+<body>
+    <div id="contents">
+        <div id="view" class="vpane">
+            <div id="toolbar">
+                <button class="toolbar-btn" id="view-xy">XY</button>
+                <button class="toolbar-btn" id="view-yz">YZ</button>
+                <button class="toolbar-btn" id="view-zx">ZX</button>
+                <button class="toolbar-btn" id="view-xyz">XYZ</button>
+            </div>
+            <canvas id="viewport"></canvas>
+        </div>
+        <div id="vsplit"></div>
+        <div id="tool" class="vpane">
+            <div id="attributes" class="hpane"></div>
+        </div>
+    </div>
+    <div id="loading-overlay" aria-hidden="true">
+        <div class="loading-panel" role="status" aria-live="polite">
+            <div class="loading-message">
+                <div id="loading-text">Loading…</div>
+                <div class="spinner" aria-hidden="true"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
